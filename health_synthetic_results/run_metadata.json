@@ -1,0 +1,59 @@
+{
+  "source_sha256": "9866ddfff6415ba2e8df4d4e0334282ab042bbabaa7e482f346ce52b0b1fc96e",
+  "start": "2020-12-05",
+  "end": "2026-10-01",
+  "days": 2127,
+  "config": {
+    "seed": 20261205,
+    "start_date": "2020-12-05",
+    "daily": {
+      "correlation_shrinkage": 0.12,
+      "weekday_strength": 0.5,
+      "vo2_persistence": 0.98,
+      "mask_persistence": 0.4
+    },
+    "sleep": {
+      "persistence_prior": 0.3,
+      "mask_persistence": 0.55,
+      "stage_persistence_prior": 0.3,
+      "fall_asleep_probability": 0.0,
+      "fall_asleep_minutes": [
+        5,
+        15,
+        45
+      ]
+    },
+    "womens_health": {
+      "cycle_mean_days": 28,
+      "cycle_sd_days": 2.5,
+      "cycle_bounds_days": [
+        24,
+        35
+      ],
+      "menstruation_bounds_days": [
+        3,
+        7
+      ]
+    },
+    "notes": "Software testing only. Models do not read FIT files or running performance. Fall Asleep is disabled by default because it has no measured observations. Persistence and cycle settings are explicit testing assumptions."
+  },
+  "versions": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1",
+    "openpyxl": "3.1.5",
+    "matplotlib": "3.11.2"
+  },
+  "purpose": "Visualization software testing; synthetic history is not physiological inference.",
+  "womens_health_encoding": {
+    "Start of Cycle": "boolean",
+    "Menstruation": [
+      "None",
+      "Light",
+      "Medium",
+      "Heavy"
+    ],
+    "Time": "12:00 synthetic event timestamp"
+  },
+  "missingness": "Original sparse measurement schedules are retained. New daily rows use observed rates; sleep auxiliary rates are conditional on observed nights."
+}

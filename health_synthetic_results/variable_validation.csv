@@ -1,0 +1,244 @@
+sheet,column,variable,provenance,records,missing,unit,source_records,source_missing,n,categories,min,q05,q25,median,q75,q95,max,mean,sd
+Daily Metrics,1,Date,measured,2127,0,Excel native,365,0,365,"{""first_date"": ""2025-10-02"", ""last_date"": ""2026-10-01""}",,,,,,,,,
+Daily Metrics,1,Date,synthetic_model,2127,0,Excel native,365,0,1762,"{""first_date"": ""2020-12-05"", ""last_date"": ""2025-10-01""}",,,,,,,,,
+Daily Metrics,1,Date,synthetic_prior,2127,0,Excel native,365,0,0,{},,,,,,,,,
+Daily Metrics,2,Active Energy,measured,2127,0,Excel native,365,0,365,{},4.897999999999999,256.32309729539344,392.32900000000006,711.1420000000002,980.077000000002,1247.9125999999978,1744.167999999998,705.7061866819724,341.470122855864
+Daily Metrics,2,Active Energy,synthetic_model,2127,0,Excel native,365,0,1762,{},5.01058494335997,251.07808155411465,396.5109847401874,743.8222219893672,1007.5016397824629,1263.1717715415455,1740.8756953713323,724.6521616256756,353.5216179174286
+Daily Metrics,2,Active Energy,synthetic_prior,2127,0,Excel native,365,0,0,{},,,,,,,,,
+Daily Metrics,3,Resting Energy,measured,2127,0,Excel native,365,0,365,{},1128.7314397407742,1521.7606237180623,1798.0794369451498,1825.4470525494285,1853.3243426599397,1890.0712739774192,2410.3471543073547,1799.1187255745383,128.20270977482204
+Daily Metrics,3,Resting Energy,synthetic_model,2127,0,Excel native,365,0,1762,{},1130.334397805171,1554.3342476838607,1799.404101994114,1828.7225236314025,1855.458136989551,1897.503594845732,2384.1783615717563,1803.0576068544888,123.35178274148217
+Daily Metrics,3,Resting Energy,synthetic_prior,2127,0,Excel native,365,0,0,{},,,,,,,,,
+Daily Metrics,4,Resting,measured,2127,8,Excel native,365,2,363,{},53.0,55.0,58.0,60.0,63.0,67.0,73.0,60.725895316804404,3.5767756321756785
+Daily Metrics,4,Resting,synthetic_model,2127,8,Excel native,365,2,1756,{},53.0,55.0,58.0,60.0,63.0,67.0,73.0,60.86617312072893,3.5369470867405957
+Daily Metrics,4,Resting,synthetic_prior,2127,8,Excel native,365,2,0,{},,,,,,,,,
+Daily Metrics,5,HRV,measured,2127,9,Excel native,365,2,363,{},19.891183969941792,28.136049521516462,34.67828070753666,39.2881554905592,45.38173940571861,55.63438127664986,72.18371404210195,40.370234582482546,8.349327510541006
+Daily Metrics,5,HRV,synthetic_model,2127,9,Excel native,365,2,1755,{},20.88274829671901,28.49728156255406,34.95737986044015,39.889488132268276,45.66289696192588,55.50446102887954,71.94422177619755,40.599526583305895,8.142282626759526
+Daily Metrics,5,HRV,synthetic_prior,2127,9,Excel native,365,2,0,{},,,,,,,,,
+Daily Metrics,6,Steps,measured,2127,0,Excel native,365,0,365,{},891.0,2864.5345680928026,5756.0,8060.0,11094.0,15745.800000000001,21010.0,8590.99037492291,3918.1198028750728
+Daily Metrics,6,Steps,synthetic_model,2127,0,Excel native,365,0,1762,{},907.0,2794.9500000000003,5700.25,8316.5,11470.0,16522.699999999983,20609.0,8777.583427922815,4119.579174302426
+Daily Metrics,6,Steps,synthetic_prior,2127,0,Excel native,365,0,0,{},,,,,,,,,
+Daily Metrics,7,VO₂ max,measured,2127,1562,Excel native,365,264,101,{},39.67,40.94,41.81,43.7,47.21,49.6,50.2,44.47202970297029,3.0327080975686287
+Daily Metrics,7,VO₂ max,synthetic_model,2127,1562,Excel native,365,264,464,{},40.08960700848558,41.23,42.782933394873815,44.06029101225392,47.981026276617236,49.50256197476675,50.180132975706094,45.14254854205219,2.7846462090453765
+Daily Metrics,7,VO₂ max,synthetic_prior,2127,1562,Excel native,365,264,0,{},,,,,,,,,
+Daily Metrics,8,Exercise Minutes,measured,2127,0,Excel native,365,0,365,{},0.0,0.0,6.0,55.0,86.0,127.40000000000003,216.0,53.16164383561644,46.0196343747181
+Daily Metrics,8,Exercise Minutes,synthetic_model,2127,0,Excel native,365,0,1762,{},0.0,0.0,6.0,57.0,89.0,130.0,215.0,54.64528944381385,47.46437403402432
+Daily Metrics,8,Exercise Minutes,synthetic_prior,2127,0,Excel native,365,0,0,{},,,,,,,,,
+Daily Metrics,9,Stand Hours,measured,2127,0,Excel native,365,0,365,{},1.0,11.0,13.0,14.0,15.0,17.0,19.0,14.175342465753424,2.2100505679405154
+Daily Metrics,9,Stand Hours,synthetic_model,2127,0,Excel native,365,0,1762,{},1.0,11.0,13.0,14.0,15.0,17.0,19.0,14.222474460839955,2.1449714194125993
+Daily Metrics,9,Stand Hours,synthetic_prior,2127,0,Excel native,365,0,0,{},,,,,,,,,
+Weight,1,Date,measured,12,0,Excel native,12,0,12,"{""first_date"": ""2025-10-08"", ""last_date"": ""2026-07-10""}",,,,,,,,,
+Weight,1,Date,synthetic_model,12,0,Excel native,12,0,0,{},,,,,,,,,
+Weight,1,Date,synthetic_prior,12,0,Excel native,12,0,0,{},,,,,,,,,
+Weight,2,Weight,measured,12,0,Excel native,12,0,12,{},73.02837157,73.07826596936027,73.91287530724594,74.162352495,74.52522604493649,75.75446095236026,76.20351816,74.27575001072748,0.8543327832460064
+Weight,2,Weight,synthetic_model,12,0,Excel native,12,0,0,{},,,,,,,,,
+Weight,2,Weight,synthetic_prior,12,0,Excel native,12,0,0,{},,,,,,,,,
+Weight,3,Data Source,measured,12,0,Excel native,12,0,12,"{""MyFitnessPal"": 12}",,,,,,,,,
+Weight,3,Data Source,synthetic_model,12,0,Excel native,12,0,0,{},,,,,,,,,
+Weight,3,Data Source,synthetic_prior,12,0,Excel native,12,0,0,{},,,,,,,,,
+Weight,4,Fat,measured,12,1,Excel native,12,1,11,{},0.17700000762939452,0.17700000762939452,0.17949999809265138,0.18100000381469727,0.18299999237060546,0.18550000190734864,0.18700000762939453,0.18136363636363637,0.0029625749758643086
+Weight,4,Fat,synthetic_model,12,1,Excel native,12,1,0,{},,,,,,,,,
+Weight,4,Fat,synthetic_prior,12,1,Excel native,12,1,0,{},,,,,,,,,
+Weight,5,Data Source,measured,12,1,Excel native,12,1,11,"{""Renpho"": 11}",,,,,,,,,
+Weight,5,Data Source,synthetic_model,12,1,Excel native,12,1,0,{},,,,,,,,,
+Weight,5,Data Source,synthetic_prior,12,1,Excel native,12,1,0,{},,,,,,,,,
+Weight,6,BMI,measured,12,1,Excel native,12,1,11,{},23.899999618530273,23.899999618530273,24.100000381469727,24.200000762939453,24.299999237060547,24.5,24.600000381469727,24.209090839732777,0.2020555899104024
+Weight,6,BMI,synthetic_model,12,1,Excel native,12,1,0,{},,,,,,,,,
+Weight,6,BMI,synthetic_prior,12,1,Excel native,12,1,0,{},,,,,,,,,
+Weight,7,Data Source,measured,12,1,Excel native,12,1,11,"{""Renpho"": 11}",,,,,,,,,
+Weight,7,Data Source,synthetic_model,12,1,Excel native,12,1,0,{},,,,,,,,,
+Weight,7,Data Source,synthetic_prior,12,1,Excel native,12,1,0,{},,,,,,,,,
+Sleep,1,Date,measured,2127,0,Excel native,29,0,29,"{""first_date"": ""2026-02-07"", ""last_date"": ""2026-06-27""}",,,,,,,,,
+Sleep,1,Date,synthetic_model,2127,0,Excel native,29,0,2098,"{""first_date"": ""2020-12-05"", ""last_date"": ""2026-10-01""}",,,,,,,,,
+Sleep,1,Date,synthetic_prior,2127,0,Excel native,29,0,0,{},,,,,,,,,
+Sleep,2,Main,measured,2127,0,Excel native,29,0,29,{},1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0
+Sleep,2,Main,synthetic_model,2127,0,Excel native,29,0,2098,{},1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0
+Sleep,2,Main,synthetic_prior,2127,0,Excel native,29,0,0,{},,,,,,,,,
+Sleep,3,Start,measured,2127,0,Excel native,29,0,29,{},0.9211111111111111,20.858722222222223,22.317777777777778,22.88111111111111,23.195555555555554,23.507555555555555,23.685,21.95371647509579,4.033987399478816
+Sleep,3,Start,synthetic_model,2127,0,Excel native,29,0,2098,{},0.00782,21.071330194444442,22.323731805555553,22.88835180555555,23.201392430555558,23.507852111111113,23.987724166666666,22.208133232178795,3.4231937351757056
+Sleep,3,Start,synthetic_prior,2127,0,Excel native,29,0,0,{},,,,,,,,,
+Sleep,4,End,measured,2127,0,Excel native,29,0,29,{},3.904166666666667,5.8916666666666675,5.996111111111111,6.002777777777778,6.8180555555555555,8.421333333333331,8.895277777777777,6.4316570881226065,1.0050697596740181
+Sleep,4,End,synthetic_model,2127,0,Excel native,29,0,2098,{},2.443941388888889,4.4628880833333335,5.640877430555555,6.318200972222222,7.197799652777778,8.420854944444445,10.198873611111111,6.392241570808177,1.1842647332559488
+Sleep,4,End,synthetic_prior,2127,0,Excel native,29,0,0,{},,,,,,,,,
+Sleep,5,InBed,measured,2127,0,hours,29,0,29,{},5.064834722222222,6.419388555555556,6.889268888888888,7.463917222222222,8.221871111111112,9.469960611111112,9.954966666666666,7.61587379310345,1.0605735058424404
+Sleep,5,InBed,synthetic_model,2127,0,hours,29,0,2098,{},5.06844837611111,6.4288043008611115,6.886483912361111,7.452710602222222,8.228087323333334,9.468374798680555,9.944529549722223,7.6235744962599306,0.9634369555884227
+Sleep,5,InBed,synthetic_prior,2127,0,hours,29,0,0,{},,,,,,,,,
+Sleep,6,Asleep,measured,2127,0,hours,29,0,29,{},2.2156333333333333,4.684746611111112,6.4729775,7.039296944444445,7.505475833333334,9.205124944444446,9.31346361111111,6.910454808429119,1.4880698851350658
+Sleep,6,Asleep,synthetic_model,2127,0,hours,29,0,2098,{},2.2156333333333333,4.951652691444445,6.297152413888889,6.893993687777778,7.617635172986111,8.959021298625,9.31346361111111,6.935600927519198,1.1790980599431926
+Sleep,6,Asleep,synthetic_prior,2127,0,hours,29,0,0,{},,,,,,,,,
+Sleep,7,Awake,measured,2127,0,hours,29,0,29,{},0.10829694444444445,0.14161600000000002,0.27489888888888886,0.39986361111111113,0.6747705555555555,1.8043671666666667,5.020908055555555,0.7054189559386973,0.926247654795276
+Sleep,7,Awake,synthetic_model,2127,0,hours,29,0,2098,{},0.10829694444444445,0.12196675693055556,0.2781672,0.3790737647222222,0.7579586691666667,2.2694433145138877,5.020908055555555,0.6879735687440419,0.7918083113154408
+Sleep,7,Awake,synthetic_prior,2127,0,hours,29,0,0,{},,,,,,,,,
+Sleep,8,REM,measured,2127,0,hours,29,1,28,{},0.8580469444444444,0.8912992777777777,1.2683090277777778,1.4577909722222224,1.7868075694444445,2.329543861111111,2.7324205555555556,1.5393149702380953,0.4777688888259513
+Sleep,8,REM,synthetic_model,2127,0,hours,29,1,2099,{},0.39565926916666666,0.8283586677222223,1.2156985154166666,1.496798536388889,1.774346640138889,2.2305287504722218,3.1422836388888893,1.5120064474509025,0.42193385162501934
+Sleep,8,REM,synthetic_prior,2127,0,hours,29,1,0,{},,,,,,,,,
+Sleep,9,Core,measured,2127,0,hours,29,1,28,{},2.465555833333333,3.1334600277777778,4.548509861111111,4.906700555555556,5.202304305555556,6.308168430555555,6.4226600000000005,4.8465058234126985,0.9056950237489795
+Sleep,9,Core,synthetic_model,2127,0,hours,29,1,2099,{},1.3123488897222222,3.2042266343055554,4.163842214583333,4.737039503888889,5.296748577500001,6.273271844749999,7.363555924166667,4.725528966361362,0.9317197774376859
+Sleep,9,Core,synthetic_prior,2127,0,hours,29,1,0,{},,,,,,,,,
+Sleep,10,Deep,measured,2127,0,hours,29,1,28,{},0.4248313888888889,0.4444403472222222,0.47898368055555557,0.6331056944444444,0.8934425694444444,1.167076083333333,1.3574975,0.6923062202380954,0.25094821621605556
+Sleep,10,Deep,synthetic_model,2127,0,hours,29,1,2099,{},0.15544375472222224,0.32257127708333333,0.47143998374999996,0.6233879397222222,0.8332810248611111,1.453150931472221,1.561122125,0.6958168392921232,0.31199267164553945
+Sleep,10,Deep,synthetic_prior,2127,0,hours,29,1,0,{},,,,,,,,,
+Sleep,11,Wake Count,measured,2127,0,Excel native,29,0,29,{},1.0,5.0,6.0,8.0,10.0,13.599999999999998,14.0,8.620689655172415,3.0104850463058135
+Sleep,11,Wake Count,synthetic_model,2127,0,Excel native,29,0,2098,{},1.0,5.0,6.0,8.0,10.0,14.0,14.0,8.682078169685415,2.8414528349324986
+Sleep,11,Wake Count,synthetic_prior,2127,0,Excel native,29,0,0,{},,,,,,,,,
+Sleep,12,Efficiency,measured,2127,0,Excel native,29,0,29,{},0.3061729502582684,0.7221226573398755,0.906869231148241,0.9532956027317429,0.9638290441644225,0.9844157075788416,0.9850219871589677,0.904089957427788,0.13066225343910542
+Sleep,12,Efficiency,synthetic_model,2127,0,Excel native,29,0,2098,{},0.3250282856927872,0.721886670263761,0.9050208890067711,0.9515129952056101,0.9638376438018283,0.9840400838396338,0.9850155769657558,0.9096958784293658,0.10331360786993402
+Sleep,12,Efficiency,synthetic_prior,2127,0,Excel native,29,0,0,{},,,,,,,,,
+Sleep,13,Fall Asleep,measured,2127,2127,hours,29,29,0,{},,,,,,,,,
+Sleep,13,Fall Asleep,synthetic_model,2127,2127,hours,29,29,0,{},,,,,,,,,
+Sleep,13,Fall Asleep,synthetic_prior,2127,2127,hours,29,29,0,{},,,,,,,,,
+Sleep,14,Min. Respiration Rate,measured,2127,80,Excel native,29,1,28,{},7.0,7.675,8.5,8.5,9.0,9.5,9.5,8.660714285714286,0.5518406121558015
+Sleep,14,Min. Respiration Rate,synthetic_model,2127,80,Excel native,29,1,2019,{},7.0,7.627266416326055,8.350195078190477,8.686576093651293,9.050344936513238,9.521096059017797,9.958438506678494,8.667048199411944,0.5560080387925165
+Sleep,14,Min. Respiration Rate,synthetic_prior,2127,80,Excel native,29,1,0,{},,,,,,,,,
+Sleep,15,Max. Respiration Rate,measured,2127,80,Excel native,29,1,28,{},11.5,12.0,13.375,15.0,15.625,16.825,17.5,14.535714285714286,1.6525336144656106
+Sleep,15,Max. Respiration Rate,synthetic_model,2127,80,Excel native,29,1,2019,{},10.570429087073283,11.998979983419835,13.189675826168756,14.795696209681603,15.777648632726887,16.836028007798983,17.5,14.50935694852253,1.5468560445227464
+Sleep,15,Max. Respiration Rate,synthetic_prior,2127,80,Excel native,29,1,0,{},,,,,,,,,
+Sleep,16,Avg. Respiration Rate,measured,2127,80,Excel native,29,1,28,{},8.842857142857143,9.704347826086957,10.153103044496486,10.363142730496454,10.54038112522686,10.879222222222223,10.923913043478262,10.303996857577875,0.4134540681637297
+Sleep,16,Avg. Respiration Rate,synthetic_model,2127,80,Excel native,29,1,2019,{},8.85767572835364,9.709947192207666,10.146689844676228,10.363290684397464,10.540027358355683,10.878325221836388,10.923764661313896,10.316066846445905,0.348159969094879
+Sleep,16,Avg. Respiration Rate,synthetic_prior,2127,80,Excel native,29,1,0,{},,,,,,,,,
+Sleep,17,Wrist Temperature,measured,2127,1609,Excel native,29,22,7,{},34.971595764160156,35.07799606323242,35.33017539978027,35.39740753173828,35.416019439697266,35.64053077697754,35.73505783081055,35.37092154366629,0.2070913332307041
+Sleep,17,Wrist Temperature,synthetic_model,2127,1609,Excel native,29,22,511,{},34.973823060661815,35.05175325328683,35.33047694790703,35.39868624388144,35.41578244385108,35.640915584748114,35.72642135413632,35.37028385822298,0.14513223950197057
+Sleep,17,Wrist Temperature,synthetic_prior,2127,1609,Excel native,29,22,0,{},,,,,,,,,
+Sleep,18,Low SpO2,measured,2127,80,Excel native,29,1,28,{},0.91,0.91,0.92,0.93,0.94,0.95,0.95,0.9296428571428572,0.013491304833945755
+Sleep,18,Low SpO2,synthetic_model,2127,80,Excel native,29,1,2019,{},0.91,0.91,0.9176767676767678,0.9318419973468909,0.9399415156942434,0.9497500380138574,0.958994297045672,0.9298302733595216,0.01291838966128806
+Sleep,18,Low SpO2,synthetic_prior,2127,80,Excel native,29,1,0,{},,,,,,,,,
+Sleep,19,High SpO2,measured,2127,80,Excel native,29,1,28,{},0.97,0.97,0.9775,0.98,0.99,1.0,1.0,0.9814285714285714,0.009147320339189793
+Sleep,19,High SpO2,synthetic_model,2127,80,Excel native,29,1,2019,{},0.9627851595395637,0.9694223257724592,0.9754217719188446,0.9800048501597348,0.9855611362441231,0.9974397965205541,1.0,0.9810252821027252,0.008045648376547745
+Sleep,19,High SpO2,synthetic_prior,2127,80,Excel native,29,1,0,{},,,,,,,,,
+Sleep,20,Avg. SpO2,measured,2127,80,Excel native,29,1,28,{},0.95,0.9511499999999999,0.9552575757575755,0.9590178571428571,0.9619191919191918,0.9642670454545454,0.968,0.9584327198245264,0.004438073748643947
+Sleep,20,Avg. SpO2,synthetic_model,2127,80,Excel native,29,1,2019,{},0.9500020795804677,0.951038871158946,0.9551022500498545,0.9590114289692512,0.9619621578727513,0.964317602174664,0.9679072196416635,0.9583595951413261,0.0042423964548856975
+Sleep,20,Avg. SpO2,synthetic_prior,2127,80,Excel native,29,1,0,{},,,,,,,,,
+Sleep,21,Low HRV,measured,2127,80,Excel native,29,1,28,{},20.80529324677943,27.81311801453557,33.95769011858118,45.62468095886716,51.812459973620484,70.59792838356694,78.46618178068225,45.590762920286444,13.936532302700794
+Sleep,21,Low HRV,synthetic_model,2127,80,Excel native,29,1,2019,{},20.80529324677943,20.93722687923101,35.40977419236131,45.37390864215611,55.97935090907636,72.45169974649845,92.21239852743088,46.0453107680385,15.031893083133603
+Sleep,21,Low HRV,synthetic_prior,2127,80,Excel native,29,1,0,{},,,,,,,,,
+Sleep,22,High HRV,measured,2127,80,Excel native,29,1,28,{},20.80529324677943,34.91385572336355,49.08975188874473,56.90440546431492,69.34483756849001,91.4899474975204,119.62558419750525,59.75303411671314,19.765320083068165
+Sleep,22,High HRV,synthetic_model,2127,80,Excel native,29,1,2019,{},21.615536377913156,35.79475936461747,49.233329520648056,59.823407542408304,69.8235813731252,88.8929447549033,114.3928337788454,60.28960036886431,15.685649334345772
+Sleep,22,High HRV,synthetic_prior,2127,80,Excel native,29,1,0,{},,,,,,,,,
+Sleep,23,Avg. HRV,measured,2127,80,Excel native,29,1,28,{},20.80529324677943,32.29757738319889,42.58747770212405,51.22649990663946,60.231389962468995,81.33136584265574,92.44848834517651,52.71682797739304,15.403640166268763
+Sleep,23,Avg. HRV,synthetic_model,2127,80,Excel native,29,1,2019,{},21.136972883043953,32.55335932637072,43.75243904766943,51.844918344662226,60.35177858806985,79.15613277647039,92.29564248491728,53.05579641632128,13.77129455432354
+Sleep,23,Avg. HRV,synthetic_prior,2127,80,Excel native,29,1,0,{},,,,,,,,,
+Sleep,24,Data Source,measured,2127,0,Excel native,29,0,29,"{""Shawn\u2019s Apple\u00a0Watch"": 29}",,,,,,,,,
+Sleep,24,Data Source,synthetic_model,2127,0,Excel native,29,0,2098,"{""synthetic_model"": 2098}",,,,,,,,,
+Sleep,24,Data Source,synthetic_prior,2127,0,Excel native,29,0,0,{},,,,,,,,,
+Nutrition,1,Date,measured,8,0,Excel native,8,0,8,"{""first_date"": ""2026-01-31"", ""last_date"": ""2026-07-10""}",,,,,,,,,
+Nutrition,1,Date,synthetic_model,8,0,Excel native,8,0,0,{},,,,,,,,,
+Nutrition,1,Date,synthetic_prior,8,0,Excel native,8,0,0,{},,,,,,,,,
+Nutrition,2,Water,measured,8,8,Excel native,8,8,0,{},,,,,,,,,
+Nutrition,2,Water,synthetic_model,8,8,Excel native,8,8,0,{},,,,,,,,,
+Nutrition,2,Water,synthetic_prior,8,8,Excel native,8,8,0,{},,,,,,,,,
+Nutrition,3,Data Source,measured,8,8,Excel native,8,8,0,{},,,,,,,,,
+Nutrition,3,Data Source,synthetic_model,8,8,Excel native,8,8,0,{},,,,,,,,,
+Nutrition,3,Data Source,synthetic_prior,8,8,Excel native,8,8,0,{},,,,,,,,,
+Nutrition,4,Dietary Energy,measured,8,0,Excel native,8,0,8,{},715.5,852.227391052246,1139.9292373657227,1359.8099975585938,1918.75,2095.575,2160.5,1465.9948463439941,467.16906702188453
+Nutrition,4,Dietary Energy,synthetic_model,8,0,Excel native,8,0,0,{},,,,,,,,,
+Nutrition,4,Dietary Energy,synthetic_prior,8,0,Excel native,8,0,0,{},,,,,,,,,
+Nutrition,5,Data Source,measured,8,0,Excel native,8,0,8,"{""MyFitnessPal"": 8}",,,,,,,,,
+Nutrition,5,Data Source,synthetic_model,8,0,Excel native,8,0,0,{},,,,,,,,,
+Nutrition,5,Data Source,synthetic_prior,8,0,Excel native,8,0,0,{},,,,,,,,,
+Nutrition,6,Total Fat,measured,8,0,Excel native,8,0,8,{},27.88606286048889,28.653940999507903,39.830000042915344,48.30478048324585,79.72125005722046,118.4134998321533,126.77499961853027,62.414452999830246,33.39254089615097
+Nutrition,6,Total Fat,synthetic_model,8,0,Excel native,8,0,0,{},,,,,,,,,
+Nutrition,6,Total Fat,synthetic_prior,8,0,Excel native,8,0,0,{},,,,,,,,,
+Nutrition,7,Data Source,measured,8,0,Excel native,8,0,8,"{""MyFitnessPal"": 8}",,,,,,,,,
+Nutrition,7,Data Source,synthetic_model,8,0,Excel native,8,0,0,{},,,,,,,,,
+Nutrition,7,Data Source,synthetic_prior,8,0,Excel native,8,0,0,{},,,,,,,,,
+Nutrition,8,Protein,measured,8,0,Excel native,8,0,8,{},42.90000057220459,47.61325998306275,98.09161400794983,125.5625,146.36159992218018,154.7713195800781,155.15999603271484,114.42498922348022,40.32106172674324
+Nutrition,8,Protein,synthetic_model,8,0,Excel native,8,0,0,{},,,,,,,,,
+Nutrition,8,Protein,synthetic_prior,8,0,Excel native,8,0,0,{},,,,,,,,,
+Nutrition,9,Data Source,measured,8,0,Excel native,8,0,8,"{""MyFitnessPal"": 8}",,,,,,,,,
+Nutrition,9,Data Source,synthetic_model,8,0,Excel native,8,0,0,{},,,,,,,,,
+Nutrition,9,Data Source,synthetic_prior,8,0,Excel native,8,0,0,{},,,,,,,,,
+Nutrition,10,Carbohydrates,measured,8,0,Excel native,8,0,8,{},70.47999954223633,72.09228944778442,78.11538553237915,96.73944664001465,117.31874942779541,171.92499999999998,191.0,107.07442927360535,37.96523528567546
+Nutrition,10,Carbohydrates,synthetic_model,8,0,Excel native,8,0,0,{},,,,,,,,,
+Nutrition,10,Carbohydrates,synthetic_prior,8,0,Excel native,8,0,0,{},,,,,,,,,
+Nutrition,11,Data Source,measured,8,0,Excel native,8,0,8,"{""MyFitnessPal"": 8}",,,,,,,,,
+Nutrition,11,Data Source,synthetic_model,8,0,Excel native,8,0,0,{},,,,,,,,,
+Nutrition,11,Data Source,synthetic_prior,8,0,Excel native,8,0,0,{},,,,,,,,,
+Mindfulness,1,Date,measured,0,0,Excel native,0,0,0,{},,,,,,,,,
+Mindfulness,1,Date,synthetic_model,0,0,Excel native,0,0,0,{},,,,,,,,,
+Mindfulness,1,Date,synthetic_prior,0,0,Excel native,0,0,0,{},,,,,,,,,
+Mindfulness,2,Time,measured,0,0,Excel native,0,0,0,{},,,,,,,,,
+Mindfulness,2,Time,synthetic_model,0,0,Excel native,0,0,0,{},,,,,,,,,
+Mindfulness,2,Time,synthetic_prior,0,0,Excel native,0,0,0,{},,,,,,,,,
+Mindfulness,3,Duration,measured,0,0,Excel native,0,0,0,{},,,,,,,,,
+Mindfulness,3,Duration,synthetic_model,0,0,Excel native,0,0,0,{},,,,,,,,,
+Mindfulness,3,Duration,synthetic_prior,0,0,Excel native,0,0,0,{},,,,,,,,,
+Mindfulness,4,SDNN,measured,0,0,Excel native,0,0,0,{},,,,,,,,,
+Mindfulness,4,SDNN,synthetic_model,0,0,Excel native,0,0,0,{},,,,,,,,,
+Mindfulness,4,SDNN,synthetic_prior,0,0,Excel native,0,0,0,{},,,,,,,,,
+Mindfulness,5,rMSSD,measured,0,0,Excel native,0,0,0,{},,,,,,,,,
+Mindfulness,5,rMSSD,synthetic_model,0,0,Excel native,0,0,0,{},,,,,,,,,
+Mindfulness,5,rMSSD,synthetic_prior,0,0,Excel native,0,0,0,{},,,,,,,,,
+Mindfulness,6,NN50,measured,0,0,Excel native,0,0,0,{},,,,,,,,,
+Mindfulness,6,NN50,synthetic_model,0,0,Excel native,0,0,0,{},,,,,,,,,
+Mindfulness,6,NN50,synthetic_prior,0,0,Excel native,0,0,0,{},,,,,,,,,
+Mindfulness,7,pNN50,measured,0,0,Excel native,0,0,0,{},,,,,,,,,
+Mindfulness,7,pNN50,synthetic_model,0,0,Excel native,0,0,0,{},,,,,,,,,
+Mindfulness,7,pNN50,synthetic_prior,0,0,Excel native,0,0,0,{},,,,,,,,,
+Mindfulness,8,Baevsky,measured,0,0,Excel native,0,0,0,{},,,,,,,,,
+Mindfulness,8,Baevsky,synthetic_model,0,0,Excel native,0,0,0,{},,,,,,,,,
+Mindfulness,8,Baevsky,synthetic_prior,0,0,Excel native,0,0,0,{},,,,,,,,,
+Mindfulness,9,Avg. HRV,measured,0,0,Excel native,0,0,0,{},,,,,,,,,
+Mindfulness,9,Avg. HRV,synthetic_model,0,0,Excel native,0,0,0,{},,,,,,,,,
+Mindfulness,9,Avg. HRV,synthetic_prior,0,0,Excel native,0,0,0,{},,,,,,,,,
+Mindfulness,10,Data Source,measured,0,0,Excel native,0,0,0,{},,,,,,,,,
+Mindfulness,10,Data Source,synthetic_model,0,0,Excel native,0,0,0,{},,,,,,,,,
+Mindfulness,10,Data Source,synthetic_prior,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Sugar,1,Date,measured,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Sugar,1,Date,synthetic_model,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Sugar,1,Date,synthetic_prior,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Sugar,2,Time,measured,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Sugar,2,Time,synthetic_model,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Sugar,2,Time,synthetic_prior,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Sugar,3,Lowest,measured,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Sugar,3,Lowest,synthetic_model,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Sugar,3,Lowest,synthetic_prior,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Sugar,4,Highest,measured,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Sugar,4,Highest,synthetic_model,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Sugar,4,Highest,synthetic_prior,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Sugar,5,Average,measured,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Sugar,5,Average,synthetic_model,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Sugar,5,Average,synthetic_prior,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Sugar,6,Blood Glucose,measured,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Sugar,6,Blood Glucose,synthetic_model,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Sugar,6,Blood Glucose,synthetic_prior,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Sugar,7,Meal Time,measured,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Sugar,7,Meal Time,synthetic_model,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Sugar,7,Meal Time,synthetic_prior,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Sugar,8,Insulin Delivery,measured,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Sugar,8,Insulin Delivery,synthetic_model,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Sugar,8,Insulin Delivery,synthetic_prior,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Sugar,9,Purpose,measured,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Sugar,9,Purpose,synthetic_model,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Sugar,9,Purpose,synthetic_prior,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Sugar,10,Data Source,measured,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Sugar,10,Data Source,synthetic_model,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Sugar,10,Data Source,synthetic_prior,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Pressure,1,Date,measured,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Pressure,1,Date,synthetic_model,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Pressure,1,Date,synthetic_prior,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Pressure,2,Time,measured,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Pressure,2,Time,synthetic_model,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Pressure,2,Time,synthetic_prior,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Pressure,3,Systolic,measured,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Pressure,3,Systolic,synthetic_model,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Pressure,3,Systolic,synthetic_prior,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Pressure,4,Diastolic,measured,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Pressure,4,Diastolic,synthetic_model,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Pressure,4,Diastolic,synthetic_prior,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Pressure,5,Data Source,measured,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Pressure,5,Data Source,synthetic_model,0,0,Excel native,0,0,0,{},,,,,,,,,
+Blood Pressure,5,Data Source,synthetic_prior,0,0,Excel native,0,0,0,{},,,,,,,,,
+Womens Health,1,Date,measured,2127,0,Excel native,0,0,0,{},,,,,,,,,
+Womens Health,1,Date,synthetic_model,2127,0,Excel native,0,0,0,{},,,,,,,,,
+Womens Health,1,Date,synthetic_prior,2127,0,Excel native,0,0,2127,"{""first_date"": ""2020-12-05"", ""last_date"": ""2026-10-01""}",,,,,,,,,
+Womens Health,2,Time,measured,2127,0,Excel native,0,0,0,{},,,,,,,,,
+Womens Health,2,Time,synthetic_model,2127,0,Excel native,0,0,0,{},,,,,,,,,
+Womens Health,2,Time,synthetic_prior,2127,0,Excel native,0,0,2127,{},12.0,12.0,12.0,12.0,12.0,12.0,12.0,12.0,0.0
+Womens Health,3,Start of Cycle,measured,2127,0,Excel native,0,0,0,{},,,,,,,,,
+Womens Health,3,Start of Cycle,synthetic_model,2127,0,Excel native,0,0,0,{},,,,,,,,,
+Womens Health,3,Start of Cycle,synthetic_prior,2127,0,Excel native,0,0,2127,{},0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.035731076633756464,0.18561887510797248
+Womens Health,4,Menstruation,measured,2127,0,Excel native,0,0,0,{},,,,,,,,,
+Womens Health,4,Menstruation,synthetic_model,2127,0,Excel native,0,0,0,{},,,,,,,,,
+Womens Health,4,Menstruation,synthetic_prior,2127,0,Excel native,0,0,2127,"{""Heavy"": 70, ""Light"": 152, ""Medium"": 141, ""None"": 1764}",,,,,,,,,
+Womens Health,5,Data Source,measured,2127,0,Excel native,0,0,0,{},,,,,,,,,
+Womens Health,5,Data Source,synthetic_model,2127,0,Excel native,0,0,0,{},,,,,,,,,
+Womens Health,5,Data Source,synthetic_prior,2127,0,Excel native,0,0,2127,"{""synthetic_prior"": 2127}",,,,,,,,,

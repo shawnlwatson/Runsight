@@ -1,0 +1,8 @@
+{
+  "seed": 20261205,
+  "start_date": "2020-12-05",
+  "daily": {"correlation_shrinkage": 0.12, "weekday_strength": 0.5, "vo2_persistence": 0.98, "mask_persistence": 0.4},
+  "sleep": {"persistence_prior": 0.3, "mask_persistence": 0.55, "stage_persistence_prior": 0.3, "fall_asleep_probability": 0.0, "fall_asleep_minutes": [5, 15, 45]},
+  "womens_health": {"cycle_mean_days": 28, "cycle_sd_days": 2.5, "cycle_bounds_days": [24, 35], "menstruation_bounds_days": [3, 7]},
+  "notes": "Software testing only. Models do not read FIT files or running performance. Fall Asleep is disabled by default because it has no measured observations. Persistence and cycle settings are explicit testing assumptions."
+}
