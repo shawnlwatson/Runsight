@@ -20,7 +20,7 @@ class HealthGeneratorTests(unittest.TestCase):
     def setUpClass(cls):
         cls.tmp = tempfile.TemporaryDirectory()
         cls.root = Path(cls.tmp.name)
-        cls.source = BASE.parent/'Health Metrics_v6.xlsx'
+        cls.source = BASE.parent.parent/'raw'/'Health Metrics_v6.xlsx'
         cls.source_hash = hashlib.sha256(cls.source.read_bytes()).hexdigest()
         cls.config = json.loads((BASE/'config.json').read_text())
         with redirect_stdout(io.StringIO()):

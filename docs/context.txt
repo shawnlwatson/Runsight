@@ -1,0 +1,252 @@
+1 Research Background and Motivation
+REVIEW
+Runsight seeks to improve casual and recre-
+ational runners’ performance and experience by
+visualizing relationships among the factors that af-
+fect their runs. Running is known to be an im-
+portant aspect of mental and physical health. In a
+meta-analysis of 14 studies, Pedisic et al. (Pedisic
+et al., 2020) found that runners had approximately
+27% lower risk of all-cause mortality. Munro et
+al. (Munro et al., 2026) concluded through meta-
+analysis that exercise had measurable reductions
+in both anxiety and depression and aerobic exer-
+cise provided the largest effect among the exercise
+types examined. These studies reinforce a com-
+monly held belief that running is beneficial to mind
+and body.
+Despite its benefits, casual runners often struggle
+to find improvement and enjoyment in their runs;
+running at random intervals or using generic run-
+ning plans online. They may believe their struggles
+are due to a lack of discipline or physical limi-
+tations. They can sometimes push beyond their
+body’s limitations, risking injuries that prevent
+them from running altogether. Elite runners focus
+on mechanics, fuel, rest, and much more to improve
+their performance. Running coaches have insights
+into correlations between running data markers and
+other factors that affect performance. They cre-
+ate tailored plans for runners that improve their
+weaknesses while managing limitations to avoid
+injuries.
+There are many run-tracking applications that
+provide discrete data points for each run. Some of
+these applications also show data trends over time.
+However, there are few services that provide correl-
+ative analysis of run attributes and provide pointed
+suggestions to improve running performance and
+enjoyment. Run-tracking applications like Strava
+and Apple Fitness collect data points on each run;
+some of the data include time, distance, heart rate,
+pace, and cadence. While these applications pro-
+vide valuable feedback on each run and allow run-
+ners to see trends in individual metrics, they do not
+do as much to show relationships between different
+metrics and the conditions that affect them.
+Runsight will provide casual runners with a holis-
+tic look at their running data that will allow them to
+see trends and correlations over time that can assist
+them in developing their own tailored plans for im-
+provement. For example, a runner may be able to
+visualize how weather conditions affect their heart
+rate and pace rather than viewing each of these as
+separate data points. Casual runners are not all
+interested in speed; some are focused on a partic-
+ular distance, some are seeking a healthy lifestyle,
+and others simply want to enjoy their time running
+with no performance goal in mind. Anyone who
+runs regularly can benefit from understanding the
+underlying conditions that affect how they perform
+and how they feel on their runs.
+2 Design Requirements REVIEW
+Runsight is targeted specifically at casual and
+recreational-competitive runners, those who track
+their runs but lack coaching-level analysis. From
+our distributed survey recording 14 responses, 86%
+of runners self-identified as casual or recreational-
+competitive, with their goals skewed toward gen-
+eral fitness or enjoyment, over racing. They report
+they already sense factors like sleep, weather, and
+fatigue affecting their run performance, but they
+have no tool to see the relationship, and Runsight
+aims to fill that gap.
+The Google Form survey was aimed at individu-
+als known to run for fitness, participate in run clubs,
+or recreationally train for triathlons, with questions
+uncovering their devices, logging habits, decision-
+making, and desired metric comparisons. Their
+responses have directly molded our requirements,
+such as one runner explicitly asking to “see similar
+graphs over time with multiple runs that take other
+data (e.g. weather/sleep) and correlate them with
+pace/hr."
+Our requirements, thus, are to inform cross-run
+relationships between contextual factors (weather,
+sleep, recovery, fatigue) and performance metrics
+(pace, HR, distance) to let users explore their data
+rather than prescribe changes, while making clear
+how much evidence supports each relationship.
+This aligns directly with 100% of users wanting to
+be offered patterns to interpret for themselves and
+57% of that group also wanting suggestions; 0%
+wanted only to be told what to do. Additionally, it
+will directly support the specific comparisons run-
+ners requested most, like Weather-HR-Pace (57%)
+and Elevation-HR-Pace (36%).
+R1: Visualize relationships among multiple met-
+rics. Survey respondents repeatedly described
+wanting HR, pace, elevation, and weather to be
+viewed together rather than their typical applica-
+tions that show them independently.
+R2: Support distance, pace, splits, time, and
+HR as core run metrics. When our survey asked
+which metrics runners cared most about comparing
+14/14 indicated distance, 12/14 pace, 9/14 splits,
+9/14 time, 7/14 HR. These top metrics must be the
+core of the run attributes with additional running
+mechanics also available for analysis.
+R3: Correlate environmental conditions with
+running performance. The relationship between
+weather, HR, and pace was the most selected rela-
+tionship (8/14) in our survey. Weather also became
+a theme throughout responses as it is a large con-
+sideration for all the runners.
+R4: Analyze performance across multiple runs
+and over time. Several runners specifically asked
+to see correlations "across runs" showing progress
+over time and analysis beyond single runs.
+R5: Help explain unusually good or bad runs.
+Respondents indicated they currently use feel,
+weather, sleep, nutrition, HR, and soreness to man-
+ually diagnose performance. Unexpected perfor-
+mance and outliers are difficult to explain. Run-
+sight will need to provide correlations to help iden-
+tify factors associated with outlier runs.
+R6: Allow users to inspect patterns themselves
+and provide suggestions. All respondents agreed
+they want to see the data presented in a way they
+can draw their own conclusions and make decisions
+based on the data. 8 of the runners indicated a
+desire to have the tool provide some feedback and
+suggestions to improve their training.
+R7: Integrate imported run data from existing
+wearable applications. Casual runners require as
+much automation as possible when it comes to
+tracking their runs. The primary applications used
+by respondents were Strava, Garmin Connect, and
+Apple Fitness. Runsight must be able to import
+that data with minimal effort from the runners and
+little or no manual data entry.
+R8: Communicate how reliable each relation-
+ship is. Runners may log fewer runs than others,
+so patterns may reflect noise rather than real ef-
+fects. Respondents noted they sometimes run well
+under poor sleep and high heat, and that the rea-
+sons behind good or bad runs are not always un-
+derstandable. Prior work found that correlations
+from sparse personal data can reverse as new data
+arrives, eroding user trust (Bentley et al., 2013).
+Runsight must show the strength of evidence be-
+hind each pattern so runners do not act on spurious
+relationships.
+Data for Runsight analysis will come from sev-
+eral sources. Run performance and context data
+such as sleep will be pulled from wearables such
+as Strava, Garmin Connect, and Apple Fitness.
+Weather will be correlated from the runs and pulled
+from a location-based weather source.
+Runs will be treated on two levels. Their primary
+use will be as data items with numerous attributes.
+Their secondary use will be as sub-datasets for
+individual run analysis. When runs are individu-
+ally analyzed, attributes will change over the time
+window of the run itself. When runs are analyzed
+against each other over time, their attributes will be
+averaged for that run and compared against other
+run averages. For example, the pace of a run is
+constantly changing within that run, but when com-
+paring run A against run B, we will use the average
+overall pace for each run.
+Data attributes will include date, time of day, dis-
+tance, total time, pace, split pace, HR, cadence, ele-
+vation gain, ground contact time, stride length, ver-
+tical oscillation, temperature, and humidity. Dates
+are also treated as items with associated attributes
+of sleep total time and if multiple runs are on the
+same date they can be analyzed for additional fa-
+tigue factors.
+The core visualization tasks will fall into four
+categories. Runsight will provide relationship &
+trend analysis to discover relationships and changes
+across the runner’s historical data. It will provide
+anomaly analysis to find unusual performance and
+investigate what distinguishes it. Data exploration
+& comparison will let the runner manipulate what
+data they are examining to answer their questions.
+Run-level inspection will move the user from ag-
+gregate patterns down to the individual runs con-
+tributing to them.
+T1: Compare two or more running metrics
+across multiple runs to identify relationships be-
+tween them (R1,R2,R4,R6). T2: Identify correla-
+tions between environmental conditions and per-
+formance metrics across runs (R1,R3,R4,R6). T3:
+Identify trends and changes in performance metrics
+over time (R2,R4,R6). T4: Identify runs or periods
+that deviate from the runner’s normal performance
+(R4,R5,R6). T5: Compare unusually good or bad
+runs with typical runs to identify factors associated
+with the difference (R1,R3,R5,R6). T6: Filter or
+group runs by conditions or attributes to compare
+similar runs (R1,R3,R4,R6). T7: Drill down from
+an identified trend, correlation, or outlier to inspect
+the contributing individual runs (R2,R4,R5,R6).
+T8: Inspect the metrics and conditions associated
+with an individual run (R2,R3,R5). T9: Select
+which metrics and conditions to visualize together
+when investigating a question about performance
+(R1,R2,R3,R6). T10: Assess the reliability of an
+identified relationship, trend, or anomaly before
+drawing conclusions from it (R4, R5, R6, R8).
+3 Related Work
+The Health Mashups prototype (Bentley et al.,
+2013) is the closest precedent to Runsight. It
+mined personal information data such as sleep,
+steps, weight, and weather for statistically signif-
+icant correlations and presented them to users as
+natural language observations. However, its pilot
+showed that with sparse data, correlations swung in
+several directions as new data arrived, which weak-
+ened users’ trust. Karduni et al. (Karduni et al.,
+2021) showed that the way correlation uncertainty
+is displayed shapes how people update their beliefs.
+A cone of plausible relationships increased view-
+ers’ confidence, and when the data conflicted with
+their priors, it produced updates closest to norma-
+tive Bayesian predictions. Finally, Karahano˘glu et
+al. (Karahano˘glu et al., 2021) found that runners
+juggle shifting goals, reflect briefly after runs rather
+than during them, and struggle to turn tracker data
+into action.
+TODO: Commercial products related work
+test test test test test test test test test test test test
+test test test test test test test test test test test test
+test test test test test test test test test test test test
+test test test test test test test test test test test test
+test test test test test test test test test test test test
+test test test test test test test test test test test test
+test test test test test test test test test test test test
+test test test test test test test test test test test test
+test test test test test test test test test test test test
+test test test test test test test test test test test test
+test test test test test test test test test test test test
+test test test test test test test test test test test test
+4 Development Plan
+Work is divided into two backend roles (data
+pipeline and statistics) and two frontend roles (D3
+core views and detail/uncertainty views). Evalua-
+tion, writing, and presentations are shared across
+all members. Roles are primary ownership, not
+exclusive; members support adjacent tasks as dead-
+lines require

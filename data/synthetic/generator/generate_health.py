@@ -643,8 +643,8 @@ def generate(source, outdir, config, plots=True):
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--input',type=Path,default=BASE.parent/'Health Metrics_v6.xlsx')
-    parser.add_argument('--output-dir',type=Path,default=BASE.parent/'health_synthetic_results')
+    parser.add_argument('--input',type=Path,default=BASE.parent.parent/'raw'/'Health Metrics_v6.xlsx')
+    parser.add_argument('--output-dir',type=Path,default=BASE.parent/'results')
     parser.add_argument('--config',type=Path,default=BASE/'config.json')
     parser.add_argument('--seed',type=int,help='Override configured random seed')
     parser.add_argument('--no-plots',action='store_true')
