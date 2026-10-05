@@ -3,24 +3,24 @@
 Run from any directory using the environment already installed here:
 
 ```bash
-/home/shawn/Runsight/.venv/bin/python /home/shawn/Runsight/fit_inventory.py
+/home/shawn/Runsight/.venv/bin/python /home/shawn/Runsight/pipeline/fit_inventory.py
 ```
 
-By default this recursively reads Runsight/.FIT Files (including hidden directories) and writes Runsight/fit_inventory_results. Only files whose extension is .fit, case-insensitively, are read. Windows Zone.Identifier sidecars are excluded. Original FIT files are never changed.
+By default this recursively reads Runsight/data/raw/fit (including hidden directories) and writes Runsight/data/derived/fit_inventory. Only files whose extension is .fit, case-insensitively, are read. Windows Zone.Identifier sidecars are excluded. Original FIT files are never changed.
 
 To choose another input/output directory or sample a subset:
 
 ```bash
-/home/shawn/Runsight/.venv/bin/python /home/shawn/Runsight/fit_inventory.py "/path/to/workouts" --output "/path/to/reports"
-/home/shawn/Runsight/.venv/bin/python /home/shawn/Runsight/fit_inventory.py --limit 10 --output /tmp/fit-sample
+/home/shawn/Runsight/.venv/bin/python /home/shawn/Runsight/pipeline/fit_inventory.py "/path/to/workouts" --output "/path/to/reports"
+/home/shawn/Runsight/.venv/bin/python /home/shawn/Runsight/pipeline/fit_inventory.py --limit 10 --output /tmp/fit-sample
 ```
 
 For a new environment:
 
 ```bash
 python3 -m venv .venv
-.venv/bin/pip install -r requirements-fit.txt
-.venv/bin/python fit_inventory.py
+.venv/bin/pip install -r pipeline/requirements-fit.txt
+.venv/bin/python pipeline/fit_inventory.py
 ```
 
 ## Reports
@@ -71,8 +71,8 @@ These are workout counts with usable values, out of 446. Full outputs also inclu
 ## Verification
 
 ```bash
-cd /home/shawn/Runsight
-.venv/bin/python -m unittest -q test_fit_inventory
+cd /home/shawn/Runsight/pipeline
+../.venv/bin/python -m unittest -q test_fit_inventory
 ```
 
 Tests build small binary FIT files to verify repeated records count once per workout, null versus zero values, session and lap versus record coverage, case-insensitive and hidden-directory discovery, sidecar exclusion, and corrupt CRC failure isolation.

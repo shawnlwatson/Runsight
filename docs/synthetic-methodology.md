@@ -7,15 +7,15 @@ The maintained generator is `generate_health.py`; editable parameters are in `co
 The Runsight environment is already installed:
 
 ```bash
-/home/shawn/Runsight/.venv/bin/python /home/shawn/Runsight/health_synthetic/generate_health.py
+/home/shawn/Runsight/.venv/bin/python /home/shawn/Runsight/data/synthetic/generator/generate_health.py
 ```
 
 Choose a different seed, configuration, or output directory:
 
 ```bash
-/home/shawn/Runsight/.venv/bin/python /home/shawn/Runsight/health_synthetic/generate_health.py \
-  --input '/home/shawn/Runsight/Health Metrics_v6.xlsx' \
-  --config /home/shawn/Runsight/health_synthetic/config.json \
+/home/shawn/Runsight/.venv/bin/python /home/shawn/Runsight/data/synthetic/generator/generate_health.py \
+  --input '/home/shawn/Runsight/data/raw/Health Metrics_v6.xlsx' \
+  --config /home/shawn/Runsight/data/synthetic/generator/config.json \
   --seed 1234 --output-dir /tmp/health-test
 ```
 
@@ -75,7 +75,7 @@ Independent seed streams separate Daily Metrics, Sleep, and Womens Health. Ident
 
 ## Deliverables
 
-Default directory: `../health_synthetic_results/`.
+Default directory: `../results/` (i.e. `data/synthetic/results/`).
 
 - `Health Metrics_synthetic.xlsx`: new workbook and provenance tabs.
 - `validation.md`: readable counts, consistency results, and limitations.
@@ -92,8 +92,8 @@ The plots and reports intentionally distinguish measured and synthetic values. S
 ## Tests
 
 ```bash
-cd /home/shawn/Runsight/health_synthetic
-../.venv/bin/python -m unittest -q test_generate_health
+cd /home/shawn/Runsight/data/synthetic/generator
+../../../.venv/bin/python -m unittest -q test_generate_health
 ```
 
 Integration tests verify source-cell values and formats, raw precision checks, unchanged source hash, identical seeded workbook/report bytes, full date grids, retained measurement schedules, realistic measurement frequencies, bounded VO2, saved-workbook sleep identities and summary ordering, provenance categories, cycle variation, configurable Fall Asleep prior behavior, and changed-seed variability.
