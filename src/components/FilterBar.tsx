@@ -40,11 +40,11 @@ export default function FilterBar({ children }: FilterBarProps) {
     <section
       aria-label="Filters"
       className="flex min-h-12 flex-wrap items-center gap-4
-      rounded-lg border border-border bg-surface px-4 py-2
-      text-foreground"
+      rounded-lg border border-gold/40 bg-navy px-4 py-3
+      text-on-brand"
     >
       <form className="flex w-full flex-wrap items-center gap-4">
-        <strong className="text-sm font-bold">Filter:</strong>
+        <strong className="text-sm font-bold text-gold">Filter:</strong>
         {filters.map((filter) => (
           <label
             key={filter.name}
@@ -54,7 +54,7 @@ export default function FilterBar({ children }: FilterBarProps) {
             <select
               name={filter.name}
               defaultValue=""
-              className="rounded border border-border bg-surface px-3 py-1.5 text-sm text-foreground scheme-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+              className="rounded border border-gold/60 bg-surface px-3 py-1.5 text-sm text-foreground scheme-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
             >
               <option value="">{filter.allLabel}</option>
               {filter.options.map((option) => (
@@ -68,7 +68,7 @@ export default function FilterBar({ children }: FilterBarProps) {
         {children}
         <button
           type="reset"
-          className="inline-flex cursor-pointer items-center gap-2 rounded border border-brand px-3 py-1.5 text-sm font-medium text-brand transition-colors hover:bg-brand hover:text-on-brand focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+          className="inline-flex cursor-pointer items-center gap-2 rounded border border-gold bg-gold px-3 py-1.5 text-sm font-semibold text-navy transition-colors hover:bg-gold/85 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

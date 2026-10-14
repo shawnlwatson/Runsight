@@ -11,21 +11,25 @@ const summaryMetrics = [
     label: "Total Runs",
     unit: "runs",
     image: runnerIcon,
+    colors: "border-teal/25 border-t-teal bg-teal/10",
   },
   {
     label: "Total Distance",
     unit: "miles",
     image: distanceIcon,
+    colors: "border-gold/40 border-t-gold bg-gold/15",
   },
   {
     label: "Avg Pace",
     unit: "min/mi",
     image: stopwatchIcon,
+    colors: "border-berry/25 border-t-berry bg-berry/10",
   },
   {
     label: "Avg Heart Rate",
     unit: "bpm",
     image: heartRateIcon,
+    colors: "border-orange/30 border-t-orange bg-orange/10",
   },
 ];
 
@@ -33,7 +37,7 @@ export default function Home() {
   return (
     <div className="space-y-6">
       <header>
-        <h1 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+        <h1 className="w-fit border-b-4 border-gold pb-2 text-3xl font-bold tracking-tight text-brand md:text-4xl">
           Dashboard
         </h1>
         <p className="mt-2 text-sm text-muted md:text-base">
@@ -47,9 +51,9 @@ export default function Home() {
         {summaryMetrics.map((metric) => (
           <div
             key={metric.label}
-            className="relative flex min-h-32 flex-col justify-center rounded-lg border border-border bg-surface p-5 pl-24 text-left"
+            className={`relative flex min-h-32 flex-col justify-center rounded-lg border border-t-4 p-5 pl-24 text-left ${metric.colors}`}
           >
-            <dt className="text-sm font-medium text-muted">
+            <dt className="text-sm font-semibold text-foreground">
               <Image
                 src={metric.image}
                 alt=""
@@ -76,16 +80,16 @@ export default function Home() {
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         <section
           aria-label="First graph placeholder"
-          className="min-h-80 rounded-lg border border-border bg-surface"
+          className="min-h-80 rounded-lg border border-gold/30 border-t-4 border-t-gold bg-gold/5"
         />
         <section
           aria-label="Second graph placeholder"
-          className="min-h-80 rounded-lg border border-border bg-surface"
+          className="min-h-80 rounded-lg border border-orange/30 border-t-4 border-t-orange bg-orange/5"
         />
       </div>
       <section
         aria-label="Full-width chart or list placeholder"
-        className="min-h-96 rounded-lg border border-border bg-surface"
+        className="min-h-96 rounded-lg border border-teal/25 border-t-4 border-t-teal bg-teal/5"
       />
     </div>
   );

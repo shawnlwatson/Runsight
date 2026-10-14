@@ -8,9 +8,9 @@ export default function TopBar() {
 
   return (
     <header className="flex min-h-12 shrink-0 flex-wrap items-center gap-x-4 gap-y-2
-    border-b border-border bg-brand px-6 py-2 md:px-10">
+    border-b border-gold/35 bg-brand px-6 py-2 md:px-10">
       <span className="text-xl font-bold leading-none
-      tracking-tight text-on-brand md:-translate-x-15">
+      tracking-tight text-gold md:-translate-x-15">
         Runsight
       </span>
       <div className="ml-auto flex flex-wrap items-center justify-end gap-x-4 gap-y-2">
@@ -20,33 +20,33 @@ export default function TopBar() {
             setFromDate("");
             setToDate("");
           }}
-          className="cursor-pointer rounded border border-on-brand/40 px-3 py-1 text-sm font-medium text-on-brand hover:bg-on-brand/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          className="cursor-pointer rounded border border-gold bg-gold px-3 py-1 text-sm font-semibold text-navy hover:bg-gold/85 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
         >
           All Time
         </button>
-        <label className="flex items-center gap-2 text-sm font-medium text-on-brand">
+        <label className="flex items-center gap-2 text-sm font-medium text-gold">
           From
           <input
             type="date"
             name="from"
             value={fromDate}
             onChange={(event) => setFromDate(event.target.value)}
-            className="min-w-0 rounded border border-on-brand/30 bg-surface px-2 py-1 text-sm text-foreground scheme-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            className="min-w-0 rounded border border-gold/60 bg-surface px-2 py-1 text-sm text-foreground scheme-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
           />
         </label>
-        <label className="flex items-center gap-2 text-sm font-medium text-on-brand">
+        <label className="flex items-center gap-2 text-sm font-medium text-gold">
           To
           <input
             type="date"
             name="to"
             value={toDate}
             onChange={(event) => setToDate(event.target.value)}
-            className="min-w-0 rounded border border-on-brand/30 bg-surface px-2 py-1 text-sm text-foreground scheme-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            className="min-w-0 rounded border border-gold/60 bg-surface px-2 py-1 text-sm text-foreground scheme-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
           />
         </label>
       <Link href="/login"
         className="inline-flex items-center gap-2 rounded
-        px-2 py-1 text-sm font-medium text-on-brand hover:bg-on-brand/10
+        px-2 py-1 text-sm font-medium text-gold hover:bg-on-brand/10
         focus-visible:outline-2 focus-visible:outline-offset-2
         focus-visible:outline-accent"
       >

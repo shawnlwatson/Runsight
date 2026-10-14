@@ -9,12 +9,12 @@
   --color-orange: #de643f;
 
   /* Neutral surfaces and supporting colors. */
-  --color-background: #f8fafc;
+  --color-background: #f5f1e8;
   --color-surface: #ffffff;
-  --color-muted: #64748b;
-  --color-border: #e2e8f0;
+  --color-muted: #526775;
+  --color-border: #d9d2c4;
   --color-divider: #6b7280;
-  --color-surface-hover: #f1f5f9;
+  --color-surface-hover: color-mix(in srgb, var(--color-gold) 18%, white);
   --color-positive: #15803d;
   --color-negative: #b91c1c;
 }
