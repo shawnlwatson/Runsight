@@ -1,4 +1,8 @@
 import FilterBar from "@/components/FilterBar";
+import DistanceTimePaceChart from "@/features/dashboard/DistanceTimePaceChart";
+import TemperatureHeartRatePaceChart from "@/features/dashboard/TemperatureHeartRatePaceChart";
+import RunsInSelection from "@/features/dashboard/RunsInSelection";
+import { demoRuns } from "@/data/fixtures/demoRuns";
 import PeriodComparison from "@/components/PeriodComparison";
 import Image from "next/image";
 import runnerIcon from "../../public/images/runner_icon.png";
@@ -79,18 +83,24 @@ export default function Home() {
       <FilterBar />
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         <section
-          aria-label="First graph placeholder"
-          className="min-h-80 rounded-lg border border-gold/30 border-t-4 border-t-gold bg-gold/5"
-        />
+          aria-label="Distance and pace over time"
+          className="h-80 min-w-0 rounded-lg border border-gold/30 border-t-4 border-t-gold bg-gold/5"
+        >
+          <DistanceTimePaceChart />
+        </section>
         <section
-          aria-label="Second graph placeholder"
-          className="min-h-80 rounded-lg border border-orange/30 border-t-4 border-t-orange bg-orange/5"
-        />
+          aria-label="Temperature, heart rate and pace"
+          className="h-80 min-w-0 rounded-lg border border-orange/30 border-t-4 border-t-orange bg-orange/5"
+        >
+          <TemperatureHeartRatePaceChart />
+        </section>
       </div>
       <section
-        aria-label="Full-width chart or list placeholder"
-        className="min-h-96 rounded-lg border border-teal/25 border-t-4 border-t-teal bg-teal/5"
-      />
+        aria-label="Runs in Selection"
+        className="min-h-96 min-w-0 rounded-lg border border-teal/25 border-t-4 border-t-teal bg-teal/5"
+      >
+        <RunsInSelection runs={demoRuns} />
+      </section>
     </div>
   );
 }
