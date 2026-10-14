@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+/* Runsight palette: use bg-teal, text-gold, border-berry, etc. */
+@theme static {
+  --color-gold: #c9a654;
+  --color-navy: #13293d;
+  --color-berry: #89023e;
+  --color-teal: #18435a;
+  --color-orange: #de643f;
+
+  /* Neutral surfaces and supporting colors. */
+  --color-background: #f8fafc;
+  --color-surface: #ffffff;
+  --color-muted: #64748b;
+  --color-border: #e2e8f0;
+  --color-divider: #6b7280;
+  --color-surface-hover: #f1f5f9;
+  --color-positive: #15803d;
+  --color-negative: #b91c1c;
+}
+
+@theme inline {
+  /* Semantic names let components describe a color's purpose. */
+  --color-brand: var(--color-teal);
+  --color-foreground: var(--color-navy);
+  --color-on-brand: var(--color-surface);
+  --color-accent: var(--color-gold);
+  --color-highlight: var(--color-orange);
+  --color-secondary: var(--color-berry);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-navy);
+  font-family: Arial, Helvetica, sans-serif;
+}

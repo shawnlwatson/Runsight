@@ -12,7 +12,7 @@ import unittest
 import numpy as np
 import openpyxl
 
-from generate_health import BASE, MODEL, PRIOR, MEASURED, generate, sheet_data, number, present
+from health_synthetic.generate_health import BASE, MODEL, PRIOR, MEASURED, generate, sheet_data, number, present
 
 
 class HealthGeneratorTests(unittest.TestCase):
@@ -20,7 +20,7 @@ class HealthGeneratorTests(unittest.TestCase):
     def setUpClass(cls):
         cls.tmp = tempfile.TemporaryDirectory()
         cls.root = Path(cls.tmp.name)
-        cls.source = BASE.parent/'Health Metrics_v6.xlsx'
+        cls.source = BASE.parent/'raw'/'Health Metrics_v6.xlsx'
         cls.source_hash = hashlib.sha256(cls.source.read_bytes()).hexdigest()
         cls.config = json.loads((BASE/'config.json').read_text())
         with redirect_stdout(io.StringIO()):
@@ -101,7 +101,7 @@ class HealthGeneratorTests(unittest.TestCase):
 
     def test_configurable_fall_asleep_prior_and_seed(self):
         # Exercise model entry points without generating another large workbook.
-        from generate_health import sleep_generate, daily_generate
+        from health_synthetic.generate_health import sleep_generate, daily_generate
         headers,original,_=sheet_data(self.source_wb['Sleep'])
         dates=sorted(original)
         config=dict(self.config['sleep']);config['fall_asleep_probability']=1

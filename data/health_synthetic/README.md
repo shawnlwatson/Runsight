@@ -7,24 +7,24 @@ The maintained generator is `generate_health.py`; editable parameters are in `co
 The Runsight environment is already installed:
 
 ```bash
-/home/shawn/Runsight/.venv/bin/python /home/shawn/Runsight/health_synthetic/generate_health.py
+/home/shawn/Runsight/data/.venv/bin/python /home/shawn/Runsight/data/health_synthetic/generate_health.py
 ```
 
 Choose a different seed, configuration, or output directory:
 
 ```bash
-/home/shawn/Runsight/.venv/bin/python /home/shawn/Runsight/health_synthetic/generate_health.py \
-  --input '/home/shawn/Runsight/Health Metrics_v6.xlsx' \
-  --config /home/shawn/Runsight/health_synthetic/config.json \
+/home/shawn/Runsight/data/.venv/bin/python /home/shawn/Runsight/data/health_synthetic/generate_health.py \
+  --input '/home/shawn/Runsight/data/raw/Health Metrics_v6.xlsx' \
+  --config /home/shawn/Runsight/data/health_synthetic/config.json \
   --seed 1234 --output-dir /tmp/health-test
 ```
 
-To install elsewhere, use Python 3.12 and the pinned dependency file:
+To install elsewhere, use Python 3.12 and the pinned dependency file. Run from `Runsight/data`:
 
 ```bash
 python3 -m venv .venv
-.venv/bin/pip install -r requirements.txt
-.venv/bin/python generate_health.py --input /path/to/HealthFit.xlsx --output-dir /path/to/output
+.venv/bin/pip install -r health_synthetic/requirements.txt
+.venv/bin/python health_synthetic/generate_health.py --input /path/to/HealthFit.xlsx --output-dir /path/to/output
 ```
 
 Defaults resolve relative to the script, not the working directory. Re-running refreshes generated files in the chosen output directory. The original input workbook is never overwritten. Use separate output directories to retain alternative seeds or configurations. `--no-plots` skips plots for faster checks.
@@ -92,8 +92,8 @@ The plots and reports intentionally distinguish measured and synthetic values. S
 ## Tests
 
 ```bash
-cd /home/shawn/Runsight/health_synthetic
-../.venv/bin/python -m unittest -q test_generate_health
+cd /home/shawn/Runsight/data
+.venv/bin/python -m unittest -q health_synthetic.test_generate_health
 ```
 
 Integration tests verify source-cell values and formats, raw precision checks, unchanged source hash, identical seeded workbook/report bytes, full date grids, retained measurement schedules, realistic measurement frequencies, bounded VO2, saved-workbook sleep identities and summary ordering, provenance categories, cycle variation, configurable Fall Asleep prior behavior, and changed-seed variability.

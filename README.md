@@ -1,53 +1,25 @@
 # Runsight
 
-Health and workout data tooling for visualization software testing.
+Frontend UI built with Next.js, React, TypeScript, and Tailwind CSS.
 
-This private repository contains personal FIT workouts, measured health data, generated test data, and the scripts that analyze or extend those data. Synthetic observations are explicitly identified and do not reconstruct historical physiology.
+## Development
 
-## Contents
-
-- `.FIT Files/`: original workout FIT files.
-- `Health Metrics_v6.xlsx`: original measured HealthFit workbook.
-- `fit_inventory.py`: recursive FIT message/field inventory with workout coverage counts.
-- `fit_inventory_results/`: CSV/JSON inventories and weather coverage analyses.
-- `health_synthetic/`: maintained synthetic-data generator, configuration, pinned dependencies, integration tests, and methodology documentation.
-- `health_synthetic_results/`: generated workbook, provenance, validation reports, and diagnostic plots.
-
-## Setup
-
-Python 3.12 was used for the current outputs.
+Run from this directory using Node.js and npm installed inside WSL/Ubuntu:
 
 ```bash
-python3 -m venv .venv
-.venv/bin/pip install -r requirements-fit.txt -r health_synthetic/requirements.txt
+npm ci
+npm run dev
 ```
 
-Run the FIT inventory:
+Open http://localhost:3000. Edit `src/app/page.tsx` to start building the UI.
+
+## Checks
 
 ```bash
-.venv/bin/python fit_inventory.py
+npm run lint
+npm run build
 ```
 
-Run the reproducible health-data generator:
+## Data tooling
 
-```bash
-.venv/bin/python health_synthetic/generate_health.py
-```
-
-Select another seed and preserve an alternative output separately:
-
-```bash
-.venv/bin/python health_synthetic/generate_health.py --seed 1234 --output-dir health_synthetic_results_seed1234
-```
-
-## Documentation and validation
-
-See [FIT inventory documentation](README-fit-inventory.md) and [synthetic-data methodology](health_synthetic/README.md). Generated observations use `synthetic_model` or `synthetic_prior`; original observations use `measured`. Existing measured workbook values remain unchanged.
-
-```bash
-.venv/bin/python -m unittest -q test_fit_inventory
-cd health_synthetic
-../.venv/bin/python -m unittest -q test_generate_health
-```
-
-Environments, Python caches, Windows download sidecars, and local credential files are excluded from Git. Data and reports are included as requested.
+Python scripts, raw data, and generated reports live under `data/`. See [data/README.md](data/README.md) for their setup and tests.

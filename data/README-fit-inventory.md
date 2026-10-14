@@ -3,19 +3,19 @@
 Run from any directory using the environment already installed here:
 
 ```bash
-/home/shawn/Runsight/.venv/bin/python /home/shawn/Runsight/fit_inventory.py
+/home/shawn/Runsight/data/.venv/bin/python /home/shawn/Runsight/data/fit_inventory.py
 ```
 
-By default this recursively reads Runsight/.FIT Files (including hidden directories) and writes Runsight/fit_inventory_results. Only files whose extension is .fit, case-insensitively, are read. Windows Zone.Identifier sidecars are excluded. Original FIT files are never changed.
+By default this recursively reads Runsight/data/raw/.FIT Files (including hidden directories) and writes Runsight/data/fit_inventory_results. Only files whose extension is .fit, case-insensitively, are read. Windows Zone.Identifier sidecars are excluded. Original FIT files are never changed.
 
 To choose another input/output directory or sample a subset:
 
 ```bash
-/home/shawn/Runsight/.venv/bin/python /home/shawn/Runsight/fit_inventory.py "/path/to/workouts" --output "/path/to/reports"
-/home/shawn/Runsight/.venv/bin/python /home/shawn/Runsight/fit_inventory.py --limit 10 --output /tmp/fit-sample
+/home/shawn/Runsight/data/.venv/bin/python /home/shawn/Runsight/data/fit_inventory.py "/path/to/workouts" --output "/path/to/reports"
+/home/shawn/Runsight/data/.venv/bin/python /home/shawn/Runsight/data/fit_inventory.py --limit 10 --output /tmp/fit-sample
 ```
 
-For a new environment:
+For a new environment, run from `Runsight/data`:
 
 ```bash
 python3 -m venv .venv
@@ -71,7 +71,7 @@ These are workout counts with usable values, out of 446. Full outputs also inclu
 ## Verification
 
 ```bash
-cd /home/shawn/Runsight
+cd /home/shawn/Runsight/data
 .venv/bin/python -m unittest -q test_fit_inventory
 ```
 

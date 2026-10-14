@@ -250,7 +250,7 @@ def run(root, output, limit=None):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('input', nargs='?', type=Path, default=Path(__file__).parent / '.FIT Files')
+    parser.add_argument('input', nargs='?', type=Path, default=Path(__file__).resolve().parent / 'raw' / '.FIT Files')
     parser.add_argument('--output', type=Path, default=Path(__file__).parent / 'fit_inventory_results')
     parser.add_argument('--limit', type=int, help='Optional sample run; omit to scan all files recursively, including hidden directories.')
     args = parser.parse_args()
