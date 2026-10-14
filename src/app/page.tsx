@@ -86,13 +86,13 @@ export default function Home() {
           aria-label="Distance and pace over time"
           className="h-80 min-w-0 rounded-lg border border-gold/30 border-t-4 border-t-gold bg-gold/5"
         >
-          <DistanceTimePaceChart />
+          <DistanceTimePaceChart runs={demoRuns} />
         </section>
         <section
           aria-label="Temperature, heart rate and pace"
           className="h-80 min-w-0 rounded-lg border border-orange/30 border-t-4 border-t-orange bg-orange/5"
         >
-          <TemperatureHeartRatePaceChart />
+          <TemperatureHeartRatePaceChart runs={demoRuns} />
         </section>
       </div>
       <section

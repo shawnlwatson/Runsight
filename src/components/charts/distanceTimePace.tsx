@@ -2,10 +2,13 @@
 
 import { useEffect, useRef, useState } from "react";
 import { scaleLinear, scaleUtc } from "d3-scale";
+import { line } from "d3-shape";
 
 type Run = {
   date: string; // Calendar date: YYYY-MM-DD
-  pace: number; // Pace in minutes per mile
+  id?: string;
+  pace: number | null; // Pace in minutes per mile
+  distanceMiles?: number | null;
 };
 
 type Props = {
@@ -15,7 +18,7 @@ type Props = {
 };
 
 const DAY = 86_400_000; // Number of milliseconds in a day
-const margin = { top: 20, right: 24, bottom: 36, left: 56 };
+const margin = { top: 24, right: 56, bottom: 36, left: 56 };
 
 function parseDay(value: string) {
   const time = Date.parse(`${value}T00:00:00Z`);
@@ -67,17 +70,17 @@ export default function DistanceTimePace({
   const validRange =
     Number.isFinite(start) && Number.isFinite(end) && end >= start;
 
-  const paces = validRange
-    ? datedRuns
-        .filter(
-          (run) =>
-            run.time >= start &&
-            run.time <= end &&
-            Number.isFinite(run.pace) &&
-            run.pace > 0,
-        )
-        .map((run) => run.pace)
+  const cohortRuns = validRange
+    ? datedRuns.filter((run) => run.time >= start && run.time <= end)
+        .sort((a, b) => a.time - b.time)
     : [];
+  const paceRuns = cohortRuns.filter((run): run is typeof run & { pace: number } =>
+    run.pace !== null && Number.isFinite(run.pace) && run.pace > 0,
+  );
+  const distanceRuns = cohortRuns.filter((run): run is typeof run & { distanceMiles: number } =>
+    typeof run.distanceMiles === "number" && Number.isFinite(run.distanceMiles) && run.distanceMiles >= 0,
+  );
+  const paces = paceRuns.map((run) => run.pace);
   const plotWidth = size.width - margin.left - margin.right;
   const plotHeight = size.height - margin.top - margin.bottom;
   const ready = validRange && plotWidth > 0 && plotHeight > 0;
@@ -110,6 +113,16 @@ export default function DistanceTimePace({
   const yTicks = ready
     ? y.ticks(Math.max(2, Math.floor(plotHeight / 50)))
     : [];
+  const distanceMax = distanceRuns.reduce((maximum, run) => Math.max(maximum, run.distanceMiles), 0);
+  const distanceY = scaleLinear().domain([0, distanceMax > 0 ? distanceMax * 1.1 : 6])
+    .nice().range([size.height - margin.bottom, margin.top]);
+  const distanceTicks = ready ? distanceY.ticks(Math.max(2, Math.floor(plotHeight / 50))) : [];
+  const distancePath = line<(typeof distanceRuns)[number]>()
+    .x((run) => x(new Date(run.time + DAY / 2)))
+    .y((run) => distanceY(run.distanceMiles))(distanceRuns);
+  const pacePath = line<(typeof paceRuns)[number]>()
+    .x((run) => x(new Date(run.time + DAY / 2)))
+    .y((run) => y(run.pace))(paceRuns);
 
   return (
     <div ref={containerRef} className="relative h-full min-h-64 w-full">
@@ -119,8 +132,30 @@ export default function DistanceTimePace({
           height={size.height}
           className="absolute inset-0 text-muted"
           role="img"
-          aria-label="Date and pace axes"
+          aria-label="Distance and pace lines over time"
         >
+          <g fontSize={10} className="fill-muted">
+            <line x1={margin.left} x2={margin.left + 10} y1={9} y2={9} className="stroke-gold" strokeWidth={2} />
+            <text x={margin.left + 15} y={13}>Distance</text>
+            <line x1={margin.left + 80} x2={margin.left + 94} y1={9} y2={9} className="stroke-berry" strokeWidth={2} />
+            <text x={margin.left + 100} y={13}>Pace</text>
+          </g>
+          <path d={distancePath ?? undefined} fill="none" className="stroke-gold" strokeWidth={2} />
+          {distanceRuns.map((run, index) => (
+            <circle key={run.id ?? `${run.date}-${index}`}
+              cx={x(new Date(run.time + DAY / 2))} cy={distanceY(run.distanceMiles)} r={4}
+              className="fill-gold stroke-surface" strokeWidth={1.5}>
+              <title>{`${run.date.slice(2)} · ${run.distanceMiles} miles`}</title>
+            </circle>
+          ))}
+          <path d={pacePath ?? undefined} fill="none" className="stroke-berry" strokeWidth={2} />
+          {paceRuns.map((run, index) => (
+            <circle key={run.id ?? `${run.date}-${index}`}
+              cx={x(new Date(run.time + DAY / 2))} cy={y(run.pace)} r={4}
+              className="fill-berry stroke-surface" strokeWidth={1.5}>
+              <title>{`${run.date.slice(2)} · ${formatPace(run.pace)} min/mi`}</title>
+            </circle>
+          ))}
           {/* Horizontal axis */}
           <line
             x1={margin.left}
@@ -165,6 +200,16 @@ export default function DistanceTimePace({
               </text>
             </g>
           ))}
+          <line x1={size.width - margin.right} x2={size.width - margin.right}
+            y1={margin.top} y2={size.height - margin.bottom} stroke="currentColor" />
+          {distanceTicks.map((distance) => (
+            <g key={distance} transform={`translate(${size.width - margin.right}, ${distanceY(distance)})`}>
+              <line x2={5} stroke="currentColor" />
+              <text x={8} dy="0.32em" fill="currentColor" fontSize={11}>{distance}</text>
+            </g>
+          ))}
+          <text transform={`translate(${size.width - 10}, ${margin.top + plotHeight / 2}) rotate(90)`}
+            textAnchor="middle" fill="currentColor" fontSize={12}>Distance (mi)</text>
 
           <text
             transform={`translate(10, ${margin.top + plotHeight / 2}) rotate(-90)`}
@@ -175,7 +220,7 @@ export default function DistanceTimePace({
             Pace (min/mile)
           </text>
 
-          {!paces.length && (
+          {!paceRuns.length && !distanceRuns.length && (
             <text
               x={margin.left + plotWidth / 2}
               y={margin.top + plotHeight / 2}
@@ -183,7 +228,7 @@ export default function DistanceTimePace({
               fill="currentColor"
               fontSize={12}
             >
-              No pace data in this period
+              No run data in this period
             </text>
           )}
         </svg>
