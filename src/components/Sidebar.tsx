@@ -28,6 +28,13 @@ const links = [
       </>
     ),
   },
+  {
+    label: "Insights",
+    href: "/insights",
+    icon: (
+      <path d="M9 18h6 M10 21h4 M9 15c0-2-3-3-3-7a6 6 0 0 1 12 0c0 4-3 5-3 7v1H9z" />
+    ),
+  },
 ];
 
 export default function Sidebar(){

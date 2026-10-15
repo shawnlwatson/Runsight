@@ -10,6 +10,7 @@ import type { CurrentRun } from "@/types/run";
 type Props = {
   runs: readonly CurrentRun[];
   referenceRuns?: readonly CurrentRun[];
+  emptyMessage?: string;
 };
 
 type RadarPoint = { angle: number; radius: number; value: number | null };
@@ -24,7 +25,7 @@ function formatMetric(value: number | null, index: number) {
   return formatNumber(value, 1);
 }
 
-export default function RunRadar({ runs, referenceRuns = runs }: Props) {
+export default function RunRadar({ runs, referenceRuns = runs, emptyMessage = "Select one or more runs below to compare." }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState({ width: 0, height: 0 });
 
@@ -133,7 +134,7 @@ export default function RunRadar({ runs, referenceRuns = runs }: Props) {
         )}
         {!runs.length && (
           <p className="absolute inset-0 flex items-center justify-center px-20 text-center text-sm text-brand">
-            Select one or more runs below to compare.
+            {emptyMessage}
           </p>
         )}
       </div>
