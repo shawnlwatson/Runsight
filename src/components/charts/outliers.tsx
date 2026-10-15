@@ -33,50 +33,71 @@ export default function Outliers({ runs, fromDate = "", toDate = "" }: Props) {
     <div className="min-w-0">
       <header className="px-4 py-4">
         <h2 className="text-base font-semibold text-foreground">Attribute Outliers</h2>
-        <p className="mt-1 text-xs leading-5 text-muted">The three highest and three lowest values per attribute in the selected dates. Highest and lowest describe numeric values, not better or worse performance. Small selections may show a run in both lists.</p>
+        <p className="mt-1 text-xs leading-5 text-muted">The three highest and three lowest values per attribute in the selected dates. Highest and lowest describe numeric values, not better or worse performance. Upward bars show highest values; downward bars show lowest values. Bar length indicates rank, not magnitude. Small selections may show a run in both groups.</p>
       </header>
       <div className="grid min-w-0 grid-cols-1 lg:grid-cols-[2fr_3fr]">
         <div className="flex h-[640px] min-w-0 flex-col border-b border-border lg:border-r lg:border-b-0">
           <div className="flex shrink-0 items-center justify-between gap-3 border-y border-border bg-teal/5 px-4 py-3">
             <p id={statusId} aria-live="polite" className="text-[10px] text-muted">
-              {selectedRuns.length} of {MAX_SELECTIONS} runs selected{atLimit ? ". Uncheck a run to select another." : ""}
+              {selectedRuns.length} of {MAX_SELECTIONS} runs selected{atLimit ? ". Deselect a run to select another." : ""}
             </p>
             <button type="button" onClick={() => setSelectedIds([])} disabled={!selectedRuns.length}
               className="cursor-pointer rounded px-2 py-1 text-[10px] font-semibold text-brand hover:bg-gold/20 disabled:cursor-default disabled:opacity-40">Clear selection</button>
           </div>
-          <div className="min-h-0 flex-1 overflow-y-auto px-4 text-[10px] leading-4">
+          <div className="min-h-0 flex-1 overflow-y-auto p-3 text-[10px] leading-4">
+            <p className="mb-3 text-center text-muted">↑ Highest 1–3 · ↓ Lowest 1–3 · Click a bar to compare</p>
             {!eligibleIds.size && <p className="py-8 text-center text-muted">No attribute values in this period.</p>}
-            {rankings.map(({ metric, highest, lowest }) => <section key={metric.key} aria-label={`${metric.label} extremes`} className="border-b border-border py-3">
-              <h3 className="mb-2 font-bold text-brand">{metric.label} ({metric.unit})</h3>
-              <div className="grid grid-cols-2 gap-3">
-                {([{ label: "Highest 3", entries: highest }, { label: "Lowest 3", entries: lowest }]).map(({ label, entries }) => <div key={label}>
-                  <h4 className="mb-1 font-semibold text-muted">{label}</h4>
-                  <ul className="space-y-1">
-                    {entries.map(({ run, value }) => {
-                      const checked = visibleSelectedIds.includes(run.id);
-                      const formatted = metric.format === "time" ? formatTotalTime(value) : metric.format === "pace" ? formatPace(value) : formatNumber(value, 1);
-                      return <li key={run.id}>
-                        <label className={`flex items-center gap-1.5 rounded px-1 py-1 ${checked ? "bg-gold/20" : "hover:bg-teal/5"} ${atLimit && !checked ? "opacity-40" : "cursor-pointer"}`}>
-                          <input type="checkbox" checked={checked} disabled={atLimit && !checked} aria-describedby={statusId}
-                            aria-label={`Select ${run.date}, ${metric.label}: ${formatted} ${metric.unit}, ${label}`}
-                            onChange={(event) => {
-                              if (event.target.checked && atLimit) return;
-                              setSelectedIds(event.target.checked ? [...visibleSelectedIds, run.id] : visibleSelectedIds.filter((id) => id !== run.id));
-                            }} className="h-3 w-3 shrink-0 accent-brand" />
-                          <time dateTime={run.date} className="shrink-0">{run.date.slice(2)}</time>
-                          <span className="ml-auto text-right tabular-nums">{formatted}</span>
-                        </label>
-                      </li>;
-                    })}
-                  </ul>
-                  {!entries.length && <p className="text-muted">No values</p>}
-                </div>)}
-              </div>
-            </section>)}
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3">
+              {rankings.map(({ metric, highest, lowest }) => (
+                <section key={metric.key} aria-label={`${metric.label} extremes`} className="min-w-0 rounded-lg border border-teal/15 bg-teal/5">
+                  <svg viewBox="0 0 160 236" className="block w-full" role="group" aria-label={`${metric.label} outlier glyph`}>
+                    <line x1={12} x2={148} y1={114} y2={114} className="stroke-teal/30" strokeDasharray="3 3" />
+                    {([{ direction: "highest", entries: highest }, { direction: "lowest", entries: lowest }] as const).map(({ direction, entries }) => (
+                      <g key={direction}>
+                        {entries.map(({ run, value }, rank) => {
+                          const selected = visibleSelectedIds.includes(run.id);
+                          const disabled = atLimit && !selected;
+                          const formatted = metric.format === "time" ? formatTotalTime(value) : metric.format === "pace" ? formatPace(value) : formatNumber(value, 1);
+                          const length = [96, 74, 52][rank];
+                          const description = `${metric.label}, ${direction} #${rank + 1}: ${run.date}, ${formatted} ${metric.unit}`;
+                          const toggle = () => {
+                            if (disabled) return;
+                            setSelectedIds(selected ? visibleSelectedIds.filter((id) => id !== run.id) : [...visibleSelectedIds, run.id]);
+                          };
+                          return (
+                            <rect key={run.id} data-outlier-bar={direction} data-run-id={run.id} data-rank={rank + 1}
+                              x={46 + rank * 26} y={direction === "highest" ? 114 - length : 114}
+                              width={16} height={length} rx={3}
+                              role="button" tabIndex={disabled ? -1 : 0} aria-pressed={selected} aria-disabled={disabled}
+                              aria-describedby={statusId} aria-label={description}
+                              onClick={toggle} onKeyDown={(event) => {
+                                if (event.key === "Enter" || event.key === " ") {
+                                  event.preventDefault();
+                                  toggle();
+                                }
+                              }}
+                              className={`${selected ? "fill-gold stroke-navy" : direction === "highest" ? "fill-teal stroke-surface" : "fill-berry stroke-surface"} ${disabled ? "opacity-30" : "cursor-pointer hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"}`}
+                              strokeWidth={selected ? 2.5 : 1}>
+                              <title>{`${description}${selected ? " · Selected; click to remove" : " · Click to compare"}`}</title>
+                            </rect>
+                          );
+                        })}
+                      </g>
+                    ))}
+                    <circle cx={80} cy={114} r={33} className="fill-surface stroke-teal/40" strokeWidth={1.5} />
+                    <text x={80} y={metric.label.includes(" ") ? 111 : 117} textAnchor="middle" fontSize={10} fontWeight={600} className="fill-brand" pointerEvents="none">
+                      {metric.label.split(" ").map((word, index) => <tspan key={index} x={80} dy={index === 0 ? 0 : 12}>{word}</tspan>)}
+                    </text>
+                    <text x={80} y={228} textAnchor="middle" fontSize={10} className="fill-muted">{metric.unit}</text>
+                    {!highest.length && <text x={80} y={55} textAnchor="middle" fontSize={10} className="fill-muted">No values</text>}
+                  </svg>
+                </section>
+              ))}
+            </div>
           </div>
         </div>
         <div className="h-[640px] min-w-0">
-          <RunRadar runs={selectedRuns} referenceRuns={cohort} emptyMessage="Select runs from the list to compare." />
+          <RunRadar runs={selectedRuns} referenceRuns={cohort} emptyMessage="Select outlier bars to compare runs." />
         </div>
       </div>
     </div>
