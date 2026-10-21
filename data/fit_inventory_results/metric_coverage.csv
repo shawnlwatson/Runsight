@@ -1,109 +1,109 @@
 metric,level,workouts_present,workouts_with_values,total_workouts,coverage_pct,matched_fields
-temperature,any_level,210,210,446,47.085,"[""session.avg_temperature""]"
-temperature,workout_session,210,210,446,47.085,"[""session.avg_temperature""]"
-temperature,lap,0,0,446,0.0,[]
-temperature,timestamped_record,0,0,446,0.0,[]
-temperature,weather,0,0,446,0.0,[]
-temperature,other_timestamped,0,0,446,0.0,[]
-humidity,any_level,210,210,446,47.085,"[""session.SESSION WEATHER HUMIDITY""]"
-humidity,workout_session,210,210,446,47.085,"[""session.SESSION WEATHER HUMIDITY""]"
-humidity,lap,0,0,446,0.0,[]
-humidity,timestamped_record,0,0,446,0.0,[]
-humidity,weather,0,0,446,0.0,[]
-humidity,other_timestamped,0,0,446,0.0,[]
-wind_speed,any_level,0,0,446,0.0,[]
-wind_speed,workout_session,0,0,446,0.0,[]
-wind_speed,lap,0,0,446,0.0,[]
-wind_speed,timestamped_record,0,0,446,0.0,[]
-wind_speed,weather,0,0,446,0.0,[]
-wind_speed,other_timestamped,0,0,446,0.0,[]
-wind_direction,any_level,0,0,446,0.0,[]
-wind_direction,workout_session,0,0,446,0.0,[]
-wind_direction,lap,0,0,446,0.0,[]
-wind_direction,timestamped_record,0,0,446,0.0,[]
-wind_direction,weather,0,0,446,0.0,[]
-wind_direction,other_timestamped,0,0,446,0.0,[]
-weather_conditions,any_level,0,0,446,0.0,[]
-weather_conditions,workout_session,0,0,446,0.0,[]
-weather_conditions,lap,0,0,446,0.0,[]
-weather_conditions,timestamped_record,0,0,446,0.0,[]
-weather_conditions,weather,0,0,446,0.0,[]
-weather_conditions,other_timestamped,0,0,446,0.0,[]
-gps,any_level,445,445,446,99.776,"[""record.gps_accuracy"", ""record.position_lat"", ""record.position_long"", ""session.nec_lat"", ""session.nec_long"", ""session.swc_lat"", ""session.swc_long""]"
-gps,workout_session,445,445,446,99.776,"[""session.nec_lat"", ""session.nec_long"", ""session.swc_lat"", ""session.swc_long""]"
-gps,lap,0,0,446,0.0,[]
-gps,timestamped_record,445,445,446,99.776,"[""record.gps_accuracy"", ""record.position_lat"", ""record.position_long""]"
-gps,weather,0,0,446,0.0,[]
-gps,other_timestamped,0,0,446,0.0,[]
-elevation,any_level,445,445,446,99.776,"[""record.altitude"", ""record.enhanced_altitude"", ""session.avg_altitude"", ""session.enhanced_avg_altitude"", ""session.enhanced_max_altitude"", ""session.enhanced_min_altitude"", ""session.max_altitude"", ""session.min_altitude"", ""session.total_ascent""]"
-elevation,workout_session,445,445,446,99.776,"[""session.avg_altitude"", ""session.enhanced_avg_altitude"", ""session.enhanced_max_altitude"", ""session.enhanced_min_altitude"", ""session.max_altitude"", ""session.min_altitude"", ""session.total_ascent""]"
-elevation,lap,0,0,446,0.0,[]
-elevation,timestamped_record,445,445,446,99.776,"[""record.altitude"", ""record.enhanced_altitude""]"
-elevation,weather,0,0,446,0.0,[]
-elevation,other_timestamped,0,0,446,0.0,[]
-heart_rate,any_level,442,442,446,99.103,"[""lap.avg_heart_rate"", ""lap.max_heart_rate"", ""lap.min_heart_rate"", ""record.heart_rate"", ""session.avg_heart_rate"", ""session.max_heart_rate"", ""session.min_heart_rate"", ""time_in_zone.max_heart_rate"", ""time_in_zone.resting_heart_rate""]"
-heart_rate,workout_session,442,442,446,99.103,"[""session.avg_heart_rate"", ""session.max_heart_rate"", ""session.min_heart_rate""]"
-heart_rate,lap,440,440,446,98.655,"[""lap.avg_heart_rate"", ""lap.max_heart_rate"", ""lap.min_heart_rate""]"
-heart_rate,timestamped_record,441,441,446,98.879,"[""record.heart_rate""]"
-heart_rate,weather,0,0,446,0.0,[]
-heart_rate,other_timestamped,441,441,446,98.879,"[""time_in_zone.max_heart_rate"", ""time_in_zone.resting_heart_rate""]"
-cadence,any_level,444,444,446,99.552,"[""lap.avg_fractional_cadence"", ""lap.avg_running_cadence"", ""lap.max_fractional_cadence"", ""lap.max_running_cadence"", ""record.cadence"", ""record.fractional_cadence"", ""session.avg_fractional_cadence"", ""session.avg_running_cadence"", ""session.max_fractional_cadence"", ""session.max_running_cadence""]"
-cadence,workout_session,444,444,446,99.552,"[""session.avg_fractional_cadence"", ""session.avg_running_cadence"", ""session.max_fractional_cadence"", ""session.max_running_cadence""]"
-cadence,lap,442,442,446,99.103,"[""lap.avg_fractional_cadence"", ""lap.avg_running_cadence"", ""lap.max_fractional_cadence"", ""lap.max_running_cadence""]"
-cadence,timestamped_record,444,444,446,99.552,"[""record.cadence"", ""record.fractional_cadence""]"
-cadence,weather,0,0,446,0.0,[]
-cadence,other_timestamped,0,0,446,0.0,[]
-power,any_level,307,307,446,68.834,"[""lap.avg_power"", ""lap.max_power"", ""record.accumulated_power"", ""record.power"", ""session.avg_power"", ""session.max_power""]"
-power,workout_session,305,305,446,68.386,"[""session.avg_power"", ""session.max_power""]"
-power,lap,304,304,446,68.161,"[""lap.avg_power"", ""lap.max_power""]"
-power,timestamped_record,307,307,446,68.834,"[""record.accumulated_power"", ""record.power""]"
-power,weather,0,0,446,0.0,[]
-power,other_timestamped,0,0,446,0.0,[]
-ground_contact_time,any_level,302,302,446,67.713,"[""lap.avg_stance_time"", ""record.stance_time"", ""session.avg_stance_time""]"
-ground_contact_time,workout_session,302,302,446,67.713,"[""session.avg_stance_time""]"
-ground_contact_time,lap,302,302,446,67.713,"[""lap.avg_stance_time""]"
-ground_contact_time,timestamped_record,302,302,446,67.713,"[""record.stance_time""]"
-ground_contact_time,weather,0,0,446,0.0,[]
-ground_contact_time,other_timestamped,0,0,446,0.0,[]
-ground_contact_balance,any_level,0,0,446,0.0,[]
-ground_contact_balance,workout_session,0,0,446,0.0,[]
-ground_contact_balance,lap,0,0,446,0.0,[]
-ground_contact_balance,timestamped_record,0,0,446,0.0,[]
-ground_contact_balance,weather,0,0,446,0.0,[]
-ground_contact_balance,other_timestamped,0,0,446,0.0,[]
-vertical_oscillation,any_level,302,302,446,67.713,"[""lap.avg_vertical_oscillation"", ""record.vertical_oscillation"", ""session.avg_vertical_oscillation""]"
-vertical_oscillation,workout_session,302,302,446,67.713,"[""session.avg_vertical_oscillation""]"
-vertical_oscillation,lap,302,302,446,67.713,"[""lap.avg_vertical_oscillation""]"
-vertical_oscillation,timestamped_record,302,302,446,67.713,"[""record.vertical_oscillation""]"
-vertical_oscillation,weather,0,0,446,0.0,[]
-vertical_oscillation,other_timestamped,0,0,446,0.0,[]
-vertical_ratio,any_level,302,302,446,67.713,"[""lap.avg_vertical_ratio"", ""record.vertical_ratio"", ""session.avg_vertical_ratio""]"
-vertical_ratio,workout_session,302,302,446,67.713,"[""session.avg_vertical_ratio""]"
-vertical_ratio,lap,302,302,446,67.713,"[""lap.avg_vertical_ratio""]"
-vertical_ratio,timestamped_record,302,302,446,67.713,"[""record.vertical_ratio""]"
-vertical_ratio,weather,0,0,446,0.0,[]
-vertical_ratio,other_timestamped,0,0,446,0.0,[]
-stride_length,any_level,302,302,446,67.713,"[""lap.avg_step_length"", ""record.step_length"", ""session.avg_step_length""]"
-stride_length,workout_session,302,302,446,67.713,"[""session.avg_step_length""]"
-stride_length,lap,302,302,446,67.713,"[""lap.avg_step_length""]"
-stride_length,timestamped_record,302,302,446,67.713,"[""record.step_length""]"
-stride_length,weather,0,0,446,0.0,[]
-stride_length,other_timestamped,0,0,446,0.0,[]
-speed,any_level,445,445,446,99.776,"[""lap.avg_speed"", ""lap.enhanced_avg_speed"", ""lap.enhanced_max_speed"", ""lap.max_speed"", ""record.enhanced_speed"", ""session.avg_speed"", ""session.enhanced_avg_speed"", ""session.enhanced_max_speed"", ""session.max_speed""]"
-speed,workout_session,445,445,446,99.776,"[""session.avg_speed"", ""session.enhanced_avg_speed"", ""session.enhanced_max_speed"", ""session.max_speed""]"
-speed,lap,442,442,446,99.103,"[""lap.avg_speed"", ""lap.enhanced_avg_speed"", ""lap.enhanced_max_speed"", ""lap.max_speed""]"
-speed,timestamped_record,445,445,446,99.776,"[""record.enhanced_speed""]"
-speed,weather,0,0,446,0.0,[]
-speed,other_timestamped,0,0,446,0.0,[]
-distance,any_level,445,445,446,99.776,"[""lap.total_distance"", ""record.distance"", ""session.total_distance""]"
-distance,workout_session,445,445,446,99.776,"[""session.total_distance""]"
-distance,lap,442,442,446,99.103,"[""lap.total_distance""]"
-distance,timestamped_record,445,445,446,99.776,"[""record.distance""]"
-distance,weather,0,0,446,0.0,[]
-distance,other_timestamped,0,0,446,0.0,[]
-respiration_rate,any_level,0,0,446,0.0,[]
-respiration_rate,workout_session,0,0,446,0.0,[]
-respiration_rate,lap,0,0,446,0.0,[]
-respiration_rate,timestamped_record,0,0,446,0.0,[]
-respiration_rate,weather,0,0,446,0.0,[]
-respiration_rate,other_timestamped,0,0,446,0.0,[]
+temperature,any_level,218,218,454,48.018,"[""session.avg_temperature""]"
+temperature,workout_session,218,218,454,48.018,"[""session.avg_temperature""]"
+temperature,lap,0,0,454,0.0,[]
+temperature,timestamped_record,0,0,454,0.0,[]
+temperature,weather,0,0,454,0.0,[]
+temperature,other_timestamped,0,0,454,0.0,[]
+humidity,any_level,218,218,454,48.018,"[""session.SESSION WEATHER HUMIDITY""]"
+humidity,workout_session,218,218,454,48.018,"[""session.SESSION WEATHER HUMIDITY""]"
+humidity,lap,0,0,454,0.0,[]
+humidity,timestamped_record,0,0,454,0.0,[]
+humidity,weather,0,0,454,0.0,[]
+humidity,other_timestamped,0,0,454,0.0,[]
+wind_speed,any_level,0,0,454,0.0,[]
+wind_speed,workout_session,0,0,454,0.0,[]
+wind_speed,lap,0,0,454,0.0,[]
+wind_speed,timestamped_record,0,0,454,0.0,[]
+wind_speed,weather,0,0,454,0.0,[]
+wind_speed,other_timestamped,0,0,454,0.0,[]
+wind_direction,any_level,0,0,454,0.0,[]
+wind_direction,workout_session,0,0,454,0.0,[]
+wind_direction,lap,0,0,454,0.0,[]
+wind_direction,timestamped_record,0,0,454,0.0,[]
+wind_direction,weather,0,0,454,0.0,[]
+wind_direction,other_timestamped,0,0,454,0.0,[]
+weather_conditions,any_level,0,0,454,0.0,[]
+weather_conditions,workout_session,0,0,454,0.0,[]
+weather_conditions,lap,0,0,454,0.0,[]
+weather_conditions,timestamped_record,0,0,454,0.0,[]
+weather_conditions,weather,0,0,454,0.0,[]
+weather_conditions,other_timestamped,0,0,454,0.0,[]
+gps,any_level,448,448,454,98.678,"[""record.gps_accuracy"", ""record.position_lat"", ""record.position_long"", ""session.nec_lat"", ""session.nec_long"", ""session.swc_lat"", ""session.swc_long""]"
+gps,workout_session,448,448,454,98.678,"[""session.nec_lat"", ""session.nec_long"", ""session.swc_lat"", ""session.swc_long""]"
+gps,lap,0,0,454,0.0,[]
+gps,timestamped_record,448,448,454,98.678,"[""record.gps_accuracy"", ""record.position_lat"", ""record.position_long""]"
+gps,weather,0,0,454,0.0,[]
+gps,other_timestamped,0,0,454,0.0,[]
+elevation,any_level,452,452,454,99.559,"[""record.altitude"", ""record.enhanced_altitude"", ""session.avg_altitude"", ""session.enhanced_avg_altitude"", ""session.enhanced_max_altitude"", ""session.enhanced_min_altitude"", ""session.max_altitude"", ""session.min_altitude"", ""session.total_ascent""]"
+elevation,workout_session,452,452,454,99.559,"[""session.avg_altitude"", ""session.enhanced_avg_altitude"", ""session.enhanced_max_altitude"", ""session.enhanced_min_altitude"", ""session.max_altitude"", ""session.min_altitude"", ""session.total_ascent""]"
+elevation,lap,0,0,454,0.0,[]
+elevation,timestamped_record,448,448,454,98.678,"[""record.altitude"", ""record.enhanced_altitude""]"
+elevation,weather,0,0,454,0.0,[]
+elevation,other_timestamped,0,0,454,0.0,[]
+heart_rate,any_level,450,450,454,99.119,"[""lap.avg_heart_rate"", ""lap.max_heart_rate"", ""lap.min_heart_rate"", ""record.heart_rate"", ""session.avg_heart_rate"", ""session.max_heart_rate"", ""session.min_heart_rate"", ""time_in_zone.max_heart_rate"", ""time_in_zone.resting_heart_rate""]"
+heart_rate,workout_session,450,450,454,99.119,"[""session.avg_heart_rate"", ""session.max_heart_rate"", ""session.min_heart_rate""]"
+heart_rate,lap,447,447,454,98.458,"[""lap.avg_heart_rate"", ""lap.max_heart_rate"", ""lap.min_heart_rate""]"
+heart_rate,timestamped_record,449,449,454,98.899,"[""record.heart_rate""]"
+heart_rate,weather,0,0,454,0.0,[]
+heart_rate,other_timestamped,449,449,454,98.899,"[""time_in_zone.max_heart_rate"", ""time_in_zone.resting_heart_rate""]"
+cadence,any_level,452,452,454,99.559,"[""lap.avg_fractional_cadence"", ""lap.avg_running_cadence"", ""lap.max_fractional_cadence"", ""lap.max_running_cadence"", ""record.cadence"", ""record.fractional_cadence"", ""session.avg_fractional_cadence"", ""session.avg_running_cadence"", ""session.max_fractional_cadence"", ""session.max_running_cadence""]"
+cadence,workout_session,452,452,454,99.559,"[""session.avg_fractional_cadence"", ""session.avg_running_cadence"", ""session.max_fractional_cadence"", ""session.max_running_cadence""]"
+cadence,lap,449,449,454,98.899,"[""lap.avg_fractional_cadence"", ""lap.avg_running_cadence"", ""lap.max_fractional_cadence"", ""lap.max_running_cadence""]"
+cadence,timestamped_record,452,452,454,99.559,"[""record.cadence"", ""record.fractional_cadence""]"
+cadence,weather,0,0,454,0.0,[]
+cadence,other_timestamped,0,0,454,0.0,[]
+power,any_level,310,310,454,68.282,"[""lap.avg_power"", ""lap.max_power"", ""record.accumulated_power"", ""record.power"", ""session.avg_power"", ""session.max_power""]"
+power,workout_session,308,308,454,67.841,"[""session.avg_power"", ""session.max_power""]"
+power,lap,307,307,454,67.621,"[""lap.avg_power"", ""lap.max_power""]"
+power,timestamped_record,310,310,454,68.282,"[""record.accumulated_power"", ""record.power""]"
+power,weather,0,0,454,0.0,[]
+power,other_timestamped,0,0,454,0.0,[]
+ground_contact_time,any_level,305,305,454,67.181,"[""lap.avg_stance_time"", ""record.stance_time"", ""session.avg_stance_time""]"
+ground_contact_time,workout_session,305,305,454,67.181,"[""session.avg_stance_time""]"
+ground_contact_time,lap,305,305,454,67.181,"[""lap.avg_stance_time""]"
+ground_contact_time,timestamped_record,305,305,454,67.181,"[""record.stance_time""]"
+ground_contact_time,weather,0,0,454,0.0,[]
+ground_contact_time,other_timestamped,0,0,454,0.0,[]
+ground_contact_balance,any_level,0,0,454,0.0,[]
+ground_contact_balance,workout_session,0,0,454,0.0,[]
+ground_contact_balance,lap,0,0,454,0.0,[]
+ground_contact_balance,timestamped_record,0,0,454,0.0,[]
+ground_contact_balance,weather,0,0,454,0.0,[]
+ground_contact_balance,other_timestamped,0,0,454,0.0,[]
+vertical_oscillation,any_level,305,305,454,67.181,"[""lap.avg_vertical_oscillation"", ""record.vertical_oscillation"", ""session.avg_vertical_oscillation""]"
+vertical_oscillation,workout_session,305,305,454,67.181,"[""session.avg_vertical_oscillation""]"
+vertical_oscillation,lap,305,305,454,67.181,"[""lap.avg_vertical_oscillation""]"
+vertical_oscillation,timestamped_record,305,305,454,67.181,"[""record.vertical_oscillation""]"
+vertical_oscillation,weather,0,0,454,0.0,[]
+vertical_oscillation,other_timestamped,0,0,454,0.0,[]
+vertical_ratio,any_level,305,305,454,67.181,"[""lap.avg_vertical_ratio"", ""record.vertical_ratio"", ""session.avg_vertical_ratio""]"
+vertical_ratio,workout_session,305,305,454,67.181,"[""session.avg_vertical_ratio""]"
+vertical_ratio,lap,305,305,454,67.181,"[""lap.avg_vertical_ratio""]"
+vertical_ratio,timestamped_record,305,305,454,67.181,"[""record.vertical_ratio""]"
+vertical_ratio,weather,0,0,454,0.0,[]
+vertical_ratio,other_timestamped,0,0,454,0.0,[]
+stride_length,any_level,305,305,454,67.181,"[""lap.avg_step_length"", ""record.step_length"", ""session.avg_step_length""]"
+stride_length,workout_session,305,305,454,67.181,"[""session.avg_step_length""]"
+stride_length,lap,305,305,454,67.181,"[""lap.avg_step_length""]"
+stride_length,timestamped_record,305,305,454,67.181,"[""record.step_length""]"
+stride_length,weather,0,0,454,0.0,[]
+stride_length,other_timestamped,0,0,454,0.0,[]
+speed,any_level,453,453,454,99.78,"[""lap.avg_speed"", ""lap.enhanced_avg_speed"", ""lap.enhanced_max_speed"", ""lap.max_speed"", ""record.enhanced_speed"", ""session.avg_speed"", ""session.enhanced_avg_speed"", ""session.enhanced_max_speed"", ""session.max_speed""]"
+speed,workout_session,453,453,454,99.78,"[""session.avg_speed"", ""session.enhanced_avg_speed"", ""session.enhanced_max_speed"", ""session.max_speed""]"
+speed,lap,449,449,454,98.899,"[""lap.avg_speed"", ""lap.enhanced_avg_speed"", ""lap.enhanced_max_speed"", ""lap.max_speed""]"
+speed,timestamped_record,453,453,454,99.78,"[""record.enhanced_speed""]"
+speed,weather,0,0,454,0.0,[]
+speed,other_timestamped,0,0,454,0.0,[]
+distance,any_level,453,453,454,99.78,"[""lap.total_distance"", ""record.distance"", ""session.total_distance""]"
+distance,workout_session,453,453,454,99.78,"[""session.total_distance""]"
+distance,lap,449,449,454,98.899,"[""lap.total_distance""]"
+distance,timestamped_record,453,453,454,99.78,"[""record.distance""]"
+distance,weather,0,0,454,0.0,[]
+distance,other_timestamped,0,0,454,0.0,[]
+respiration_rate,any_level,0,0,454,0.0,[]
+respiration_rate,workout_session,0,0,454,0.0,[]
+respiration_rate,lap,0,0,454,0.0,[]
+respiration_rate,timestamped_record,0,0,454,0.0,[]
+respiration_rate,weather,0,0,454,0.0,[]
+respiration_rate,other_timestamped,0,0,454,0.0,[]
