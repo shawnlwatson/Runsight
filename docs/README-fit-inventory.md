@@ -15,7 +15,7 @@ To choose another input/output directory or sample a subset:
 /home/shawn/Runsight/.venv/bin/python /home/shawn/Runsight/pipeline/fit_inventory.py --limit 10 --output /tmp/fit-sample
 ```
 
-For a new environment:
+For a new environment, run from the repository root:
 
 ```bash
 python3 -m venv .venv
@@ -48,25 +48,25 @@ Workout starts use UTC session.start_time, falling back to first record timestam
 
 ## Current scan
 
-446 valid workouts, 0 failures, 0 parser warnings. Starts range from 2021-01-04T14:33:15+00:00 to 2026-09-30T11:08:56+00:00. Inventory includes 12 message types and 143 decoded field identities (including expansions), across 1,004,111 record messages.
+454 valid workouts, 0 failures, 0 files with parser warnings. Starts range from 2021-01-04T14:33:15+00:00 to 2026-10-21T11:18:20+00:00. Inventory includes 12 message types and 143 decoded field identities (including expansions), across 1,017,665 record messages.
 
 | Metric | Any level | Session/activity | Lap | Timestamped record |
 | --- | ---: | ---: | ---: | ---: |
-| Temperature | 210 | 210 | 0 | 0 |
-| Humidity | 210 | 210 | 0 | 0 |
+| Temperature | 218 | 218 | 0 | 0 |
+| Humidity | 218 | 218 | 0 | 0 |
 | Wind speed | 0 | 0 | 0 | 0 |
 | Wind direction | 0 | 0 | 0 | 0 |
 | Weather conditions | 0 | 0 | 0 | 0 |
-| GPS | 445 | 445 | 0 | 445 |
-| Elevation | 445 | 445 | 0 | 445 |
-| Heart rate | 442 | 442 | 440 | 441 |
-| Cadence | 444 | 444 | 442 | 444 |
-| Power | 307 | 305 | 304 | 307 |
-| Ground contact time | 302 | 302 | 302 | 302 |
-| Vertical oscillation | 302 | 302 | 302 | 302 |
-| Stride/step length | 302 | 302 | 302 | 302 |
+| GPS | 448 | 448 | 0 | 448 |
+| Elevation | 452 | 452 | 0 | 448 |
+| Heart rate | 450 | 450 | 447 | 449 |
+| Cadence | 452 | 452 | 449 | 452 |
+| Power | 310 | 308 | 307 | 310 |
+| Ground contact time | 305 | 305 | 305 | 305 |
+| Vertical oscillation | 305 | 305 | 305 | 305 |
+| Stride/step length | 305 | 305 | 305 | 305 |
 
-These are workout counts with usable values, out of 446. Full outputs also include vertical ratio, ground contact balance, speed, distance, and respiration rate.
+These are workout counts with usable values, out of 454. Full outputs also include vertical ratio, ground contact balance, speed, distance, and respiration rate.
 
 ## Verification
 

@@ -1,6 +1,6 @@
 # Runsight
 
-Health and workout data tooling for visualization software testing.
+Running analytics frontend and health/workout data tooling.
 
 This private repository contains personal FIT workouts, measured health data, generated test data, and the scripts that analyze or extend those data. Synthetic observations are explicitly identified and do not reconstruct historical physiology.
 
@@ -15,12 +15,27 @@ This private repository contains personal FIT workouts, measured health data, ge
 - `data/derived/fit_inventory/`: CSV/JSON inventories and weather coverage analyses computed from `data/raw/fit`.
 - `pipeline/`: data-processing scripts, independent of the product app.
   - `fit_inventory.py`, `test_fit_inventory.py`, `requirements-fit.txt`.
-- `app/`: product code (backend API/stats engine, frontend D3 views) — not yet implemented.
+- `app/frontend/`: Next.js, React, TypeScript, Tailwind CSS, and D3 frontend: Dashboard, Trends, Runs, Explore, and Insights.
+- `app/backend/`: reserved for the backend API and statistics engine.
 - `docs/`: design background and methodology documentation.
   - `context.txt`: research background, design requirements, and development plan.
   - `README-fit-inventory.md`, `synthetic-methodology.md`.
 
-## Setup
+## Frontend development
+
+Use Node.js and npm installed inside WSL/Ubuntu:
+
+```bash
+cd app/frontend
+npm ci
+npm run dev
+```
+
+Open http://localhost:3000. Run `npm run lint` and `npm run build` from `app/frontend` to validate the UI. See [frontend documentation](app/frontend/README.md).
+
+The frontend uses fictional fixtures in `app/frontend/src/data/fixtures`. Shared data contracts live in `app/frontend/src/types`.
+
+## Data tooling setup
 
 Python 3.12 was used for the current outputs.
 
@@ -59,3 +74,5 @@ cd ../data/synthetic/generator
 ```
 
 Environments, Python caches, Windows download sidecars, and local credential files are excluded from Git. Data and reports are included as requested.
+
+The existing local Python environment at `data/.venv` can also run the relocated tooling; a fresh setup uses the root `.venv` shown above.

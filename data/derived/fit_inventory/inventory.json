@@ -1,16 +1,16 @@
 {
   "summary": {
-    "input_directory": "/home/shawn/Runsight/.FIT Files",
-    "generated_utc": "2026-10-02T23:35:24.512466+00:00",
+    "input_directory": "/home/shawn/Runsight/data/raw/fit",
+    "generated_utc": "2026-10-21T14:21:22.264191+00:00",
     "parser": "fitdecode 0.11.0",
-    "total_files": 446,
-    "valid_files": 446,
+    "total_files": 454,
+    "valid_files": 454,
     "failed_files": 0,
-    "valid_workout_files": 446,
+    "valid_workout_files": 454,
     "valid_non_workout_files": 0,
     "workouts_missing_date": 0,
     "earliest_workout_utc": "2021-01-04T14:33:15+00:00",
-    "latest_workout_utc": "2026-09-30T11:08:56+00:00",
+    "latest_workout_utc": "2026-10-21T11:18:20+00:00",
     "files_with_multiple_sessions": [],
     "message_type_count": 12,
     "field_identity_count": 143,
@@ -6285,6 +6285,118 @@
       "record_first_utc": "2026-09-30T11:08:56+00:00",
       "record_last_utc": "2026-09-30T12:06:29+00:00",
       "file_type": "activity"
+    },
+    {
+      "file": "2026-10-01-080309-Indoor Running-Shawn’s Apple Watch.fit",
+      "size_bytes": 3046,
+      "status": "valid",
+      "error": "",
+      "warnings": [],
+      "session_count": 1,
+      "is_workout": true,
+      "workout_start_utc": "2026-10-01T13:03:09+00:00",
+      "date_source": "session.start_time",
+      "record_first_utc": "2026-10-01T13:03:09+00:00",
+      "record_last_utc": "2026-10-01T13:05:29+00:00",
+      "file_type": "activity"
+    },
+    {
+      "file": "2026-10-05-075710-Indoor Running-Shawn’s Apple Watch.fit",
+      "size_bytes": 27131,
+      "status": "valid",
+      "error": "",
+      "warnings": [],
+      "session_count": 1,
+      "is_workout": true,
+      "workout_start_utc": "2026-10-05T12:57:10+00:00",
+      "date_source": "session.start_time",
+      "record_first_utc": "2026-10-05T12:57:12+00:00",
+      "record_last_utc": "2026-10-05T13:24:22+00:00",
+      "file_type": "activity"
+    },
+    {
+      "file": "2026-10-06-081321-Indoor Running-Shawn’s Apple Watch.fit",
+      "size_bytes": 21096,
+      "status": "valid",
+      "error": "",
+      "warnings": [],
+      "session_count": 1,
+      "is_workout": true,
+      "workout_start_utc": "2026-10-06T13:13:21+00:00",
+      "date_source": "session.start_time",
+      "record_first_utc": "2026-10-06T13:13:21+00:00",
+      "record_last_utc": "2026-10-06T13:34:22+00:00",
+      "file_type": "activity"
+    },
+    {
+      "file": "2026-10-07-060918-Outdoor Running-Shawn’s Apple Watch.fit",
+      "size_bytes": 142443,
+      "status": "valid",
+      "error": "",
+      "warnings": [],
+      "session_count": 1,
+      "is_workout": true,
+      "workout_start_utc": "2026-10-07T11:09:18+00:00",
+      "date_source": "session.start_time",
+      "record_first_utc": "2026-10-07T11:09:18+00:00",
+      "record_last_utc": "2026-10-07T12:05:47+00:00",
+      "file_type": "activity"
+    },
+    {
+      "file": "2026-10-15-060439-Indoor Running-Shawn’s Apple Watch.fit",
+      "size_bytes": 11338,
+      "status": "valid",
+      "error": "",
+      "warnings": [],
+      "session_count": 1,
+      "is_workout": true,
+      "workout_start_utc": "2026-10-15T10:04:39+00:00",
+      "date_source": "session.start_time",
+      "record_first_utc": "2026-10-15T10:04:39+00:00",
+      "record_last_utc": "2026-10-15T10:16:05+00:00",
+      "file_type": "activity"
+    },
+    {
+      "file": "2026-10-19-075233-Indoor Running-Shawn’s Apple Watch.fit",
+      "size_bytes": 20355,
+      "status": "valid",
+      "error": "",
+      "warnings": [],
+      "session_count": 1,
+      "is_workout": true,
+      "workout_start_utc": "2026-10-19T12:52:33+00:00",
+      "date_source": "session.start_time",
+      "record_first_utc": "2026-10-19T12:52:33+00:00",
+      "record_last_utc": "2026-10-19T13:12:44+00:00",
+      "file_type": "activity"
+    },
+    {
+      "file": "2026-10-20-070618-Outdoor Running-Shawn’s Apple Watch.fit",
+      "size_bytes": 74212,
+      "status": "valid",
+      "error": "",
+      "warnings": [],
+      "session_count": 1,
+      "is_workout": true,
+      "workout_start_utc": "2026-10-20T12:06:18+00:00",
+      "date_source": "session.start_time",
+      "record_first_utc": "2026-10-20T12:06:18+00:00",
+      "record_last_utc": "2026-10-20T12:39:11+00:00",
+      "file_type": "activity"
+    },
+    {
+      "file": "2026-10-21-061820-Outdoor Running-Shawn’s Apple Watch.fit",
+      "size_bytes": 136196,
+      "status": "valid",
+      "error": "",
+      "warnings": [],
+      "session_count": 1,
+      "is_workout": true,
+      "workout_start_utc": "2026-10-21T11:18:20+00:00",
+      "date_source": "session.start_time",
+      "record_first_utc": "2026-10-21T11:18:20+00:00",
+      "record_last_utc": "2026-10-21T12:12:36+00:00",
+      "file_type": "activity"
     }
   ],
   "messages": [
@@ -6292,97 +6404,97 @@
       "message_number": 0,
       "message_type": "file_id",
       "level": "metadata",
-      "occurrences": 446,
-      "files_present": 446,
-      "workouts_present": 446
+      "occurrences": 454,
+      "files_present": 454,
+      "workouts_present": 454
     },
     {
       "message_number": 12,
       "message_type": "sport",
       "level": "metadata",
-      "occurrences": 446,
-      "files_present": 446,
-      "workouts_present": 446
+      "occurrences": 454,
+      "files_present": 454,
+      "workouts_present": 454
     },
     {
       "message_number": 18,
       "message_type": "session",
       "level": "workout_session",
-      "occurrences": 446,
-      "files_present": 446,
-      "workouts_present": 446
+      "occurrences": 454,
+      "files_present": 454,
+      "workouts_present": 454
     },
     {
       "message_number": 19,
       "message_type": "lap",
       "level": "lap",
-      "occurrences": 3046,
-      "files_present": 444,
-      "workouts_present": 444
+      "occurrences": 3074,
+      "files_present": 451,
+      "workouts_present": 451
     },
     {
       "message_number": 20,
       "message_type": "record",
       "level": "timestamped_record",
-      "occurrences": 1004111,
-      "files_present": 446,
-      "workouts_present": 446
+      "occurrences": 1017665,
+      "files_present": 454,
+      "workouts_present": 454
     },
     {
       "message_number": 21,
       "message_type": "event",
       "level": "other_timestamped",
-      "occurrences": 1202,
-      "files_present": 446,
-      "workouts_present": 446
+      "occurrences": 1218,
+      "files_present": 454,
+      "workouts_present": 454
     },
     {
       "message_number": 23,
       "message_type": "device_info",
       "level": "metadata",
-      "occurrences": 446,
-      "files_present": 446,
-      "workouts_present": 446
+      "occurrences": 454,
+      "files_present": 454,
+      "workouts_present": 454
     },
     {
       "message_number": 34,
       "message_type": "activity",
       "level": "workout_session",
-      "occurrences": 446,
-      "files_present": 446,
-      "workouts_present": 446
+      "occurrences": 454,
+      "files_present": 454,
+      "workouts_present": 454
     },
     {
       "message_number": 49,
       "message_type": "file_creator",
       "level": "metadata",
-      "occurrences": 446,
-      "files_present": 446,
-      "workouts_present": 446
+      "occurrences": 454,
+      "files_present": 454,
+      "workouts_present": 454
     },
     {
       "message_number": 206,
       "message_type": "field_description",
       "level": "metadata",
-      "occurrences": 2676,
-      "files_present": 446,
-      "workouts_present": 446
+      "occurrences": 2724,
+      "files_present": 454,
+      "workouts_present": 454
     },
     {
       "message_number": 207,
       "message_type": "developer_data_id",
       "level": "metadata",
-      "occurrences": 446,
-      "files_present": 446,
-      "workouts_present": 446
+      "occurrences": 454,
+      "files_present": 454,
+      "workouts_present": 454
     },
     {
       "message_number": 216,
       "message_type": "time_in_zone",
       "level": "other_timestamped",
-      "occurrences": 441,
-      "files_present": 441,
-      "workouts_present": 441
+      "occurrences": 449,
+      "files_present": 449,
+      "workouts_present": 449
     }
   ],
   "fields": [
@@ -6394,12 +6506,12 @@
       "field_name": "type",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "file"
@@ -6414,12 +6526,12 @@
       "field_name": "manufacturer",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "manufacturer"
@@ -6434,12 +6546,12 @@
       "field_name": "serial_number",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "uint32z"
@@ -6454,12 +6566,12 @@
       "field_name": "time_created",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "date_time"
@@ -6474,12 +6586,12 @@
       "field_name": "product_name",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "string"
@@ -6494,12 +6606,12 @@
       "field_name": "sport",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "sport"
@@ -6514,12 +6626,12 @@
       "field_name": "sub_sport",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "sub_sport"
@@ -6534,12 +6646,12 @@
       "field_name": "name",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "string"
@@ -6554,12 +6666,12 @@
       "field_name": "SESSION UUID",
       "developer_data_index": 0,
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "uint8"
@@ -6574,12 +6686,12 @@
       "field_name": "SESSION INDOOR",
       "developer_data_index": 0,
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "uint8"
@@ -6594,12 +6706,12 @@
       "field_name": "event_type",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "event_type"
@@ -6614,19 +6726,19 @@
       "field_name": "total_strides",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 444,
-      "non_null_occurrences": 444,
-      "files_present": 444,
-      "files_with_values": 444,
-      "workouts_present": 444,
-      "workouts_with_values": 444,
+      "occurrences": 452,
+      "non_null_occurrences": 452,
+      "files_present": 452,
+      "files_with_values": 452,
+      "workouts_present": 452,
+      "workouts_with_values": 452,
       "units": [
         "strides"
       ],
       "types": [
         "uint32"
       ],
-      "workout_coverage_pct": 99.552
+      "workout_coverage_pct": 99.559
     },
     {
       "message_number": 18,
@@ -6636,12 +6748,12 @@
       "field_name": "total_calories",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [
         "kcal"
       ],
@@ -6658,19 +6770,19 @@
       "field_name": "enhanced_avg_speed",
       "developer_data_index": "",
       "is_expanded": true,
-      "occurrences": 445,
-      "non_null_occurrences": 445,
-      "files_present": 445,
-      "files_with_values": 445,
-      "workouts_present": 445,
-      "workouts_with_values": 445,
+      "occurrences": 453,
+      "non_null_occurrences": 453,
+      "files_present": 453,
+      "files_with_values": 453,
+      "workouts_present": 453,
+      "workouts_with_values": 453,
       "units": [
         "m/s"
       ],
       "types": [
         "uint32"
       ],
-      "workout_coverage_pct": 99.776
+      "workout_coverage_pct": 99.78
     },
     {
       "message_number": 18,
@@ -6680,19 +6792,19 @@
       "field_name": "enhanced_max_speed",
       "developer_data_index": "",
       "is_expanded": true,
-      "occurrences": 444,
-      "non_null_occurrences": 444,
-      "files_present": 444,
-      "files_with_values": 444,
-      "workouts_present": 444,
-      "workouts_with_values": 444,
+      "occurrences": 452,
+      "non_null_occurrences": 452,
+      "files_present": 452,
+      "files_with_values": 452,
+      "workouts_present": 452,
+      "workouts_with_values": 452,
       "units": [
         "m/s"
       ],
       "types": [
         "uint32"
       ],
-      "workout_coverage_pct": 99.552
+      "workout_coverage_pct": 99.559
     },
     {
       "message_number": 18,
@@ -6702,19 +6814,19 @@
       "field_name": "enhanced_avg_altitude",
       "developer_data_index": "",
       "is_expanded": true,
-      "occurrences": 445,
-      "non_null_occurrences": 445,
-      "files_present": 445,
-      "files_with_values": 445,
-      "workouts_present": 445,
-      "workouts_with_values": 445,
+      "occurrences": 448,
+      "non_null_occurrences": 448,
+      "files_present": 448,
+      "files_with_values": 448,
+      "workouts_present": 448,
+      "workouts_with_values": 448,
       "units": [
         "m"
       ],
       "types": [
         "uint32"
       ],
-      "workout_coverage_pct": 99.776
+      "workout_coverage_pct": 98.678
     },
     {
       "message_number": 18,
@@ -6724,19 +6836,19 @@
       "field_name": "enhanced_min_altitude",
       "developer_data_index": "",
       "is_expanded": true,
-      "occurrences": 445,
-      "non_null_occurrences": 445,
-      "files_present": 445,
-      "files_with_values": 445,
-      "workouts_present": 445,
-      "workouts_with_values": 445,
+      "occurrences": 448,
+      "non_null_occurrences": 448,
+      "files_present": 448,
+      "files_with_values": 448,
+      "workouts_present": 448,
+      "workouts_with_values": 448,
       "units": [
         "m"
       ],
       "types": [
         "uint32"
       ],
-      "workout_coverage_pct": 99.776
+      "workout_coverage_pct": 98.678
     },
     {
       "message_number": 18,
@@ -6746,19 +6858,19 @@
       "field_name": "enhanced_max_altitude",
       "developer_data_index": "",
       "is_expanded": true,
-      "occurrences": 445,
-      "non_null_occurrences": 445,
-      "files_present": 445,
-      "files_with_values": 445,
-      "workouts_present": 445,
-      "workouts_with_values": 445,
+      "occurrences": 448,
+      "non_null_occurrences": 448,
+      "files_present": 448,
+      "files_with_values": 448,
+      "workouts_present": 448,
+      "workouts_with_values": 448,
       "units": [
         "m"
       ],
       "types": [
         "uint32"
       ],
-      "workout_coverage_pct": 99.776
+      "workout_coverage_pct": 98.678
     },
     {
       "message_number": 18,
@@ -6768,19 +6880,19 @@
       "field_name": "avg_vertical_ratio",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 302,
-      "non_null_occurrences": 302,
-      "files_present": 302,
-      "files_with_values": 302,
-      "workouts_present": 302,
-      "workouts_with_values": 302,
+      "occurrences": 305,
+      "non_null_occurrences": 305,
+      "files_present": 305,
+      "files_with_values": 305,
+      "workouts_present": 305,
+      "workouts_with_values": 305,
       "units": [
         "percent"
       ],
       "types": [
         "uint16"
       ],
-      "workout_coverage_pct": 67.713
+      "workout_coverage_pct": 67.181
     },
     {
       "message_number": 18,
@@ -6790,19 +6902,19 @@
       "field_name": "avg_step_length",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 302,
-      "non_null_occurrences": 302,
-      "files_present": 302,
-      "files_with_values": 302,
-      "workouts_present": 302,
-      "workouts_with_values": 302,
+      "occurrences": 305,
+      "non_null_occurrences": 305,
+      "files_present": 305,
+      "files_with_values": 305,
+      "workouts_present": 305,
+      "workouts_with_values": 305,
       "units": [
         "mm"
       ],
       "types": [
         "uint16"
       ],
-      "workout_coverage_pct": 67.713
+      "workout_coverage_pct": 67.181
     },
     {
       "message_number": 18,
@@ -6812,19 +6924,19 @@
       "field_name": "avg_speed",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 445,
-      "non_null_occurrences": 445,
-      "files_present": 445,
-      "files_with_values": 445,
-      "workouts_present": 445,
-      "workouts_with_values": 445,
+      "occurrences": 453,
+      "non_null_occurrences": 453,
+      "files_present": 453,
+      "files_with_values": 453,
+      "workouts_present": 453,
+      "workouts_with_values": 453,
       "units": [
         "m/s"
       ],
       "types": [
         "uint16"
       ],
-      "workout_coverage_pct": 99.776
+      "workout_coverage_pct": 99.78
     },
     {
       "message_number": 18,
@@ -6834,19 +6946,19 @@
       "field_name": "max_speed",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 444,
-      "non_null_occurrences": 444,
-      "files_present": 444,
-      "files_with_values": 444,
-      "workouts_present": 444,
-      "workouts_with_values": 444,
+      "occurrences": 452,
+      "non_null_occurrences": 452,
+      "files_present": 452,
+      "files_with_values": 452,
+      "workouts_present": 452,
+      "workouts_with_values": 452,
       "units": [
         "m/s"
       ],
       "types": [
         "uint16"
       ],
-      "workout_coverage_pct": 99.552
+      "workout_coverage_pct": 99.559
     },
     {
       "message_number": 18,
@@ -6856,19 +6968,19 @@
       "field_name": "avg_heart_rate",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 442,
-      "non_null_occurrences": 442,
-      "files_present": 442,
-      "files_with_values": 442,
-      "workouts_present": 442,
-      "workouts_with_values": 442,
+      "occurrences": 450,
+      "non_null_occurrences": 450,
+      "files_present": 450,
+      "files_with_values": 450,
+      "workouts_present": 450,
+      "workouts_with_values": 450,
       "units": [
         "bpm"
       ],
       "types": [
         "uint8"
       ],
-      "workout_coverage_pct": 99.103
+      "workout_coverage_pct": 99.119
     },
     {
       "message_number": 18,
@@ -6878,17 +6990,17 @@
       "field_name": "training_load_peak",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 441,
-      "non_null_occurrences": 441,
-      "files_present": 441,
-      "files_with_values": 441,
-      "workouts_present": 441,
-      "workouts_with_values": 441,
+      "occurrences": 449,
+      "non_null_occurrences": 449,
+      "files_present": 449,
+      "files_with_values": 449,
+      "workouts_present": 449,
+      "workouts_with_values": 449,
       "units": [],
       "types": [
         "sint32"
       ],
-      "workout_coverage_pct": 98.879
+      "workout_coverage_pct": 98.899
     },
     {
       "message_number": 18,
@@ -6898,19 +7010,19 @@
       "field_name": "max_heart_rate",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 442,
-      "non_null_occurrences": 442,
-      "files_present": 442,
-      "files_with_values": 442,
-      "workouts_present": 442,
-      "workouts_with_values": 442,
+      "occurrences": 450,
+      "non_null_occurrences": 450,
+      "files_present": 450,
+      "files_with_values": 450,
+      "workouts_present": 450,
+      "workouts_with_values": 450,
       "units": [
         "bpm"
       ],
       "types": [
         "uint8"
       ],
-      "workout_coverage_pct": 99.103
+      "workout_coverage_pct": 99.119
     },
     {
       "message_number": 18,
@@ -6920,19 +7032,19 @@
       "field_name": "avg_running_cadence",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 444,
-      "non_null_occurrences": 444,
-      "files_present": 444,
-      "files_with_values": 444,
-      "workouts_present": 444,
-      "workouts_with_values": 444,
+      "occurrences": 452,
+      "non_null_occurrences": 452,
+      "files_present": 452,
+      "files_with_values": 452,
+      "workouts_present": 452,
+      "workouts_with_values": 452,
       "units": [
         "strides/min"
       ],
       "types": [
         "uint8"
       ],
-      "workout_coverage_pct": 99.552
+      "workout_coverage_pct": 99.559
     },
     {
       "message_number": 18,
@@ -6942,19 +7054,19 @@
       "field_name": "max_running_cadence",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 444,
-      "non_null_occurrences": 444,
-      "files_present": 444,
-      "files_with_values": 444,
-      "workouts_present": 444,
-      "workouts_with_values": 444,
+      "occurrences": 452,
+      "non_null_occurrences": 452,
+      "files_present": 452,
+      "files_with_values": 452,
+      "workouts_present": 452,
+      "workouts_with_values": 452,
       "units": [
         "strides/min"
       ],
       "types": [
         "uint8"
       ],
-      "workout_coverage_pct": 99.552
+      "workout_coverage_pct": 99.559
     },
     {
       "message_number": 18,
@@ -6964,17 +7076,17 @@
       "field_name": "workout_rpe",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 130,
-      "non_null_occurrences": 130,
-      "files_present": 130,
-      "files_with_values": 130,
-      "workouts_present": 130,
-      "workouts_with_values": 130,
+      "occurrences": 137,
+      "non_null_occurrences": 137,
+      "files_present": 137,
+      "files_with_values": 137,
+      "workouts_present": 137,
+      "workouts_with_values": 137,
       "units": [],
       "types": [
         "uint8"
       ],
-      "workout_coverage_pct": 29.148
+      "workout_coverage_pct": 30.176
     },
     {
       "message_number": 18,
@@ -6984,12 +7096,12 @@
       "field_name": "SESSION ACTIVITY TYPE",
       "developer_data_index": 0,
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "uint64"
@@ -7004,12 +7116,12 @@
       "field_name": "start_time",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "date_time"
@@ -7024,19 +7136,19 @@
       "field_name": "avg_power",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 305,
-      "non_null_occurrences": 305,
-      "files_present": 305,
-      "files_with_values": 305,
-      "workouts_present": 305,
-      "workouts_with_values": 305,
+      "occurrences": 308,
+      "non_null_occurrences": 308,
+      "files_present": 308,
+      "files_with_values": 308,
+      "workouts_present": 308,
+      "workouts_with_values": 308,
       "units": [
         "watts"
       ],
       "types": [
         "uint16"
       ],
-      "workout_coverage_pct": 68.386
+      "workout_coverage_pct": 67.841
     },
     {
       "message_number": 18,
@@ -7046,19 +7158,19 @@
       "field_name": "max_power",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 305,
-      "non_null_occurrences": 305,
-      "files_present": 305,
-      "files_with_values": 305,
-      "workouts_present": 305,
-      "workouts_with_values": 305,
+      "occurrences": 308,
+      "non_null_occurrences": 308,
+      "files_present": 308,
+      "files_with_values": 308,
+      "workouts_present": 308,
+      "workouts_with_values": 308,
       "units": [
         "watts"
       ],
       "types": [
         "uint16"
       ],
-      "workout_coverage_pct": 68.386
+      "workout_coverage_pct": 67.841
     },
     {
       "message_number": 18,
@@ -7068,19 +7180,19 @@
       "field_name": "total_ascent",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 362,
-      "non_null_occurrences": 362,
-      "files_present": 362,
-      "files_with_values": 362,
-      "workouts_present": 362,
-      "workouts_with_values": 362,
+      "occurrences": 369,
+      "non_null_occurrences": 369,
+      "files_present": 369,
+      "files_with_values": 369,
+      "workouts_present": 369,
+      "workouts_with_values": 369,
       "units": [
         "m"
       ],
       "types": [
         "uint16"
       ],
-      "workout_coverage_pct": 81.166
+      "workout_coverage_pct": 81.278
     },
     {
       "message_number": 18,
@@ -7090,17 +7202,17 @@
       "field_name": "first_lap_index",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 444,
-      "non_null_occurrences": 444,
-      "files_present": 444,
-      "files_with_values": 444,
-      "workouts_present": 444,
-      "workouts_with_values": 444,
+      "occurrences": 451,
+      "non_null_occurrences": 451,
+      "files_present": 451,
+      "files_with_values": 451,
+      "workouts_present": 451,
+      "workouts_with_values": 451,
       "units": [],
       "types": [
         "uint16"
       ],
-      "workout_coverage_pct": 99.552
+      "workout_coverage_pct": 99.339
     },
     {
       "message_number": 18,
@@ -7110,12 +7222,12 @@
       "field_name": "timestamp",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "date_time"
@@ -7130,12 +7242,12 @@
       "field_name": "message_index",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "message_index"
@@ -7150,17 +7262,17 @@
       "field_name": "num_laps",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 444,
-      "non_null_occurrences": 444,
-      "files_present": 444,
-      "files_with_values": 444,
-      "workouts_present": 444,
-      "workouts_with_values": 444,
+      "occurrences": 451,
+      "non_null_occurrences": 451,
+      "files_present": 451,
+      "files_with_values": 451,
+      "workouts_present": 451,
+      "workouts_with_values": 451,
       "units": [],
       "types": [
         "uint16"
       ],
-      "workout_coverage_pct": 99.552
+      "workout_coverage_pct": 99.339
     },
     {
       "message_number": 18,
@@ -7170,12 +7282,12 @@
       "field_name": "trigger",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "session_trigger"
@@ -7190,19 +7302,19 @@
       "field_name": "nec_lat",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 445,
-      "non_null_occurrences": 445,
-      "files_present": 445,
-      "files_with_values": 445,
-      "workouts_present": 445,
-      "workouts_with_values": 445,
+      "occurrences": 448,
+      "non_null_occurrences": 448,
+      "files_present": 448,
+      "files_with_values": 448,
+      "workouts_present": 448,
+      "workouts_with_values": 448,
       "units": [
         "semicircles"
       ],
       "types": [
         "sint32"
       ],
-      "workout_coverage_pct": 99.776
+      "workout_coverage_pct": 98.678
     },
     {
       "message_number": 18,
@@ -7212,17 +7324,17 @@
       "field_name": "SESSION WEATHER HUMIDITY",
       "developer_data_index": 0,
       "is_expanded": false,
-      "occurrences": 210,
-      "non_null_occurrences": 210,
-      "files_present": 210,
-      "files_with_values": 210,
-      "workouts_present": 210,
-      "workouts_with_values": 210,
+      "occurrences": 218,
+      "non_null_occurrences": 218,
+      "files_present": 218,
+      "files_with_values": 218,
+      "workouts_present": 218,
+      "workouts_with_values": 218,
       "units": [],
       "types": [
         "uint16"
       ],
-      "workout_coverage_pct": 47.085
+      "workout_coverage_pct": 48.018
     },
     {
       "message_number": 18,
@@ -7232,19 +7344,19 @@
       "field_name": "nec_long",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 445,
-      "non_null_occurrences": 445,
-      "files_present": 445,
-      "files_with_values": 445,
-      "workouts_present": 445,
-      "workouts_with_values": 445,
+      "occurrences": 448,
+      "non_null_occurrences": 448,
+      "files_present": 448,
+      "files_with_values": 448,
+      "workouts_present": 448,
+      "workouts_with_values": 448,
       "units": [
         "semicircles"
       ],
       "types": [
         "sint32"
       ],
-      "workout_coverage_pct": 99.776
+      "workout_coverage_pct": 98.678
     },
     {
       "message_number": 18,
@@ -7254,19 +7366,19 @@
       "field_name": "swc_lat",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 445,
-      "non_null_occurrences": 445,
-      "files_present": 445,
-      "files_with_values": 445,
-      "workouts_present": 445,
-      "workouts_with_values": 445,
+      "occurrences": 448,
+      "non_null_occurrences": 448,
+      "files_present": 448,
+      "files_with_values": 448,
+      "workouts_present": 448,
+      "workouts_with_values": 448,
       "units": [
         "semicircles"
       ],
       "types": [
         "sint32"
       ],
-      "workout_coverage_pct": 99.776
+      "workout_coverage_pct": 98.678
     },
     {
       "message_number": 18,
@@ -7276,19 +7388,19 @@
       "field_name": "swc_long",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 445,
-      "non_null_occurrences": 445,
-      "files_present": 445,
-      "files_with_values": 445,
-      "workouts_present": 445,
-      "workouts_with_values": 445,
+      "occurrences": 448,
+      "non_null_occurrences": 448,
+      "files_present": 448,
+      "files_with_values": 448,
+      "workouts_present": 448,
+      "workouts_with_values": 448,
       "units": [
         "semicircles"
       ],
       "types": [
         "sint32"
       ],
-      "workout_coverage_pct": 99.776
+      "workout_coverage_pct": 98.678
     },
     {
       "message_number": 18,
@@ -7298,17 +7410,17 @@
       "field_name": "WORKOUT RPE ESTIMATED",
       "developer_data_index": 0,
       "is_expanded": false,
-      "occurrences": 130,
-      "non_null_occurrences": 130,
-      "files_present": 130,
-      "files_with_values": 130,
-      "workouts_present": 130,
-      "workouts_with_values": 130,
+      "occurrences": 137,
+      "non_null_occurrences": 137,
+      "files_present": 137,
+      "files_with_values": 137,
+      "workouts_present": 137,
+      "workouts_with_values": 137,
       "units": [],
       "types": [
         "uint8"
       ],
-      "workout_coverage_pct": 29.148
+      "workout_coverage_pct": 30.176
     },
     {
       "message_number": 18,
@@ -7318,19 +7430,19 @@
       "field_name": "avg_altitude",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 445,
-      "non_null_occurrences": 445,
-      "files_present": 445,
-      "files_with_values": 445,
-      "workouts_present": 445,
-      "workouts_with_values": 445,
+      "occurrences": 448,
+      "non_null_occurrences": 448,
+      "files_present": 448,
+      "files_with_values": 448,
+      "workouts_present": 448,
+      "workouts_with_values": 448,
       "units": [
         "m"
       ],
       "types": [
         "uint16"
       ],
-      "workout_coverage_pct": 99.776
+      "workout_coverage_pct": 98.678
     },
     {
       "message_number": 18,
@@ -7340,12 +7452,12 @@
       "field_name": "sport",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "sport"
@@ -7360,19 +7472,19 @@
       "field_name": "max_altitude",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 445,
-      "non_null_occurrences": 445,
-      "files_present": 445,
-      "files_with_values": 445,
-      "workouts_present": 445,
-      "workouts_with_values": 445,
+      "occurrences": 448,
+      "non_null_occurrences": 448,
+      "files_present": 448,
+      "files_with_values": 448,
+      "workouts_present": 448,
+      "workouts_with_values": 448,
       "units": [
         "m"
       ],
       "types": [
         "uint16"
       ],
-      "workout_coverage_pct": 99.776
+      "workout_coverage_pct": 98.678
     },
     {
       "message_number": 18,
@@ -7382,19 +7494,19 @@
       "field_name": "avg_temperature",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 210,
-      "non_null_occurrences": 210,
-      "files_present": 210,
-      "files_with_values": 210,
-      "workouts_present": 210,
-      "workouts_with_values": 210,
+      "occurrences": 218,
+      "non_null_occurrences": 218,
+      "files_present": 218,
+      "files_with_values": 218,
+      "workouts_present": 218,
+      "workouts_with_values": 218,
       "units": [
         "C"
       ],
       "types": [
         "sint8"
       ],
-      "workout_coverage_pct": 47.085
+      "workout_coverage_pct": 48.018
     },
     {
       "message_number": 18,
@@ -7404,17 +7516,17 @@
       "field_name": "AVG METs",
       "developer_data_index": 0,
       "is_expanded": false,
-      "occurrences": 445,
-      "non_null_occurrences": 445,
-      "files_present": 445,
-      "files_with_values": 445,
-      "workouts_present": 445,
-      "workouts_with_values": 445,
+      "occurrences": 453,
+      "non_null_occurrences": 453,
+      "files_present": 453,
+      "files_with_values": 453,
+      "workouts_present": 453,
+      "workouts_with_values": 453,
       "units": [],
       "types": [
         "uint16"
       ],
-      "workout_coverage_pct": 99.776
+      "workout_coverage_pct": 99.78
     },
     {
       "message_number": 18,
@@ -7424,12 +7536,12 @@
       "field_name": "sub_sport",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "sub_sport"
@@ -7444,19 +7556,19 @@
       "field_name": "min_heart_rate",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 442,
-      "non_null_occurrences": 442,
-      "files_present": 442,
-      "files_with_values": 442,
-      "workouts_present": 442,
-      "workouts_with_values": 442,
+      "occurrences": 450,
+      "non_null_occurrences": 450,
+      "files_present": 450,
+      "files_with_values": 450,
+      "workouts_present": 450,
+      "workouts_with_values": 450,
       "units": [
         "bpm"
       ],
       "types": [
         "uint8"
       ],
-      "workout_coverage_pct": 99.103
+      "workout_coverage_pct": 99.119
     },
     {
       "message_number": 18,
@@ -7466,12 +7578,12 @@
       "field_name": "total_elapsed_time",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [
         "s"
       ],
@@ -7488,19 +7600,19 @@
       "field_name": "min_altitude",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 445,
-      "non_null_occurrences": 445,
-      "files_present": 445,
-      "files_with_values": 445,
-      "workouts_present": 445,
-      "workouts_with_values": 445,
+      "occurrences": 448,
+      "non_null_occurrences": 448,
+      "files_present": 448,
+      "files_with_values": 448,
+      "workouts_present": 448,
+      "workouts_with_values": 448,
       "units": [
         "m"
       ],
       "types": [
         "uint16"
       ],
-      "workout_coverage_pct": 99.776
+      "workout_coverage_pct": 98.678
     },
     {
       "message_number": 18,
@@ -7510,12 +7622,12 @@
       "field_name": "total_timer_time",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [
         "s"
       ],
@@ -7532,19 +7644,19 @@
       "field_name": "avg_vertical_oscillation",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 302,
-      "non_null_occurrences": 302,
-      "files_present": 302,
-      "files_with_values": 302,
-      "workouts_present": 302,
-      "workouts_with_values": 302,
+      "occurrences": 305,
+      "non_null_occurrences": 305,
+      "files_present": 305,
+      "files_with_values": 305,
+      "workouts_present": 305,
+      "workouts_with_values": 305,
       "units": [
         "mm"
       ],
       "types": [
         "uint16"
       ],
-      "workout_coverage_pct": 67.713
+      "workout_coverage_pct": 67.181
     },
     {
       "message_number": 18,
@@ -7554,19 +7666,19 @@
       "field_name": "total_distance",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 445,
-      "non_null_occurrences": 445,
-      "files_present": 445,
-      "files_with_values": 445,
-      "workouts_present": 445,
-      "workouts_with_values": 445,
+      "occurrences": 453,
+      "non_null_occurrences": 453,
+      "files_present": 453,
+      "files_with_values": 453,
+      "workouts_present": 453,
+      "workouts_with_values": 453,
       "units": [
         "m"
       ],
       "types": [
         "uint32"
       ],
-      "workout_coverage_pct": 99.776
+      "workout_coverage_pct": 99.78
     },
     {
       "message_number": 18,
@@ -7576,19 +7688,19 @@
       "field_name": "avg_stance_time",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 302,
-      "non_null_occurrences": 302,
-      "files_present": 302,
-      "files_with_values": 302,
-      "workouts_present": 302,
-      "workouts_with_values": 302,
+      "occurrences": 305,
+      "non_null_occurrences": 305,
+      "files_present": 305,
+      "files_with_values": 305,
+      "workouts_present": 305,
+      "workouts_with_values": 305,
       "units": [
         "ms"
       ],
       "types": [
         "uint16"
       ],
-      "workout_coverage_pct": 67.713
+      "workout_coverage_pct": 67.181
     },
     {
       "message_number": 18,
@@ -7598,19 +7710,19 @@
       "field_name": "avg_fractional_cadence",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 444,
-      "non_null_occurrences": 444,
-      "files_present": 444,
-      "files_with_values": 444,
-      "workouts_present": 444,
-      "workouts_with_values": 444,
+      "occurrences": 452,
+      "non_null_occurrences": 452,
+      "files_present": 452,
+      "files_with_values": 452,
+      "workouts_present": 452,
+      "workouts_with_values": 452,
       "units": [
         "rpm"
       ],
       "types": [
         "uint8"
       ],
-      "workout_coverage_pct": 99.552
+      "workout_coverage_pct": 99.559
     },
     {
       "message_number": 18,
@@ -7620,19 +7732,19 @@
       "field_name": "max_fractional_cadence",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 444,
-      "non_null_occurrences": 444,
-      "files_present": 444,
-      "files_with_values": 444,
-      "workouts_present": 444,
-      "workouts_with_values": 444,
+      "occurrences": 452,
+      "non_null_occurrences": 452,
+      "files_present": 452,
+      "files_with_values": 452,
+      "workouts_present": 452,
+      "workouts_with_values": 452,
       "units": [
         "rpm"
       ],
       "types": [
         "uint8"
       ],
-      "workout_coverage_pct": 99.552
+      "workout_coverage_pct": 99.559
     },
     {
       "message_number": 19,
@@ -7642,17 +7754,17 @@
       "field_name": "event",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 3046,
-      "non_null_occurrences": 3046,
-      "files_present": 444,
-      "files_with_values": 444,
-      "workouts_present": 444,
-      "workouts_with_values": 444,
+      "occurrences": 3074,
+      "non_null_occurrences": 3074,
+      "files_present": 451,
+      "files_with_values": 451,
+      "workouts_present": 451,
+      "workouts_with_values": 451,
       "units": [],
       "types": [
         "event"
       ],
-      "workout_coverage_pct": 99.552
+      "workout_coverage_pct": 99.339
     },
     {
       "message_number": 19,
@@ -7662,17 +7774,17 @@
       "field_name": "event_type",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 3046,
-      "non_null_occurrences": 3046,
-      "files_present": 444,
-      "files_with_values": 444,
-      "workouts_present": 444,
-      "workouts_with_values": 444,
+      "occurrences": 3074,
+      "non_null_occurrences": 3074,
+      "files_present": 451,
+      "files_with_values": 451,
+      "workouts_present": 451,
+      "workouts_with_values": 451,
       "units": [],
       "types": [
         "event_type"
       ],
-      "workout_coverage_pct": 99.552
+      "workout_coverage_pct": 99.339
     },
     {
       "message_number": 19,
@@ -7682,19 +7794,19 @@
       "field_name": "total_strides",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 3043,
-      "non_null_occurrences": 3043,
-      "files_present": 442,
-      "files_with_values": 442,
-      "workouts_present": 442,
-      "workouts_with_values": 442,
+      "occurrences": 3071,
+      "non_null_occurrences": 3071,
+      "files_present": 449,
+      "files_with_values": 449,
+      "workouts_present": 449,
+      "workouts_with_values": 449,
       "units": [
         "strides"
       ],
       "types": [
         "uint32"
       ],
-      "workout_coverage_pct": 99.103
+      "workout_coverage_pct": 98.899
     },
     {
       "message_number": 19,
@@ -7704,19 +7816,19 @@
       "field_name": "total_calories",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 3046,
-      "non_null_occurrences": 3046,
-      "files_present": 444,
-      "files_with_values": 444,
-      "workouts_present": 444,
-      "workouts_with_values": 444,
+      "occurrences": 3074,
+      "non_null_occurrences": 3074,
+      "files_present": 451,
+      "files_with_values": 451,
+      "workouts_present": 451,
+      "workouts_with_values": 451,
       "units": [
         "kcal"
       ],
       "types": [
         "uint16"
       ],
-      "workout_coverage_pct": 99.552
+      "workout_coverage_pct": 99.339
     },
     {
       "message_number": 19,
@@ -7726,19 +7838,19 @@
       "field_name": "enhanced_avg_speed",
       "developer_data_index": "",
       "is_expanded": true,
-      "occurrences": 5037,
-      "non_null_occurrences": 5037,
-      "files_present": 442,
-      "files_with_values": 442,
-      "workouts_present": 442,
-      "workouts_with_values": 442,
+      "occurrences": 5083,
+      "non_null_occurrences": 5083,
+      "files_present": 449,
+      "files_with_values": 449,
+      "workouts_present": 449,
+      "workouts_with_values": 449,
       "units": [
         "m/s"
       ],
       "types": [
         "uint32"
       ],
-      "workout_coverage_pct": 99.103
+      "workout_coverage_pct": 98.899
     },
     {
       "message_number": 19,
@@ -7748,19 +7860,19 @@
       "field_name": "enhanced_max_speed",
       "developer_data_index": "",
       "is_expanded": true,
-      "occurrences": 2035,
-      "non_null_occurrences": 2035,
-      "files_present": 305,
-      "files_with_values": 305,
-      "workouts_present": 305,
-      "workouts_with_values": 305,
+      "occurrences": 2053,
+      "non_null_occurrences": 2053,
+      "files_present": 308,
+      "files_with_values": 308,
+      "workouts_present": 308,
+      "workouts_with_values": 308,
       "units": [
         "m/s"
       ],
       "types": [
         "uint32"
       ],
-      "workout_coverage_pct": 68.386
+      "workout_coverage_pct": 67.841
     },
     {
       "message_number": 19,
@@ -7770,19 +7882,19 @@
       "field_name": "avg_vertical_ratio",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 1991,
-      "non_null_occurrences": 1991,
-      "files_present": 302,
-      "files_with_values": 302,
-      "workouts_present": 302,
-      "workouts_with_values": 302,
+      "occurrences": 2008,
+      "non_null_occurrences": 2008,
+      "files_present": 305,
+      "files_with_values": 305,
+      "workouts_present": 305,
+      "workouts_with_values": 305,
       "units": [
         "percent"
       ],
       "types": [
         "uint16"
       ],
-      "workout_coverage_pct": 67.713
+      "workout_coverage_pct": 67.181
     },
     {
       "message_number": 19,
@@ -7792,19 +7904,19 @@
       "field_name": "avg_step_length",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 2000,
-      "non_null_occurrences": 2000,
-      "files_present": 302,
-      "files_with_values": 302,
-      "workouts_present": 302,
-      "workouts_with_values": 302,
+      "occurrences": 2017,
+      "non_null_occurrences": 2017,
+      "files_present": 305,
+      "files_with_values": 305,
+      "workouts_present": 305,
+      "workouts_with_values": 305,
       "units": [
         "mm"
       ],
       "types": [
         "uint16"
       ],
-      "workout_coverage_pct": 67.713
+      "workout_coverage_pct": 67.181
     },
     {
       "message_number": 19,
@@ -7814,19 +7926,19 @@
       "field_name": "avg_speed",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 5037,
-      "non_null_occurrences": 5037,
-      "files_present": 442,
-      "files_with_values": 442,
-      "workouts_present": 442,
-      "workouts_with_values": 442,
+      "occurrences": 5083,
+      "non_null_occurrences": 5083,
+      "files_present": 449,
+      "files_with_values": 449,
+      "workouts_present": 449,
+      "workouts_with_values": 449,
       "units": [
         "m/s"
       ],
       "types": [
         "uint16"
       ],
-      "workout_coverage_pct": 99.103
+      "workout_coverage_pct": 98.899
     },
     {
       "message_number": 19,
@@ -7836,19 +7948,19 @@
       "field_name": "max_speed",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 2035,
-      "non_null_occurrences": 2035,
-      "files_present": 305,
-      "files_with_values": 305,
-      "workouts_present": 305,
-      "workouts_with_values": 305,
+      "occurrences": 2053,
+      "non_null_occurrences": 2053,
+      "files_present": 308,
+      "files_with_values": 308,
+      "workouts_present": 308,
+      "workouts_with_values": 308,
       "units": [
         "m/s"
       ],
       "types": [
         "uint16"
       ],
-      "workout_coverage_pct": 68.386
+      "workout_coverage_pct": 67.841
     },
     {
       "message_number": 19,
@@ -7858,19 +7970,19 @@
       "field_name": "avg_heart_rate",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 2669,
-      "non_null_occurrences": 2669,
-      "files_present": 440,
-      "files_with_values": 440,
-      "workouts_present": 440,
-      "workouts_with_values": 440,
+      "occurrences": 2697,
+      "non_null_occurrences": 2697,
+      "files_present": 447,
+      "files_with_values": 447,
+      "workouts_present": 447,
+      "workouts_with_values": 447,
       "units": [
         "bpm"
       ],
       "types": [
         "uint8"
       ],
-      "workout_coverage_pct": 98.655
+      "workout_coverage_pct": 98.458
     },
     {
       "message_number": 19,
@@ -7880,19 +7992,19 @@
       "field_name": "max_heart_rate",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 2669,
-      "non_null_occurrences": 2669,
-      "files_present": 440,
-      "files_with_values": 440,
-      "workouts_present": 440,
-      "workouts_with_values": 440,
+      "occurrences": 2697,
+      "non_null_occurrences": 2697,
+      "files_present": 447,
+      "files_with_values": 447,
+      "workouts_present": 447,
+      "workouts_with_values": 447,
       "units": [
         "bpm"
       ],
       "types": [
         "uint8"
       ],
-      "workout_coverage_pct": 98.655
+      "workout_coverage_pct": 98.458
     },
     {
       "message_number": 19,
@@ -7902,19 +8014,19 @@
       "field_name": "avg_running_cadence",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 3043,
-      "non_null_occurrences": 3043,
-      "files_present": 442,
-      "files_with_values": 442,
-      "workouts_present": 442,
-      "workouts_with_values": 442,
+      "occurrences": 3071,
+      "non_null_occurrences": 3071,
+      "files_present": 449,
+      "files_with_values": 449,
+      "workouts_present": 449,
+      "workouts_with_values": 449,
       "units": [
         "strides/min"
       ],
       "types": [
         "uint8"
       ],
-      "workout_coverage_pct": 99.103
+      "workout_coverage_pct": 98.899
     },
     {
       "message_number": 19,
@@ -7924,19 +8036,19 @@
       "field_name": "max_running_cadence",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 3043,
-      "non_null_occurrences": 3043,
-      "files_present": 442,
-      "files_with_values": 442,
-      "workouts_present": 442,
-      "workouts_with_values": 442,
+      "occurrences": 3071,
+      "non_null_occurrences": 3071,
+      "files_present": 449,
+      "files_with_values": 449,
+      "workouts_present": 449,
+      "workouts_with_values": 449,
       "units": [
         "strides/min"
       ],
       "types": [
         "uint8"
       ],
-      "workout_coverage_pct": 99.103
+      "workout_coverage_pct": 98.899
     },
     {
       "message_number": 19,
@@ -7946,19 +8058,19 @@
       "field_name": "avg_power",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 2034,
-      "non_null_occurrences": 2034,
-      "files_present": 304,
-      "files_with_values": 304,
-      "workouts_present": 304,
-      "workouts_with_values": 304,
+      "occurrences": 2052,
+      "non_null_occurrences": 2052,
+      "files_present": 307,
+      "files_with_values": 307,
+      "workouts_present": 307,
+      "workouts_with_values": 307,
       "units": [
         "watts"
       ],
       "types": [
         "uint16"
       ],
-      "workout_coverage_pct": 68.161
+      "workout_coverage_pct": 67.621
     },
     {
       "message_number": 19,
@@ -7968,17 +8080,17 @@
       "field_name": "start_time",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 3046,
-      "non_null_occurrences": 3046,
-      "files_present": 444,
-      "files_with_values": 444,
-      "workouts_present": 444,
-      "workouts_with_values": 444,
+      "occurrences": 3074,
+      "non_null_occurrences": 3074,
+      "files_present": 451,
+      "files_with_values": 451,
+      "workouts_present": 451,
+      "workouts_with_values": 451,
       "units": [],
       "types": [
         "date_time"
       ],
-      "workout_coverage_pct": 99.552
+      "workout_coverage_pct": 99.339
     },
     {
       "message_number": 19,
@@ -7988,19 +8100,19 @@
       "field_name": "max_power",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 2034,
-      "non_null_occurrences": 2034,
-      "files_present": 304,
-      "files_with_values": 304,
-      "workouts_present": 304,
-      "workouts_with_values": 304,
+      "occurrences": 2052,
+      "non_null_occurrences": 2052,
+      "files_present": 307,
+      "files_with_values": 307,
+      "workouts_present": 307,
+      "workouts_with_values": 307,
       "units": [
         "watts"
       ],
       "types": [
         "uint16"
       ],
-      "workout_coverage_pct": 68.161
+      "workout_coverage_pct": 67.621
     },
     {
       "message_number": 19,
@@ -8010,17 +8122,17 @@
       "field_name": "lap_trigger",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 3046,
-      "non_null_occurrences": 3046,
-      "files_present": 444,
-      "files_with_values": 444,
-      "workouts_present": 444,
-      "workouts_with_values": 444,
+      "occurrences": 3074,
+      "non_null_occurrences": 3074,
+      "files_present": 451,
+      "files_with_values": 451,
+      "workouts_present": 451,
+      "workouts_with_values": 451,
       "units": [],
       "types": [
         "lap_trigger"
       ],
-      "workout_coverage_pct": 99.552
+      "workout_coverage_pct": 99.339
     },
     {
       "message_number": 19,
@@ -8030,17 +8142,17 @@
       "field_name": "sport",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 3046,
-      "non_null_occurrences": 3046,
-      "files_present": 444,
-      "files_with_values": 444,
-      "workouts_present": 444,
-      "workouts_with_values": 444,
+      "occurrences": 3074,
+      "non_null_occurrences": 3074,
+      "files_present": 451,
+      "files_with_values": 451,
+      "workouts_present": 451,
+      "workouts_with_values": 451,
       "units": [],
       "types": [
         "sport"
       ],
-      "workout_coverage_pct": 99.552
+      "workout_coverage_pct": 99.339
     },
     {
       "message_number": 19,
@@ -8050,17 +8162,17 @@
       "field_name": "timestamp",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 3046,
-      "non_null_occurrences": 3046,
-      "files_present": 444,
-      "files_with_values": 444,
-      "workouts_present": 444,
-      "workouts_with_values": 444,
+      "occurrences": 3074,
+      "non_null_occurrences": 3074,
+      "files_present": 451,
+      "files_with_values": 451,
+      "workouts_present": 451,
+      "workouts_with_values": 451,
       "units": [],
       "types": [
         "date_time"
       ],
-      "workout_coverage_pct": 99.552
+      "workout_coverage_pct": 99.339
     },
     {
       "message_number": 19,
@@ -8070,17 +8182,17 @@
       "field_name": "message_index",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 3046,
-      "non_null_occurrences": 3046,
-      "files_present": 444,
-      "files_with_values": 444,
-      "workouts_present": 444,
-      "workouts_with_values": 444,
+      "occurrences": 3074,
+      "non_null_occurrences": 3074,
+      "files_present": 451,
+      "files_with_values": 451,
+      "workouts_present": 451,
+      "workouts_with_values": 451,
       "units": [],
       "types": [
         "message_index"
       ],
-      "workout_coverage_pct": 99.552
+      "workout_coverage_pct": 99.339
     },
     {
       "message_number": 19,
@@ -8090,17 +8202,17 @@
       "field_name": "sub_sport",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 3046,
-      "non_null_occurrences": 3046,
-      "files_present": 444,
-      "files_with_values": 444,
-      "workouts_present": 444,
-      "workouts_with_values": 444,
+      "occurrences": 3074,
+      "non_null_occurrences": 3074,
+      "files_present": 451,
+      "files_with_values": 451,
+      "workouts_present": 451,
+      "workouts_with_values": 451,
       "units": [],
       "types": [
         "sub_sport"
       ],
-      "workout_coverage_pct": 99.552
+      "workout_coverage_pct": 99.339
     },
     {
       "message_number": 19,
@@ -8110,19 +8222,19 @@
       "field_name": "min_heart_rate",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 2669,
-      "non_null_occurrences": 2669,
-      "files_present": 440,
-      "files_with_values": 440,
-      "workouts_present": 440,
-      "workouts_with_values": 440,
+      "occurrences": 2697,
+      "non_null_occurrences": 2697,
+      "files_present": 447,
+      "files_with_values": 447,
+      "workouts_present": 447,
+      "workouts_with_values": 447,
       "units": [
         "bpm"
       ],
       "types": [
         "uint8"
       ],
-      "workout_coverage_pct": 98.655
+      "workout_coverage_pct": 98.458
     },
     {
       "message_number": 19,
@@ -8132,19 +8244,19 @@
       "field_name": "total_elapsed_time",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 3046,
-      "non_null_occurrences": 3046,
-      "files_present": 444,
-      "files_with_values": 444,
-      "workouts_present": 444,
-      "workouts_with_values": 444,
+      "occurrences": 3074,
+      "non_null_occurrences": 3074,
+      "files_present": 451,
+      "files_with_values": 451,
+      "workouts_present": 451,
+      "workouts_with_values": 451,
       "units": [
         "s"
       ],
       "types": [
         "uint32"
       ],
-      "workout_coverage_pct": 99.552
+      "workout_coverage_pct": 99.339
     },
     {
       "message_number": 19,
@@ -8154,19 +8266,19 @@
       "field_name": "avg_vertical_oscillation",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 1993,
-      "non_null_occurrences": 1993,
-      "files_present": 302,
-      "files_with_values": 302,
-      "workouts_present": 302,
-      "workouts_with_values": 302,
+      "occurrences": 2010,
+      "non_null_occurrences": 2010,
+      "files_present": 305,
+      "files_with_values": 305,
+      "workouts_present": 305,
+      "workouts_with_values": 305,
       "units": [
         "mm"
       ],
       "types": [
         "uint16"
       ],
-      "workout_coverage_pct": 67.713
+      "workout_coverage_pct": 67.181
     },
     {
       "message_number": 19,
@@ -8176,19 +8288,19 @@
       "field_name": "avg_stance_time",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 2003,
-      "non_null_occurrences": 2003,
-      "files_present": 302,
-      "files_with_values": 302,
-      "workouts_present": 302,
-      "workouts_with_values": 302,
+      "occurrences": 2021,
+      "non_null_occurrences": 2021,
+      "files_present": 305,
+      "files_with_values": 305,
+      "workouts_present": 305,
+      "workouts_with_values": 305,
       "units": [
         "ms"
       ],
       "types": [
         "uint16"
       ],
-      "workout_coverage_pct": 67.713
+      "workout_coverage_pct": 67.181
     },
     {
       "message_number": 19,
@@ -8198,19 +8310,19 @@
       "field_name": "total_timer_time",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 3046,
-      "non_null_occurrences": 3046,
-      "files_present": 444,
-      "files_with_values": 444,
-      "workouts_present": 444,
-      "workouts_with_values": 444,
+      "occurrences": 3074,
+      "non_null_occurrences": 3074,
+      "files_present": 451,
+      "files_with_values": 451,
+      "workouts_present": 451,
+      "workouts_with_values": 451,
       "units": [
         "s"
       ],
       "types": [
         "uint32"
       ],
-      "workout_coverage_pct": 99.552
+      "workout_coverage_pct": 99.339
     },
     {
       "message_number": 19,
@@ -8220,19 +8332,19 @@
       "field_name": "avg_fractional_cadence",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 3043,
-      "non_null_occurrences": 3043,
-      "files_present": 442,
-      "files_with_values": 442,
-      "workouts_present": 442,
-      "workouts_with_values": 442,
+      "occurrences": 3071,
+      "non_null_occurrences": 3071,
+      "files_present": 449,
+      "files_with_values": 449,
+      "workouts_present": 449,
+      "workouts_with_values": 449,
       "units": [
         "rpm"
       ],
       "types": [
         "uint8"
       ],
-      "workout_coverage_pct": 99.103
+      "workout_coverage_pct": 98.899
     },
     {
       "message_number": 19,
@@ -8242,19 +8354,19 @@
       "field_name": "max_fractional_cadence",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 3043,
-      "non_null_occurrences": 3043,
-      "files_present": 442,
-      "files_with_values": 442,
-      "workouts_present": 442,
-      "workouts_with_values": 442,
+      "occurrences": 3071,
+      "non_null_occurrences": 3071,
+      "files_present": 449,
+      "files_with_values": 449,
+      "workouts_present": 449,
+      "workouts_with_values": 449,
       "units": [
         "rpm"
       ],
       "types": [
         "uint8"
       ],
-      "workout_coverage_pct": 99.103
+      "workout_coverage_pct": 98.899
     },
     {
       "message_number": 19,
@@ -8264,19 +8376,19 @@
       "field_name": "total_distance",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 3044,
-      "non_null_occurrences": 3044,
-      "files_present": 442,
-      "files_with_values": 442,
-      "workouts_present": 442,
-      "workouts_with_values": 442,
+      "occurrences": 3072,
+      "non_null_occurrences": 3072,
+      "files_present": 449,
+      "files_with_values": 449,
+      "workouts_present": 449,
+      "workouts_with_values": 449,
       "units": [
         "m"
       ],
       "types": [
         "uint32"
       ],
-      "workout_coverage_pct": 99.103
+      "workout_coverage_pct": 98.899
     },
     {
       "message_number": 20,
@@ -8286,19 +8398,19 @@
       "field_name": "position_lat",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 999483,
-      "non_null_occurrences": 999483,
-      "files_present": 445,
-      "files_with_values": 445,
-      "workouts_present": 445,
-      "workouts_with_values": 445,
+      "occurrences": 1008101,
+      "non_null_occurrences": 1008101,
+      "files_present": 448,
+      "files_with_values": 448,
+      "workouts_present": 448,
+      "workouts_with_values": 448,
       "units": [
         "semicircles"
       ],
       "types": [
         "sint32"
       ],
-      "workout_coverage_pct": 99.776
+      "workout_coverage_pct": 98.678
     },
     {
       "message_number": 20,
@@ -8308,19 +8420,19 @@
       "field_name": "position_long",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 999483,
-      "non_null_occurrences": 999483,
-      "files_present": 445,
-      "files_with_values": 445,
-      "workouts_present": 445,
-      "workouts_with_values": 445,
+      "occurrences": 1008101,
+      "non_null_occurrences": 1008101,
+      "files_present": 448,
+      "files_with_values": 448,
+      "workouts_present": 448,
+      "workouts_with_values": 448,
       "units": [
         "semicircles"
       ],
       "types": [
         "sint32"
       ],
-      "workout_coverage_pct": 99.776
+      "workout_coverage_pct": 98.678
     },
     {
       "message_number": 20,
@@ -8330,19 +8442,19 @@
       "field_name": "altitude",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 998603,
-      "non_null_occurrences": 998603,
-      "files_present": 445,
-      "files_with_values": 445,
-      "workouts_present": 445,
-      "workouts_with_values": 445,
+      "occurrences": 1007221,
+      "non_null_occurrences": 1007221,
+      "files_present": 448,
+      "files_with_values": 448,
+      "workouts_present": 448,
+      "workouts_with_values": 448,
       "units": [
         "m"
       ],
       "types": [
         "uint16"
       ],
-      "workout_coverage_pct": 99.776
+      "workout_coverage_pct": 98.678
     },
     {
       "message_number": 20,
@@ -8352,12 +8464,12 @@
       "field_name": "timestamp",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 1004111,
-      "non_null_occurrences": 1004111,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 1017665,
+      "non_null_occurrences": 1017665,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "date_time"
@@ -8372,19 +8484,19 @@
       "field_name": "accumulated_power",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 660257,
-      "non_null_occurrences": 660257,
-      "files_present": 307,
-      "files_with_values": 307,
-      "workouts_present": 307,
-      "workouts_with_values": 307,
+      "occurrences": 668862,
+      "non_null_occurrences": 668862,
+      "files_present": 310,
+      "files_with_values": 310,
+      "workouts_present": 310,
+      "workouts_with_values": 310,
       "units": [
         "watts"
       ],
       "types": [
         "uint32"
       ],
-      "workout_coverage_pct": 68.834
+      "workout_coverage_pct": 68.282
     },
     {
       "message_number": 20,
@@ -8394,19 +8506,19 @@
       "field_name": "heart_rate",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 655725,
-      "non_null_occurrences": 655725,
-      "files_present": 441,
-      "files_with_values": 441,
-      "workouts_present": 441,
-      "workouts_with_values": 441,
+      "occurrences": 668355,
+      "non_null_occurrences": 668355,
+      "files_present": 449,
+      "files_with_values": 449,
+      "workouts_present": 449,
+      "workouts_with_values": 449,
       "units": [
         "bpm"
       ],
       "types": [
         "uint8"
       ],
-      "workout_coverage_pct": 98.879
+      "workout_coverage_pct": 98.899
     },
     {
       "message_number": 20,
@@ -8416,19 +8528,19 @@
       "field_name": "gps_accuracy",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 999483,
-      "non_null_occurrences": 999483,
-      "files_present": 445,
-      "files_with_values": 445,
-      "workouts_present": 445,
-      "workouts_with_values": 445,
+      "occurrences": 1008101,
+      "non_null_occurrences": 1008101,
+      "files_present": 448,
+      "files_with_values": 448,
+      "workouts_present": 448,
+      "workouts_with_values": 448,
       "units": [
         "m"
       ],
       "types": [
         "uint8"
       ],
-      "workout_coverage_pct": 99.776
+      "workout_coverage_pct": 98.678
     },
     {
       "message_number": 20,
@@ -8438,19 +8550,19 @@
       "field_name": "vertical_oscillation",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 597037,
-      "non_null_occurrences": 597037,
-      "files_present": 302,
-      "files_with_values": 302,
-      "workouts_present": 302,
-      "workouts_with_values": 302,
+      "occurrences": 604307,
+      "non_null_occurrences": 604307,
+      "files_present": 305,
+      "files_with_values": 305,
+      "workouts_present": 305,
+      "workouts_with_values": 305,
       "units": [
         "mm"
       ],
       "types": [
         "uint16"
       ],
-      "workout_coverage_pct": 67.713
+      "workout_coverage_pct": 67.181
     },
     {
       "message_number": 20,
@@ -8460,19 +8572,19 @@
       "field_name": "cadence",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 984440,
-      "non_null_occurrences": 984440,
-      "files_present": 444,
-      "files_with_values": 444,
-      "workouts_present": 444,
-      "workouts_with_values": 444,
+      "occurrences": 997885,
+      "non_null_occurrences": 997885,
+      "files_present": 452,
+      "files_with_values": 452,
+      "workouts_present": 452,
+      "workouts_with_values": 452,
       "units": [
         "rpm"
       ],
       "types": [
         "uint8"
       ],
-      "workout_coverage_pct": 99.552
+      "workout_coverage_pct": 99.559
     },
     {
       "message_number": 20,
@@ -8482,19 +8594,19 @@
       "field_name": "stance_time",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 593784,
-      "non_null_occurrences": 593784,
-      "files_present": 302,
-      "files_with_values": 302,
-      "workouts_present": 302,
-      "workouts_with_values": 302,
+      "occurrences": 600993,
+      "non_null_occurrences": 600993,
+      "files_present": 305,
+      "files_with_values": 305,
+      "workouts_present": 305,
+      "workouts_with_values": 305,
       "units": [
         "ms"
       ],
       "types": [
         "uint16"
       ],
-      "workout_coverage_pct": 67.713
+      "workout_coverage_pct": 67.181
     },
     {
       "message_number": 20,
@@ -8504,19 +8616,19 @@
       "field_name": "distance",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 1003729,
-      "non_null_occurrences": 1003729,
-      "files_present": 445,
-      "files_with_values": 445,
-      "workouts_present": 445,
-      "workouts_with_values": 445,
+      "occurrences": 1017252,
+      "non_null_occurrences": 1017252,
+      "files_present": 453,
+      "files_with_values": 453,
+      "workouts_present": 453,
+      "workouts_with_values": 453,
       "units": [
         "m"
       ],
       "types": [
         "uint32"
       ],
-      "workout_coverage_pct": 99.776
+      "workout_coverage_pct": 99.78
     },
     {
       "message_number": 20,
@@ -8526,19 +8638,19 @@
       "field_name": "fractional_cadence",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 984440,
-      "non_null_occurrences": 984440,
-      "files_present": 444,
-      "files_with_values": 444,
-      "workouts_present": 444,
-      "workouts_with_values": 444,
+      "occurrences": 997885,
+      "non_null_occurrences": 997885,
+      "files_present": 452,
+      "files_with_values": 452,
+      "workouts_present": 452,
+      "workouts_with_values": 452,
       "units": [
         "rpm"
       ],
       "types": [
         "uint8"
       ],
-      "workout_coverage_pct": 99.552
+      "workout_coverage_pct": 99.559
     },
     {
       "message_number": 20,
@@ -8548,19 +8660,19 @@
       "field_name": "power",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 660257,
-      "non_null_occurrences": 660257,
-      "files_present": 307,
-      "files_with_values": 307,
-      "workouts_present": 307,
-      "workouts_with_values": 307,
+      "occurrences": 668862,
+      "non_null_occurrences": 668862,
+      "files_present": 310,
+      "files_with_values": 310,
+      "workouts_present": 310,
+      "workouts_with_values": 310,
       "units": [
         "watts"
       ],
       "types": [
         "uint16"
       ],
-      "workout_coverage_pct": 68.834
+      "workout_coverage_pct": 68.282
     },
     {
       "message_number": 20,
@@ -8570,19 +8682,19 @@
       "field_name": "enhanced_speed",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 973420,
-      "non_null_occurrences": 973420,
-      "files_present": 445,
-      "files_with_values": 445,
-      "workouts_present": 445,
-      "workouts_with_values": 445,
+      "occurrences": 986802,
+      "non_null_occurrences": 986802,
+      "files_present": 453,
+      "files_with_values": 453,
+      "workouts_present": 453,
+      "workouts_with_values": 453,
       "units": [
         "m/s"
       ],
       "types": [
         "uint32"
       ],
-      "workout_coverage_pct": 99.776
+      "workout_coverage_pct": 99.78
     },
     {
       "message_number": 20,
@@ -8592,19 +8704,19 @@
       "field_name": "enhanced_altitude",
       "developer_data_index": "",
       "is_expanded": true,
-      "occurrences": 998603,
-      "non_null_occurrences": 998603,
-      "files_present": 445,
-      "files_with_values": 445,
-      "workouts_present": 445,
-      "workouts_with_values": 445,
+      "occurrences": 1007221,
+      "non_null_occurrences": 1007221,
+      "files_present": 448,
+      "files_with_values": 448,
+      "workouts_present": 448,
+      "workouts_with_values": 448,
       "units": [
         "m"
       ],
       "types": [
         "uint32"
       ],
-      "workout_coverage_pct": 99.776
+      "workout_coverage_pct": 98.678
     },
     {
       "message_number": 20,
@@ -8614,19 +8726,19 @@
       "field_name": "vertical_ratio",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 586691,
-      "non_null_occurrences": 586691,
-      "files_present": 302,
-      "files_with_values": 302,
-      "workouts_present": 302,
-      "workouts_with_values": 302,
+      "occurrences": 593849,
+      "non_null_occurrences": 593849,
+      "files_present": 305,
+      "files_with_values": 305,
+      "workouts_present": 305,
+      "workouts_with_values": 305,
       "units": [
         "percent"
       ],
       "types": [
         "uint16"
       ],
-      "workout_coverage_pct": 67.713
+      "workout_coverage_pct": 67.181
     },
     {
       "message_number": 20,
@@ -8636,19 +8748,19 @@
       "field_name": "step_length",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 594381,
-      "non_null_occurrences": 594381,
-      "files_present": 302,
-      "files_with_values": 302,
-      "workouts_present": 302,
-      "workouts_with_values": 302,
+      "occurrences": 601556,
+      "non_null_occurrences": 601556,
+      "files_present": 305,
+      "files_with_values": 305,
+      "workouts_present": 305,
+      "workouts_with_values": 305,
       "units": [
         "mm"
       ],
       "types": [
         "uint16"
       ],
-      "workout_coverage_pct": 67.713
+      "workout_coverage_pct": 67.181
     },
     {
       "message_number": 206,
@@ -8658,12 +8770,12 @@
       "field_name": "developer_data_index",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 2676,
-      "non_null_occurrences": 2676,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 2724,
+      "non_null_occurrences": 2724,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "uint8"
@@ -8678,12 +8790,12 @@
       "field_name": "field_definition_number",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 2676,
-      "non_null_occurrences": 2676,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 2724,
+      "non_null_occurrences": 2724,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "uint8"
@@ -8698,12 +8810,12 @@
       "field_name": "fit_base_type_id",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 2676,
-      "non_null_occurrences": 2676,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 2724,
+      "non_null_occurrences": 2724,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "fit_base_type"
@@ -8718,12 +8830,12 @@
       "field_name": "field_name",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 2676,
-      "non_null_occurrences": 2676,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 2724,
+      "non_null_occurrences": 2724,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "string"
@@ -8738,12 +8850,12 @@
       "field_name": "array",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "uint8"
@@ -8758,12 +8870,12 @@
       "field_name": "application_id",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "byte"
@@ -8778,12 +8890,12 @@
       "field_name": "developer_data_index",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "uint8"
@@ -8798,12 +8910,12 @@
       "field_name": "application_version",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "uint32"
@@ -8818,12 +8930,12 @@
       "field_name": "event",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 1202,
-      "non_null_occurrences": 1202,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 1218,
+      "non_null_occurrences": 1218,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "event"
@@ -8838,12 +8950,12 @@
       "field_name": "event_type",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 1202,
-      "non_null_occurrences": 1202,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 1218,
+      "non_null_occurrences": 1218,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "event_type"
@@ -8858,12 +8970,12 @@
       "field_name": "timestamp",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 1202,
-      "non_null_occurrences": 1202,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 1218,
+      "non_null_occurrences": 1218,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "date_time"
@@ -8878,12 +8990,12 @@
       "field_name": "data",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "uint32"
@@ -8898,12 +9010,12 @@
       "field_name": "timer_trigger",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 756,
-      "non_null_occurrences": 756,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 764,
+      "non_null_occurrences": 764,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "timer_trigger"
@@ -8918,12 +9030,12 @@
       "field_name": "event_group",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 1202,
-      "non_null_occurrences": 1202,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 1218,
+      "non_null_occurrences": 1218,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "uint8"
@@ -8938,17 +9050,17 @@
       "field_name": "reference_mesg",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 441,
-      "non_null_occurrences": 441,
-      "files_present": 441,
-      "files_with_values": 441,
-      "workouts_present": 441,
-      "workouts_with_values": 441,
+      "occurrences": 449,
+      "non_null_occurrences": 449,
+      "files_present": 449,
+      "files_with_values": 449,
+      "workouts_present": 449,
+      "workouts_with_values": 449,
       "units": [],
       "types": [
         "mesg_num"
       ],
-      "workout_coverage_pct": 98.879
+      "workout_coverage_pct": 98.899
     },
     {
       "message_number": 216,
@@ -8958,17 +9070,17 @@
       "field_name": "reference_index",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 441,
-      "non_null_occurrences": 441,
-      "files_present": 441,
-      "files_with_values": 441,
-      "workouts_present": 441,
-      "workouts_with_values": 441,
+      "occurrences": 449,
+      "non_null_occurrences": 449,
+      "files_present": 449,
+      "files_with_values": 449,
+      "workouts_present": 449,
+      "workouts_with_values": 449,
       "units": [],
       "types": [
         "message_index"
       ],
-      "workout_coverage_pct": 98.879
+      "workout_coverage_pct": 98.899
     },
     {
       "message_number": 216,
@@ -8978,17 +9090,17 @@
       "field_name": "hr_calc_type",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 441,
-      "non_null_occurrences": 441,
-      "files_present": 441,
-      "files_with_values": 441,
-      "workouts_present": 441,
-      "workouts_with_values": 441,
+      "occurrences": 449,
+      "non_null_occurrences": 449,
+      "files_present": 449,
+      "files_with_values": 449,
+      "workouts_present": 449,
+      "workouts_with_values": 449,
       "units": [],
       "types": [
         "hr_zone_calc"
       ],
-      "workout_coverage_pct": 98.879
+      "workout_coverage_pct": 98.899
     },
     {
       "message_number": 216,
@@ -8998,17 +9110,17 @@
       "field_name": "max_heart_rate",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 441,
-      "non_null_occurrences": 441,
-      "files_present": 441,
-      "files_with_values": 441,
-      "workouts_present": 441,
-      "workouts_with_values": 441,
+      "occurrences": 449,
+      "non_null_occurrences": 449,
+      "files_present": 449,
+      "files_with_values": 449,
+      "workouts_present": 449,
+      "workouts_with_values": 449,
       "units": [],
       "types": [
         "uint8"
       ],
-      "workout_coverage_pct": 98.879
+      "workout_coverage_pct": 98.899
     },
     {
       "message_number": 216,
@@ -9018,17 +9130,17 @@
       "field_name": "resting_heart_rate",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 441,
-      "non_null_occurrences": 441,
-      "files_present": 441,
-      "files_with_values": 441,
-      "workouts_present": 441,
-      "workouts_with_values": 441,
+      "occurrences": 449,
+      "non_null_occurrences": 449,
+      "files_present": 449,
+      "files_with_values": 449,
+      "workouts_present": 449,
+      "workouts_with_values": 449,
       "units": [],
       "types": [
         "uint8"
       ],
-      "workout_coverage_pct": 98.879
+      "workout_coverage_pct": 98.899
     },
     {
       "message_number": 216,
@@ -9038,19 +9150,19 @@
       "field_name": "time_in_hr_zone",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 441,
-      "non_null_occurrences": 441,
-      "files_present": 441,
-      "files_with_values": 441,
-      "workouts_present": 441,
-      "workouts_with_values": 441,
+      "occurrences": 449,
+      "non_null_occurrences": 449,
+      "files_present": 449,
+      "files_with_values": 449,
+      "workouts_present": 449,
+      "workouts_with_values": 449,
       "units": [
         "s"
       ],
       "types": [
         "uint32"
       ],
-      "workout_coverage_pct": 98.879
+      "workout_coverage_pct": 98.899
     },
     {
       "message_number": 216,
@@ -9060,17 +9172,17 @@
       "field_name": "timestamp",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 441,
-      "non_null_occurrences": 441,
-      "files_present": 441,
-      "files_with_values": 441,
-      "workouts_present": 441,
-      "workouts_with_values": 441,
+      "occurrences": 449,
+      "non_null_occurrences": 449,
+      "files_present": 449,
+      "files_with_values": 449,
+      "workouts_present": 449,
+      "workouts_with_values": 449,
       "units": [],
       "types": [
         "date_time"
       ],
-      "workout_coverage_pct": 98.879
+      "workout_coverage_pct": 98.899
     },
     {
       "message_number": 216,
@@ -9080,19 +9192,19 @@
       "field_name": "hr_zone_high_boundary",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 441,
-      "non_null_occurrences": 441,
-      "files_present": 441,
-      "files_with_values": 441,
-      "workouts_present": 441,
-      "workouts_with_values": 441,
+      "occurrences": 449,
+      "non_null_occurrences": 449,
+      "files_present": 449,
+      "files_with_values": 449,
+      "workouts_present": 449,
+      "workouts_with_values": 449,
       "units": [
         "bpm"
       ],
       "types": [
         "uint8"
       ],
-      "workout_coverage_pct": 98.879
+      "workout_coverage_pct": 98.899
     },
     {
       "message_number": 23,
@@ -9102,12 +9214,12 @@
       "field_name": "device_index",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "device_index"
@@ -9122,12 +9234,12 @@
       "field_name": "descriptor",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 892,
-      "non_null_occurrences": 892,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 908,
+      "non_null_occurrences": 908,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "string"
@@ -9142,12 +9254,12 @@
       "field_name": "manufacturer",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "manufacturer"
@@ -9162,12 +9274,12 @@
       "field_name": "source_type",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "source_type"
@@ -9182,12 +9294,12 @@
       "field_name": "timestamp",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "date_time"
@@ -9202,12 +9314,12 @@
       "field_name": "product_name",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 892,
-      "non_null_occurrences": 892,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 908,
+      "non_null_occurrences": 908,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "string"
@@ -9222,12 +9334,12 @@
       "field_name": "serial_number",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "uint32z"
@@ -9242,12 +9354,12 @@
       "field_name": "total_timer_time",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [
         "s"
       ],
@@ -9264,12 +9376,12 @@
       "field_name": "num_sessions",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "uint16"
@@ -9284,12 +9396,12 @@
       "field_name": "type",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "activity"
@@ -9304,12 +9416,12 @@
       "field_name": "timestamp",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "date_time"
@@ -9324,12 +9436,12 @@
       "field_name": "event",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "event"
@@ -9344,12 +9456,12 @@
       "field_name": "event_type",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "event_type"
@@ -9364,12 +9476,12 @@
       "field_name": "local_timestamp",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "local_date_time"
@@ -9384,12 +9496,12 @@
       "field_name": "software_version",
       "developer_data_index": "",
       "is_expanded": false,
-      "occurrences": 446,
-      "non_null_occurrences": 446,
-      "files_present": 446,
-      "files_with_values": 446,
-      "workouts_present": 446,
-      "workouts_with_values": 446,
+      "occurrences": 454,
+      "non_null_occurrences": 454,
+      "files_present": 454,
+      "files_with_values": 454,
+      "workouts_present": 454,
+      "workouts_with_values": 454,
       "units": [],
       "types": [
         "uint16"
@@ -9401,10 +9513,10 @@
     {
       "metric": "temperature",
       "level": "any_level",
-      "workouts_present": 210,
-      "workouts_with_values": 210,
-      "total_workouts": 446,
-      "coverage_pct": 47.085,
+      "workouts_present": 218,
+      "workouts_with_values": 218,
+      "total_workouts": 454,
+      "coverage_pct": 48.018,
       "matched_fields": [
         "session.avg_temperature"
       ]
@@ -9412,10 +9524,10 @@
     {
       "metric": "temperature",
       "level": "workout_session",
-      "workouts_present": 210,
-      "workouts_with_values": 210,
-      "total_workouts": 446,
-      "coverage_pct": 47.085,
+      "workouts_present": 218,
+      "workouts_with_values": 218,
+      "total_workouts": 454,
+      "coverage_pct": 48.018,
       "matched_fields": [
         "session.avg_temperature"
       ]
@@ -9425,7 +9537,7 @@
       "level": "lap",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -9434,7 +9546,7 @@
       "level": "timestamped_record",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -9443,7 +9555,7 @@
       "level": "weather",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -9452,17 +9564,17 @@
       "level": "other_timestamped",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
     {
       "metric": "humidity",
       "level": "any_level",
-      "workouts_present": 210,
-      "workouts_with_values": 210,
-      "total_workouts": 446,
-      "coverage_pct": 47.085,
+      "workouts_present": 218,
+      "workouts_with_values": 218,
+      "total_workouts": 454,
+      "coverage_pct": 48.018,
       "matched_fields": [
         "session.SESSION WEATHER HUMIDITY"
       ]
@@ -9470,10 +9582,10 @@
     {
       "metric": "humidity",
       "level": "workout_session",
-      "workouts_present": 210,
-      "workouts_with_values": 210,
-      "total_workouts": 446,
-      "coverage_pct": 47.085,
+      "workouts_present": 218,
+      "workouts_with_values": 218,
+      "total_workouts": 454,
+      "coverage_pct": 48.018,
       "matched_fields": [
         "session.SESSION WEATHER HUMIDITY"
       ]
@@ -9483,7 +9595,7 @@
       "level": "lap",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -9492,7 +9604,7 @@
       "level": "timestamped_record",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -9501,7 +9613,7 @@
       "level": "weather",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -9510,7 +9622,7 @@
       "level": "other_timestamped",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -9519,7 +9631,7 @@
       "level": "any_level",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -9528,7 +9640,7 @@
       "level": "workout_session",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -9537,7 +9649,7 @@
       "level": "lap",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -9546,7 +9658,7 @@
       "level": "timestamped_record",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -9555,7 +9667,7 @@
       "level": "weather",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -9564,7 +9676,7 @@
       "level": "other_timestamped",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -9573,7 +9685,7 @@
       "level": "any_level",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -9582,7 +9694,7 @@
       "level": "workout_session",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -9591,7 +9703,7 @@
       "level": "lap",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -9600,7 +9712,7 @@
       "level": "timestamped_record",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -9609,7 +9721,7 @@
       "level": "weather",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -9618,7 +9730,7 @@
       "level": "other_timestamped",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -9627,7 +9739,7 @@
       "level": "any_level",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -9636,7 +9748,7 @@
       "level": "workout_session",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -9645,7 +9757,7 @@
       "level": "lap",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -9654,7 +9766,7 @@
       "level": "timestamped_record",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -9663,7 +9775,7 @@
       "level": "weather",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -9672,17 +9784,17 @@
       "level": "other_timestamped",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
     {
       "metric": "gps",
       "level": "any_level",
-      "workouts_present": 445,
-      "workouts_with_values": 445,
-      "total_workouts": 446,
-      "coverage_pct": 99.776,
+      "workouts_present": 448,
+      "workouts_with_values": 448,
+      "total_workouts": 454,
+      "coverage_pct": 98.678,
       "matched_fields": [
         "record.gps_accuracy",
         "record.position_lat",
@@ -9696,10 +9808,10 @@
     {
       "metric": "gps",
       "level": "workout_session",
-      "workouts_present": 445,
-      "workouts_with_values": 445,
-      "total_workouts": 446,
-      "coverage_pct": 99.776,
+      "workouts_present": 448,
+      "workouts_with_values": 448,
+      "total_workouts": 454,
+      "coverage_pct": 98.678,
       "matched_fields": [
         "session.nec_lat",
         "session.nec_long",
@@ -9712,17 +9824,17 @@
       "level": "lap",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
     {
       "metric": "gps",
       "level": "timestamped_record",
-      "workouts_present": 445,
-      "workouts_with_values": 445,
-      "total_workouts": 446,
-      "coverage_pct": 99.776,
+      "workouts_present": 448,
+      "workouts_with_values": 448,
+      "total_workouts": 454,
+      "coverage_pct": 98.678,
       "matched_fields": [
         "record.gps_accuracy",
         "record.position_lat",
@@ -9734,7 +9846,7 @@
       "level": "weather",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -9743,17 +9855,17 @@
       "level": "other_timestamped",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
     {
       "metric": "elevation",
       "level": "any_level",
-      "workouts_present": 445,
-      "workouts_with_values": 445,
-      "total_workouts": 446,
-      "coverage_pct": 99.776,
+      "workouts_present": 452,
+      "workouts_with_values": 452,
+      "total_workouts": 454,
+      "coverage_pct": 99.559,
       "matched_fields": [
         "record.altitude",
         "record.enhanced_altitude",
@@ -9769,10 +9881,10 @@
     {
       "metric": "elevation",
       "level": "workout_session",
-      "workouts_present": 445,
-      "workouts_with_values": 445,
-      "total_workouts": 446,
-      "coverage_pct": 99.776,
+      "workouts_present": 452,
+      "workouts_with_values": 452,
+      "total_workouts": 454,
+      "coverage_pct": 99.559,
       "matched_fields": [
         "session.avg_altitude",
         "session.enhanced_avg_altitude",
@@ -9788,17 +9900,17 @@
       "level": "lap",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
     {
       "metric": "elevation",
       "level": "timestamped_record",
-      "workouts_present": 445,
-      "workouts_with_values": 445,
-      "total_workouts": 446,
-      "coverage_pct": 99.776,
+      "workouts_present": 448,
+      "workouts_with_values": 448,
+      "total_workouts": 454,
+      "coverage_pct": 98.678,
       "matched_fields": [
         "record.altitude",
         "record.enhanced_altitude"
@@ -9809,7 +9921,7 @@
       "level": "weather",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -9818,17 +9930,17 @@
       "level": "other_timestamped",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
     {
       "metric": "heart_rate",
       "level": "any_level",
-      "workouts_present": 442,
-      "workouts_with_values": 442,
-      "total_workouts": 446,
-      "coverage_pct": 99.103,
+      "workouts_present": 450,
+      "workouts_with_values": 450,
+      "total_workouts": 454,
+      "coverage_pct": 99.119,
       "matched_fields": [
         "lap.avg_heart_rate",
         "lap.max_heart_rate",
@@ -9844,10 +9956,10 @@
     {
       "metric": "heart_rate",
       "level": "workout_session",
-      "workouts_present": 442,
-      "workouts_with_values": 442,
-      "total_workouts": 446,
-      "coverage_pct": 99.103,
+      "workouts_present": 450,
+      "workouts_with_values": 450,
+      "total_workouts": 454,
+      "coverage_pct": 99.119,
       "matched_fields": [
         "session.avg_heart_rate",
         "session.max_heart_rate",
@@ -9857,10 +9969,10 @@
     {
       "metric": "heart_rate",
       "level": "lap",
-      "workouts_present": 440,
-      "workouts_with_values": 440,
-      "total_workouts": 446,
-      "coverage_pct": 98.655,
+      "workouts_present": 447,
+      "workouts_with_values": 447,
+      "total_workouts": 454,
+      "coverage_pct": 98.458,
       "matched_fields": [
         "lap.avg_heart_rate",
         "lap.max_heart_rate",
@@ -9870,10 +9982,10 @@
     {
       "metric": "heart_rate",
       "level": "timestamped_record",
-      "workouts_present": 441,
-      "workouts_with_values": 441,
-      "total_workouts": 446,
-      "coverage_pct": 98.879,
+      "workouts_present": 449,
+      "workouts_with_values": 449,
+      "total_workouts": 454,
+      "coverage_pct": 98.899,
       "matched_fields": [
         "record.heart_rate"
       ]
@@ -9883,17 +9995,17 @@
       "level": "weather",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
     {
       "metric": "heart_rate",
       "level": "other_timestamped",
-      "workouts_present": 441,
-      "workouts_with_values": 441,
-      "total_workouts": 446,
-      "coverage_pct": 98.879,
+      "workouts_present": 449,
+      "workouts_with_values": 449,
+      "total_workouts": 454,
+      "coverage_pct": 98.899,
       "matched_fields": [
         "time_in_zone.max_heart_rate",
         "time_in_zone.resting_heart_rate"
@@ -9902,10 +10014,10 @@
     {
       "metric": "cadence",
       "level": "any_level",
-      "workouts_present": 444,
-      "workouts_with_values": 444,
-      "total_workouts": 446,
-      "coverage_pct": 99.552,
+      "workouts_present": 452,
+      "workouts_with_values": 452,
+      "total_workouts": 454,
+      "coverage_pct": 99.559,
       "matched_fields": [
         "lap.avg_fractional_cadence",
         "lap.avg_running_cadence",
@@ -9922,10 +10034,10 @@
     {
       "metric": "cadence",
       "level": "workout_session",
-      "workouts_present": 444,
-      "workouts_with_values": 444,
-      "total_workouts": 446,
-      "coverage_pct": 99.552,
+      "workouts_present": 452,
+      "workouts_with_values": 452,
+      "total_workouts": 454,
+      "coverage_pct": 99.559,
       "matched_fields": [
         "session.avg_fractional_cadence",
         "session.avg_running_cadence",
@@ -9936,10 +10048,10 @@
     {
       "metric": "cadence",
       "level": "lap",
-      "workouts_present": 442,
-      "workouts_with_values": 442,
-      "total_workouts": 446,
-      "coverage_pct": 99.103,
+      "workouts_present": 449,
+      "workouts_with_values": 449,
+      "total_workouts": 454,
+      "coverage_pct": 98.899,
       "matched_fields": [
         "lap.avg_fractional_cadence",
         "lap.avg_running_cadence",
@@ -9950,10 +10062,10 @@
     {
       "metric": "cadence",
       "level": "timestamped_record",
-      "workouts_present": 444,
-      "workouts_with_values": 444,
-      "total_workouts": 446,
-      "coverage_pct": 99.552,
+      "workouts_present": 452,
+      "workouts_with_values": 452,
+      "total_workouts": 454,
+      "coverage_pct": 99.559,
       "matched_fields": [
         "record.cadence",
         "record.fractional_cadence"
@@ -9964,7 +10076,7 @@
       "level": "weather",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -9973,17 +10085,17 @@
       "level": "other_timestamped",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
     {
       "metric": "power",
       "level": "any_level",
-      "workouts_present": 307,
-      "workouts_with_values": 307,
-      "total_workouts": 446,
-      "coverage_pct": 68.834,
+      "workouts_present": 310,
+      "workouts_with_values": 310,
+      "total_workouts": 454,
+      "coverage_pct": 68.282,
       "matched_fields": [
         "lap.avg_power",
         "lap.max_power",
@@ -9996,10 +10108,10 @@
     {
       "metric": "power",
       "level": "workout_session",
-      "workouts_present": 305,
-      "workouts_with_values": 305,
-      "total_workouts": 446,
-      "coverage_pct": 68.386,
+      "workouts_present": 308,
+      "workouts_with_values": 308,
+      "total_workouts": 454,
+      "coverage_pct": 67.841,
       "matched_fields": [
         "session.avg_power",
         "session.max_power"
@@ -10008,10 +10120,10 @@
     {
       "metric": "power",
       "level": "lap",
-      "workouts_present": 304,
-      "workouts_with_values": 304,
-      "total_workouts": 446,
-      "coverage_pct": 68.161,
+      "workouts_present": 307,
+      "workouts_with_values": 307,
+      "total_workouts": 454,
+      "coverage_pct": 67.621,
       "matched_fields": [
         "lap.avg_power",
         "lap.max_power"
@@ -10020,10 +10132,10 @@
     {
       "metric": "power",
       "level": "timestamped_record",
-      "workouts_present": 307,
-      "workouts_with_values": 307,
-      "total_workouts": 446,
-      "coverage_pct": 68.834,
+      "workouts_present": 310,
+      "workouts_with_values": 310,
+      "total_workouts": 454,
+      "coverage_pct": 68.282,
       "matched_fields": [
         "record.accumulated_power",
         "record.power"
@@ -10034,7 +10146,7 @@
       "level": "weather",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -10043,17 +10155,17 @@
       "level": "other_timestamped",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
     {
       "metric": "ground_contact_time",
       "level": "any_level",
-      "workouts_present": 302,
-      "workouts_with_values": 302,
-      "total_workouts": 446,
-      "coverage_pct": 67.713,
+      "workouts_present": 305,
+      "workouts_with_values": 305,
+      "total_workouts": 454,
+      "coverage_pct": 67.181,
       "matched_fields": [
         "lap.avg_stance_time",
         "record.stance_time",
@@ -10063,10 +10175,10 @@
     {
       "metric": "ground_contact_time",
       "level": "workout_session",
-      "workouts_present": 302,
-      "workouts_with_values": 302,
-      "total_workouts": 446,
-      "coverage_pct": 67.713,
+      "workouts_present": 305,
+      "workouts_with_values": 305,
+      "total_workouts": 454,
+      "coverage_pct": 67.181,
       "matched_fields": [
         "session.avg_stance_time"
       ]
@@ -10074,10 +10186,10 @@
     {
       "metric": "ground_contact_time",
       "level": "lap",
-      "workouts_present": 302,
-      "workouts_with_values": 302,
-      "total_workouts": 446,
-      "coverage_pct": 67.713,
+      "workouts_present": 305,
+      "workouts_with_values": 305,
+      "total_workouts": 454,
+      "coverage_pct": 67.181,
       "matched_fields": [
         "lap.avg_stance_time"
       ]
@@ -10085,10 +10197,10 @@
     {
       "metric": "ground_contact_time",
       "level": "timestamped_record",
-      "workouts_present": 302,
-      "workouts_with_values": 302,
-      "total_workouts": 446,
-      "coverage_pct": 67.713,
+      "workouts_present": 305,
+      "workouts_with_values": 305,
+      "total_workouts": 454,
+      "coverage_pct": 67.181,
       "matched_fields": [
         "record.stance_time"
       ]
@@ -10098,7 +10210,7 @@
       "level": "weather",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -10107,7 +10219,7 @@
       "level": "other_timestamped",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -10116,7 +10228,7 @@
       "level": "any_level",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -10125,7 +10237,7 @@
       "level": "workout_session",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -10134,7 +10246,7 @@
       "level": "lap",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -10143,7 +10255,7 @@
       "level": "timestamped_record",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -10152,7 +10264,7 @@
       "level": "weather",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -10161,17 +10273,17 @@
       "level": "other_timestamped",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
     {
       "metric": "vertical_oscillation",
       "level": "any_level",
-      "workouts_present": 302,
-      "workouts_with_values": 302,
-      "total_workouts": 446,
-      "coverage_pct": 67.713,
+      "workouts_present": 305,
+      "workouts_with_values": 305,
+      "total_workouts": 454,
+      "coverage_pct": 67.181,
       "matched_fields": [
         "lap.avg_vertical_oscillation",
         "record.vertical_oscillation",
@@ -10181,10 +10293,10 @@
     {
       "metric": "vertical_oscillation",
       "level": "workout_session",
-      "workouts_present": 302,
-      "workouts_with_values": 302,
-      "total_workouts": 446,
-      "coverage_pct": 67.713,
+      "workouts_present": 305,
+      "workouts_with_values": 305,
+      "total_workouts": 454,
+      "coverage_pct": 67.181,
       "matched_fields": [
         "session.avg_vertical_oscillation"
       ]
@@ -10192,10 +10304,10 @@
     {
       "metric": "vertical_oscillation",
       "level": "lap",
-      "workouts_present": 302,
-      "workouts_with_values": 302,
-      "total_workouts": 446,
-      "coverage_pct": 67.713,
+      "workouts_present": 305,
+      "workouts_with_values": 305,
+      "total_workouts": 454,
+      "coverage_pct": 67.181,
       "matched_fields": [
         "lap.avg_vertical_oscillation"
       ]
@@ -10203,10 +10315,10 @@
     {
       "metric": "vertical_oscillation",
       "level": "timestamped_record",
-      "workouts_present": 302,
-      "workouts_with_values": 302,
-      "total_workouts": 446,
-      "coverage_pct": 67.713,
+      "workouts_present": 305,
+      "workouts_with_values": 305,
+      "total_workouts": 454,
+      "coverage_pct": 67.181,
       "matched_fields": [
         "record.vertical_oscillation"
       ]
@@ -10216,7 +10328,7 @@
       "level": "weather",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -10225,17 +10337,17 @@
       "level": "other_timestamped",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
     {
       "metric": "vertical_ratio",
       "level": "any_level",
-      "workouts_present": 302,
-      "workouts_with_values": 302,
-      "total_workouts": 446,
-      "coverage_pct": 67.713,
+      "workouts_present": 305,
+      "workouts_with_values": 305,
+      "total_workouts": 454,
+      "coverage_pct": 67.181,
       "matched_fields": [
         "lap.avg_vertical_ratio",
         "record.vertical_ratio",
@@ -10245,10 +10357,10 @@
     {
       "metric": "vertical_ratio",
       "level": "workout_session",
-      "workouts_present": 302,
-      "workouts_with_values": 302,
-      "total_workouts": 446,
-      "coverage_pct": 67.713,
+      "workouts_present": 305,
+      "workouts_with_values": 305,
+      "total_workouts": 454,
+      "coverage_pct": 67.181,
       "matched_fields": [
         "session.avg_vertical_ratio"
       ]
@@ -10256,10 +10368,10 @@
     {
       "metric": "vertical_ratio",
       "level": "lap",
-      "workouts_present": 302,
-      "workouts_with_values": 302,
-      "total_workouts": 446,
-      "coverage_pct": 67.713,
+      "workouts_present": 305,
+      "workouts_with_values": 305,
+      "total_workouts": 454,
+      "coverage_pct": 67.181,
       "matched_fields": [
         "lap.avg_vertical_ratio"
       ]
@@ -10267,10 +10379,10 @@
     {
       "metric": "vertical_ratio",
       "level": "timestamped_record",
-      "workouts_present": 302,
-      "workouts_with_values": 302,
-      "total_workouts": 446,
-      "coverage_pct": 67.713,
+      "workouts_present": 305,
+      "workouts_with_values": 305,
+      "total_workouts": 454,
+      "coverage_pct": 67.181,
       "matched_fields": [
         "record.vertical_ratio"
       ]
@@ -10280,7 +10392,7 @@
       "level": "weather",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -10289,17 +10401,17 @@
       "level": "other_timestamped",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
     {
       "metric": "stride_length",
       "level": "any_level",
-      "workouts_present": 302,
-      "workouts_with_values": 302,
-      "total_workouts": 446,
-      "coverage_pct": 67.713,
+      "workouts_present": 305,
+      "workouts_with_values": 305,
+      "total_workouts": 454,
+      "coverage_pct": 67.181,
       "matched_fields": [
         "lap.avg_step_length",
         "record.step_length",
@@ -10309,10 +10421,10 @@
     {
       "metric": "stride_length",
       "level": "workout_session",
-      "workouts_present": 302,
-      "workouts_with_values": 302,
-      "total_workouts": 446,
-      "coverage_pct": 67.713,
+      "workouts_present": 305,
+      "workouts_with_values": 305,
+      "total_workouts": 454,
+      "coverage_pct": 67.181,
       "matched_fields": [
         "session.avg_step_length"
       ]
@@ -10320,10 +10432,10 @@
     {
       "metric": "stride_length",
       "level": "lap",
-      "workouts_present": 302,
-      "workouts_with_values": 302,
-      "total_workouts": 446,
-      "coverage_pct": 67.713,
+      "workouts_present": 305,
+      "workouts_with_values": 305,
+      "total_workouts": 454,
+      "coverage_pct": 67.181,
       "matched_fields": [
         "lap.avg_step_length"
       ]
@@ -10331,10 +10443,10 @@
     {
       "metric": "stride_length",
       "level": "timestamped_record",
-      "workouts_present": 302,
-      "workouts_with_values": 302,
-      "total_workouts": 446,
-      "coverage_pct": 67.713,
+      "workouts_present": 305,
+      "workouts_with_values": 305,
+      "total_workouts": 454,
+      "coverage_pct": 67.181,
       "matched_fields": [
         "record.step_length"
       ]
@@ -10344,7 +10456,7 @@
       "level": "weather",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -10353,17 +10465,17 @@
       "level": "other_timestamped",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
     {
       "metric": "speed",
       "level": "any_level",
-      "workouts_present": 445,
-      "workouts_with_values": 445,
-      "total_workouts": 446,
-      "coverage_pct": 99.776,
+      "workouts_present": 453,
+      "workouts_with_values": 453,
+      "total_workouts": 454,
+      "coverage_pct": 99.78,
       "matched_fields": [
         "lap.avg_speed",
         "lap.enhanced_avg_speed",
@@ -10379,10 +10491,10 @@
     {
       "metric": "speed",
       "level": "workout_session",
-      "workouts_present": 445,
-      "workouts_with_values": 445,
-      "total_workouts": 446,
-      "coverage_pct": 99.776,
+      "workouts_present": 453,
+      "workouts_with_values": 453,
+      "total_workouts": 454,
+      "coverage_pct": 99.78,
       "matched_fields": [
         "session.avg_speed",
         "session.enhanced_avg_speed",
@@ -10393,10 +10505,10 @@
     {
       "metric": "speed",
       "level": "lap",
-      "workouts_present": 442,
-      "workouts_with_values": 442,
-      "total_workouts": 446,
-      "coverage_pct": 99.103,
+      "workouts_present": 449,
+      "workouts_with_values": 449,
+      "total_workouts": 454,
+      "coverage_pct": 98.899,
       "matched_fields": [
         "lap.avg_speed",
         "lap.enhanced_avg_speed",
@@ -10407,10 +10519,10 @@
     {
       "metric": "speed",
       "level": "timestamped_record",
-      "workouts_present": 445,
-      "workouts_with_values": 445,
-      "total_workouts": 446,
-      "coverage_pct": 99.776,
+      "workouts_present": 453,
+      "workouts_with_values": 453,
+      "total_workouts": 454,
+      "coverage_pct": 99.78,
       "matched_fields": [
         "record.enhanced_speed"
       ]
@@ -10420,7 +10532,7 @@
       "level": "weather",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -10429,17 +10541,17 @@
       "level": "other_timestamped",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
     {
       "metric": "distance",
       "level": "any_level",
-      "workouts_present": 445,
-      "workouts_with_values": 445,
-      "total_workouts": 446,
-      "coverage_pct": 99.776,
+      "workouts_present": 453,
+      "workouts_with_values": 453,
+      "total_workouts": 454,
+      "coverage_pct": 99.78,
       "matched_fields": [
         "lap.total_distance",
         "record.distance",
@@ -10449,10 +10561,10 @@
     {
       "metric": "distance",
       "level": "workout_session",
-      "workouts_present": 445,
-      "workouts_with_values": 445,
-      "total_workouts": 446,
-      "coverage_pct": 99.776,
+      "workouts_present": 453,
+      "workouts_with_values": 453,
+      "total_workouts": 454,
+      "coverage_pct": 99.78,
       "matched_fields": [
         "session.total_distance"
       ]
@@ -10460,10 +10572,10 @@
     {
       "metric": "distance",
       "level": "lap",
-      "workouts_present": 442,
-      "workouts_with_values": 442,
-      "total_workouts": 446,
-      "coverage_pct": 99.103,
+      "workouts_present": 449,
+      "workouts_with_values": 449,
+      "total_workouts": 454,
+      "coverage_pct": 98.899,
       "matched_fields": [
         "lap.total_distance"
       ]
@@ -10471,10 +10583,10 @@
     {
       "metric": "distance",
       "level": "timestamped_record",
-      "workouts_present": 445,
-      "workouts_with_values": 445,
-      "total_workouts": 446,
-      "coverage_pct": 99.776,
+      "workouts_present": 453,
+      "workouts_with_values": 453,
+      "total_workouts": 454,
+      "coverage_pct": 99.78,
       "matched_fields": [
         "record.distance"
       ]
@@ -10484,7 +10596,7 @@
       "level": "weather",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -10493,7 +10605,7 @@
       "level": "other_timestamped",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -10502,7 +10614,7 @@
       "level": "any_level",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -10511,7 +10623,7 @@
       "level": "workout_session",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -10520,7 +10632,7 @@
       "level": "lap",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -10529,7 +10641,7 @@
       "level": "timestamped_record",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -10538,7 +10650,7 @@
       "level": "weather",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     },
@@ -10547,7 +10659,7 @@
       "level": "other_timestamped",
       "workouts_present": 0,
       "workouts_with_values": 0,
-      "total_workouts": 446,
+      "total_workouts": 454,
       "coverage_pct": 0.0,
       "matched_fields": []
     }
