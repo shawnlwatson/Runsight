@@ -10,11 +10,12 @@ This private repository contains personal FIT workouts, measured health data, ge
   - `fit/`: original workout FIT files.
   - `Health Metrics_v6.xlsx`: original measured HealthFit workbook.
 - `data/synthetic/`: synthetic-data generation.
-  - `generator/`: maintained generator (`generate_health.py`), configuration, pinned dependencies, integration tests.
+  - `generator/`: maintained generator (`generate_health.py`), configuration, integration tests.
   - `results/`: generated workbook, provenance, validation reports, and diagnostic plots.
 - `data/derived/fit_inventory/`: CSV/JSON inventories and weather coverage analyses computed from `data/raw/fit`.
 - `pipeline/`: data-processing scripts, independent of the product app.
-  - `fit_inventory.py`, `test_fit_inventory.py`, `requirements-fit.txt`.
+  - `fit_inventory.py`, `test_fit_inventory.py`.
+- `requirements.txt`: pinned Python dependencies for all data tooling.
 - `app/frontend/`: Next.js, React, TypeScript, Tailwind CSS, and D3 frontend: Dashboard, Trends, Runs, Explore, and Insights.
 - `app/backend/`: reserved for the backend API and statistics engine.
 - `docs/`: design background and methodology documentation.
@@ -41,7 +42,7 @@ Python 3.12 was used for the current outputs.
 
 ```bash
 python3 -m venv .venv
-.venv/bin/pip install -r pipeline/requirements-fit.txt -r data/synthetic/generator/requirements.txt
+.venv/bin/pip install -r requirements.txt
 ```
 
 Run the FIT inventory:

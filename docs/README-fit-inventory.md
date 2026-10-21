@@ -19,7 +19,7 @@ For a new environment, run from the repository root:
 
 ```bash
 python3 -m venv .venv
-.venv/bin/pip install -r pipeline/requirements-fit.txt
+.venv/bin/pip install -r requirements.txt
 .venv/bin/python pipeline/fit_inventory.py
 ```
 

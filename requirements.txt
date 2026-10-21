@@ -1,6 +1,7 @@
 contourpy==1.4.0
 cycler==0.12.1
 et_xmlfile==2.0.0
+fitdecode==0.11.0
 fonttools==4.66.1
 kiwisolver==1.5.1
 matplotlib==3.11.2
@@ -9,7 +10,9 @@ openpyxl==3.1.5
 packaging==26.3
 pandas==3.0.6
 pillow==12.3.0
+pymongo==4.18.3
 pyparsing==3.3.3
 python-dateutil==2.9.0.post0
+python-dotenv==1.2.3
 scipy==1.18.1
 six==1.17.0
