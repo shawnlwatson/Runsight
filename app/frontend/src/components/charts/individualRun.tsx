@@ -35,11 +35,6 @@ export default function IndividualRun({ run }: Props) {
           <p className="mt-2 text-sm text-on-brand/80">
             <time dateTime={run.date}>{run.date.slice(2)}</time>
           </p>
-          {run.id.startsWith("demo-") && (
-            <p className="mt-2 w-fit rounded-full border border-gold/40 px-2 py-0.5 text-xs text-gold">
-              Fictional preview run
-            </p>
-          )}
           </div>
           <dl className="shrink-0 text-right">
             <dt className="text-xs font-medium uppercase tracking-widest text-on-brand/75">Total Distance</dt>

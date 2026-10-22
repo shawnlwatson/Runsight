@@ -1,9 +1,11 @@
 import FilterBar from "@/components/FilterBar";
 import CustomViewsChart from "@/features/explore/CustomViewsChart";
 import OutliersChart from "@/features/explore/OutliersChart";
-import { demoRuns } from "@/data/fixtures/demoRuns";
+import { fetchRuns } from "@/lib/api";
 
-export default function ExplorePage() {
+export default async function ExplorePage() {
+  const runs = await fetchRuns();
+
   return (
     <div className="space-y-6">
       <header>
@@ -13,10 +15,10 @@ export default function ExplorePage() {
       </header>
       <FilterBar />
       <section aria-label="Custom views" className="min-w-0 rounded-lg border border-teal/25 border-t-4 border-t-teal bg-surface">
-        <CustomViewsChart runs={demoRuns} />
+        <CustomViewsChart runs={runs} />
       </section>
       <section aria-label="Outlier run comparison" className="min-w-0 overflow-hidden rounded-lg border border-teal/25 border-t-4 border-t-teal bg-surface">
-        <OutliersChart runs={demoRuns} />
+        <OutliersChart runs={runs} />
       </section>
     </div>
   );

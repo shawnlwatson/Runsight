@@ -19,12 +19,12 @@ Choose a different seed, configuration, or output directory:
   --seed 1234 --output-dir /tmp/health-test
 ```
 
-To install elsewhere, use Python 3.12 and the pinned dependency file:
+To install elsewhere, use Python 3.12 and the pinned dependency file. Run from the repository root:
 
 ```bash
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
-.venv/bin/python generate_health.py --input /path/to/HealthFit.xlsx --output-dir /path/to/output
+.venv/bin/python data/synthetic/generator/generate_health.py --input /path/to/HealthFit.xlsx --output-dir /path/to/output
 ```
 
 Defaults resolve relative to the script, not the working directory. Re-running refreshes generated files in the chosen output directory. The original input workbook is never overwritten. Use separate output directories to retain alternative seeds or configurations. `--no-plots` skips plots for faster checks.
