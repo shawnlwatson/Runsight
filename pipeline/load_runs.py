@@ -81,6 +81,7 @@ def parse_run(path):
     miles = times(session.get("total_distance"), 1 / METERS_PER_MILE)  # convert meters -> miles
     cadence = session.get("avg_running_cadence")  # strides/min. 1 stride = 2 steps
     celsius = session.get("avg_temperature")  # only ~48% of runs have weather
+    indoor = session.get("SESSION INDOOR")  # Apple developer field (0/1). Missing = unknown
     run_id = path.stem[:17]  # "YYYY-MM-DD-HHMMSS" from the file name. unique and stable
 
     return {
@@ -100,7 +101,7 @@ def parse_run(path):
         "elevationFeet": times(session.get("total_ascent"), 3.28084),  # meters -> feet
         "temperature": celsius * 9 / 5 + 32 if celsius is not None else None,  # F
         "humidity": times(session.get("SESSION WEATHER HUMIDITY"), 1 / 100),  # stored as % x 100 (7900 -> 79%)
-        "isIndoor": session.get("SESSION INDOOR") == 1,  # Apple developer field (0/1)
+        "isIndoor": indoor == 1 if indoor is not None else None,
         "sourceFile": path.name,  # traceability back to the raw file
         # --- Raw FIT messages, original units (m, s, m/s, C), for stats work ---
         "session": session,
@@ -119,6 +120,11 @@ def main():
             docs.append(parse_run(path))
         except Exception as error:
             print(f"Skipped {path.name}: {error}")
+
+    # bulk_write raises an error on an empty list
+    if not docs:
+        print("No runs to load")
+        return
 
     # Connect to MongoDB collection
     load_dotenv(f"{ROOT}/.env")

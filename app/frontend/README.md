@@ -16,4 +16,4 @@ npm run lint
 npm run build
 ```
 
-The UI uses fictional run fixtures in `src/data/fixtures`. Backend integration should preserve or adapt to the run contracts in `src/types`. Backend code belongs in `../backend`; data and pipeline documentation is linked from the [repository README](../../README.md).
+Pages load runs from the FastAPI backend through `src/lib/api.ts`; start the backend first (set `NEXT_PUBLIC_API_URL` in `.env.local`). Responses follow the run contracts in `src/types`. Backend code belongs in `../backend`; data and pipeline documentation is linked from the [repository README](../../README.md).

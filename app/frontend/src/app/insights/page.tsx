@@ -1,7 +1,9 @@
 import FatigueChart from "@/features/insights/FatigueChart";
-import { demoFatigueRuns } from "@/data/fixtures/demoFatigueRuns";
+import { fetchFatigueRuns } from "@/lib/api";
 
-export default function InsightsPage() {
+export default async function InsightsPage() {
+  const fatigueRuns = await fetchFatigueRuns();
+
   return (
     <div className="space-y-6">
       <header>
@@ -14,8 +16,8 @@ export default function InsightsPage() {
           <h2 className="px-4 pt-4 text-base font-semibold text-foreground">To Build: Possibly a chatbot</h2>
         </section>
         <section aria-label="Fatigue parallel coordinates" className="min-w-0 rounded-lg border border-teal/25 border-t-4 border-t-teal bg-surface">
-          <FatigueChart runs={demoFatigueRuns} />
-          <p className="px-4 pb-3 text-xs text-muted">Fictional preview data · Daily active energy is separate from workout calories.</p>
+          <FatigueChart runs={fatigueRuns} />
+          <p className="px-4 pb-3 text-xs text-muted">Daily active energy is separate from workout calories.</p>
         </section>
       </div>
     </div>

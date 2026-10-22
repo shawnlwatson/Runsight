@@ -35,7 +35,8 @@ def clean(value):
 def read_sheet(workbook, name):
     """{"YYYY-MM-DD": {column: value}} with one row per date."""
     rows = workbook[name].iter_rows(values_only=True)
-    headers = [str(h).strip() for h in next(rows)]  # headers have padding: " Steps "
+    # Headers have padding (" Steps ") and dots ("Avg. HRV"). Mongo reads dots as nested paths
+    headers = [str(h).strip().replace(".", "") for h in next(rows)]
     by_date = {}
 
     for row in rows:
@@ -85,6 +86,11 @@ def main():
                 },
             }
         )
+
+    # bulk_write raises an error on an empty list
+    if not docs:
+        print("No dates to load")
+        return
 
     # Connect to Mongo collection and upsert by date so re-running never duplicates
     load_dotenv(f"{ROOT}/.env")

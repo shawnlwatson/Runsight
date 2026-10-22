@@ -1,9 +1,11 @@
 import PaceTimeChart from "@/features/trends/PaceTimeChart";
 import PaceTempChart from "@/features/trends/PaceTempChart";
 import VolumePaceChart from "@/features/trends/VolumePaceChart";
-import { demoRuns } from "@/data/fixtures/demoRuns";
+import { fetchRuns } from "@/lib/api";
 
-export default function TrendsPage() {
+export default async function TrendsPage() {
+  const runs = await fetchRuns();
+
   return (
     <div className="space-y-6">
       <header>
@@ -15,14 +17,14 @@ export default function TrendsPage() {
         aria-label="Pace over time"
         className="h-96 w-full min-w-0 rounded-lg border border-berry/25 border-t-4 border-t-berry bg-berry/5"
       >
-        <PaceTimeChart runs={demoRuns} />
+        <PaceTimeChart runs={runs} />
       </section>
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         <section
           aria-label="Pace versus temperature"
           className="h-96 min-w-0 rounded-lg border border-teal/25 border-t-4 border-t-teal bg-teal/5"
         >
-          <PaceTempChart runs={demoRuns} />
+          <PaceTempChart runs={runs} />
         </section>
         <section
           aria-label="Future chart"
@@ -37,7 +39,7 @@ export default function TrendsPage() {
         aria-label="Weekly volume and pace"
         className="h-96 w-full min-w-0 rounded-lg border border-gold/25 border-t-4 border-t-gold bg-gold/5"
       >
-        <VolumePaceChart runs={demoRuns} />
+        <VolumePaceChart runs={runs} />
       </section>
     </div>
   );

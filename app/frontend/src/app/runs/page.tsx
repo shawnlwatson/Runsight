@@ -1,7 +1,9 @@
 import RunsBrowser from "@/features/runs/RunsBrowser";
-import { demoRuns } from "@/data/fixtures/demoRuns";
+import { fetchRuns } from "@/lib/api";
 
-export default function RunsPage() {
+export default async function RunsPage() {
+  const runs = await fetchRuns();
+
   return (
     <div className="space-y-6">
       <header>
@@ -12,7 +14,7 @@ export default function RunsPage() {
           Select a run to view its details, or check multiple runs to compare.
         </p>
       </header>
-      <RunsBrowser runs={demoRuns} />
+      <RunsBrowser runs={runs} />
     </div>
   );
 }
