@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { scaleLinear, scalePoint } from "d3-scale";
 import { line } from "d3-shape";
 import { formatNumber, formatPace } from "@/lib/runFormatters";
+import { chartDashes } from "@/lib/charts/chartTheme";
 import type { FatigueRun } from "@/types/fatigue";
 
 type Props = { runs: readonly FatigueRun[]; fromDate?: string; toDate?: string };
@@ -19,7 +20,7 @@ const dimensions: Dimension[] = [
   { key: "steps", label: "Steps", unit: "steps/day", fallback: [0, 15000] },
   { key: "pace", label: "Pace", unit: "min/mile", fallback: [6, 14] },
 ];
-const colors = ["var(--color-berry)", "var(--color-teal)", "var(--color-orange)", "var(--color-gold)", "var(--color-navy)"];
+const colors = ["var(--color-chart-berry)", "var(--color-chart-teal)", "var(--color-chart-orange)", "var(--color-chart-gold)", "var(--color-chart-navy)"];
 const margin = { top: 48, right: 24, bottom: 20, left: 52 };
 
 function parseDay(value: string) {
@@ -73,7 +74,7 @@ export default function Fatigue({ runs, fromDate = "", toDate = "" }: Props) {
     });
     const path = line<typeof points[number]>().defined((point) => point.value !== null)
       .x((point) => point.x).y((point) => point.y)(points);
-    return { run, points, path, color: colors[index % colors.length], dash: Math.floor(index / colors.length) % 2 ? "6 3" : undefined };
+    return { run, points, path, color: colors[index % colors.length], dash: chartDashes[index % chartDashes.length] };
   });
   const hasValues = series.some(({ points }) => points.some(({ value }) => value !== null));
 

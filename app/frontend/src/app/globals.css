@@ -1,38 +1,65 @@
 @import "tailwindcss";
 
-/* Runsight palette: use bg-teal, text-gold, border-berry, etc. */
+/* Neutral surfaces, charcoal type, and restrained warm gray-blue accents. */
 @theme static {
-  --color-gold: #c9a654;
-  --color-navy: #13293d;
-  --color-berry: #89023e;
-  --color-teal: #18435a;
-  --color-orange: #de643f;
+  --color-offwhite: #f5f4f1;
+  --color-lightgray: #e3e5e3;
+  --color-grayblue: #c2cbd0;
+  --color-warmblue: #536570;
+  --color-armygreen: #69756d;
 
-  /* Neutral surfaces and supporting colors. */
-  --color-background: #f5f1e8;
-  --color-surface: #ffffff;
-  --color-muted: #526775;
-  --color-border: #d9d2c4;
-  --color-divider: #6b7280;
-  --color-surface-hover: color-mix(in srgb, var(--color-gold) 18%, white);
-  --color-positive: #15803d;
-  --color-negative: #b91c1c;
+  --color-background: #f5f4f1;
+  --color-surface: #fdfdfb;
+  --color-surface-muted: #eeefed;
+  --color-chrome: #e9ecea;
+  --color-foreground: #272d31;
+  --color-muted: #566169;
+  --color-border: #d2d7d5;
+  --color-control-border: #818c92;
+  --color-divider: #b6bfbe;
+  --color-surface-hover: #dde3e5;
+  --color-selection: #e0e7ea;
+  --color-positive: #21613e;
+  --color-negative: #a13c3c;
+
+  /* Compatibility tokens for existing chart marks; all use subdued neutrals. */
+  --color-gold: #69757a;
+  --color-navy: #303a40;
+  --color-teal: #536570;
+  --color-berry: #5d6672;
+  --color-orange: #7a7068;
+
+  /* Colorful data encodings are independent of the neutral interface palette. */
+  --color-chart-teal: #18435a;
+  --color-chart-gold: #c9a654;
+  --color-chart-berry: #89023e;
+  --color-chart-orange: #de643f;
+  --color-chart-navy: #13293d;
+
+  --color-chart-1: #18435a;
+  --color-chart-2: #c9a654;
+  --color-chart-3: #89023e;
+  --color-chart-4: #de643f;
+  --color-chart-5: #2563eb;
+  --color-chart-6: #9333ea;
+  --color-chart-7: #15803d;
+  --color-chart-8: #0891b2;
+  --color-chart-9: #b45309;
+  --color-chart-10: #526775;
 }
 
 @theme inline {
-  /* Semantic names let components describe a color's purpose. */
-  --color-brand: var(--color-teal);
-  --color-foreground: var(--color-navy);
+  --color-brand: var(--color-warmblue);
   --color-on-brand: var(--color-surface);
-  --color-accent: var(--color-gold);
-  --color-highlight: var(--color-orange);
-  --color-secondary: var(--color-berry);
+  --color-accent: var(--color-warmblue);
+  --color-highlight: var(--color-grayblue);
+  --color-secondary: var(--color-muted);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 body {
   background: var(--color-background);
-  color: var(--color-navy);
+  color: var(--color-foreground);
   font-family: Arial, Helvetica, sans-serif;
 }

@@ -11,7 +11,7 @@ export default async function Home() {
   return (
     <div className="space-y-6">
       <header>
-        <h1 className="w-fit border-b-4 border-gold pb-2 text-3xl font-bold tracking-tight text-brand md:text-4xl">
+        <h1 className="w-fit border-b-2 border-divider pb-2 text-3xl font-bold tracking-tight text-brand md:text-4xl">
           Dashboard
         </h1>
         <p className="mt-2 text-sm text-muted md:text-base">
@@ -23,20 +23,20 @@ export default async function Home() {
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         <section
           aria-label="Distance and pace over time"
-          className="h-80 min-w-0 rounded-lg border border-gold/30 border-t-4 border-t-gold bg-gold/5"
+          className="h-80 min-w-0 rounded-lg border border-border border-t-2 border-t-accent/30 bg-surface-muted"
         >
           <DistanceTimePaceChart runs={runs} />
         </section>
         <section
           aria-label="Temperature, heart rate and pace"
-          className="h-80 min-w-0 rounded-lg border border-orange/30 border-t-4 border-t-orange bg-orange/5"
+          className="h-80 min-w-0 rounded-lg border border-border border-t-2 border-t-accent/30 bg-surface-muted"
         >
           <TemperatureHeartRatePaceChart runs={runs} />
         </section>
       </div>
       <section
         aria-label="Runs in Selection"
-        className="min-h-96 min-w-0 rounded-lg border border-teal/25 border-t-4 border-t-teal bg-teal/5"
+        className="min-h-96 min-w-0 rounded-lg border border-border border-t-2 border-t-accent/30 bg-surface-muted"
       >
         <RunsInSelection runs={runs} />
       </section>

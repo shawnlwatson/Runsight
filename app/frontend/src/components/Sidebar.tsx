@@ -39,11 +39,11 @@ const links = [
 
 export default function Sidebar(){
   return (
-    <aside className="relative w-full shrink-0 border-b border-gold/35
-    bg-brand px-6 pt-3 pb-6 md:min-h-screen md:w-40 md:border-b-0">
+    <aside className="relative w-full shrink-0 border-b border-border
+    bg-chrome px-6 pt-3 pb-6 md:min-h-screen md:w-40 md:border-b-0">
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute right-0 top-12 bottom-0 hidden border-r border-gold/35 md:block"
+        className="pointer-events-none absolute right-0 top-12 bottom-0 hidden border-r border-border md:block"
       />
       <Link href="/" className="mx-auto block w-fit">
         <Image
@@ -61,7 +61,7 @@ export default function Sidebar(){
             <Link
               href={link.href}
               className="group flex items-center gap-2 rounded-lg px-3 py-3 text-sm font-medium
-              text-on-brand transition-colors hover:bg-gold hover:text-navy
+              text-foreground transition-colors hover:bg-surface-hover hover:text-foreground
               focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
               >
                 <svg
@@ -73,7 +73,7 @@ export default function Sidebar(){
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   aria-hidden="true"
-                  className="h-4 w-4 shrink-0 text-gold group-hover:text-navy"
+                  className="h-4 w-4 shrink-0 text-brand group-hover:text-foreground"
                 >
                   {link.icon}
                 </svg>
@@ -82,11 +82,11 @@ export default function Sidebar(){
           </li>
         ))}
       </ul>
-      <hr className="my-4 w-full border-0 border-t-2 border-gold/50" />
+      <hr className="my-4 w-full border-0 border-t-2 border-border" />
       <Link
         href="/settings"
         className="block rounded-lg px-3 py-3 text-sm font-medium
-        text-on-brand transition-colors hover:bg-gold hover:text-navy
+        text-foreground transition-colors hover:bg-surface-hover hover:text-foreground
         focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
       >
         Settings

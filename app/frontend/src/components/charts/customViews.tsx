@@ -5,6 +5,7 @@ import { scaleLinear, scaleUtc } from "d3-scale";
 import { line } from "d3-shape";
 import { radarDomain, radarMetrics, radarValue } from "@/lib/charts/radarMetrics";
 import { formatNumber, formatPace, formatTotalTime } from "@/lib/runFormatters";
+import { chartColors, chartDashes } from "@/lib/charts/chartTheme";
 import type { CurrentRun } from "@/types/run";
 import { customViewAttributes as attributes } from "@/lib/charts/customViewAttributes";
 
@@ -16,8 +17,8 @@ type Props = {
 
 const DAY = 86_400_000;
 const margin = { top: 20, right: 66, bottom: 38, left: 60 };
-const colors = ["#18435a", "#c9a654", "#89023e", "#de643f", "#2563eb", "#9333ea", "#15803d", "#0891b2", "#b45309", "#526775"];
-const dashes = [undefined, "7 3", undefined, "3 3", "9 3 2 3", "7 3", "3 3", "9 3 2 3", "12 4", "2 4"];
+const colors = chartColors;
+const dashes = chartDashes;
 
 function parseDay(value: string) {
   const time = Date.parse(`${value}T00:00:00Z`);

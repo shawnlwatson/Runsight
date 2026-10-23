@@ -17,7 +17,7 @@ const summaryMetrics = [
     label: "Total Runs",
     unit: "runs",
     image: runnerIcon,
-    colors: "border-teal/25 border-t-teal bg-teal/10",
+    colors: "border-border bg-surface",
     value: (summary: RunSummary) => summary.totalRuns,
     format: (value: number | null) => formatNumber(value),
   },
@@ -25,7 +25,7 @@ const summaryMetrics = [
     label: "Total Distance",
     unit: "miles",
     image: distanceIcon,
-    colors: "border-gold/40 border-t-gold bg-gold/15",
+    colors: "border-border bg-surface",
     value: (summary: RunSummary) => summary.totalDistanceMiles,
     format: (value: number | null) => formatNumber(value, 1),
   },
@@ -33,7 +33,7 @@ const summaryMetrics = [
     label: "Avg Pace",
     unit: "min/mi",
     image: stopwatchIcon,
-    colors: "border-berry/25 border-t-berry bg-berry/10",
+    colors: "border-border bg-surface",
     value: (summary: RunSummary) => summary.avgPace,
     format: formatPace,
   },
@@ -41,7 +41,7 @@ const summaryMetrics = [
     label: "Avg Heart Rate",
     unit: "bpm",
     image: heartRateIcon,
-    colors: "border-orange/30 border-t-orange bg-orange/10",
+    colors: "border-border bg-surface",
     value: (summary: RunSummary) => summary.avgHeartRate,
     format: (value: number | null) => formatNumber(value),
   },
@@ -72,14 +72,14 @@ export default function SummaryTiles() {
         return (
           <div
             key={metric.label}
-            className={`relative flex min-h-32 flex-col justify-center rounded-lg border border-t-4 p-5 pl-24 text-left ${metric.colors}`}
+            className={`relative flex min-h-32 flex-col justify-center rounded-lg border border-t-2 p-5 pl-24 text-left ${metric.colors}`}
           >
             <dt className="text-sm font-semibold text-foreground">
               <Image
                 src={metric.image}
                 alt=""
                 sizes="64px"
-                className="absolute left-5 top-1/2 h-16 w-16 -translate-y-1/2 object-contain"
+                className="absolute left-5 top-1/2 h-16 w-16 -translate-y-1/2 object-contain grayscale opacity-80"
               />
               {metric.label}
             </dt>

@@ -38,14 +38,14 @@ export default function RunDetailsDialog({ selectedRun, onClose }: Props) {
             event.currentTarget.close();
           }
         }}
-        className="fixed inset-0 m-auto h-[480px] max-h-[calc(100dvh-2rem)] w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] overflow-hidden rounded-xl border border-gold/40 bg-surface p-0 text-foreground shadow-2xl backdrop:bg-navy/50 md:w-[33.333vw] md:min-w-80"
+        className="fixed inset-0 m-auto h-[480px] max-h-[calc(100dvh-2rem)] w-[calc(100vw-2rem)] max-w-[calc(100vw-2rem)] overflow-hidden rounded-xl border border-border bg-surface p-0 text-foreground shadow-2xl backdrop:bg-navy/50 md:w-[33.333vw] md:min-w-80"
       >
         <div className="flex h-full flex-col">
-        <div className="flex shrink-0 items-center justify-between gap-4 border-b border-gold/30 bg-navy px-5 py-3">
-            <h2 id={dialogTitleId} className="text-lg font-bold text-gold">Run Details</h2>
+        <div className="flex shrink-0 items-center justify-between gap-4 border-b border-border bg-surface-muted px-5 py-3">
+            <h2 id={dialogTitleId} className="text-lg font-bold text-foreground">Run Details</h2>
           <button type="button" aria-label="Close run details"
             onClick={() => dialogRef.current?.close()}
-            className="-mr-2 flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-lg text-gold hover:bg-gold/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold">
+            className="-mr-2 flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-lg text-foreground hover:bg-surface-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
               strokeLinecap="round" aria-hidden="true" className="h-5 w-5">
               <path d="m6 6 12 12 M18 6 6 18" />

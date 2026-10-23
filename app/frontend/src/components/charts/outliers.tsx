@@ -37,21 +37,21 @@ export default function Outliers({ runs, fromDate = "", toDate = "" }: Props) {
       </header>
       <div className="grid min-w-0 grid-cols-1 lg:grid-cols-[2fr_3fr]">
         <div className="flex h-[640px] min-w-0 flex-col border-b border-border lg:border-r lg:border-b-0">
-          <div className="flex shrink-0 items-center justify-between gap-3 border-y border-border bg-teal/5 px-4 py-3">
+          <div className="flex shrink-0 items-center justify-between gap-3 border-y border-border bg-surface-muted px-4 py-3">
             <p id={statusId} aria-live="polite" className="text-[10px] text-muted">
               {selectedRuns.length} of {MAX_SELECTIONS} runs selected{atLimit ? ". Deselect a run to select another." : ""}
             </p>
             <button type="button" onClick={() => setSelectedIds([])} disabled={!selectedRuns.length}
-              className="cursor-pointer rounded px-2 py-1 text-[10px] font-semibold text-brand hover:bg-gold/20 disabled:cursor-default disabled:opacity-40">Clear selection</button>
+              className="cursor-pointer rounded px-2 py-1 text-[10px] font-semibold text-brand hover:bg-surface-hover disabled:cursor-default disabled:opacity-40">Clear selection</button>
           </div>
           <div className="min-h-0 flex-1 overflow-y-auto p-3 text-[10px] leading-4">
             <p className="mb-3 text-center text-muted">↑ Highest 1–3 · ↓ Lowest 1–3 · Click a bar to compare</p>
             {!eligibleIds.size && <p className="py-8 text-center text-muted">No attribute values in this period.</p>}
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3">
               {rankings.map(({ metric, highest, lowest }) => (
-                <section key={metric.key} aria-label={`${metric.label} extremes`} className="min-w-0 rounded-lg border border-teal/15 bg-teal/5">
+                <section key={metric.key} aria-label={`${metric.label} extremes`} className="min-w-0 rounded-lg border border-border bg-surface-muted">
                   <svg viewBox="0 0 160 236" className="block w-full" role="group" aria-label={`${metric.label} outlier glyph`}>
-                    <line x1={12} x2={148} y1={114} y2={114} className="stroke-teal/30" strokeDasharray="3 3" />
+                    <line x1={12} x2={148} y1={114} y2={114} className="stroke-chart-teal/30" strokeDasharray="3 3" />
                     {([{ direction: "highest", entries: highest }, { direction: "lowest", entries: lowest }] as const).map(({ direction, entries }) => (
                       <g key={direction}>
                         {entries.map(({ run, value }, rank) => {
@@ -76,7 +76,7 @@ export default function Outliers({ runs, fromDate = "", toDate = "" }: Props) {
                                   toggle();
                                 }
                               }}
-                              className={`${selected ? "fill-gold stroke-navy" : direction === "highest" ? "fill-teal stroke-surface" : "fill-berry stroke-surface"} ${disabled ? "opacity-30" : "cursor-pointer hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"}`}
+                              className={`${selected ? "fill-chart-gold stroke-chart-navy" : direction === "highest" ? "fill-chart-teal stroke-surface" : "fill-chart-berry stroke-surface"} ${disabled ? "opacity-30" : "cursor-pointer hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"}`}
                               strokeWidth={selected ? 2.5 : 1}>
                               <title>{`${description}${selected ? " · Selected; click to remove" : " · Click to compare"}`}</title>
                             </rect>
@@ -84,7 +84,7 @@ export default function Outliers({ runs, fromDate = "", toDate = "" }: Props) {
                         })}
                       </g>
                     ))}
-                    <circle cx={80} cy={114} r={33} className="fill-surface stroke-teal/40" strokeWidth={1.5} />
+                    <circle cx={80} cy={114} r={33} className="fill-surface stroke-chart-teal/40" strokeWidth={1.5} />
                     <text x={80} y={metric.label.includes(" ") ? 111 : 117} textAnchor="middle" fontSize={10} fontWeight={600} className="fill-brand" pointerEvents="none">
                       {metric.label.split(" ").map((word, index) => <tspan key={index} x={80} dy={index === 0 ? 0 : 12}>{word}</tspan>)}
                     </text>

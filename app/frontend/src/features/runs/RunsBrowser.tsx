@@ -24,8 +24,8 @@ export default function RunsBrowser({ runs }: Props) {
   return (
     <div className="space-y-5">
       <div className="grid grid-cols-1 gap-5 xl:grid-cols-2">
-      <div className="flex h-[640px] min-w-0 flex-col overflow-hidden rounded-xl border border-gold/40 bg-surface">
-        <h2 className="shrink-0 border-b border-gold/30 bg-navy px-5 py-4 text-base font-semibold text-gold">
+      <div className="flex h-[640px] min-w-0 flex-col overflow-hidden rounded-xl border border-border bg-surface">
+        <h2 className="shrink-0 border-b border-border bg-surface-muted px-5 py-4 text-base font-semibold text-foreground">
           Run Details
         </h2>
         <div className="min-h-0 flex-1">
@@ -40,7 +40,7 @@ export default function RunsBrowser({ runs }: Props) {
       </div>
       <div
         aria-label="Run radar comparison"
-        className="h-[640px] min-w-0 overflow-hidden rounded-xl border border-orange/30 border-t-4 border-t-orange bg-orange/5"
+        className="h-[640px] min-w-0 overflow-hidden rounded-xl border border-border border-t-2 border-t-accent/30 bg-surface-muted"
       >
         <RunRadar
           runs={selectedRuns.filter((run) => checkedRunIds.includes(run.id))}
@@ -48,7 +48,7 @@ export default function RunsBrowser({ runs }: Props) {
         />
       </div>
       </div>
-      <div className="min-h-64 min-w-0 overflow-hidden rounded-xl border border-teal/25 border-t-4 border-t-teal bg-surface">
+      <div className="min-h-64 min-w-0 overflow-hidden rounded-xl border border-border border-t-2 border-t-accent/30 bg-surface">
         <CurrentRunsList
           compact
           runs={selectedRuns}

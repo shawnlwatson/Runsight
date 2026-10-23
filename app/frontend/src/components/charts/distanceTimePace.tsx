@@ -135,24 +135,24 @@ export default function DistanceTimePace({
           aria-label="Distance and pace lines over time"
         >
           <g fontSize={10} className="fill-muted">
-            <line x1={margin.left} x2={margin.left + 10} y1={9} y2={9} className="stroke-gold" strokeWidth={2} />
+            <line x1={margin.left} x2={margin.left + 10} y1={9} y2={9} className="stroke-chart-gold" strokeWidth={2} />
             <text x={margin.left + 15} y={13}>Distance</text>
-            <line x1={margin.left + 80} x2={margin.left + 94} y1={9} y2={9} className="stroke-berry" strokeWidth={2} />
+            <line x1={margin.left + 80} x2={margin.left + 94} y1={9} y2={9} className="stroke-chart-berry" strokeWidth={2} />
             <text x={margin.left + 100} y={13}>Pace</text>
           </g>
-          <path d={distancePath ?? undefined} fill="none" className="stroke-gold" strokeWidth={2} />
+          <path d={distancePath ?? undefined} fill="none" className="stroke-chart-gold" strokeWidth={2} />
           {distanceRuns.map((run, index) => (
             <circle key={run.id ?? `${run.date}-${index}`}
               cx={x(new Date(run.time + DAY / 2))} cy={distanceY(run.distanceMiles)} r={4}
-              className="fill-gold stroke-surface" strokeWidth={1.5}>
+              className="fill-chart-gold stroke-surface" strokeWidth={1.5}>
               <title>{`${run.date.slice(2)} · ${run.distanceMiles} miles`}</title>
             </circle>
           ))}
-          <path d={pacePath ?? undefined} fill="none" className="stroke-berry" strokeWidth={2} />
+          <path d={pacePath ?? undefined} fill="none" className="stroke-chart-berry" strokeWidth={2} />
           {paceRuns.map((run, index) => (
             <circle key={run.id ?? `${run.date}-${index}`}
               cx={x(new Date(run.time + DAY / 2))} cy={y(run.pace)} r={4}
-              className="fill-berry stroke-surface" strokeWidth={1.5}>
+              className="fill-chart-berry stroke-surface" strokeWidth={1.5}>
               <title>{`${run.date.slice(2)} · ${formatPace(run.pace)} min/mi`}</title>
             </circle>
           ))}

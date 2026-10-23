@@ -9,15 +9,15 @@ export default async function ExplorePage() {
   return (
     <div className="space-y-6">
       <header>
-        <h1 className="w-fit border-b-4 border-gold pb-2 text-3xl font-bold tracking-tight text-brand md:text-4xl">
+        <h1 className="w-fit border-b-2 border-divider pb-2 text-3xl font-bold tracking-tight text-brand md:text-4xl">
           Explore
         </h1>
       </header>
       <FilterBar />
-      <section aria-label="Custom views" className="min-w-0 rounded-lg border border-teal/25 border-t-4 border-t-teal bg-surface">
+      <section aria-label="Custom views" className="min-w-0 rounded-lg border border-border border-t-2 border-t-accent/30 bg-surface">
         <CustomViewsChart runs={runs} />
       </section>
-      <section aria-label="Outlier run comparison" className="min-w-0 overflow-hidden rounded-lg border border-teal/25 border-t-4 border-t-teal bg-surface">
+      <section aria-label="Outlier run comparison" className="min-w-0 overflow-hidden rounded-lg border border-border border-t-2 border-t-accent/30 bg-surface">
         <OutliersChart runs={runs} />
       </section>
     </div>

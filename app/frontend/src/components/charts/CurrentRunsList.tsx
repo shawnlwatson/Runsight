@@ -38,11 +38,11 @@ export default function CurrentRunsList({
         </p>
       )}
       <div className="overflow-x-auto rounded-b-lg">
-        <table className={`w-full table-auto border-collapse [&_th]:border [&_th]:border-teal/15 [&_td]:border [&_td]:border-teal/15 ${compact
+        <table className={`w-full table-auto border-collapse [&_th]:border [&_th]:border-border [&_td]:border [&_td]:border-border ${compact
           ? "text-[10px] [&_th]:px-1.5 [&_th]:py-2 [&_td]:px-1.5 [&_td]:py-2"
           : "text-sm"}`}>
           <caption className="sr-only">Runs in the selected date range, newest first.</caption>
-          <thead className="border-y border-teal/20 bg-teal/10 text-foreground">
+          <thead className="border-y border-border bg-surface-muted text-foreground">
             <tr>
               {onCheckedRunsChange && (
                 <th scope="col" className="w-12 px-2 py-3 text-center font-semibold">Select</th>
@@ -61,8 +61,8 @@ export default function CurrentRunsList({
             {sortedRuns.map((run) => (
               <tr key={run.id} onClick={() => onSelectRun ? onSelectRun(run) : setSelectedRun(run)}
                 className={`cursor-pointer transition-colors ${selectedRunId === run.id
-                  ? "bg-gold/20 hover:bg-gold/30"
-                  : "odd:bg-surface even:bg-teal/5 odd:hover:bg-surface-hover even:hover:bg-surface-hover"}`}>
+                  ? "bg-selection hover:bg-surface-hover"
+                  : "odd:bg-surface even:bg-surface-muted odd:hover:bg-surface-hover even:hover:bg-surface-hover"}`}>
                 {onCheckedRunsChange && (
                   <td className="px-2 py-3 text-center" onClick={(event) => event.stopPropagation()}>
                     <input

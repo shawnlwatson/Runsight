@@ -129,24 +129,24 @@ export default function PaceTemp<T extends Run>({
         >
           <desc>Each point is a run positioned by temperature in degrees Fahrenheit and pace in minutes per mile. The horizontal line shows mean pace for the selected period. The shaded band extends one sample standard deviation above and below the mean. Larger outlined points are more than two standard deviations from the mean.</desc>
           <g fontSize={10} className="fill-muted">
-            <circle cx={margin.left + 3} cy={9} r={3} className="fill-berry" />
+            <circle cx={margin.left + 3} cy={9} r={3} className="fill-chart-berry" />
             <text x={margin.left + 11} y={13}>Runs</text>
-            <line x1={margin.left + 48} x2={margin.left + 62} y1={9} y2={9} className="stroke-brand" strokeWidth={2} />
+            <line x1={margin.left + 48} x2={margin.left + 62} y1={9} y2={9} className="stroke-chart-teal" strokeWidth={2} />
             <text x={margin.left + 67} y={13}>Mean</text>
-            <rect x={margin.left + 106} y={5} width={12} height={8} className="fill-teal/15" />
+            <rect x={margin.left + 106} y={5} width={12} height={8} className="fill-chart-teal/15" />
             <text x={margin.left + 123} y={13}>±1 SD</text>
-            <circle cx={margin.left + 174} cy={9} r={4} className="fill-orange stroke-navy" strokeWidth={2} />
+            <circle cx={margin.left + 174} cy={9} r={4} className="fill-chart-orange stroke-chart-navy" strokeWidth={2} />
             <text x={margin.left + 183} y={13}>Outlier</text>
           </g>
           {bandLow !== null && bandHigh !== null && spread !== null && spread > 0 && (
             <rect data-pace-band="true" x={margin.left} y={y(bandHigh)}
-              width={plotWidth} height={y(bandLow) - y(bandHigh)} className="fill-teal/15">
+              width={plotWidth} height={y(bandLow) - y(bandHigh)} className="fill-chart-teal/15">
               <title>{`Mean ±1 sample SD: ${formatPace(bandLow)}–${formatPace(bandHigh)} min/mi`}</title>
             </rect>
           )}
           {meanPace !== null && (
             <line data-pace-mean="true" x1={margin.left} x2={size.width - margin.right}
-              y1={y(meanPace)} y2={y(meanPace)} className="stroke-brand" strokeWidth={2} strokeDasharray="6 3">
+              y1={y(meanPace)} y2={y(meanPace)} className="stroke-chart-teal" strokeWidth={2} strokeDasharray="6 3">
               <title>{`Mean pace: ${formatPace(meanPace)} min/mi across ${statistics.count} runs`}</title>
             </line>
           )}
@@ -167,7 +167,7 @@ export default function PaceTemp<T extends Run>({
                 }
               }}
               cx={x(run.temperature)} cy={y(run.pace)} r={outlier ? 6.5 : 4}
-              className={`${outlier ? "fill-orange stroke-navy" : "fill-berry stroke-surface"} ${onSelectRun ? "cursor-pointer hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand" : ""}`}
+              className={`${outlier ? "fill-chart-orange stroke-chart-navy" : "fill-chart-berry stroke-surface"} ${onSelectRun ? "cursor-pointer hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand" : ""}`}
               strokeWidth={outlier ? 2.5 : 1.5}>
               <title>{`${run.date.slice(2)} · ${run.temperature}°F · ${formatPace(run.pace)} min/mi${outlier ? " · Outlier: more than 2 SD from the mean" : ""}`}</title>
             </circle>

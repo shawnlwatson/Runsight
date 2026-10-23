@@ -5,6 +5,7 @@ import { scaleLinear } from "d3-scale";
 import { curveLinear, curveLinearClosed, lineRadial } from "d3-shape";
 import { radarAngle, radarDomain, radarMetrics, radarValue } from "@/lib/charts/radarMetrics";
 import { formatNumber, formatPace, formatTotalTime } from "@/lib/runFormatters";
+import { chartDashes } from "@/lib/charts/chartTheme";
 import type { CurrentRun } from "@/types/run";
 
 type Props = {
@@ -14,8 +15,8 @@ type Props = {
 };
 
 type RadarPoint = { angle: number; radius: number; value: number | null };
-const colors = ["var(--color-teal)", "var(--color-berry)", "var(--color-orange)", "var(--color-navy)", "var(--color-gold)"];
-const dashPatterns = [undefined, "7 3", "2 3", "9 3 2 3", "12 4"];
+const colors = ["var(--color-chart-teal)", "var(--color-chart-berry)", "var(--color-chart-orange)", "var(--color-chart-navy)", "var(--color-chart-gold)"];
+const dashPatterns = chartDashes;
 const levels = [0.25, 0.5, 0.75, 1];
 
 function formatMetric(value: number | null, index: number) {
@@ -61,7 +62,7 @@ export default function RunRadar({ runs, referenceRuns = runs, emptyMessage = "S
       run, points, complete,
       path: line(complete ? points : [...points, points[0]]),
       color: colors[runIndex % colors.length],
-      dash: dashPatterns[Math.floor(runIndex / colors.length) % dashPatterns.length],
+      dash: dashPatterns[runIndex % dashPatterns.length],
     };
   });
 
@@ -94,7 +95,7 @@ export default function RunRadar({ runs, referenceRuns = runs, emptyMessage = "S
               {levels.map((level) => (
                 <g key={level}>
                   <path d={ring(radarMetrics.map(() => radius * level)) ?? undefined}
-                    className="stroke-teal/20" fill="none" />
+                    className="stroke-chart-teal/20" fill="none" />
                   <text x={5} y={-radius * level + 11} fontSize={9} className="fill-muted">{level * 100}%</text>
                 </g>
               ))}
@@ -105,7 +106,7 @@ export default function RunRadar({ runs, referenceRuns = runs, emptyMessage = "S
                 const labelRadius = radius + 20;
                 return (
                   <g key={metric.key}>
-                    <line x2={sin * radius} y2={-cos * radius} className="stroke-teal/25" />
+                    <line x2={sin * radius} y2={-cos * radius} className="stroke-chart-teal/25" />
                     <text x={sin * labelRadius} y={-cos * labelRadius}
                       textAnchor={sin > 0.1 ? "start" : sin < -0.1 ? "end" : "middle"}
                       fontSize={11} className="fill-foreground">
@@ -138,7 +139,7 @@ export default function RunRadar({ runs, referenceRuns = runs, emptyMessage = "S
           </p>
         )}
       </div>
-      <details className="max-h-44 shrink-0 overflow-auto border-t border-orange/20 px-5 py-3 text-xs">
+      <details className="max-h-44 shrink-0 overflow-auto border-t border-border px-5 py-3 text-xs">
         <summary className="cursor-pointer font-medium text-brand">View values and scale details</summary>
         <p className="my-2 text-muted">Scales use runs in the current date range. Missing values appear as — and leave gaps in the chart.</p>
         <div className="overflow-x-auto">

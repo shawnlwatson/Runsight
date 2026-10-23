@@ -7,7 +7,7 @@ export default async function RunsPage() {
   return (
     <div className="space-y-6">
       <header>
-        <h1 className="w-fit border-b-4 border-gold pb-2 text-3xl font-bold tracking-tight text-brand md:text-4xl">
+        <h1 className="w-fit border-b-2 border-divider pb-2 text-3xl font-bold tracking-tight text-brand md:text-4xl">
           Runs
         </h1>
         <p className="mt-2 text-sm text-muted md:text-base">

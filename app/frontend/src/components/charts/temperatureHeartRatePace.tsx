@@ -122,7 +122,7 @@ export default function TemperatureHeartRatePace({ runs, title }: Props) {
           {points.map((run) => (
             <circle key={run.id} cx={x(run.pace)} cy={y(run.heartRate)} r={5}
               fill={color(run.temperature)} fillOpacity={0.9} tabIndex={0}
-              className="stroke-brand stroke-1 focus:stroke-berry focus:stroke-2 focus:outline-none"
+              className="stroke-chart-teal stroke-1 focus:stroke-chart-berry focus:stroke-2 focus:outline-none"
               aria-label={`${run.date}, pace ${formatPace(run.pace)} per mile, heart rate ${run.heartRate} bpm, temperature ${run.temperature} degrees Fahrenheit`}>
               <title>{`${run.date.slice(2)} · ${formatPace(run.pace)} min/mi · ${run.heartRate} bpm · ${run.temperature}°F`}</title>
             </circle>
