@@ -6,6 +6,7 @@ The raw FIT messages (session, laps, activity, sport, fileId) keep every field i
 Usage: python pipeline/load_runs.py
 """
 
+import json
 import math
 import os
 from pathlib import Path
@@ -17,6 +18,7 @@ from pymongo import MongoClient, ReplaceOne
 # Paths are resolved from this file, so the script works from any directory.
 ROOT = Path(__file__).resolve().parent.parent
 FIT_DIR = f"{ROOT}/data/raw/fit"
+EXCLUSIONS_FILE = ROOT / "pipeline" / "excluded_runs.json"
 
 # FIT message types stored in MongoDB
 STORED_MESSAGES = {
@@ -113,9 +115,14 @@ def parse_run(path):
 
 
 def main():
+    # Explicitly excluded accidental recordings must not return on a later import.
+    excluded_ids = {entry["id"] for entry in json.loads(EXCLUSIONS_FILE.read_text())}
     # Parse every file. a bad file is reported and skipped, not fatal
     docs = []
     for path in sorted(Path(FIT_DIR).glob("*.fit")):
+        if path.stem[:17] in excluded_ids:
+            print(f"Excluded accidental recording: {path.name}")
+            continue
         try:
             docs.append(parse_run(path))
         except Exception as error:

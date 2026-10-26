@@ -3,28 +3,28 @@ Daily Metrics,Date,measured,0,
 Daily Metrics,Date,synthetic_model,0,
 Daily Metrics,Date,synthetic_prior,0,
 Daily Metrics,Active Energy,measured,364,0.3452143736443076
-Daily Metrics,Active Energy,synthetic_model,1761,0.3040959591312746
+Daily Metrics,Active Energy,synthetic_model,1780,0.30580032790724665
 Daily Metrics,Active Energy,synthetic_prior,0,
 Daily Metrics,Resting Energy,measured,364,0.12885427660843995
-Daily Metrics,Resting Energy,synthetic_model,1761,0.21106050780706356
+Daily Metrics,Resting Energy,synthetic_model,1780,0.21257191289417535
 Daily Metrics,Resting Energy,synthetic_prior,0,
 Daily Metrics,Resting,measured,360,0.5513157808021085
-Daily Metrics,Resting,synthetic_model,1749,0.5041422903529917
+Daily Metrics,Resting,synthetic_model,1766,0.5016712118431579
 Daily Metrics,Resting,synthetic_prior,0,
 Daily Metrics,HRV,measured,360,0.22755065301352512
-Daily Metrics,HRV,synthetic_model,1747,0.17753787456434078
+Daily Metrics,HRV,synthetic_model,1760,0.18290082174645947
 Daily Metrics,HRV,synthetic_prior,0,
 Daily Metrics,Steps,measured,364,0.20390631492728611
-Daily Metrics,Steps,synthetic_model,1761,0.21172002618695493
+Daily Metrics,Steps,synthetic_model,1780,0.21627524105737597
 Daily Metrics,Steps,synthetic_prior,0,
 Daily Metrics,VO₂ max,measured,33,0.9656392400231111
-Daily Metrics,VO₂ max,synthetic_model,203,0.9713929626038253
+Daily Metrics,VO₂ max,synthetic_model,204,0.9805364050085169
 Daily Metrics,VO₂ max,synthetic_prior,0,
 Daily Metrics,Exercise Minutes,measured,364,0.3145539571740671
-Daily Metrics,Exercise Minutes,synthetic_model,1761,0.26419771500753153
+Daily Metrics,Exercise Minutes,synthetic_model,1780,0.26606964942562494
 Daily Metrics,Exercise Minutes,synthetic_prior,0,
 Daily Metrics,Stand Hours,measured,364,0.1600348350516514
-Daily Metrics,Stand Hours,synthetic_model,1761,0.14094566440969059
+Daily Metrics,Stand Hours,synthetic_model,1780,0.1431158309490141
 Daily Metrics,Stand Hours,synthetic_prior,0,
 Weight,Date,measured,0,
 Weight,Date,synthetic_model,0,
@@ -51,70 +51,70 @@ Sleep,Date,measured,0,
 Sleep,Date,synthetic_model,0,
 Sleep,Date,synthetic_prior,0,
 Sleep,Main,measured,19,
-Sleep,Main,synthetic_model,2087,
+Sleep,Main,synthetic_model,2107,
 Sleep,Main,synthetic_prior,0,
 Sleep,Start,measured,19,-0.05320780517445532
-Sleep,Start,synthetic_model,2087,0.011080671942553334
+Sleep,Start,synthetic_model,2107,0.007174317769104882
 Sleep,Start,synthetic_prior,0,
 Sleep,End,measured,19,0.2401799783641437
-Sleep,End,synthetic_model,2087,0.2880328004623387
+Sleep,End,synthetic_model,2107,0.3055907084909296
 Sleep,End,synthetic_prior,0,
 Sleep,InBed,measured,19,-0.0457718014494753
-Sleep,InBed,synthetic_model,2087,0.29776428851263315
+Sleep,InBed,synthetic_model,2107,0.29842081992685143
 Sleep,InBed,synthetic_prior,0,
 Sleep,Asleep,measured,19,-0.1673052399181389
-Sleep,Asleep,synthetic_model,2087,0.2466558326210596
+Sleep,Asleep,synthetic_model,2107,0.2610547417666171
 Sleep,Asleep,synthetic_prior,0,
 Sleep,Awake,measured,19,0.11195431914498817
-Sleep,Awake,synthetic_model,2087,0.19725940718411622
+Sleep,Awake,synthetic_model,2107,0.20826984217660707
 Sleep,Awake,synthetic_prior,0,
 Sleep,REM,measured,19,-0.14927776817798022
-Sleep,REM,synthetic_model,2089,0.12286858374780124
+Sleep,REM,synthetic_model,2109,0.12532201844646218
 Sleep,REM,synthetic_prior,0,
 Sleep,Core,measured,19,-0.23676270437582175
-Sleep,Core,synthetic_model,2089,0.20518512305604808
+Sleep,Core,synthetic_model,2109,0.2312510106597346
 Sleep,Core,synthetic_prior,0,
 Sleep,Deep,measured,19,0.4563421358467322
-Sleep,Deep,synthetic_model,2089,0.04989256889360104
+Sleep,Deep,synthetic_model,2109,0.0068866336662470485
 Sleep,Deep,synthetic_prior,0,
 Sleep,Wake Count,measured,19,0.39471275154830937
-Sleep,Wake Count,synthetic_model,2087,0.30516678632792066
+Sleep,Wake Count,synthetic_model,2107,0.29973395599682673
 Sleep,Wake Count,synthetic_prior,0,
 Sleep,Efficiency,measured,19,0.03733270796860748
-Sleep,Efficiency,synthetic_model,2087,0.19968263698862682
+Sleep,Efficiency,synthetic_model,2107,0.19665305128676736
 Sleep,Efficiency,synthetic_prior,0,
 Sleep,Fall Asleep,measured,0,
 Sleep,Fall Asleep,synthetic_model,0,
 Sleep,Fall Asleep,synthetic_prior,0,
 Sleep,Min. Respiration Rate,measured,19,0.43108901303178526
-Sleep,Min. Respiration Rate,synthetic_model,1954,0.11403370553156392
+Sleep,Min. Respiration Rate,synthetic_model,1971,0.13385702980082137
 Sleep,Min. Respiration Rate,synthetic_prior,0,
 Sleep,Max. Respiration Rate,measured,19,-0.09168391163177693
-Sleep,Max. Respiration Rate,synthetic_model,1954,0.022665080388942677
+Sleep,Max. Respiration Rate,synthetic_model,1971,0.001661368022329249
 Sleep,Max. Respiration Rate,synthetic_prior,0,
 Sleep,Avg. Respiration Rate,measured,19,0.0016121974996239157
-Sleep,Avg. Respiration Rate,synthetic_model,1954,0.2855824649230582
+Sleep,Avg. Respiration Rate,synthetic_model,1971,0.28909623185296374
 Sleep,Avg. Respiration Rate,synthetic_prior,0,
 Sleep,Wrist Temperature,measured,2,
-Sleep,Wrist Temperature,synthetic_model,235,0.2761185944722242
+Sleep,Wrist Temperature,synthetic_model,246,0.2606471392536279
 Sleep,Wrist Temperature,synthetic_prior,0,
 Sleep,Low SpO2,measured,19,0.04999072523752497
-Sleep,Low SpO2,synthetic_model,1954,0.018104899884818535
+Sleep,Low SpO2,synthetic_model,1971,0.022412949085583157
 Sleep,Low SpO2,synthetic_prior,0,
 Sleep,High SpO2,measured,19,0.13568659739701006
-Sleep,High SpO2,synthetic_model,1954,0.05368111503993347
+Sleep,High SpO2,synthetic_model,1971,0.05675944669148544
 Sleep,High SpO2,synthetic_prior,0,
 Sleep,Avg. SpO2,measured,19,0.04310341225475849
-Sleep,Avg. SpO2,synthetic_model,1954,0.296356456292834
+Sleep,Avg. SpO2,synthetic_model,1971,0.29752848848185365
 Sleep,Avg. SpO2,synthetic_prior,0,
 Sleep,Low HRV,measured,19,0.2073068449420498
-Sleep,Low HRV,synthetic_model,1954,0.19571256828549505
+Sleep,Low HRV,synthetic_model,1971,0.21143875137587367
 Sleep,Low HRV,synthetic_prior,0,
 Sleep,High HRV,measured,19,0.19835602096307306
-Sleep,High HRV,synthetic_model,1954,0.2045595333477667
+Sleep,High HRV,synthetic_model,1971,0.20191652744404512
 Sleep,High HRV,synthetic_prior,0,
 Sleep,Avg. HRV,measured,19,0.2545787796988051
-Sleep,Avg. HRV,synthetic_model,1954,0.2701319101062169
+Sleep,Avg. HRV,synthetic_model,1971,0.27972986182246745
 Sleep,Avg. HRV,synthetic_prior,0,
 Sleep,Data Source,measured,0,
 Sleep,Data Source,synthetic_model,0,
@@ -232,10 +232,10 @@ Womens Health,Date,synthetic_model,0,
 Womens Health,Date,synthetic_prior,0,
 Womens Health,Time,measured,0,
 Womens Health,Time,synthetic_model,0,
-Womens Health,Time,synthetic_prior,2126,
+Womens Health,Time,synthetic_prior,2146,
 Womens Health,Start of Cycle,measured,0,
 Womens Health,Start of Cycle,synthetic_model,0,
-Womens Health,Start of Cycle,synthetic_prior,2126,-0.037073170731707274
+Womens Health,Start of Cycle,synthetic_prior,2146,-0.03721604639922678
 Womens Health,Menstruation,measured,0,
 Womens Health,Menstruation,synthetic_model,0,
 Womens Health,Menstruation,synthetic_prior,0,

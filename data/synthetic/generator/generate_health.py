@@ -541,7 +541,7 @@ def validate_config(config):
     if config['womens_health']['cycle_sd_days']<0:raise ValueError('Cycle SD cannot be negative')
 
 
-def generate(source, outdir, config, plots=True):
+def generate(source, outdir, config, plots=True, end_date=None):
     validate_config(config)
     source=source.resolve();outdir=outdir.resolve();outdir.mkdir(parents=True,exist_ok=True)
     target=outdir/'Health Metrics_synthetic.xlsx'
@@ -553,6 +553,10 @@ def generate(source, outdir, config, plots=True):
     for sheet in workbook:
         all_headers[sheet.title],original[sheet.title],original_row_numbers[sheet.title]=sheet_data(sheet)
     latest=max(d for rows in original.values() for d in rows)
+    if end_date is not None:
+        if end_date < latest:
+            raise ValueError('End date excludes measured observations')
+        latest=end_date
     start=date.fromisoformat(config['start_date'])
     if start>min(d for rows in original.values() for d in rows):
         raise ValueError('Start date excludes measured observations')
@@ -647,10 +651,11 @@ def main():
     parser.add_argument('--output-dir',type=Path,default=BASE.parent/'results')
     parser.add_argument('--config',type=Path,default=BASE/'config.json')
     parser.add_argument('--seed',type=int,help='Override configured random seed')
+    parser.add_argument('--end-date',type=date.fromisoformat,help='Extend synthetic coverage through this YYYY-MM-DD date; cannot exclude measured observations')
     parser.add_argument('--no-plots',action='store_true')
     args=parser.parse_args();config=json.loads(args.config.read_text())
     if args.seed is not None:config['seed']=args.seed
-    generate(args.input,args.output_dir,config,not args.no_plots)
+    generate(args.input,args.output_dir,config,not args.no_plots,end_date=args.end_date)
 
 
 if __name__=='__main__':

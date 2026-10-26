@@ -4,9 +4,12 @@ from app.db import runs_collection
 from app.services.runs import date_match
 
 
-def summarize(start: date | None, end: date | None):
+def summarize(start: date | None, end: date | None, excluded_run_ids: list[str] | None = None):
+    match = date_match(start, end)
+    if excluded_run_ids:
+        match["$match"]["_id"] = {"$nin": excluded_run_ids}
     pipeline = [
-        date_match(start, end),
+        match,
         # Collapse every matched run into one document. $sum and $avg skip nulls
         {
             "$group": {
@@ -38,8 +41,8 @@ def previous_period(start: date, end: date):
     return start - length, start - timedelta(days=1)
 
 
-def dashboard_summary(start: date | None, end: date | None):
+def dashboard_summary(start: date | None, end: date | None, excluded_run_ids: list[str] | None = None):
     previous = None
     if start and end and start <= end:
-        previous = summarize(*previous_period(start, end))
-    return {"current": summarize(start, end), "previous": previous}
+        previous = summarize(*previous_period(start, end), excluded_run_ids=excluded_run_ids)
+    return {"current": summarize(start, end, excluded_run_ids), "previous": previous}

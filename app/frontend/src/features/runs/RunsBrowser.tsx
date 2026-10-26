@@ -4,6 +4,7 @@ import { useState } from "react";
 import CurrentRunsList from "@/components/charts/CurrentRunsList";
 import IndividualRun from "@/components/charts/individualRun";
 import RunRadar from "@/components/charts/runRadar";
+import { useAnalysisRuns } from "@/components/AnalysisProvider";
 import { useDateRange } from "@/components/DateRangeProvider";
 import type { CurrentRun } from "@/types/run";
 
@@ -12,9 +13,10 @@ const MAX_RADAR_RUNS = 8;
 
 export default function RunsBrowser({ runs }: Props) {
   const { fromDate, toDate } = useDateRange();
+  const analysisRuns = useAnalysisRuns(runs);
   const [selectedRunId, setSelectedRunId] = useState<string | null>(null);
   const [checkedRunIds, setCheckedRunIds] = useState<string[]>([]);
-  const selectedRuns = runs.filter((run) =>
+  const selectedRuns = analysisRuns.filter((run) =>
     (!fromDate || run.date >= fromDate) && (!toDate || run.date <= toDate),
   ).sort((a, b) => b.date.localeCompare(a.date));
   // Pick the newest visible run when the previous selection is filtered out.

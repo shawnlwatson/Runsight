@@ -1,9 +1,11 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useId, useMemo, useState } from "react";
 import RunDetailsDialog from "@/components/RunDetailsDialog";
+import ExcludeRunButton from "@/components/ExcludeRunButton";
 import type { CurrentRun } from "@/types/run";
 import { formatNumber, formatPace, formatSpeed, formatTotalTime } from "@/lib/runFormatters";
+import { runSortColumns, sortRuns, type RunSort } from "@/lib/runSorting";
 
 export type { CurrentRun } from "@/types/run";
 
@@ -22,9 +24,10 @@ export default function CurrentRunsList({
   checkedRunIds = [], onCheckedRunsChange, maxSelections = Infinity,
 }: Props) {
   const [selectedRun, setSelectedRun] = useState<CurrentRun | null>(null);
+  const [sort, setSort] = useState<RunSort>({ key: "date", direction: "descending" });
   const selectionStatusId = useId();
   const selectionLimitReached = checkedRunIds.length >= maxSelections;
-  const sortedRuns = [...runs].sort((a, b) => b.date.localeCompare(a.date));
+  const sortedRuns = useMemo(() => sortRuns(runs, sort), [runs, sort]);
 
   return (
     <div className="min-w-0">
@@ -41,20 +44,27 @@ export default function CurrentRunsList({
         <table className={`w-full table-auto border-collapse [&_th]:border [&_th]:border-border [&_td]:border [&_td]:border-border ${compact
           ? "text-[10px] [&_th]:px-1.5 [&_th]:py-2 [&_td]:px-1.5 [&_td]:py-2"
           : "text-sm"}`}>
-          <caption className="sr-only">Runs in the selected date range, newest first.</caption>
+          <caption className="sr-only">Runs in the selected date range, sorted by {runSortColumns.find((column) => column.key === sort.key)?.label}, {sort.direction}. Click a column heading to change sorting. Missing values appear last.</caption>
           <thead className="border-y border-border bg-surface-muted text-foreground">
             <tr>
               {onCheckedRunsChange && (
                 <th scope="col" className="w-12 px-2 py-3 text-center font-semibold">Select</th>
               )}
-              <th scope="col" aria-sort="descending" className="px-2 py-3 text-left font-semibold">Date ↓</th>
-              <th scope="col" title="Hours:minutes:seconds" className="px-2 py-3 text-center font-semibold">Total Time</th>
-              <th scope="col" title="Miles" className="px-2 py-3 text-center font-semibold">Distance (mi)</th>
-              <th scope="col" title="Minutes per mile" className="px-2 py-3 text-center font-semibold">Pace (min/mi)</th>
-              <th scope="col" className="px-2 py-3 text-center font-semibold">Speed (MPH)</th>
-              <th scope="col" title="Average heart rate in beats per minute" className="px-2 py-3 text-center font-semibold">Heart rate (bpm)</th>
-              <th scope="col" title="Temperature in degrees Fahrenheit" className="px-2 py-3 text-center font-semibold">Temperature (°F)</th>
-              <th scope="col" title="Feet" className="px-2 py-3 text-center font-semibold">Elevation (ft)</th>
+              {runSortColumns.map((column) => {
+                const active = sort.key === column.key;
+                const nextDirection = active && sort.direction === "ascending" ? "descending" : "ascending";
+                return <th key={column.key} scope="col" aria-sort={active ? sort.direction : undefined}
+                  className={`px-2 py-3 font-semibold ${column.key === "date" ? "text-left" : "text-center"}`}>
+                  <button type="button" title={`${column.title}; sort ${nextDirection}`}
+                    aria-label={`Sort by ${column.label} ${nextDirection}`}
+                    onClick={() => setSort({ key: column.key, direction: nextDirection })}
+                    className={`inline-flex w-full cursor-pointer items-center gap-1 rounded hover:text-brand focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand ${column.key === "date" ? "justify-start" : "justify-center"}`}>
+                    {column.label}
+                    <span aria-hidden="true" className="shrink-0 text-muted">{active ? sort.direction === "ascending" ? "↑" : "↓" : "↕"}</span>
+                  </button>
+                </th>;
+              })}
+              <th scope="col" className="w-10"><span className="sr-only">Analysis actions</span></th>
             </tr>
           </thead>
           <tbody className="text-foreground">
@@ -96,11 +106,12 @@ export default function CurrentRunsList({
                 <td className="px-2 py-3 text-center tabular-nums">{formatNumber(run.heartRate)}</td>
                 <td className="px-2 py-3 text-center tabular-nums">{formatNumber(run.temperature, 1)}</td>
                 <td className="px-2 py-3 text-center tabular-nums">{formatNumber(run.elevationFeet)}</td>
+                <td className="text-center"><ExcludeRunButton run={run} compact /></td>
               </tr>
             ))}
             {!sortedRuns.length && (
               <tr>
-                <td colSpan={onCheckedRunsChange ? 9 : 8} className="px-2 py-12 text-center text-muted">
+                <td colSpan={onCheckedRunsChange ? 10 : 9} className="px-2 py-12 text-center text-muted">
                   No runs in the selected period.
                 </td>
               </tr>

@@ -1,6 +1,6 @@
 from datetime import date
 
-from fastapi import APIRouter
+from fastapi import APIRouter, Query
 
 from app.models.run import Run
 from app.models.summary import DashboardSummary
@@ -16,5 +16,5 @@ def get_runs(start: date | None = None, end: date | None = None):
 
 
 @router.get("/summary", response_model=DashboardSummary)
-def get_summary(start: date | None = None, end: date | None = None):
-    return dashboard_summary(start, end)
+def get_summary(start: date | None = None, end: date | None = None, exclude_id: list[str] | None = Query(default=None)):
+    return dashboard_summary(start, end, exclude_id)

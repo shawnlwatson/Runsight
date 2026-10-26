@@ -16,9 +16,10 @@ export const fetchRuns = () => getJson<CurrentRun[]>("/runs");
 export const fetchFatigueRuns = () => getJson<FatigueRun[]>("/insights/fatigue");
 
 // Dates are YYYY-MM-DD; an empty string means no limit on that side.
-export function fetchSummary(start: string, end: string) {
+export function fetchSummary(start: string, end: string, excludedRunIds: readonly string[] = []) {
   const params = new URLSearchParams();
   if (start) params.set("start", start);
   if (end) params.set("end", end);
+  for (const id of excludedRunIds) params.append("exclude_id", id);
   return getJson<DashboardSummary>(`/runs/summary?${params}`);
 }

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useAnalysis } from "@/components/AnalysisProvider";
 import { useDateRange } from "@/components/DateRangeProvider";
 import PeriodComparison from "@/components/PeriodComparison";
 import { fetchSummary } from "@/lib/api";
@@ -47,23 +48,26 @@ const summaryMetrics = [
   },
 ];
 
-export default function SummaryTiles() {
+export default function SummaryTiles({ compact = false }: { compact?: boolean }) {
   const { fromDate, toDate } = useDateRange();
-  const [summary, setSummary] = useState<DashboardSummary | null>(null);
+  const { excludedRunIds } = useAnalysis();
+  const queryKey = JSON.stringify([fromDate, toDate, excludedRunIds]);
+  const [loaded, setLoaded] = useState<{ key: string; data: DashboardSummary } | null>(null);
+  const summary = loaded?.key === queryKey ? loaded.data : null;
 
   // Refetch whenever the selected date range changes
   useEffect(() => {
     let ignore = false; // drop a slow response if the range changed again
-    fetchSummary(fromDate, toDate)
-      .then((result) => { if (!ignore) setSummary(result); })
-      .catch(() => { if (!ignore) setSummary(null); });
+    fetchSummary(fromDate, toDate, excludedRunIds)
+      .then((result) => { if (!ignore) setLoaded({ key: queryKey, data: result }); })
+      .catch(() => { if (!ignore) setLoaded(null); });
     return () => { ignore = true; };
-  }, [fromDate, toDate]);
+  }, [fromDate, toDate, excludedRunIds, queryKey]);
 
   return (
     <dl
       aria-label="Running summary"
-      className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4"
+      className={compact ? "grid grid-cols-1 gap-2" : "grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4"}
     >
       {summaryMetrics.map((metric) => {
         const current = summary ? metric.value(summary.current) : null;
@@ -72,23 +76,23 @@ export default function SummaryTiles() {
         return (
           <div
             key={metric.label}
-            className={`relative flex min-h-32 flex-col justify-center rounded-lg border border-t-2 p-5 pl-24 text-left ${metric.colors}`}
+            className={`relative flex min-w-0 flex-col justify-center rounded-lg border border-t-2 text-left ${compact ? "min-h-20 px-3 py-2.5" : "min-h-32 p-5 pl-24"} ${metric.colors}`}
           >
-            <dt className="text-sm font-semibold text-foreground">
-              <Image
+            <dt className={`${compact ? "text-[11px] leading-4" : "text-sm"} font-semibold text-foreground`}>
+              {!compact && <Image
                 src={metric.image}
                 alt=""
                 sizes="64px"
                 className="absolute left-5 top-1/2 h-16 w-16 -translate-y-1/2 object-contain grayscale opacity-80"
-              />
+              />}
               {metric.label}
             </dt>
-            <dd className="mt-3">
-              <div className="flex flex-wrap items-baseline justify-start gap-2">
-                <span className="text-3xl font-bold tabular-nums text-foreground">
+            <dd className={compact ? "mt-1" : "mt-3"}>
+              <div className={`flex flex-wrap items-baseline justify-start ${compact ? "gap-x-1 gap-y-0" : "gap-2"}`}>
+                <span className={`${compact ? "text-xl leading-7" : "text-3xl"} font-bold tabular-nums text-foreground`}>
                   {metric.format(current)}
                 </span>
-                <span className="text-sm text-muted">{metric.unit}</span>
+                <span className={`${compact ? "text-[10px]" : "text-sm"} text-muted`}>{metric.unit}</span>
               </div>
               <PeriodComparison currentValue={current} previousValue={previous} />
             </dd>

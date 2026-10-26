@@ -14,7 +14,7 @@ export default async function TrendsPage() {
         </h1>
       </header>
       <section
-        aria-label="Pace over time"
+        aria-label="Pace consistency over time"
         className="h-96 w-full min-w-0 rounded-lg border border-border border-t-2 border-t-accent/30 bg-surface-muted"
       >
         <PaceTimeChart runs={runs} />

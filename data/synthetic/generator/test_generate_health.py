@@ -1,7 +1,7 @@
 """Integration tests use the workbook, not copies of the generation formulas."""
 from collections import Counter
 from contextlib import redirect_stdout
-from datetime import timedelta
+from datetime import date, timedelta
 import hashlib
 import io
 import json
@@ -56,6 +56,20 @@ class HealthGeneratorTests(unittest.TestCase):
     def test_seed_reproducibility_including_workbook_bytes(self):
         for filename in ('Health Metrics_synthetic.xlsx','variable_validation.csv','temporal_validation.csv','validation.json','provenance.csv'):
             self.assertEqual((self.root/'first'/filename).read_bytes(),(self.root/'second'/filename).read_bytes(),filename)
+
+    def test_explicit_end_date_extends_synthetic_coverage(self):
+        with redirect_stdout(io.StringIO()):
+            values,origins,report=generate(self.source,self.root/'extended',self.config,plots=False,end_date=date(2026,10,21))
+        for name in ('Daily Metrics','Sleep','Womens Health'):
+            self.assertEqual(len(values[name]),2147)
+            self.assertEqual(max(values[name]),date(2026,10,21))
+        for name in ('Daily Metrics','Sleep'):
+            self.assertTrue(all(origins[name][date(2026,10,21),column]==MODEL for column in values[name][date(2026,10,21)]))
+        self.assertEqual(report['measured_cells_verified_raw_xml'],3883)
+        self.assertEqual(report['sleep_consistency']['failures'],[])
+        self.assertEqual(hashlib.sha256(self.source.read_bytes()).hexdigest(),self.source_hash)
+        with self.assertRaisesRegex(ValueError,'excludes measured'):
+            generate(self.source,self.root/'invalid-end',self.config,plots=False,end_date=date(2026,9,30))
 
     def test_full_daily_grids_and_preserved_sparse_schedule(self):
         for name in ('Daily Metrics','Sleep','Womens Health'):

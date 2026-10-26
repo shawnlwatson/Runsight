@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { scaleLinear, scaleSequential } from "d3-scale";
-import { interpolateOrRd } from "d3-scale-chromatic";
+import { scaleLinear, scaleThreshold } from "d3-scale";
 
 export type TemperatureHeartRatePaceRun = {
   id: string;
@@ -37,6 +36,13 @@ function formatPace(pace: number) {
 }
 
 const margin = { top: 16, right: 24, bottom: 46, left: 56 };
+const temperatureBands = [
+  { label: "<65°", color: "#8ecae6" },
+  { label: "65–79°", color: "#f28e2b" },
+  { label: "80°+", color: "#d73027" },
+];
+const temperatureColor = scaleThreshold<number, string>()
+  .domain([65, 80]).range(temperatureBands.map((band) => band.color));
 
 export default function TemperatureHeartRatePace({ runs, title }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -62,39 +68,27 @@ export default function TemperatureHeartRatePace({ runs, title }: Props) {
   paceDomain[0] = Math.max(0, paceDomain[0]);
   heartRateDomain[0] = Math.max(0, heartRateDomain[0]);
 
-  const temperatures = points.map((run) => run.temperature);
-  let temperatureDomain: [number, number] = [30, 90];
-  if (temperatures.length) {
-    const low = temperatures.reduce((a, b) => Math.min(a, b));
-    const high = temperatures.reduce((a, b) => Math.max(a, b));
-    temperatureDomain = low === high ? [low - 1, high + 1] : [low, high];
-  }
-
   const plotWidth = size.width - margin.left - margin.right;
   const plotHeight = size.height - margin.top - margin.bottom;
   const ready = plotWidth > 0 && plotHeight > 0;
   const x = scaleLinear().domain(paceDomain).nice().range([margin.left, size.width - margin.right]);
   const y = scaleLinear().domain(heartRateDomain).nice().range([size.height - margin.bottom, margin.top]);
-  const color = scaleSequential(interpolateOrRd).domain(temperatureDomain).clamp(true);
   const xTicks = ready ? x.ticks(Math.max(2, Math.floor(plotWidth / 65))) : [];
   const yTicks = ready ? y.ticks(Math.max(2, Math.floor(plotHeight / 40))) : [];
-  const legendGradient = `linear-gradient(to right, ${Array.from({ length: 21 }, (_, index) =>
-    `${interpolateOrRd(index / 20)} ${index * 5}%`,
-  ).join(", ")})`;
 
   return (
     <div className="flex h-full min-h-64 w-full flex-col">
       <div className="flex shrink-0 flex-wrap items-start justify-between gap-x-4 gap-y-2 px-4 pt-3">
         {title && <h2 className="text-base font-semibold text-foreground">{title}</h2>}
-        <div className="ml-auto w-36 shrink-0 text-muted">
+        <div className="ml-auto shrink-0 text-muted" aria-label="Temperature: light blue below 65°F, orange from 65°F to below 80°F, red at 80°F and above">
           <p className="text-center text-[11px] leading-4">
-            Temperature (°F){!points.length ? " · preview" : ""}
+            Temperature (°F)
           </p>
-          <div className="mt-1 h-2 rounded-sm border border-muted/50"
-            style={{ background: legendGradient }} />
-          <div className="mt-0.5 flex justify-between text-[10px] leading-3">
-            <span>{temperatureDomain[0].toFixed(0)}°</span>
-            <span>{temperatureDomain[1].toFixed(0)}°</span>
+          <div className="mt-1 flex items-center gap-3 text-[10px] leading-3">
+            {temperatureBands.map((band) => <span key={band.label} className="inline-flex items-center gap-1">
+              <span aria-hidden="true" className="h-2.5 w-2.5 rounded-full border border-muted/50" style={{ backgroundColor: band.color }} />
+              {band.label}
+            </span>)}
           </div>
         </div>
       </div>
@@ -102,7 +96,7 @@ export default function TemperatureHeartRatePace({ runs, title }: Props) {
       {ready && (
         <svg width={size.width} height={size.height} className="absolute inset-0 text-muted" role="img"
           aria-label={`Pace versus heart rate, colored by temperature. ${points.length} runs.`}>
-          <desc>Each point represents one run. Lighter orange means cooler, and darker red means warmer. Axes fit the supplied runs.</desc>
+          <desc>Each point represents one run. Light blue means below 65°F, orange means 65°F to below 80°F, and red means 80°F or warmer. Axes fit the supplied runs.</desc>
           {yTicks.map((heartRate) => (
             <g key={heartRate} transform={`translate(${margin.left}, ${y(heartRate)})`}>
               <line x2={plotWidth} className="stroke-border" />
@@ -121,7 +115,7 @@ export default function TemperatureHeartRatePace({ runs, title }: Props) {
 
           {points.map((run) => (
             <circle key={run.id} cx={x(run.pace)} cy={y(run.heartRate)} r={5}
-              fill={color(run.temperature)} fillOpacity={0.9} tabIndex={0}
+              fill={temperatureColor(run.temperature)} fillOpacity={0.9} tabIndex={0}
               className="stroke-chart-teal stroke-1 focus:stroke-chart-berry focus:stroke-2 focus:outline-none"
               aria-label={`${run.date}, pace ${formatPace(run.pace)} per mile, heart rate ${run.heartRate} bpm, temperature ${run.temperature} degrees Fahrenheit`}>
               <title>{`${run.date.slice(2)} · ${formatPace(run.pace)} min/mi · ${run.heartRate} bpm · ${run.temperature}°F`}</title>

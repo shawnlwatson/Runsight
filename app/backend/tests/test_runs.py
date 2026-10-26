@@ -138,6 +138,29 @@ class FatigueTests(ApiTestCase):
 
 
 class SummaryTests(ApiTestCase):
+    def test_exclusions_apply_to_both_comparison_periods_without_deleting_runs(self):
+        summary = self.get_json('/runs/summary?start=2026-09-01&end=2026-09-10&exclude_id=2026-09-01-070000&exclude_id=2026-08-25-070000')
+        self.assertEqual(summary['current']['totalRuns'], 2)
+        self.assertAlmostEqual(summary['current']['totalDistanceMiles'], 6)
+        self.assertAlmostEqual(summary['current']['avgPace'], 9)
+        self.assertAlmostEqual(summary['current']['avgHeartRate'], 160)
+        self.assertEqual(summary['previous']['totalRuns'], 0)
+        self.assertIsNone(summary['previous']['avgPace'])
+        self.assertEqual(len(self.get_json('/runs')), 4)
+
+    def test_excluding_all_runs_returns_empty_summary(self):
+        query = '&'.join(f'exclude_id={run["_id"]}' for run in RUNS)
+        summary = self.get_json(f'/runs/summary?{query}')
+        self.assertEqual(summary['current']['totalRuns'], 0)
+        self.assertEqual(summary['current']['totalDistanceMiles'], 0)
+        self.assertIsNone(summary['current']['avgPace'])
+        self.assertIsNone(summary['current']['avgHeartRate'])
+
+    def test_duplicate_and_unknown_exclusions_do_not_change_other_runs(self):
+        summary = self.get_json('/runs/summary?exclude_id=2026-09-01-070000&exclude_id=2026-09-01-070000&exclude_id=not-a-run')
+        self.assertEqual(summary['current']['totalRuns'], 3)
+        self.assertAlmostEqual(summary['current']['totalDistanceMiles'], 10)
+
     def test_current_period_totals(self):
         current = self.get_json("/runs/summary?start=2026-09-01&end=2026-09-10")["current"]
         self.assertEqual(current["totalRuns"], 3)

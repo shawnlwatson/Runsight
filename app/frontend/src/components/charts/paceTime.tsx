@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { scaleLinear, scaleUtc } from "d3-scale";
-import { isPaceOutlier, paceStatistics } from "@/lib/charts/paceStatistics";
+import { area, line } from "d3-shape";
+import { rollingPaceStatistics } from "@/lib/charts/rollingPaceStatistics";
 
 type Run = {
   date: string; // Calendar date: YYYY-MM-DD
@@ -73,18 +74,14 @@ export default function PaceTime<T extends Run>({
 
   const cohortRuns = validRange
     ? datedRuns.filter((run) => run.time >= start && run.time <= end)
-        .sort((a, b) => a.time - b.time)
+        .sort((a, b) => a.time - b.time || (a.id ?? "").localeCompare(b.id ?? ""))
     : [];
   const paceRuns = cohortRuns.filter((run): run is typeof run & { pace: number } =>
     run.pace !== null && Number.isFinite(run.pace) && run.pace > 0,
   );
   const paces = paceRuns.map((run) => run.pace);
-  // Every visible run contributes equally, rather than weighting by distance.
-  const statistics = paceStatistics(paces);
-  const meanPace = statistics.mean;
-  const spread = statistics.standardDeviation;
-  const bandLow = meanPace !== null && spread !== null ? Math.max(0, meanPace - spread) : null;
-  const bandHigh = meanPace !== null && spread !== null ? meanPace + spread : null;
+  const statistics = rollingPaceStatistics(paces);
+  const rolling = paceRuns.map((run, index) => ({ ...statistics[index], time: run.time }));
   const plotWidth = size.width - margin.left - margin.right;
   const plotHeight = size.height - margin.top - margin.bottom;
   const ready = validRange && plotWidth > 0 && plotHeight > 0;
@@ -95,8 +92,8 @@ export default function PaceTime<T extends Run>({
     .range([margin.left, size.width - margin.right]);
 
   // Leave breathing room, including when every run has the same pace
-  const minimum = paces.length ? Math.min(...paces, bandLow ?? Infinity) : 0;
-  const maximum = paces.length ? Math.max(...paces, bandHigh ?? -Infinity) : 0;
+  const minimum = paces.length ? Math.min(...paces) : 0;
+  const maximum = paces.length ? Math.max(...paces) : 0;
   const padding = Math.max((maximum - minimum) * 0.1, 0.25);
 
   const y = scaleLinear()
@@ -117,6 +114,11 @@ export default function PaceTime<T extends Run>({
   const yTicks = ready
     ? y.ticks(Math.max(2, Math.floor(plotHeight / 50)))
     : [];
+  const medianPath = line<(typeof rolling)[number]>()
+    .x((point) => x(new Date(point.time + DAY / 2))).y((point) => y(point.median))(rolling);
+  const iqrPath = area<(typeof rolling)[number]>()
+    .x((point) => x(new Date(point.time + DAY / 2)))
+    .y0((point) => y(point.q1)).y1((point) => y(point.q3))(rolling);
   return (
     <div ref={containerRef} className="relative h-full min-h-64 w-full">
       {ready ? (
@@ -125,36 +127,36 @@ export default function PaceTime<T extends Run>({
           height={size.height}
           className="absolute inset-0 text-muted"
           role="group"
-          aria-label="Pace over time"
+          aria-label="Pace consistency over time"
         >
-          <desc>Each point is a run. The horizontal line shows mean pace for the selected period. The shaded band extends one sample standard deviation above and below the mean. Larger outlined points are more than two standard deviations from the mean.</desc>
+          <desc>Each point is a run. The line shows a rolling median over the latest ten selected runs, including the current run; early windows contain fewer runs. The shaded band spans the rolling 25th to 75th percentiles. Larger outlined points fall beyond 1.5 times the interquartile range outside those quartiles, after at least four runs.</desc>
           <g fontSize={10} className="fill-muted">
             <circle cx={margin.left + 3} cy={9} r={3} className="fill-chart-berry" />
             <text x={margin.left + 11} y={13}>Runs</text>
             <line x1={margin.left + 48} x2={margin.left + 62} y1={9} y2={9} className="stroke-chart-teal" strokeWidth={2} />
-            <text x={margin.left + 67} y={13}>Mean</text>
-            <rect x={margin.left + 106} y={5} width={12} height={8} className="fill-chart-teal/15" />
-            <text x={margin.left + 123} y={13}>±1 SD</text>
-            <circle cx={margin.left + 174} cy={9} r={4} className="fill-chart-orange stroke-chart-navy" strokeWidth={2} />
-            <text x={margin.left + 183} y={13}>Outlier</text>
+            <text x={margin.left + 67} y={13}>Rolling median</text>
+            <rect x={margin.left + 148} y={5} width={12} height={8} className="fill-chart-teal/15" />
+            <text x={margin.left + 165} y={13}>IQR</text>
+            <circle cx={margin.left + 202} cy={9} r={4} className="fill-chart-orange stroke-chart-navy" strokeWidth={2} />
+            <text x={margin.left + 211} y={13}>Outlier</text>
           </g>
-          {bandLow !== null && bandHigh !== null && spread !== null && spread > 0 && (
-            <rect data-pace-band="true" x={margin.left} y={y(bandHigh)}
-              width={plotWidth} height={y(bandLow) - y(bandHigh)} className="fill-chart-teal/15">
-              <title>{`Mean ±1 sample SD: ${formatPace(bandLow)}–${formatPace(bandHigh)} min/mi`}</title>
-            </rect>
+          {iqrPath && (
+            <path data-pace-band="true" d={iqrPath} className="fill-chart-teal/15" pointerEvents="none">
+              <title>Rolling interquartile range: 25th–75th percentile of the latest 10 selected runs</title>
+            </path>
           )}
-          {meanPace !== null && (
-            <line data-pace-mean="true" x1={margin.left} x2={size.width - margin.right}
-              y1={y(meanPace)} y2={y(meanPace)} className="stroke-chart-teal" strokeWidth={2} strokeDasharray="6 3">
-              <title>{`Mean pace: ${formatPace(meanPace)} min/mi across ${statistics.count} runs`}</title>
-            </line>
+          {medianPath && (
+            <path data-pace-median="true" d={medianPath} fill="none" className="stroke-chart-teal" strokeWidth={2.5} pointerEvents="none">
+              <title>Rolling median pace: latest 10 selected runs</title>
+            </path>
           )}
+          {rolling.length === 1 && <circle cx={x(new Date(rolling[0].time + DAY / 2))} cy={y(rolling[0].median)} r={7} fill="none" className="stroke-chart-teal" strokeWidth={2} pointerEvents="none" />}
           {paceRuns.map((run, index) => {
-            const outlier = isPaceOutlier(run.pace, statistics);
+            const { outlier, q1, median, q3, count } = statistics[index];
             return (
             <circle key={run.id ?? `${run.date}-${index}`}
               data-pace-run="true" data-outlier={outlier}
+              data-rolling-median={median} data-rolling-q1={q1} data-rolling-q3={q3} data-window-count={count}
               role={onSelectRun ? "button" : undefined}
               tabIndex={onSelectRun ? 0 : undefined}
               aria-label={`View run details for ${run.date}, pace ${formatPace(run.pace)} min/mi`}
@@ -169,7 +171,7 @@ export default function PaceTime<T extends Run>({
               cx={x(new Date(run.time + DAY / 2))} cy={y(run.pace)} r={outlier ? 6.5 : 4}
               className={`${outlier ? "fill-chart-orange stroke-chart-navy" : "fill-chart-berry stroke-surface"} ${onSelectRun ? "cursor-pointer hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand" : ""}`}
               strokeWidth={outlier ? 2.5 : 1.5}>
-              <title>{`${run.date.slice(2)} · ${formatPace(run.pace)} min/mi${outlier ? " · Outlier: more than 2 SD from the mean" : ""}`}</title>
+              <title>{`${run.date.slice(2)} · ${formatPace(run.pace)} min/mi · Rolling median: ${formatPace(median)} · IQR: ${formatPace(q1)}–${formatPace(q3)} min/mi · ${count} runs${outlier ? " · Outlier: beyond 1.5×IQR fences" : ""}`}</title>
             </circle>
             );
           })}
@@ -179,7 +181,7 @@ export default function PaceTime<T extends Run>({
             x2={size.width - margin.right}
             y1={size.height - margin.bottom}
             y2={size.height - margin.bottom}
-            stroke="currentColor"
+            stroke="currentColor" pointerEvents="none"
           />
 
           {xTicks.map((date) => (
@@ -187,7 +189,7 @@ export default function PaceTime<T extends Run>({
               key={date.getTime()}
               transform={`translate(${x(date)}, ${size.height - margin.bottom})`}
             >
-              <line y2={6} stroke="currentColor" />
+              <line y2={6} stroke="currentColor" pointerEvents="none" />
               <text y={22} textAnchor="middle" fill="currentColor" fontSize={11}>
                 {date.toISOString().slice(2, 10)}
               </text>
@@ -200,12 +202,12 @@ export default function PaceTime<T extends Run>({
             x2={margin.left}
             y1={margin.top}
             y2={size.height - margin.bottom}
-            stroke="currentColor"
+            stroke="currentColor" pointerEvents="none"
           />
 
           {yTicks.map((pace) => (
             <g key={pace} transform={`translate(${margin.left}, ${y(pace)})`}>
-              <line x2={-6} stroke="currentColor" />
+              <line x2={-6} stroke="currentColor" pointerEvents="none" />
               <text
                 x={-8}
                 dy="0.32em"

@@ -6,13 +6,14 @@ document with the same date as the run. Durations are stored in hours.
 Usage: python pipeline/load_health.py
 """
 
+import argparse
 import os
-from datetime import datetime, time, timedelta
+from datetime import date, datetime, time, timedelta
 from pathlib import Path
 
 import openpyxl
 from dotenv import load_dotenv
-from pymongo import MongoClient, ReplaceOne
+from pymongo import MongoClient, ReplaceOne, UpdateOne
 
 # Paths are resolved from this file, so the script works from any directory
 ROOT = Path(__file__).resolve().parent.parent
@@ -52,6 +53,14 @@ def read_sheet(workbook, name):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--start', type=date.fromisoformat, help='First date to load, inclusive')
+    parser.add_argument('--end', type=date.fromisoformat, help='Last date to load, inclusive')
+    parser.add_argument('--insert-only', action='store_true', help='Insert missing dates without replacing existing MongoDB records')
+    parser.add_argument('--dry-run', action='store_true', help='Validate and count workbook dates without connecting to MongoDB')
+    args = parser.parse_args()
+    if args.start and args.end and args.start > args.end:
+        parser.error('--start must not be after --end')
     # Read the two sheets the frontend needs
     workbook = openpyxl.load_workbook(WORKBOOK, read_only=True)
     daily = read_sheet(workbook, "Daily Metrics")
@@ -64,10 +73,13 @@ def main():
             workbook["Record Provenance"].iter_rows(values_only=True)
         )[1:]
     }
+    workbook.close()
 
     # Build one document per date that appears in either sheet
     docs = []
     for day in sorted(daily.keys() | sleep.keys()):
+        if (args.start and day < args.start.isoformat()) or (args.end and day > args.end.isoformat()):
+            continue
         d, s = daily.get(day), sleep.get(day)
         docs.append(
             {
@@ -91,15 +103,18 @@ def main():
     if not docs:
         print("No dates to load")
         return
+    if args.dry_run:
+        print(f"Validated {len(docs)} dates ({docs[0]['date']} through {docs[-1]['date']}); no database writes")
+        return
 
     # Connect to Mongo collection and upsert by date so re-running never duplicates
     load_dotenv(f"{ROOT}/.env")
-    health = MongoClient(os.environ["MONGODB_URI"]).runsight.daily_health
-    result = health.bulk_write(
-        [ReplaceOne({"_id": d["_id"]}, d, upsert=True) for d in docs]
-    )
+    operations = [UpdateOne({"_id": d["_id"]}, {"$setOnInsert": d}, upsert=True)
+                  if args.insert_only else ReplaceOne({"_id": d["_id"]}, d, upsert=True) for d in docs]
+    with MongoClient(os.environ["MONGODB_URI"]) as client:
+        result = client.runsight.daily_health.bulk_write(operations)
     print(
-        f"Loaded {len(docs)} dates ({result.upserted_count} new, {result.matched_count} updated)"
+        f"Loaded {len(docs)} dates ({result.upserted_count} new, {result.modified_count} modified, {result.matched_count} existing matches)"
     )
 
 

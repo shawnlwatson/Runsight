@@ -204,7 +204,7 @@
       "sheet": "Daily Metrics",
       "column": 1,
       "variable": "Date",
-      "records": 2127,
+      "records": 2147,
       "missing": 0,
       "source_records": 365,
       "source_missing": 0,
@@ -218,10 +218,10 @@
           }
         },
         "synthetic_model": {
-          "n": 1762,
+          "n": 1782,
           "categories": {
             "first_date": "2020-12-05",
-            "last_date": "2025-10-01"
+            "last_date": "2026-10-21"
           }
         },
         "synthetic_prior": {
@@ -234,7 +234,7 @@
       "sheet": "Daily Metrics",
       "column": 2,
       "variable": "Active Energy",
-      "records": 2127,
+      "records": 2147,
       "missing": 0,
       "source_records": 365,
       "source_missing": 0,
@@ -253,16 +253,16 @@
           "sd": 341.470122855864
         },
         "synthetic_model": {
-          "n": 1762,
+          "n": 1782,
           "min": 5.01058494335997,
-          "q05": 251.07808155411465,
+          "q05": 251.24503813266844,
           "q25": 396.5109847401874,
           "median": 743.8222219893672,
-          "q75": 1007.5016397824629,
-          "q95": 1263.1717715415455,
+          "q75": 1007.2825740773901,
+          "q95": 1262.855046958971,
           "max": 1740.8756953713323,
-          "mean": 724.6521616256756,
-          "sd": 353.5216179174286
+          "mean": 723.962310236253,
+          "sd": 352.98207812834767
         },
         "synthetic_prior": {
           "n": 0,
@@ -274,7 +274,7 @@
       "sheet": "Daily Metrics",
       "column": 3,
       "variable": "Resting Energy",
-      "records": 2127,
+      "records": 2147,
       "missing": 0,
       "source_records": 365,
       "source_missing": 0,
@@ -293,16 +293,16 @@
           "sd": 128.20270977482204
         },
         "synthetic_model": {
-          "n": 1762,
+          "n": 1782,
           "min": 1130.334397805171,
-          "q05": 1554.3342476838607,
-          "q25": 1799.404101994114,
-          "median": 1828.7225236314025,
-          "q75": 1855.458136989551,
-          "q95": 1897.503594845732,
+          "q05": 1577.041256135147,
+          "q25": 1799.500477416317,
+          "median": 1828.918107360487,
+          "q75": 1856.5249655884943,
+          "q95": 1897.9341401434826,
           "max": 2384.1783615717563,
-          "mean": 1803.0576068544888,
-          "sd": 123.35178274148217
+          "mean": 1803.5372034805503,
+          "sd": 122.85589240656817
         },
         "synthetic_prior": {
           "n": 0,
@@ -314,8 +314,8 @@
       "sheet": "Daily Metrics",
       "column": 4,
       "variable": "Resting",
-      "records": 2127,
-      "missing": 8,
+      "records": 2147,
+      "missing": 9,
       "source_records": 365,
       "source_missing": 2,
       "unit": "Excel native",
@@ -333,7 +333,7 @@
           "sd": 3.5767756321756785
         },
         "synthetic_model": {
-          "n": 1756,
+          "n": 1775,
           "min": 53.0,
           "q05": 55.0,
           "q25": 58.0,
@@ -341,8 +341,8 @@
           "q75": 63.0,
           "q95": 67.0,
           "max": 73.0,
-          "mean": 60.86617312072893,
-          "sd": 3.5369470867405957
+          "mean": 60.860845070422535,
+          "sd": 3.5353051331458687
         },
         "synthetic_prior": {
           "n": 0,
@@ -354,8 +354,8 @@
       "sheet": "Daily Metrics",
       "column": 5,
       "variable": "HRV",
-      "records": 2127,
-      "missing": 9,
+      "records": 2147,
+      "missing": 12,
       "source_records": 365,
       "source_missing": 2,
       "unit": "Excel native",
@@ -373,16 +373,16 @@
           "sd": 8.349327510541006
         },
         "synthetic_model": {
-          "n": 1755,
+          "n": 1772,
           "min": 20.88274829671901,
-          "q05": 28.49728156255406,
-          "q25": 34.95737986044015,
-          "median": 39.889488132268276,
-          "q75": 45.66289696192588,
-          "q95": 55.50446102887954,
+          "q05": 28.496224255833805,
+          "q25": 34.9584676824627,
+          "median": 39.84917941641392,
+          "q75": 45.54720192330005,
+          "q95": 55.41430182035441,
           "max": 71.94422177619755,
-          "mean": 40.599526583305895,
-          "sd": 8.142282626759526
+          "mean": 40.57372421372674,
+          "sd": 8.108933465473925
         },
         "synthetic_prior": {
           "n": 0,
@@ -394,7 +394,7 @@
       "sheet": "Daily Metrics",
       "column": 6,
       "variable": "Steps",
-      "records": 2127,
+      "records": 2147,
       "missing": 0,
       "source_records": 365,
       "source_missing": 0,
@@ -413,16 +413,16 @@
           "sd": 3918.1198028750728
         },
         "synthetic_model": {
-          "n": 1762,
+          "n": 1782,
           "min": 907.0,
-          "q05": 2794.9500000000003,
-          "q25": 5700.25,
-          "median": 8316.5,
-          "q75": 11470.0,
+          "q05": 2751.2000000000007,
+          "q25": 5696.75,
+          "median": 8316.0,
+          "q75": 11465.5,
           "q95": 16522.699999999983,
           "max": 20609.0,
-          "mean": 8777.583427922815,
-          "sd": 4119.579174302426
+          "mean": 8773.494949494949,
+          "sd": 4124.718950358557
         },
         "synthetic_prior": {
           "n": 0,
@@ -434,8 +434,8 @@
       "sheet": "Daily Metrics",
       "column": 7,
       "variable": "VO\u2082 max",
-      "records": 2127,
-      "missing": 1562,
+      "records": 2147,
+      "missing": 1584,
       "source_records": 365,
       "source_missing": 264,
       "unit": "Excel native",
@@ -453,16 +453,16 @@
           "sd": 3.0327080975686287
         },
         "synthetic_model": {
-          "n": 464,
-          "min": 40.08960700848558,
-          "q05": 41.23,
-          "q25": 42.782933394873815,
-          "median": 44.06029101225392,
-          "q75": 47.981026276617236,
-          "q95": 49.50256197476675,
-          "max": 50.180132975706094,
-          "mean": 45.14254854205219,
-          "sd": 2.7846462090453765
+          "n": 462,
+          "min": 40.6707155210805,
+          "q05": 41.228088348767606,
+          "q25": 42.61060026354572,
+          "median": 44.02150424684544,
+          "q75": 48.008264255806225,
+          "q95": 50.07624967359941,
+          "max": 50.169587840504725,
+          "mean": 45.15015396697772,
+          "sd": 2.934069849582215
         },
         "synthetic_prior": {
           "n": 0,
@@ -474,7 +474,7 @@
       "sheet": "Daily Metrics",
       "column": 8,
       "variable": "Exercise Minutes",
-      "records": 2127,
+      "records": 2147,
       "missing": 0,
       "source_records": 365,
       "source_missing": 0,
@@ -493,7 +493,7 @@
           "sd": 46.0196343747181
         },
         "synthetic_model": {
-          "n": 1762,
+          "n": 1782,
           "min": 0.0,
           "q05": 0.0,
           "q25": 6.0,
@@ -501,8 +501,8 @@
           "q75": 89.0,
           "q95": 130.0,
           "max": 215.0,
-          "mean": 54.64528944381385,
-          "sd": 47.46437403402432
+          "mean": 54.52693602693603,
+          "sd": 47.370167575531696
         },
         "synthetic_prior": {
           "n": 0,
@@ -514,7 +514,7 @@
       "sheet": "Daily Metrics",
       "column": 9,
       "variable": "Stand Hours",
-      "records": 2127,
+      "records": 2147,
       "missing": 0,
       "source_records": 365,
       "source_missing": 0,
@@ -533,7 +533,7 @@
           "sd": 2.2100505679405154
         },
         "synthetic_model": {
-          "n": 1762,
+          "n": 1782,
           "min": 1.0,
           "q05": 11.0,
           "q25": 13.0,
@@ -541,8 +541,8 @@
           "q75": 15.0,
           "q95": 17.0,
           "max": 19.0,
-          "mean": 14.222474460839955,
-          "sd": 2.1449714194125993
+          "mean": 14.22334455667789,
+          "sd": 2.1405586905159417
         },
         "synthetic_prior": {
           "n": 0,
@@ -755,7 +755,7 @@
       "sheet": "Sleep",
       "column": 1,
       "variable": "Date",
-      "records": 2127,
+      "records": 2147,
       "missing": 0,
       "source_records": 29,
       "source_missing": 0,
@@ -769,10 +769,10 @@
           }
         },
         "synthetic_model": {
-          "n": 2098,
+          "n": 2118,
           "categories": {
             "first_date": "2020-12-05",
-            "last_date": "2026-10-01"
+            "last_date": "2026-10-21"
           }
         },
         "synthetic_prior": {
@@ -785,7 +785,7 @@
       "sheet": "Sleep",
       "column": 2,
       "variable": "Main",
-      "records": 2127,
+      "records": 2147,
       "missing": 0,
       "source_records": 29,
       "source_missing": 0,
@@ -804,7 +804,7 @@
           "sd": 0.0
         },
         "synthetic_model": {
-          "n": 2098,
+          "n": 2118,
           "min": 1.0,
           "q05": 1.0,
           "q25": 1.0,
@@ -825,7 +825,7 @@
       "sheet": "Sleep",
       "column": 3,
       "variable": "Start",
-      "records": 2127,
+      "records": 2147,
       "missing": 0,
       "source_records": 29,
       "source_missing": 0,
@@ -844,16 +844,16 @@
           "sd": 4.033987399478816
         },
         "synthetic_model": {
-          "n": 2098,
+          "n": 2118,
           "min": 0.00782,
-          "q05": 21.071330194444442,
-          "q25": 22.323731805555553,
-          "median": 22.88835180555555,
-          "q75": 23.201392430555558,
+          "q05": 21.041324083333336,
+          "q25": 22.31820465277778,
+          "median": 22.88635763888889,
+          "q75": 23.200715486111108,
           "q95": 23.507852111111113,
           "max": 23.987724166666666,
-          "mean": 22.208133232178795,
-          "sd": 3.4231937351757056
+          "mean": 22.177575087871155,
+          "sd": 3.506462658070351
         },
         "synthetic_prior": {
           "n": 0,
@@ -865,7 +865,7 @@
       "sheet": "Sleep",
       "column": 4,
       "variable": "End",
-      "records": 2127,
+      "records": 2147,
       "missing": 0,
       "source_records": 29,
       "source_missing": 0,
@@ -884,16 +884,16 @@
           "sd": 1.0050697596740181
         },
         "synthetic_model": {
-          "n": 2098,
-          "min": 2.443941388888889,
-          "q05": 4.4628880833333335,
-          "q25": 5.640877430555555,
-          "median": 6.318200972222222,
-          "q75": 7.197799652777778,
-          "q95": 8.420854944444445,
-          "max": 10.198873611111111,
-          "mean": 6.392241570808177,
-          "sd": 1.1842647332559488
+          "n": 2118,
+          "min": 1.9555580555555554,
+          "q05": 4.508873236111111,
+          "q25": 5.571627847222222,
+          "median": 6.332858194444444,
+          "q75": 7.200297222222222,
+          "q95": 8.47495226388889,
+          "max": 10.2868925,
+          "mean": 6.390699169420838,
+          "sd": 1.2147185906012798
         },
         "synthetic_prior": {
           "n": 0,
@@ -905,7 +905,7 @@
       "sheet": "Sleep",
       "column": 5,
       "variable": "InBed",
-      "records": 2127,
+      "records": 2147,
       "missing": 0,
       "source_records": 29,
       "source_missing": 0,
@@ -924,16 +924,16 @@
           "sd": 1.0605735058424404
         },
         "synthetic_model": {
-          "n": 2098,
+          "n": 2118,
           "min": 5.06844837611111,
-          "q05": 6.4288043008611115,
-          "q25": 6.886483912361111,
-          "median": 7.452710602222222,
-          "q75": 8.228087323333334,
-          "q95": 9.468374798680555,
+          "q05": 6.428468887361112,
+          "q25": 6.887017929652777,
+          "median": 7.454705067916667,
+          "q75": 8.228997751666668,
+          "q95": 9.468488431986112,
           "max": 9.944529549722223,
-          "mean": 7.6235744962599306,
-          "sd": 0.9634369555884227
+          "mean": 7.623888953632751,
+          "sd": 0.9639072675178834
         },
         "synthetic_prior": {
           "n": 0,
@@ -945,7 +945,7 @@
       "sheet": "Sleep",
       "column": 6,
       "variable": "Asleep",
-      "records": 2127,
+      "records": 2147,
       "missing": 0,
       "source_records": 29,
       "source_missing": 0,
@@ -964,16 +964,16 @@
           "sd": 1.4880698851350658
         },
         "synthetic_model": {
-          "n": 2098,
+          "n": 2118,
           "min": 2.2156333333333333,
-          "q05": 4.951652691444445,
-          "q25": 6.297152413888889,
-          "median": 6.893993687777778,
-          "q75": 7.617635172986111,
-          "q95": 8.959021298625,
+          "q05": 4.964555558458334,
+          "q25": 6.298094036805556,
+          "median": 6.877055599444445,
+          "q75": 7.671614034930555,
+          "q95": 8.96915170361111,
           "max": 9.31346361111111,
-          "mean": 6.935600927519198,
-          "sd": 1.1790980599431926
+          "mean": 6.948981630246826,
+          "sd": 1.1814448587583566
         },
         "synthetic_prior": {
           "n": 0,
@@ -985,7 +985,7 @@
       "sheet": "Sleep",
       "column": 7,
       "variable": "Awake",
-      "records": 2127,
+      "records": 2147,
       "missing": 0,
       "source_records": 29,
       "source_missing": 0,
@@ -1004,16 +1004,16 @@
           "sd": 0.926247654795276
         },
         "synthetic_model": {
-          "n": 2098,
+          "n": 2118,
           "min": 0.10829694444444445,
-          "q05": 0.12196675693055556,
-          "q25": 0.2781672,
-          "median": 0.3790737647222222,
-          "q75": 0.7579586691666667,
-          "q95": 2.2694433145138877,
+          "q05": 0.12387664998611111,
+          "q25": 0.2784966438194445,
+          "median": 0.37799757680555557,
+          "q75": 0.7364297059027778,
+          "q95": 2.141761699499999,
           "max": 5.020908055555555,
-          "mean": 0.6879735687440419,
-          "sd": 0.7918083113154408
+          "mean": 0.6749073233846133,
+          "sd": 0.7673693775077973
         },
         "synthetic_prior": {
           "n": 0,
@@ -1025,7 +1025,7 @@
       "sheet": "Sleep",
       "column": 8,
       "variable": "REM",
-      "records": 2127,
+      "records": 2147,
       "missing": 0,
       "source_records": 29,
       "source_missing": 1,
@@ -1044,16 +1044,16 @@
           "sd": 0.4777688888259513
         },
         "synthetic_model": {
-          "n": 2099,
-          "min": 0.39565926916666666,
-          "q05": 0.8283586677222223,
-          "q25": 1.2156985154166666,
-          "median": 1.496798536388889,
-          "q75": 1.774346640138889,
-          "q95": 2.2305287504722218,
+          "n": 2119,
+          "min": 0.3395178486111111,
+          "q05": 0.8711035393888888,
+          "q25": 1.2115557105555557,
+          "median": 1.4880466794444445,
+          "q75": 1.7893674184722221,
+          "q95": 2.2607283157777776,
           "max": 3.1422836388888893,
-          "mean": 1.5120064474509025,
-          "sd": 0.42193385162501934
+          "mean": 1.5202820339532535,
+          "sd": 0.430139997360465
         },
         "synthetic_prior": {
           "n": 0,
@@ -1065,7 +1065,7 @@
       "sheet": "Sleep",
       "column": 9,
       "variable": "Core",
-      "records": 2127,
+      "records": 2147,
       "missing": 0,
       "source_records": 29,
       "source_missing": 1,
@@ -1084,16 +1084,16 @@
           "sd": 0.9056950237489795
         },
         "synthetic_model": {
-          "n": 2099,
-          "min": 1.3123488897222222,
-          "q05": 3.2042266343055554,
-          "q25": 4.163842214583333,
-          "median": 4.737039503888889,
-          "q75": 5.296748577500001,
-          "q95": 6.273271844749999,
-          "max": 7.363555924166667,
-          "mean": 4.725528966361362,
-          "sd": 0.9317197774376859
+          "n": 2119,
+          "min": 1.3689311672222222,
+          "q05": 3.2545620038611114,
+          "q25": 4.164701973750001,
+          "median": 4.719371475,
+          "q75": 5.317726215555556,
+          "q95": 6.255243067388889,
+          "max": 7.3860589999999995,
+          "mean": 4.7298491593192535,
+          "sd": 0.9203726436359552
         },
         "synthetic_prior": {
           "n": 0,
@@ -1105,7 +1105,7 @@
       "sheet": "Sleep",
       "column": 10,
       "variable": "Deep",
-      "records": 2127,
+      "records": 2147,
       "missing": 0,
       "source_records": 29,
       "source_missing": 1,
@@ -1124,16 +1124,16 @@
           "sd": 0.25094821621605556
         },
         "synthetic_model": {
-          "n": 2099,
-          "min": 0.15544375472222224,
-          "q05": 0.32257127708333333,
-          "q25": 0.47143998374999996,
-          "median": 0.6233879397222222,
-          "q75": 0.8332810248611111,
-          "q95": 1.453150931472221,
+          "n": 2119,
+          "min": 0.11749998416666665,
+          "q05": 0.33719319041666673,
+          "q25": 0.4722678052777778,
+          "median": 0.6180074702777778,
+          "q75": 0.8244503104166667,
+          "q95": 1.458936719222222,
           "max": 1.561122125,
-          "mean": 0.6958168392921232,
-          "sd": 0.31199267164553945
+          "mean": 0.6966166718494048,
+          "sd": 0.3148791553512618
         },
         "synthetic_prior": {
           "n": 0,
@@ -1145,7 +1145,7 @@
       "sheet": "Sleep",
       "column": 11,
       "variable": "Wake Count",
-      "records": 2127,
+      "records": 2147,
       "missing": 0,
       "source_records": 29,
       "source_missing": 0,
@@ -1164,7 +1164,7 @@
           "sd": 3.0104850463058135
         },
         "synthetic_model": {
-          "n": 2098,
+          "n": 2118,
           "min": 1.0,
           "q05": 5.0,
           "q25": 6.0,
@@ -1172,8 +1172,8 @@
           "q75": 10.0,
           "q95": 14.0,
           "max": 14.0,
-          "mean": 8.682078169685415,
-          "sd": 2.8414528349324986
+          "mean": 8.629839471199245,
+          "sd": 2.8307459840080025
         },
         "synthetic_prior": {
           "n": 0,
@@ -1185,7 +1185,7 @@
       "sheet": "Sleep",
       "column": 12,
       "variable": "Efficiency",
-      "records": 2127,
+      "records": 2147,
       "missing": 0,
       "source_records": 29,
       "source_missing": 0,
@@ -1204,16 +1204,16 @@
           "sd": 0.13066225343910542
         },
         "synthetic_model": {
-          "n": 2098,
-          "min": 0.3250282856927872,
-          "q05": 0.721886670263761,
-          "q25": 0.9050208890067711,
-          "median": 0.9515129952056101,
-          "q75": 0.9638376438018283,
-          "q95": 0.9840400838396338,
-          "max": 0.9850155769657558,
-          "mean": 0.9096958784293658,
-          "sd": 0.10331360786993402
+          "n": 2118,
+          "min": 0.32306751550417145,
+          "q05": 0.7219431257017414,
+          "q25": 0.9055596871971469,
+          "median": 0.9523708308780503,
+          "q75": 0.9637568331098604,
+          "q95": 0.9839767814374727,
+          "max": 0.9849847088031621,
+          "mean": 0.9111283805276869,
+          "sd": 0.1008259089252165
         },
         "synthetic_prior": {
           "n": 0,
@@ -1225,8 +1225,8 @@
       "sheet": "Sleep",
       "column": 13,
       "variable": "Fall Asleep",
-      "records": 2127,
-      "missing": 2127,
+      "records": 2147,
+      "missing": 2147,
       "source_records": 29,
       "source_missing": 29,
       "unit": "hours",
@@ -1249,8 +1249,8 @@
       "sheet": "Sleep",
       "column": 14,
       "variable": "Min. Respiration Rate",
-      "records": 2127,
-      "missing": 80,
+      "records": 2147,
+      "missing": 82,
       "source_records": 29,
       "source_missing": 1,
       "unit": "Excel native",
@@ -1268,16 +1268,16 @@
           "sd": 0.5518406121558015
         },
         "synthetic_model": {
-          "n": 2019,
+          "n": 2037,
           "min": 7.0,
-          "q05": 7.627266416326055,
-          "q25": 8.350195078190477,
-          "median": 8.686576093651293,
-          "q75": 9.050344936513238,
-          "q95": 9.521096059017797,
-          "max": 9.958438506678494,
-          "mean": 8.667048199411944,
-          "sd": 0.5560080387925165
+          "q05": 7.578881445982954,
+          "q25": 8.343619376773656,
+          "median": 8.691254052019568,
+          "q75": 9.06535267562538,
+          "q95": 9.557128268269693,
+          "max": 9.964475728085773,
+          "mean": 8.673358414928849,
+          "sd": 0.57535507058353
         },
         "synthetic_prior": {
           "n": 0,
@@ -1289,8 +1289,8 @@
       "sheet": "Sleep",
       "column": 15,
       "variable": "Max. Respiration Rate",
-      "records": 2127,
-      "missing": 80,
+      "records": 2147,
+      "missing": 82,
       "source_records": 29,
       "source_missing": 1,
       "unit": "Excel native",
@@ -1308,16 +1308,16 @@
           "sd": 1.6525336144656106
         },
         "synthetic_model": {
-          "n": 2019,
-          "min": 10.570429087073283,
-          "q05": 11.998979983419835,
-          "q25": 13.189675826168756,
-          "median": 14.795696209681603,
-          "q75": 15.777648632726887,
-          "q95": 16.836028007798983,
+          "n": 2037,
+          "min": 10.579000335031731,
+          "q05": 12.033177270391402,
+          "q25": 13.304743624146257,
+          "median": 14.79311945925208,
+          "q75": 15.783649721779607,
+          "q95": 16.87250414909609,
           "max": 17.5,
-          "mean": 14.50935694852253,
-          "sd": 1.5468560445227464
+          "mean": 14.551716687205085,
+          "sd": 1.5379623100395157
         },
         "synthetic_prior": {
           "n": 0,
@@ -1329,8 +1329,8 @@
       "sheet": "Sleep",
       "column": 16,
       "variable": "Avg. Respiration Rate",
-      "records": 2127,
-      "missing": 80,
+      "records": 2147,
+      "missing": 82,
       "source_records": 29,
       "source_missing": 1,
       "unit": "Excel native",
@@ -1348,16 +1348,16 @@
           "sd": 0.4134540681637297
         },
         "synthetic_model": {
-          "n": 2019,
-          "min": 8.85767572835364,
-          "q05": 9.709947192207666,
-          "q25": 10.146689844676228,
-          "median": 10.363290684397464,
-          "q75": 10.540027358355683,
-          "q95": 10.878325221836388,
+          "n": 2037,
+          "min": 8.852577979016042,
+          "q05": 9.714777859703931,
+          "q25": 10.161654094912794,
+          "median": 10.363384918658257,
+          "q75": 10.54056746066439,
+          "q95": 10.87845151246282,
           "max": 10.923764661313896,
-          "mean": 10.316066846445905,
-          "sd": 0.348159969094879
+          "mean": 10.318906292093432,
+          "sd": 0.34874575485465603
         },
         "synthetic_prior": {
           "n": 0,
@@ -1369,8 +1369,8 @@
       "sheet": "Sleep",
       "column": 17,
       "variable": "Wrist Temperature",
-      "records": 2127,
-      "missing": 1609,
+      "records": 2147,
+      "missing": 1618,
       "source_records": 29,
       "source_missing": 22,
       "unit": "Excel native",
@@ -1388,16 +1388,16 @@
           "sd": 0.2070913332307041
         },
         "synthetic_model": {
-          "n": 511,
-          "min": 34.973823060661815,
-          "q05": 35.05175325328683,
-          "q25": 35.33047694790703,
-          "median": 35.39868624388144,
-          "q75": 35.41578244385108,
-          "q95": 35.640915584748114,
-          "max": 35.72642135413632,
-          "mean": 35.37028385822298,
-          "sd": 0.14513223950197057
+          "n": 522,
+          "min": 34.983240170902555,
+          "q05": 35.09302537843774,
+          "q25": 35.33090539079984,
+          "median": 35.396229297274104,
+          "q75": 35.41652878933398,
+          "q95": 35.65577236192024,
+          "max": 35.73494915639653,
+          "mean": 35.37777331115209,
+          "sd": 0.144972900798406
         },
         "synthetic_prior": {
           "n": 0,
@@ -1409,8 +1409,8 @@
       "sheet": "Sleep",
       "column": 18,
       "variable": "Low SpO2",
-      "records": 2127,
-      "missing": 80,
+      "records": 2147,
+      "missing": 82,
       "source_records": 29,
       "source_missing": 1,
       "unit": "Excel native",
@@ -1428,16 +1428,16 @@
           "sd": 0.013491304833945755
         },
         "synthetic_model": {
-          "n": 2019,
+          "n": 2037,
           "min": 0.91,
           "q05": 0.91,
-          "q25": 0.9176767676767678,
-          "median": 0.9318419973468909,
-          "q75": 0.9399415156942434,
-          "q95": 0.9497500380138574,
-          "max": 0.958994297045672,
-          "mean": 0.9298302733595216,
-          "sd": 0.01291838966128806
+          "q25": 0.9175610386831187,
+          "median": 0.9311111111111111,
+          "q75": 0.9400283658557087,
+          "q95": 0.9497875616227992,
+          "max": 0.9580148116962872,
+          "mean": 0.9296198573205796,
+          "sd": 0.012906076812529218
         },
         "synthetic_prior": {
           "n": 0,
@@ -1449,8 +1449,8 @@
       "sheet": "Sleep",
       "column": 19,
       "variable": "High SpO2",
-      "records": 2127,
-      "missing": 80,
+      "records": 2147,
+      "missing": 82,
       "source_records": 29,
       "source_missing": 1,
       "unit": "Excel native",
@@ -1468,16 +1468,16 @@
           "sd": 0.009147320339189793
         },
         "synthetic_model": {
-          "n": 2019,
-          "min": 0.9627851595395637,
-          "q05": 0.9694223257724592,
-          "q25": 0.9754217719188446,
-          "median": 0.9800048501597348,
-          "q75": 0.9855611362441231,
-          "q95": 0.9974397965205541,
+          "n": 2037,
+          "min": 0.9630453565387236,
+          "q05": 0.9695630807596337,
+          "q25": 0.975211554173835,
+          "median": 0.98,
+          "q75": 0.9859722222222222,
+          "q95": 0.998821981400545,
           "max": 1.0,
-          "mean": 0.9810252821027252,
-          "sd": 0.008045648376547745
+          "mean": 0.9811703033065581,
+          "sd": 0.008326399310340259
         },
         "synthetic_prior": {
           "n": 0,
@@ -1489,8 +1489,8 @@
       "sheet": "Sleep",
       "column": 20,
       "variable": "Avg. SpO2",
-      "records": 2127,
-      "missing": 80,
+      "records": 2147,
+      "missing": 82,
       "source_records": 29,
       "source_missing": 1,
       "unit": "Excel native",
@@ -1508,16 +1508,16 @@
           "sd": 0.004438073748643947
         },
         "synthetic_model": {
-          "n": 2019,
-          "min": 0.9500020795804677,
-          "q05": 0.951038871158946,
-          "q25": 0.9551022500498545,
-          "median": 0.9590114289692512,
-          "q75": 0.9619621578727513,
-          "q95": 0.964317602174664,
+          "n": 2037,
+          "min": 0.9500036936413792,
+          "q05": 0.951152839631619,
+          "q25": 0.9551450394287478,
+          "median": 0.9589994686614197,
+          "q75": 0.9619383818278527,
+          "q95": 0.9642412873760663,
           "max": 0.9679072196416635,
-          "mean": 0.9583595951413261,
-          "sd": 0.0042423964548856975
+          "mean": 0.9583763874030479,
+          "sd": 0.004179986669614913
         },
         "synthetic_prior": {
           "n": 0,
@@ -1529,8 +1529,8 @@
       "sheet": "Sleep",
       "column": 21,
       "variable": "Low HRV",
-      "records": 2127,
-      "missing": 80,
+      "records": 2147,
+      "missing": 82,
       "source_records": 29,
       "source_missing": 1,
       "unit": "Excel native",
@@ -1548,16 +1548,16 @@
           "sd": 13.936532302700794
         },
         "synthetic_model": {
-          "n": 2019,
+          "n": 2037,
           "min": 20.80529324677943,
-          "q05": 20.93722687923101,
-          "q25": 35.40977419236131,
-          "median": 45.37390864215611,
-          "q75": 55.97935090907636,
-          "q95": 72.45169974649845,
-          "max": 92.21239852743088,
-          "mean": 46.0453107680385,
-          "sd": 15.031893083133603
+          "q05": 20.80529324677943,
+          "q25": 35.85677325615046,
+          "median": 45.537960781908446,
+          "q75": 56.06330725555021,
+          "q95": 72.50857892730136,
+          "max": 92.40323664469679,
+          "mean": 45.97568237630582,
+          "sd": 14.829124559827763
         },
         "synthetic_prior": {
           "n": 0,
@@ -1569,8 +1569,8 @@
       "sheet": "Sleep",
       "column": 22,
       "variable": "High HRV",
-      "records": 2127,
-      "missing": 80,
+      "records": 2147,
+      "missing": 82,
       "source_records": 29,
       "source_missing": 1,
       "unit": "Excel native",
@@ -1588,16 +1588,16 @@
           "sd": 19.765320083068165
         },
         "synthetic_model": {
-          "n": 2019,
+          "n": 2037,
           "min": 21.615536377913156,
-          "q05": 35.79475936461747,
-          "q25": 49.233329520648056,
-          "median": 59.823407542408304,
-          "q75": 69.8235813731252,
-          "q95": 88.8929447549033,
-          "max": 114.3928337788454,
-          "mean": 60.28960036886431,
-          "sd": 15.685649334345772
+          "q05": 36.39513913799384,
+          "q25": 49.74575461655736,
+          "median": 59.42398658076915,
+          "q75": 69.04081918082885,
+          "q95": 89.55838172776174,
+          "max": 119.3228382253387,
+          "mean": 60.19588494493653,
+          "sd": 15.63914799348063
         },
         "synthetic_prior": {
           "n": 0,
@@ -1609,8 +1609,8 @@
       "sheet": "Sleep",
       "column": 23,
       "variable": "Avg. HRV",
-      "records": 2127,
-      "missing": 80,
+      "records": 2147,
+      "missing": 82,
       "source_records": 29,
       "source_missing": 1,
       "unit": "Excel native",
@@ -1628,16 +1628,16 @@
           "sd": 15.403640166268763
         },
         "synthetic_model": {
-          "n": 2019,
-          "min": 21.136972883043953,
-          "q05": 32.55335932637072,
-          "q25": 43.75243904766943,
-          "median": 51.844918344662226,
-          "q75": 60.35177858806985,
-          "q95": 79.15613277647039,
-          "max": 92.29564248491728,
-          "mean": 53.05579641632128,
-          "sd": 13.77129455432354
+          "n": 2037,
+          "min": 21.137108164765134,
+          "q05": 32.41198833316045,
+          "q25": 43.76518397545932,
+          "median": 51.76457496866729,
+          "q75": 60.30806979598259,
+          "q95": 79.16776611610737,
+          "max": 92.40323664469679,
+          "mean": 52.948619077800764,
+          "sd": 13.703402237018642
         },
         "synthetic_prior": {
           "n": 0,
@@ -1649,7 +1649,7 @@
       "sheet": "Sleep",
       "column": 24,
       "variable": "Data Source",
-      "records": 2127,
+      "records": 2147,
       "missing": 0,
       "source_records": 29,
       "source_missing": 0,
@@ -1662,9 +1662,9 @@
           }
         },
         "synthetic_model": {
-          "n": 2098,
+          "n": 2118,
           "categories": {
-            "synthetic_model": 2098
+            "synthetic_model": 2118
           }
         },
         "synthetic_prior": {
@@ -2584,7 +2584,7 @@
       "sheet": "Womens Health",
       "column": 1,
       "variable": "Date",
-      "records": 2127,
+      "records": 2147,
       "missing": 0,
       "source_records": 0,
       "source_missing": 0,
@@ -2599,10 +2599,10 @@
           "categories": {}
         },
         "synthetic_prior": {
-          "n": 2127,
+          "n": 2147,
           "categories": {
             "first_date": "2020-12-05",
-            "last_date": "2026-10-01"
+            "last_date": "2026-10-21"
           }
         }
       }
@@ -2611,7 +2611,7 @@
       "sheet": "Womens Health",
       "column": 2,
       "variable": "Time",
-      "records": 2127,
+      "records": 2147,
       "missing": 0,
       "source_records": 0,
       "source_missing": 0,
@@ -2626,7 +2626,7 @@
           "categories": {}
         },
         "synthetic_prior": {
-          "n": 2127,
+          "n": 2147,
           "min": 12.0,
           "q05": 12.0,
           "q25": 12.0,
@@ -2643,7 +2643,7 @@
       "sheet": "Womens Health",
       "column": 3,
       "variable": "Start of Cycle",
-      "records": 2127,
+      "records": 2147,
       "missing": 0,
       "source_records": 0,
       "source_missing": 0,
@@ -2658,7 +2658,7 @@
           "categories": {}
         },
         "synthetic_prior": {
-          "n": 2127,
+          "n": 2147,
           "min": 0.0,
           "q05": 0.0,
           "q25": 0.0,
@@ -2666,8 +2666,8 @@
           "q75": 0.0,
           "q95": 0.0,
           "max": 1.0,
-          "mean": 0.035731076633756464,
-          "sd": 0.18561887510797248
+          "mean": 0.03586399627387052,
+          "sd": 0.1859509882876085
         }
       }
     },
@@ -2675,7 +2675,7 @@
       "sheet": "Womens Health",
       "column": 4,
       "variable": "Menstruation",
-      "records": 2127,
+      "records": 2147,
       "missing": 0,
       "source_records": 0,
       "source_missing": 0,
@@ -2690,12 +2690,12 @@
           "categories": {}
         },
         "synthetic_prior": {
-          "n": 2127,
+          "n": 2147,
           "categories": {
-            "None": 1764,
-            "Light": 152,
+            "None": 1778,
+            "Light": 154,
             "Heavy": 70,
-            "Medium": 141
+            "Medium": 145
           }
         }
       }
@@ -2704,7 +2704,7 @@
       "sheet": "Womens Health",
       "column": 5,
       "variable": "Data Source",
-      "records": 2127,
+      "records": 2147,
       "missing": 0,
       "source_records": 0,
       "source_missing": 0,
@@ -2719,9 +2719,9 @@
           "categories": {}
         },
         "synthetic_prior": {
-          "n": 2127,
+          "n": 2147,
           "categories": {
-            "synthetic_prior": 2127
+            "synthetic_prior": 2147
           }
         }
       }
@@ -3123,6 +3123,11 @@
       "start": "2026-09-11",
       "cycle_days": 25,
       "menstruation_days": 5
+    },
+    {
+      "start": "2026-10-06",
+      "cycle_days": 28,
+      "menstruation_days": 6
     }
   ],
   "limitations": [
@@ -3165,8 +3170,8 @@
       "sheet": "Daily Metrics",
       "variable": "Active Energy",
       "provenance": "synthetic_model",
-      "consecutive_day_pairs": 1761,
-      "lag1_correlation": 0.3040959591312746
+      "consecutive_day_pairs": 1780,
+      "lag1_correlation": 0.30580032790724665
     },
     {
       "sheet": "Daily Metrics",
@@ -3186,8 +3191,8 @@
       "sheet": "Daily Metrics",
       "variable": "Resting Energy",
       "provenance": "synthetic_model",
-      "consecutive_day_pairs": 1761,
-      "lag1_correlation": 0.21106050780706356
+      "consecutive_day_pairs": 1780,
+      "lag1_correlation": 0.21257191289417535
     },
     {
       "sheet": "Daily Metrics",
@@ -3207,8 +3212,8 @@
       "sheet": "Daily Metrics",
       "variable": "Resting",
       "provenance": "synthetic_model",
-      "consecutive_day_pairs": 1749,
-      "lag1_correlation": 0.5041422903529917
+      "consecutive_day_pairs": 1766,
+      "lag1_correlation": 0.5016712118431579
     },
     {
       "sheet": "Daily Metrics",
@@ -3228,8 +3233,8 @@
       "sheet": "Daily Metrics",
       "variable": "HRV",
       "provenance": "synthetic_model",
-      "consecutive_day_pairs": 1747,
-      "lag1_correlation": 0.17753787456434078
+      "consecutive_day_pairs": 1760,
+      "lag1_correlation": 0.18290082174645947
     },
     {
       "sheet": "Daily Metrics",
@@ -3249,8 +3254,8 @@
       "sheet": "Daily Metrics",
       "variable": "Steps",
       "provenance": "synthetic_model",
-      "consecutive_day_pairs": 1761,
-      "lag1_correlation": 0.21172002618695493
+      "consecutive_day_pairs": 1780,
+      "lag1_correlation": 0.21627524105737597
     },
     {
       "sheet": "Daily Metrics",
@@ -3270,8 +3275,8 @@
       "sheet": "Daily Metrics",
       "variable": "VO\u2082 max",
       "provenance": "synthetic_model",
-      "consecutive_day_pairs": 203,
-      "lag1_correlation": 0.9713929626038253
+      "consecutive_day_pairs": 204,
+      "lag1_correlation": 0.9805364050085169
     },
     {
       "sheet": "Daily Metrics",
@@ -3291,8 +3296,8 @@
       "sheet": "Daily Metrics",
       "variable": "Exercise Minutes",
       "provenance": "synthetic_model",
-      "consecutive_day_pairs": 1761,
-      "lag1_correlation": 0.26419771500753153
+      "consecutive_day_pairs": 1780,
+      "lag1_correlation": 0.26606964942562494
     },
     {
       "sheet": "Daily Metrics",
@@ -3312,8 +3317,8 @@
       "sheet": "Daily Metrics",
       "variable": "Stand Hours",
       "provenance": "synthetic_model",
-      "consecutive_day_pairs": 1761,
-      "lag1_correlation": 0.14094566440969059
+      "consecutive_day_pairs": 1780,
+      "lag1_correlation": 0.1431158309490141
     },
     {
       "sheet": "Daily Metrics",
@@ -3501,7 +3506,7 @@
       "sheet": "Sleep",
       "variable": "Main",
       "provenance": "synthetic_model",
-      "consecutive_day_pairs": 2087,
+      "consecutive_day_pairs": 2107,
       "lag1_correlation": null
     },
     {
@@ -3522,8 +3527,8 @@
       "sheet": "Sleep",
       "variable": "Start",
       "provenance": "synthetic_model",
-      "consecutive_day_pairs": 2087,
-      "lag1_correlation": 0.011080671942553334
+      "consecutive_day_pairs": 2107,
+      "lag1_correlation": 0.007174317769104882
     },
     {
       "sheet": "Sleep",
@@ -3543,8 +3548,8 @@
       "sheet": "Sleep",
       "variable": "End",
       "provenance": "synthetic_model",
-      "consecutive_day_pairs": 2087,
-      "lag1_correlation": 0.2880328004623387
+      "consecutive_day_pairs": 2107,
+      "lag1_correlation": 0.3055907084909296
     },
     {
       "sheet": "Sleep",
@@ -3564,8 +3569,8 @@
       "sheet": "Sleep",
       "variable": "InBed",
       "provenance": "synthetic_model",
-      "consecutive_day_pairs": 2087,
-      "lag1_correlation": 0.29776428851263315
+      "consecutive_day_pairs": 2107,
+      "lag1_correlation": 0.29842081992685143
     },
     {
       "sheet": "Sleep",
@@ -3585,8 +3590,8 @@
       "sheet": "Sleep",
       "variable": "Asleep",
       "provenance": "synthetic_model",
-      "consecutive_day_pairs": 2087,
-      "lag1_correlation": 0.2466558326210596
+      "consecutive_day_pairs": 2107,
+      "lag1_correlation": 0.2610547417666171
     },
     {
       "sheet": "Sleep",
@@ -3606,8 +3611,8 @@
       "sheet": "Sleep",
       "variable": "Awake",
       "provenance": "synthetic_model",
-      "consecutive_day_pairs": 2087,
-      "lag1_correlation": 0.19725940718411622
+      "consecutive_day_pairs": 2107,
+      "lag1_correlation": 0.20826984217660707
     },
     {
       "sheet": "Sleep",
@@ -3627,8 +3632,8 @@
       "sheet": "Sleep",
       "variable": "REM",
       "provenance": "synthetic_model",
-      "consecutive_day_pairs": 2089,
-      "lag1_correlation": 0.12286858374780124
+      "consecutive_day_pairs": 2109,
+      "lag1_correlation": 0.12532201844646218
     },
     {
       "sheet": "Sleep",
@@ -3648,8 +3653,8 @@
       "sheet": "Sleep",
       "variable": "Core",
       "provenance": "synthetic_model",
-      "consecutive_day_pairs": 2089,
-      "lag1_correlation": 0.20518512305604808
+      "consecutive_day_pairs": 2109,
+      "lag1_correlation": 0.2312510106597346
     },
     {
       "sheet": "Sleep",
@@ -3669,8 +3674,8 @@
       "sheet": "Sleep",
       "variable": "Deep",
       "provenance": "synthetic_model",
-      "consecutive_day_pairs": 2089,
-      "lag1_correlation": 0.04989256889360104
+      "consecutive_day_pairs": 2109,
+      "lag1_correlation": 0.0068866336662470485
     },
     {
       "sheet": "Sleep",
@@ -3690,8 +3695,8 @@
       "sheet": "Sleep",
       "variable": "Wake Count",
       "provenance": "synthetic_model",
-      "consecutive_day_pairs": 2087,
-      "lag1_correlation": 0.30516678632792066
+      "consecutive_day_pairs": 2107,
+      "lag1_correlation": 0.29973395599682673
     },
     {
       "sheet": "Sleep",
@@ -3711,8 +3716,8 @@
       "sheet": "Sleep",
       "variable": "Efficiency",
       "provenance": "synthetic_model",
-      "consecutive_day_pairs": 2087,
-      "lag1_correlation": 0.19968263698862682
+      "consecutive_day_pairs": 2107,
+      "lag1_correlation": 0.19665305128676736
     },
     {
       "sheet": "Sleep",
@@ -3753,8 +3758,8 @@
       "sheet": "Sleep",
       "variable": "Min. Respiration Rate",
       "provenance": "synthetic_model",
-      "consecutive_day_pairs": 1954,
-      "lag1_correlation": 0.11403370553156392
+      "consecutive_day_pairs": 1971,
+      "lag1_correlation": 0.13385702980082137
     },
     {
       "sheet": "Sleep",
@@ -3774,8 +3779,8 @@
       "sheet": "Sleep",
       "variable": "Max. Respiration Rate",
       "provenance": "synthetic_model",
-      "consecutive_day_pairs": 1954,
-      "lag1_correlation": 0.022665080388942677
+      "consecutive_day_pairs": 1971,
+      "lag1_correlation": 0.001661368022329249
     },
     {
       "sheet": "Sleep",
@@ -3795,8 +3800,8 @@
       "sheet": "Sleep",
       "variable": "Avg. Respiration Rate",
       "provenance": "synthetic_model",
-      "consecutive_day_pairs": 1954,
-      "lag1_correlation": 0.2855824649230582
+      "consecutive_day_pairs": 1971,
+      "lag1_correlation": 0.28909623185296374
     },
     {
       "sheet": "Sleep",
@@ -3816,8 +3821,8 @@
       "sheet": "Sleep",
       "variable": "Wrist Temperature",
       "provenance": "synthetic_model",
-      "consecutive_day_pairs": 235,
-      "lag1_correlation": 0.2761185944722242
+      "consecutive_day_pairs": 246,
+      "lag1_correlation": 0.2606471392536279
     },
     {
       "sheet": "Sleep",
@@ -3837,8 +3842,8 @@
       "sheet": "Sleep",
       "variable": "Low SpO2",
       "provenance": "synthetic_model",
-      "consecutive_day_pairs": 1954,
-      "lag1_correlation": 0.018104899884818535
+      "consecutive_day_pairs": 1971,
+      "lag1_correlation": 0.022412949085583157
     },
     {
       "sheet": "Sleep",
@@ -3858,8 +3863,8 @@
       "sheet": "Sleep",
       "variable": "High SpO2",
       "provenance": "synthetic_model",
-      "consecutive_day_pairs": 1954,
-      "lag1_correlation": 0.05368111503993347
+      "consecutive_day_pairs": 1971,
+      "lag1_correlation": 0.05675944669148544
     },
     {
       "sheet": "Sleep",
@@ -3879,8 +3884,8 @@
       "sheet": "Sleep",
       "variable": "Avg. SpO2",
       "provenance": "synthetic_model",
-      "consecutive_day_pairs": 1954,
-      "lag1_correlation": 0.296356456292834
+      "consecutive_day_pairs": 1971,
+      "lag1_correlation": 0.29752848848185365
     },
     {
       "sheet": "Sleep",
@@ -3900,8 +3905,8 @@
       "sheet": "Sleep",
       "variable": "Low HRV",
       "provenance": "synthetic_model",
-      "consecutive_day_pairs": 1954,
-      "lag1_correlation": 0.19571256828549505
+      "consecutive_day_pairs": 1971,
+      "lag1_correlation": 0.21143875137587367
     },
     {
       "sheet": "Sleep",
@@ -3921,8 +3926,8 @@
       "sheet": "Sleep",
       "variable": "High HRV",
       "provenance": "synthetic_model",
-      "consecutive_day_pairs": 1954,
-      "lag1_correlation": 0.2045595333477667
+      "consecutive_day_pairs": 1971,
+      "lag1_correlation": 0.20191652744404512
     },
     {
       "sheet": "Sleep",
@@ -3942,8 +3947,8 @@
       "sheet": "Sleep",
       "variable": "Avg. HRV",
       "provenance": "synthetic_model",
-      "consecutive_day_pairs": 1954,
-      "lag1_correlation": 0.2701319101062169
+      "consecutive_day_pairs": 1971,
+      "lag1_correlation": 0.27972986182246745
     },
     {
       "sheet": "Sleep",
@@ -4768,7 +4773,7 @@
       "sheet": "Womens Health",
       "variable": "Time",
       "provenance": "synthetic_prior",
-      "consecutive_day_pairs": 2126,
+      "consecutive_day_pairs": 2146,
       "lag1_correlation": null
     },
     {
@@ -4789,8 +4794,8 @@
       "sheet": "Womens Health",
       "variable": "Start of Cycle",
       "provenance": "synthetic_prior",
-      "consecutive_day_pairs": 2126,
-      "lag1_correlation": -0.037073170731707274
+      "consecutive_day_pairs": 2146,
+      "lag1_correlation": -0.03721604639922678
     },
     {
       "sheet": "Womens Health",
@@ -4837,19 +4842,19 @@
   ],
   "cycle_summary": {
     "cycle_length": {
-      "n": 77,
+      "n": 78,
       "min": 24.0,
       "q05": 24.0,
-      "q25": 25.0,
-      "median": 27.0,
+      "q25": 25.25,
+      "median": 27.5,
       "q75": 29.0,
       "q95": 33.0,
       "max": 34.0,
-      "mean": 27.792207792207794,
-      "sd": 2.68878219108728
+      "mean": 27.794871794871796,
+      "sd": 2.6715930825909964
     },
     "menstruation_duration": {
-      "n": 77,
+      "n": 78,
       "min": 3.0,
       "q05": 3.0,
       "q25": 4.0,
@@ -4857,8 +4862,8 @@
       "q75": 6.0,
       "q95": 7.0,
       "max": 7.0,
-      "mean": 4.753246753246753,
-      "sd": 1.3498998919674061
+      "mean": 4.769230769230769,
+      "sd": 1.3485326966466364
     },
     "boundary_policy": "Cycles are generated before and beyond the range; boundary cycles may be partially visible."
   }

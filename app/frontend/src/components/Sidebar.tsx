@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../../public/images/logo.png";
+import SidebarSummary from "@/components/SidebarSummary";
 
 const links = [
   {
@@ -92,6 +93,7 @@ export default function Sidebar(){
         Settings
       </Link>
     </nav>
+    <SidebarSummary />
     </aside>
   );
 }

@@ -1,4 +1,3 @@
-import FilterBar from "@/components/FilterBar";
 import CustomViewsChart from "@/features/explore/CustomViewsChart";
 import OutliersChart from "@/features/explore/OutliersChart";
 import { fetchRuns } from "@/lib/api";
@@ -13,7 +12,6 @@ export default async function ExplorePage() {
           Explore
         </h1>
       </header>
-      <FilterBar />
       <section aria-label="Custom views" className="min-w-0 rounded-lg border border-border border-t-2 border-t-accent/30 bg-surface">
         <CustomViewsChart runs={runs} />
       </section>

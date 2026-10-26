@@ -1,6 +1,6 @@
 # HealthFit synthetic test-data generator
 
-The maintained generator is `generate_health.py`; editable parameters are in `config.json`. It extends Daily Metrics, Sleep, and Womens Health from 2020-12-05 through the latest observed date in the input workbook. For Health Metrics_v6.xlsx that is 2026-10-01, or 2,127 dates. Weight, Nutrition, Mindfulness, Blood Sugar, and Blood Pressure are kept unchanged.
+The maintained generator is `generate_health.py`; editable parameters are in `config.json`. By default it extends Daily Metrics, Sleep, and Womens Health from 2020-12-05 through the latest observed date in the input workbook (2026-10-01, or 2,127 dates). Use `--end-date` to extend beyond measured coverage. The current generated outputs extend through 2026-10-21 (2,147 dates). Weight, Nutrition, Mindfulness, Blood Sugar, and Blood Pressure are kept unchanged.
 
 ## Run
 
@@ -28,6 +28,15 @@ python3 -m venv .venv
 ```
 
 Defaults resolve relative to the script, not the working directory. Re-running refreshes generated files in the chosen output directory. The original input workbook is never overwritten. Use separate output directories to retain alternative seeds or configurations. `--no-plots` skips plots for faster checks.
+
+To extend coverage and add only missing MongoDB dates, run from the repository root:
+
+```bash
+.venv/bin/python data/synthetic/generator/generate_health.py --end-date 2026-10-21
+.venv/bin/python pipeline/load_health.py --start 2026-10-02 --end 2026-10-21 --insert-only
+```
+
+End dates cannot exclude measured observations. A different generation horizon can change earlier synthetic values in the regenerated workbook; `--insert-only` preserves all previously stored database documents. New dates retain `synthetic_model` provenance. Use `--dry-run` on the loader to validate the selected workbook dates without database writes.
 
 ## Method
 

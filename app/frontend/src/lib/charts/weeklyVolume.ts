@@ -1,4 +1,5 @@
 export type VolumeRun = {
+  id?: string;
   date: string;
   distanceMiles: number | null;
   pace: number | null;

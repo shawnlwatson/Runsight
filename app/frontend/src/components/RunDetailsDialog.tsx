@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useId, useRef } from "react";
+import { useAnalysis } from "@/components/AnalysisProvider";
 import IndividualRun from "@/components/charts/individualRun";
 import type { CurrentRun } from "@/types/run";
 
@@ -10,12 +11,14 @@ type Props = {
 };
 
 export default function RunDetailsDialog({ selectedRun, onClose }: Props) {
+  const { excludedRunIds } = useAnalysis();
+  const activeRun = selectedRun && !excludedRunIds.includes(selectedRun.id) ? selectedRun : null;
   const dialogRef = useRef<HTMLDialogElement>(null);
   const dialogTitleId = useId();
 
   useEffect(() => {
     const dialog = dialogRef.current;
-    if (!selectedRun || !dialog) return;
+    if (!activeRun || !dialog) return;
     if (!dialog.open) dialog.showModal();
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -23,7 +26,7 @@ export default function RunDetailsDialog({ selectedRun, onClose }: Props) {
       document.body.style.overflow = previousOverflow;
       if (dialog.open) dialog.close();
     };
-  }, [selectedRun]);
+  }, [activeRun]);
 
   return (
       <dialog
@@ -53,7 +56,7 @@ export default function RunDetailsDialog({ selectedRun, onClose }: Props) {
           </button>
         </div>
         <div className="min-h-0 flex-1">
-          {selectedRun && <IndividualRun run={selectedRun} />}
+          {activeRun && <IndividualRun run={activeRun} />}
         </div>
         </div>
       </dialog>
