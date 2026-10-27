@@ -36,7 +36,7 @@ export default async function TrendsPage() {
         </section>
       </div>
       <section
-        aria-label="Weekly volume and pace"
+        aria-label="Prior 30-day volume and pace"
         className="h-96 w-full min-w-0 rounded-lg border border-border border-t-2 border-t-accent/30 bg-surface-muted"
       >
         <VolumePaceChart runs={runs} />

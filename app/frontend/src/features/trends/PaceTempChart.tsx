@@ -25,7 +25,7 @@ export default function PaceTempChart({ runs }: Props) {
         <PaceTemp runs={analysisRuns} fromDate={fromDate} toDate={toDate} onSelectRun={setSelectedRun} />
       </div>
       <p className="shrink-0 px-4 pb-3 text-xs leading-5 text-muted">
-        Median pace across plotted runs · Band: 25th–75th percentile · Bold points: beyond 1.5×IQR fences (at least 4 runs)
+        Median pace across plotted runs · Band: 25th–75th percentile · Triangles: beyond 1.5×IQR fences (at least 4 runs)
       </p>
       <RunDetailsDialog selectedRun={selectedRun} onClose={() => setSelectedRun(null)} />
     </div>

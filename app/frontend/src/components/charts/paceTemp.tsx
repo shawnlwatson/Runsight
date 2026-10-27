@@ -126,7 +126,7 @@ export default function PaceTemp<T extends Run>({
           role="group"
           aria-label="Pace versus temperature"
         >
-          <desc>Each point is a run positioned by temperature in degrees Fahrenheit and pace in minutes per mile. The horizontal line shows median pace across plotted runs in the selected period. The shaded interquartile range spans the 25th to 75th percentiles. Larger outlined points fall beyond 1.5 times the interquartile range outside those quartiles, with at least four runs required.</desc>
+          <desc>Each mark is a run positioned by temperature in degrees Fahrenheit and pace in minutes per mile. The horizontal line shows median pace across plotted runs in the selected period. The shaded interquartile range spans the 25th to 75th percentiles. Triangles mark runs beyond 1.5 times the interquartile range outside those quartiles, with at least four runs required. Other runs are circles.</desc>
           <g fontSize={10} className="fill-muted">
             <circle cx={margin.left + 3} cy={9} r={3} className="fill-chart-berry" />
             <text x={margin.left + 11} y={13}>Runs</text>
@@ -134,7 +134,7 @@ export default function PaceTemp<T extends Run>({
             <text x={margin.left + 67} y={13}>Median</text>
             <rect x={margin.left + 112} y={5} width={12} height={8} className="fill-chart-teal/15" />
             <text x={margin.left + 129} y={13}>IQR</text>
-            <circle cx={margin.left + 174} cy={9} r={4} className="fill-chart-orange stroke-chart-navy" strokeWidth={2} />
+            <polygon points="0,-5 4,3 -4,3" transform={`translate(${margin.left + 174},9)`} className="fill-chart-orange stroke-chart-navy" strokeWidth={1.5} />
             <text x={margin.left + 183} y={13}>Outlier</text>
           </g>
           {bandLow !== null && bandHigh !== null && (
@@ -151,8 +151,11 @@ export default function PaceTemp<T extends Run>({
           )}
           {paceRuns.map((run, index) => {
             const outlier = isPaceIqrOutlier(run.pace, statistics);
+            const Mark = outlier ? "polygon" : "circle";
+            const markX = x(run.temperature);
+            const markY = y(run.pace);
             return (
-            <circle key={run.id ?? `${run.date}-${index}`}
+            <Mark key={run.id ?? `${run.date}-${index}`}
               data-pace-run="true" data-outlier={outlier}
               role={onSelectRun ? "button" : undefined}
               tabIndex={onSelectRun ? 0 : undefined}
@@ -165,11 +168,11 @@ export default function PaceTemp<T extends Run>({
                   onSelectRun(run);
                 }
               }}
-              cx={x(run.temperature)} cy={y(run.pace)} r={outlier ? 6.5 : 4}
+              {...(outlier ? { points: "0,-8 7,4 -7,4", transform: `translate(${markX},${markY})` } : { cx: markX, cy: markY, r: 4 })}
               className={`${outlier ? "fill-chart-orange stroke-chart-navy" : "fill-chart-berry stroke-surface"} ${onSelectRun ? "cursor-pointer hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand" : ""}`}
               strokeWidth={outlier ? 2.5 : 1.5}>
               <title>{`${run.date.slice(2)} · ${run.temperature}°F · ${formatPace(run.pace)} min/mi${outlier ? " · Outlier: beyond 1.5×IQR fences" : ""}`}</title>
-            </circle>
+            </Mark>
             );
           })}
           {/* Horizontal axis */}

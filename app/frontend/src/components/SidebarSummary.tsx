@@ -10,7 +10,7 @@ export default function SidebarSummary() {
   if (!summaryPages.some((page) => pathname === page || pathname.startsWith(`${page}/`))) return null;
 
   return <section aria-label="Sidebar running summary" className="-mx-3 mt-6 border-t border-border pt-4">
-    <h2 className="mb-2 px-1 text-[10px] font-semibold uppercase tracking-wide text-muted">Running summary</h2>
+    <h2 className="mb-2 px-1 text-[10px] font-semibold uppercase tracking-wide text-muted">Selection summary</h2>
     <SummaryTiles compact />
   </section>;
 }

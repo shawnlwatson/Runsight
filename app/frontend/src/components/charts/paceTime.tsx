@@ -129,7 +129,7 @@ export default function PaceTime<T extends Run>({
           role="group"
           aria-label="Pace consistency over time"
         >
-          <desc>Each point is a run. The line shows a rolling median over the latest ten selected runs, including the current run; early windows contain fewer runs. The shaded band spans the rolling 25th to 75th percentiles. Larger outlined points fall beyond 1.5 times the interquartile range outside those quartiles, after at least four runs.</desc>
+          <desc>Each mark is a run. The line shows a rolling median over the latest ten selected runs, including the current run; early windows contain fewer runs. The shaded band spans the rolling 25th to 75th percentiles. Triangles mark runs beyond 1.5 times the interquartile range outside those quartiles, after at least four runs. Other runs are circles.</desc>
           <g fontSize={10} className="fill-muted">
             <circle cx={margin.left + 3} cy={9} r={3} className="fill-chart-berry" />
             <text x={margin.left + 11} y={13}>Runs</text>
@@ -137,7 +137,7 @@ export default function PaceTime<T extends Run>({
             <text x={margin.left + 67} y={13}>Rolling median</text>
             <rect x={margin.left + 148} y={5} width={12} height={8} className="fill-chart-teal/15" />
             <text x={margin.left + 165} y={13}>IQR</text>
-            <circle cx={margin.left + 202} cy={9} r={4} className="fill-chart-orange stroke-chart-navy" strokeWidth={2} />
+            <polygon points="0,-5 4,3 -4,3" transform={`translate(${margin.left + 202},9)`} className="fill-chart-orange stroke-chart-navy" strokeWidth={1.5} />
             <text x={margin.left + 211} y={13}>Outlier</text>
           </g>
           {iqrPath && (
@@ -153,8 +153,11 @@ export default function PaceTime<T extends Run>({
           {rolling.length === 1 && <circle cx={x(new Date(rolling[0].time + DAY / 2))} cy={y(rolling[0].median)} r={7} fill="none" className="stroke-chart-teal" strokeWidth={2} pointerEvents="none" />}
           {paceRuns.map((run, index) => {
             const { outlier, q1, median, q3, count } = statistics[index];
+            const Mark = outlier ? "polygon" : "circle";
+            const markX = x(new Date(run.time + DAY / 2));
+            const markY = y(run.pace);
             return (
-            <circle key={run.id ?? `${run.date}-${index}`}
+            <Mark key={run.id ?? `${run.date}-${index}`}
               data-pace-run="true" data-outlier={outlier}
               data-rolling-median={median} data-rolling-q1={q1} data-rolling-q3={q3} data-window-count={count}
               role={onSelectRun ? "button" : undefined}
@@ -168,11 +171,11 @@ export default function PaceTime<T extends Run>({
                   onSelectRun(run);
                 }
               }}
-              cx={x(new Date(run.time + DAY / 2))} cy={y(run.pace)} r={outlier ? 6.5 : 4}
+              {...(outlier ? { points: "0,-8 7,4 -7,4", transform: `translate(${markX},${markY})` } : { cx: markX, cy: markY, r: 4 })}
               className={`${outlier ? "fill-chart-orange stroke-chart-navy" : "fill-chart-berry stroke-surface"} ${onSelectRun ? "cursor-pointer hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand" : ""}`}
               strokeWidth={outlier ? 2.5 : 1.5}>
               <title>{`${run.date.slice(2)} · ${formatPace(run.pace)} min/mi · Rolling median: ${formatPace(median)} · IQR: ${formatPace(q1)}–${formatPace(q3)} min/mi · ${count} runs${outlier ? " · Outlier: beyond 1.5×IQR fences" : ""}`}</title>
-            </circle>
+            </Mark>
             );
           })}
           {/* Horizontal axis */}
