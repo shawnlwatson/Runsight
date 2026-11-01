@@ -113,6 +113,14 @@ Open http://localhost:3000. Run `npm run lint` and `npm run build` from `app/fro
 
 The frontend loads data from the FastAPI backend (`app/backend`) through `app/frontend/src/lib/api.ts`. Shared data contracts live in `app/frontend/src/types`.
 
+## Data sources and attribution
+
+Weather for runs without watch data comes from the [Open-Meteo](https://open-meteo.com/) historical weather API, using its archive endpoint (`archive-api.open-meteo.com`). Open-Meteo data is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Credit it wherever these values are shown or reported:
+
+> Weather data by Open-Meteo.com (https://open-meteo.com/), licensed under CC BY 4.0.
+
+Open-Meteo's free tier is for non-commercial use. Its archive values are modeled reanalysis estimates on a grid, not station measurements. Runs use watch-recorded temperature and humidity whenever the watch has them, and `temperatureSource` and `humiditySource` record where each value came from. See [weather join plan](docs/weather-join.md).
+
 ## Analysis exclusions
 
 Use the minus-circle action in a run list, or **Exclude from analysis** in run details, to omit a run from analysis without deleting it. Exclusions apply across Dashboard, Trends, Runs, Explore, and Insights, including chart scales, outlier rankings, weekly totals, radar comparisons, and both periods of dashboard comparisons.
