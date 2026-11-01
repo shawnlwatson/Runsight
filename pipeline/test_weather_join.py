@@ -3,8 +3,13 @@
 Run: python -m unittest -q pipeline/test_weather_join.py
 """
 
+import io
+import json
+import tempfile
 import unittest
 from datetime import datetime, timezone
+from pathlib import Path
+from unittest.mock import MagicMock, patch
 
 import load_runs
 
@@ -114,6 +119,100 @@ class AddWeatherTest(unittest.TestCase):
     def test_request_uses_rounded_point_and_run_dates(self):
         load_runs.add_weather(make_doc(lat=30.561723, lon=-96.280488), fetch=self.fetch)
         self.assertEqual(self.calls, [(30.5617, -96.2805, "2026-10-21", "2026-10-21")])
+
+
+class HourBoundaryTest(unittest.TestCase):
+    times = ["2026-10-21T10:00", "2026-10-21T11:00", "2026-10-21T12:00"]
+
+    def test_run_starting_exactly_on_the_hour_starts_with_that_hour(self):
+        start = datetime(2026, 10, 21, 10, 0, tzinfo=timezone.utc)
+        self.assertEqual(load_runs.hourly_window(self.times, start, 3600), [0, 1])
+
+    def test_run_ending_exactly_on_the_hour_includes_that_hour(self):
+        start = datetime(2026, 10, 21, 10, 30, tzinfo=timezone.utc)
+        self.assertEqual(load_runs.hourly_window(self.times, start, 5400), [0, 1, 2])
+
+
+class MidnightCrossingTest(unittest.TestCase):
+    def test_request_spans_both_dates_when_run_crosses_midnight_utc(self):
+        calls = []
+
+        def fetch(*args):
+            calls.append(args)
+            return fake_hourly({})
+
+        doc = make_doc(lat=30.5, lon=-96.3, duration=5400)
+        doc["startTimeUtc"] = datetime(2026, 10, 21, 23, 30, tzinfo=timezone.utc)
+        load_runs.add_weather(doc, fetch=fetch)
+        self.assertEqual(calls, [(30.5, -96.3, "2026-10-21", "2026-10-22")])
+
+
+class NoHoursInWindowTest(unittest.TestCase):
+    def test_run_outside_returned_hours_keeps_watch_values_and_nulls_the_rest(self):
+        doc = make_doc(temperature=55.0, humidity=None)
+        doc["startTimeUtc"] = datetime(2026, 10, 21, 20, 0, tzinfo=timezone.utc)  # no row at 20:00
+        load_runs.add_weather(doc, fetch=lambda *args: fake_hourly({}))
+        self.assertIsNone(doc["weather"])
+        self.assertIsNone(doc["apiTemperatureF"])
+        self.assertEqual(doc["temperature"], 55.0)
+        self.assertEqual(doc["temperatureSource"], "watch")
+        self.assertIsNone(doc["humidity"])
+        self.assertIsNone(doc["humiditySource"])
+
+
+class FetchRetryTest(unittest.TestCase):
+    def setUp(self):
+        load_runs._hourly_cache.clear()
+        self.payload = json.dumps({"hourly": fake_hourly({})}).encode()
+
+    def test_retries_network_errors_then_succeeds(self):
+        responses = [OSError("timeout"), OSError("timeout"), io.BytesIO(self.payload)]
+        with patch("load_runs.urllib.request.urlopen", side_effect=responses) as urlopen, \
+             patch("load_runs.time.sleep"):
+            result = load_runs.fetch_hourly(30.5, -96.3, "2026-10-21", "2026-10-21")
+        self.assertEqual(urlopen.call_count, 3)
+        self.assertEqual(result["time"][0], "2026-10-21T10:00")
+
+    def test_gives_up_after_all_attempts(self):
+        with patch("load_runs.urllib.request.urlopen", side_effect=OSError("down")) as urlopen, \
+             patch("load_runs.time.sleep"):
+            with self.assertRaises(OSError):
+                load_runs.fetch_hourly(30.5, -96.3, "2026-10-21", "2026-10-21")
+        self.assertEqual(urlopen.call_count, load_runs.REQUEST_ATTEMPTS)
+
+    def test_repeat_point_and_dates_is_fetched_once(self):
+        with patch("load_runs.urllib.request.urlopen", side_effect=[io.BytesIO(self.payload)]) as urlopen, \
+             patch("load_runs.time.sleep"):
+            load_runs.fetch_hourly(30.5, -96.3, "2026-10-21", "2026-10-21")
+            load_runs.fetch_hourly(30.5, -96.3, "2026-10-21", "2026-10-21")
+        self.assertEqual(urlopen.call_count, 1)
+
+
+class FailedLookupWritesNothingTest(unittest.TestCase):
+    def test_main_stops_before_writing_when_weather_lookup_fails(self):
+        with tempfile.TemporaryDirectory() as folder:
+            fit_dir = Path(folder) / "fit"
+            fit_dir.mkdir()
+            (fit_dir / "2026-10-21-103000-test.fit").write_bytes(b"")
+            exclusions = Path(folder) / "excluded.json"
+            exclusions.write_text("[]")
+            doc = make_doc(lat=30.5, lon=-96.3)
+            doc["_id"] = "2026-10-21-103000"
+            client = MagicMock()
+            collection = client.runsight.runs
+            load_runs._hourly_cache.clear()
+            with patch.object(load_runs, "FIT_DIR", str(fit_dir)), \
+                 patch.object(load_runs, "EXCLUSIONS_FILE", exclusions), \
+                 patch.object(load_runs, "parse_run", return_value=doc), \
+                 patch.object(load_runs, "load_dotenv"), \
+                 patch.object(load_runs, "MongoClient", return_value=client), \
+                 patch.dict("os.environ", {"MONGODB_URI": "mongodb://localhost"}), \
+                 patch("load_runs.urllib.request.urlopen", side_effect=OSError("down")), \
+                 patch("load_runs.time.sleep"):
+                with self.assertRaises(SystemExit) as raised:
+                    load_runs.main()
+        self.assertIn("nothing was written", str(raised.exception))
+        collection.bulk_write.assert_not_called()
 
 
 if __name__ == "__main__":
