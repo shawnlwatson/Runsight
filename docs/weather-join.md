@@ -25,7 +25,7 @@ Runs without GPS (for example, treadmill runs) cannot be joined by location. Rep
 ## Proposed approach
 
 1. **Extract location per run.** Take the first valid position in each FIT file's records, or the median of valid positions, and convert it to degrees. Store it with the run, not as a separate source of truth.
-2. **Choose a historical weather source.** Compare candidates for free access, hourly history, and terms of use. Confirm the choice before implementing (for example, Open-Meteo's historical archive is a candidate to check, not a decision).
+2. **Use Open-Meteo's historical archive** (`archive-api.open-meteo.com/v1/archive`) for hourly weather. It needs no API key and covers history back to 1940. Its free tier is for non-commercial use, capped at about 10,000 calls per day. Data is licensed CC BY 4.0, so the project must credit Open-Meteo. The values come from reanalysis models (ERA5 and related datasets) on a grid, not from weather stations, so they are modeled estimates at the run's location rather than measurements. Visual Crossing was considered and rejected because its free plan caps history records per day. Meteostat's terms were not verified.
 3. **Fetch hourly weather at the run's location and start hour.** Use the hour nearest the start time, and record which hour was used.
 4. **Write the join without overwriting watch data.** Watch-recorded values stay as they are. Fill only the runs where the watch value is missing, and store the source of each filled value so it can be audited.
 5. **Make the join rerunnable.** Match the loader's upsert behavior so reruns don't duplicate data, and respect `pipeline/excluded_runs.json`.
@@ -38,7 +38,8 @@ Runs without GPS (for example, treadmill runs) cannot be joined by location. Rep
 
 ## Open questions
 
-- Which historical weather source to use, and its rate limits and terms.
+- Whether Open-Meteo accepts several locations in one request, to reduce call volume for about 450 runs.
+- Whether the non-commercial terms cover this project. Confirm with the team or instructor.
 - Whether to store the source and the matched hour on each run document, or in a separate collection.
 - How to handle runs that start in one location and end far from it.
 - Whether the weather join belongs in the loader or in a separate script run after it.
