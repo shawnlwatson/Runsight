@@ -1,0 +1,44 @@
+# Location-based weather join: plan
+
+Status: planned. No code has been written yet.
+
+## Goal
+
+Runsight's design requires weather to be correlated with each run and pulled from a location-based weather source (`docs/context.txt`, R3). The watch records temperature and humidity for only about half of runs, so the join fills in the rest from a historical weather source using each run's location and start time.
+
+## Current state
+
+- `pipeline/load_runs.py` maps `avg_temperature` (converted to °F) and `SESSION WEATHER HUMIDITY` (stored as % × 100, converted to %) from each FIT session. Runs without these fields get `null`.
+- The loader's comment records that only about 48% of runs have watch weather.
+- `data/derived/fit_inventory/weather_coverage_by_workout.csv` lists 454 workouts with `temperature_present` and `humidity_present` flags. Use it as the baseline for coverage.
+
+## Inputs already in the data
+
+| Input | Source | Notes |
+|---|---|---|
+| Start time (UTC) | `startTimeUtc` in MongoDB runs | Use the UTC timestamp for the historical lookup. |
+| Local date | `date` in MongoDB runs | Already computed by the loader from the watch's wall clock. |
+| Latitude and longitude | FIT `record.position_lat` and `record.position_long` | Stored as semicircles. Convert with degrees = semicircles × 180 / 2³¹. Field coverage is in `data/derived/fit_inventory/fields.csv`. |
+
+Runs without GPS (for example, treadmill runs) cannot be joined by location. Report them as a separate, uncovered group.
+
+## Proposed approach
+
+1. **Extract location per run.** Take the first valid position in each FIT file's records, or the median of valid positions, and convert it to degrees. Store it with the run, not as a separate source of truth.
+2. **Choose a historical weather source.** Compare candidates for free access, hourly history, and terms of use. Confirm the choice before implementing (for example, Open-Meteo's historical archive is a candidate to check, not a decision).
+3. **Fetch hourly weather at the run's location and start hour.** Use the hour nearest the start time, and record which hour was used.
+4. **Write the join without overwriting watch data.** Watch-recorded values stay as they are. Fill only the runs where the watch value is missing, and store the source of each filled value so it can be audited.
+5. **Make the join rerunnable.** Match the loader's upsert behavior so reruns don't duplicate data, and respect `pipeline/excluded_runs.json`.
+
+## Validation
+
+- Compare the watch and the historical source on runs where both exist. Report the difference in temperature and humidity.
+- Report coverage before and after the join, by month, using the same method as `weather_coverage_by_workout.csv`.
+- Unit-test the semicircle conversion and the nearest-hour selection, following the style of `pipeline/test_load_runs.py`.
+
+## Open questions
+
+- Which historical weather source to use, and its rate limits and terms.
+- Whether to store the source and the matched hour on each run document, or in a separate collection.
+- How to handle runs that start in one location and end far from it.
+- Whether the weather join belongs in the loader or in a separate script run after it.
