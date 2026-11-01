@@ -57,6 +57,10 @@ Temperature and humidity are also pulled from Open-Meteo (`temperature_2m`, `rel
 - Report coverage before and after the join, by month, using the same method as `weather_coverage_by_workout.csv`.
 - Unit-test the semicircle conversion and the nearest-hour selection, following the style of `pipeline/test_load_runs.py`.
 
+## Attribution
+
+Open-Meteo data is CC BY 4.0. The README's "Data sources and attribution" section carries the credit line, and it must appear wherever weather values are shown or reported.
+
 ## Open questions
 
 - Whether Open-Meteo accepts several locations in one request, to reduce call volume for about 450 runs.
