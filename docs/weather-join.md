@@ -1,6 +1,6 @@
 # Location-based weather join: plan
 
-Status: planned. No code has been written yet.
+Status: loader implemented in `pipeline/load_runs.py` and unit-tested (`pipeline/test_weather_join.py`). Not yet loaded into MongoDB.
 
 ## Goal
 
