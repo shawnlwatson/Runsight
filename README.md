@@ -90,8 +90,20 @@ The API runs at http://localhost:8000. Open http://localhost:8000/docs to try th
 | `GET /runs?start=&end=` | Runs with prior-night sleep (`CurrentRun`) |
 | `GET /runs/summary?start=&end=` | Dashboard totals for the period and the previous period |
 | `GET /insights/fatigue?start=&end=` | Runs joined to sleep, steps, and active energy (`FatigueRun`) |
+| `POST /insights/chat` | Runsight Assistant answer, streamed as newline-delimited JSON events (`ChatEvent`) |
 
 `start` and `end` are optional `YYYY-MM-DD` dates.
+
+### Runsight Assistant
+
+The Insights chat sends the conversation and the shared filters (dates, pace, distance, elevation, temperature, and excluded runs) to `POST /insights/chat`. The backend runs a tool-calling loop through [Vercel AI Gateway](https://vercel.com/docs/ai-gateway) with the OpenAI-compatible API. The model can summarize a period, list runs, describe a metric over time, correlate two metrics (Pearson r with a 95% interval, Spearman rho, sample size, and an evidence label), and compare one run with the rest. Every tool sees only the runs that pass the user's filters, and tool code lives in `app/backend/app/services/chat_tools.py`.
+
+Authentication:
+
+- Local: add `AI_GATEWAY_API_KEY` to the root `.env`. Create a key in the Vercel dashboard (AI Gateway, API Keys) or with `vercel ai-gateway api-keys create`.
+- Vercel: leave the key unset. Deployments authenticate with their OIDC token automatically.
+
+`AI_GATEWAY_MODEL` optionally selects any tool-capable model ID from https://ai-gateway.vercel.sh/v1/models; the default is `anthropic/claude-haiku-5.5`. Without credentials the endpoint returns `503` and the chat shows that the assistant is not set up. Requests are limited to the latest 20 messages and 2,000 characters per user message; set an AI Gateway budget to cap spend on a public deployment.
 
 ## Frontend development
 
@@ -136,7 +148,7 @@ The summary endpoint accepts repeated `exclude_id` parameters, for example `/run
 - Custom Views offers two to nine parallel-coordinate axes. Custom Views and Fatigue and Pace highlight a whole run on hover or keyboard focus and display its selected metrics.
 - Trends, Runs, Explore, and Insights show compact summary cards stacked vertically in the sidebar. Run-list columns support ascending and descending sorting.
 - The FilterBar is displayed on Dashboard in this order: minimum/maximum distance, minimum/maximum pace, elevation, temperature. Its state lives in the shared app layout, like the date range, and persists when navigating between pages. The filters apply across Dashboard, Trends, Runs, Explore, and Insights, including charts, run lists, outlier rankings, radar references, health charts, sidebar summaries, and previous-period comparisons. Distance inputs accept nonnegative decimal miles; pace inputs use m:ss per mile. Both include their endpoints and accept blank bounds for no limit. Elevation and temperature dropdown ranges include their lower bound and exclude their upper bound; missing measurements are omitted only when their filter is active. Reset filters clears the shared controls while preserving dates and excluded runs. All Time changes dates without clearing filters. The volume chart calculates lookbacks from full non-excluded history before filtering visible marks. The temperature/heart-rate chart on Trends further narrows the shared selection with its own pace controls.
-- Runsight Assistant on Insights is a frontend chat preview. Messages remain in page memory; AI responses and a chat backend are not connected.
+- Runsight Assistant on Insights answers questions about the selected runs through the backend and Vercel AI Gateway. Answers stream in with a status line while the assistant checks the data, can be stopped, and report how much evidence supports each pattern. The conversation stays in page memory and clears on reload. See [Runsight Assistant](#runsight-assistant).
 
 ## Documentation and validation
 
@@ -148,7 +160,7 @@ cd pipeline
 cd ../data/synthetic/generator
 ../../../.venv/bin/python -m unittest -q test_generate_health
 cd ../../../app/backend
-../../.venv/bin/python -m unittest -q tests/test_runs.py
+../../.venv/bin/python -m unittest -q tests/test_runs.py tests/test_chat.py
 ```
 
 Environments, Python caches, Windows download sidecars, and local credential files are excluded from Git. Data and reports are included as requested.
