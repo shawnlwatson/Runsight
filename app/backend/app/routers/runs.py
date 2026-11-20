@@ -5,7 +5,7 @@ from fastapi import APIRouter, HTTPException, Query
 from app.models.run import Run
 from app.models.summary import DashboardSummary
 from app.services.runs import list_runs
-from app.services.summary import dashboard_summary, parse_attribute_filters
+from app.services.summary import add_distance_bounds, dashboard_summary, parse_attribute_filters
 
 router = APIRouter(prefix="/runs", tags=["runs"])
 
@@ -30,11 +30,5 @@ def get_summary(start: date | None = None, end: date | None = None, exclude_id: 
         attribute_filters = parse_attribute_filters(distance, elevation, temperature)
     except ValueError as error:
         raise HTTPException(status_code=422, detail=str(error)) from error
-    if min_distance is not None or max_distance is not None:
-        bounds = attribute_filters.setdefault("distanceMiles", {})
-        bounds["$ne"] = None
-        if min_distance is not None:
-            bounds["$gte"] = max(min_distance, bounds.get("$gte", min_distance))
-        if max_distance is not None:
-            bounds["$lte"] = max_distance
+    add_distance_bounds(attribute_filters, min_distance, max_distance)
     return dashboard_summary(start, end, exclude_id, min_pace, max_pace, attribute_filters)

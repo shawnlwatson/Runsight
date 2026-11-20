@@ -29,9 +29,9 @@ def date_match(start: date | None, end: date | None):
     return {"$match": {"date": date_range} if date_range else {}}
 
 
-def runs_with_health(start: date | None, end: date | None, fields: list[str]):
+def runs_with_health(start: date | None, end: date | None, fields: list[str], match: dict | None = None):
     pipeline = [
-        date_match(start, end),
+        match or date_match(start, end),  # a $match stage replaces the plain date filter
         {"$sort": {"date": 1, "_id": 1}},
         # Join each run to the daily_health document with the same date
         {

@@ -20,9 +20,22 @@ def parse_attribute_filters(distance: str | None, elevation: str | None, tempera
     return result
 
 
-def summarize(start: date | None, end: date | None, excluded_run_ids: list[str] | None = None,
+def add_distance_bounds(attribute_filters: dict, min_distance: float | None, max_distance: float | None):
+    """Merge inclusive numeric distance bounds into the bucket filters from parse_attribute_filters."""
+    if min_distance is not None or max_distance is not None:
+        bounds = attribute_filters.setdefault("distanceMiles", {})
+        bounds["$ne"] = None
+        if min_distance is not None:
+            bounds["$gte"] = max(min_distance, bounds.get("$gte", min_distance))
+        if max_distance is not None:
+            bounds["$lte"] = max_distance
+    return attribute_filters
+
+
+def run_match(start: date | None, end: date | None, excluded_run_ids: list[str] | None = None,
               min_pace: float | None = None, max_pace: float | None = None,
               attribute_filters: dict | None = None):
+    """$match stage for runs in a date range that pass the shared analysis filters."""
     match = date_match(start, end)
     match["$match"].update(attribute_filters or {})
     if excluded_run_ids:
@@ -34,6 +47,13 @@ def summarize(start: date | None, end: date | None, excluded_run_ids: list[str] 
         if max_pace is not None:
             bounds["$lte"] = max_pace
         match["$match"]["pace"] = bounds
+    return match
+
+
+def summarize(start: date | None, end: date | None, excluded_run_ids: list[str] | None = None,
+              min_pace: float | None = None, max_pace: float | None = None,
+              attribute_filters: dict | None = None):
+    match = run_match(start, end, excluded_run_ids, min_pace, max_pace, attribute_filters)
     pipeline = [
         match,
         # Collapse every matched run into one document. $sum and $avg skip nulls
