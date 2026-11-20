@@ -102,7 +102,7 @@ Configuration (root `.env` locally, project environment variables on Vercel):
 
 - `GEMINI_API_KEY`: a free key from [Google AI Studio](https://aistudio.google.com/apikey). Takes precedence when set. The free tier is rate limited, and Google may use free-tier prompts, which include run and health values, to improve its products.
 - `AI_GATEWAY_API_KEY`: alternative provider. On Vercel, AI Gateway authenticates with the deployment's OIDC token, so the key is only needed locally.
-- `AI_MODEL`: optional model ID for the active provider. Defaults are `gemini-2.5-flash` and `anthropic/claude-haiku-5.5`.
+- `AI_MODEL`: optional model ID for the active provider. Defaults are `gemini-3.5-flash` and `anthropic/claude-haiku-5.5`.
 
 Without credentials the endpoint returns `503` and the chat shows that the assistant is not set up. Requests are limited to the latest 20 messages and 2,000 characters per user message.
 

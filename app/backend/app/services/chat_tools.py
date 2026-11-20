@@ -120,6 +120,12 @@ def describe_values(values: list[float]):
     return stats
 
 
+def with_pace_text(stats: dict):
+    """Add m:ss versions of pace statistics so the model never converts decimals itself."""
+    return {**stats, **{f"{key}Text": pace_text(stats[key]) for key in ("mean", "median", "min", "max", "p25", "p75")
+                        if key in stats}}
+
+
 def period_key(day: str, group_by: str):
     year, month = day[:4], int(day[5:7])
     return {"year": year, "quarter": f"{year}-Q{(month - 1) // 3 + 1}", "month": day[:7]}[group_by]
@@ -191,6 +197,10 @@ def metric_stats(scope: AnalysisScope, metric: str, start: str | None = None, en
         result["groups"] = rows[-MAX_GROUPS:]
         if len(rows) > MAX_GROUPS:
             result["note"] = f"Only the latest {MAX_GROUPS} groups are shown; use a coarser group_by."
+    if metric == "pace":
+        result["overall"] = with_pace_text(result["overall"])
+        if "groups" in result:
+            result["groups"] = [with_pace_text(group) for group in result["groups"]]
     return result
 
 

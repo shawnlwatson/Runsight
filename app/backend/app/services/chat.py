@@ -15,7 +15,7 @@ from app.services.chat_tools import TOOL_DEFINITIONS, AnalysisScope, run_tool
 logger = logging.getLogger(__name__)
 
 GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/openai/"
-GEMINI_MODEL = "gemini-2.5-flash"
+GEMINI_MODEL = "gemini-3.5-flash"  # list a key's models at GEMINI_URL + "models"
 GATEWAY_URL = "https://ai-gateway.vercel.sh/v1"
 GATEWAY_MODEL = "anthropic/claude-haiku-5.5"  # any tool-capable id from https://ai-gateway.vercel.sh/v1/models
 MAX_STEPS = 6  # model calls per question; the last one may not call tools
@@ -69,7 +69,8 @@ def resolve_provider(oidc_header: str | None):
 
 
 def make_client(base_url: str, key: str):
-    return openai.OpenAI(api_key=key, base_url=base_url, timeout=60, max_retries=1)
+    # Retries cover brief rate limits and "high demand" 503s, which are common on the Gemini free tier
+    return openai.OpenAI(api_key=key, base_url=base_url, timeout=60, max_retries=3)
 
 
 def event(kind: str, **fields):
@@ -83,6 +84,8 @@ def error_message(error: openai.OpenAIError):
         return "The assistant could not reach the AI service. Try again in a moment."
     if status == 429:
         return "The assistant is getting too many requests right now. Wait a minute and try again."
+    if status in (503, 529):
+        return "The AI service is busy right now. Try again in a moment."
     if status == 402:
         return "The assistant has used its AI credits for now. Try again later."
     # Gemini reports a bad key as 400 rather than 401
@@ -123,6 +126,10 @@ def stream_chat(request: ChatRequest, scope: AnalysisScope, client: openai.OpenA
                     call = calls.setdefault(key, {"id": "", "name": "", "arguments": ""})
                     if piece.id:
                         call["id"] = piece.id
+                    # Gemini 3 signs each call (extra_content.google.thought_signature) and rejects the
+                    # next request unless the signature comes back with the call
+                    if extra := getattr(piece, "extra_content", None):
+                        call["extra_content"] = extra
                     if piece.function and piece.function.name:
                         call["name"] += piece.function.name
                     if piece.function and piece.function.arguments:
@@ -132,7 +139,8 @@ def stream_chat(request: ChatRequest, scope: AnalysisScope, client: openai.OpenA
             for number, call in enumerate(calls.values()):
                 call["id"] = call["id"] or f"call-{step}-{number}"  # every tool result must name its call
             messages.append({"role": "assistant", "content": "".join(text), "tool_calls": [
-                {"id": call["id"], "type": "function", "function": {"name": call["name"], "arguments": call["arguments"]}}
+                {"id": call["id"], "type": "function", "function": {"name": call["name"], "arguments": call["arguments"]},
+                 **({"extra_content": call["extra_content"]} if "extra_content" in call else {})}
                 for call in calls.values()]})
             for call in calls.values():
                 yield event("status", message=TOOL_STATUS.get(call["name"], "Checking your data…"))

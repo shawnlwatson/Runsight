@@ -32,8 +32,9 @@ def chunk(content=None, tool_calls=None):
     return SimpleNamespace(choices=[SimpleNamespace(delta=SimpleNamespace(content=content, tool_calls=tool_calls))])
 
 
-def tool_piece(index, call_id=None, name=None, arguments=None):
-    return SimpleNamespace(index=index, id=call_id, function=SimpleNamespace(name=name, arguments=arguments))
+def tool_piece(index, call_id=None, name=None, arguments=None, extra_content=None):
+    return SimpleNamespace(index=index, id=call_id, function=SimpleNamespace(name=name, arguments=arguments),
+                           extra_content=extra_content)
 
 
 class FakeGateway:
@@ -115,6 +116,14 @@ class ToolTests(ChatTestCase):
         self.assertEqual(result["overall"]["n"], 3)
         self.assertEqual(result["groups"], [{"period": "2026-08", "n": 1, "mean": 4, "median": 4},
                                             {"period": "2026-09", "n": 2, "mean": 4.5, "median": 4.5}])
+
+    def test_pace_stats_include_minutes_and_seconds(self):
+        result = self.tool("metric_stats", metric="pace", group_by="year")
+        self.assertEqual((result["overall"]["median"], result["overall"]["medianText"]), (10, "10:00"))
+        self.assertEqual(result["overall"]["minText"], "9:00")
+        self.assertEqual(result["groups"], [{"period": "2026", "n": 3, "mean": 9.67, "median": 10,
+                                                "meanText": "9:40", "medianText": "10:00"}])
+        self.assertNotIn("medianText", self.tool("metric_stats", metric="distance")["overall"])
 
     def test_correlate_reports_strength_and_sample_size(self):
         result = self.tool("correlate", x="pace", y="heartRate")
@@ -199,6 +208,7 @@ class EndpointTests(ChatTestCase):
         tool_result = json.loads(second["messages"][-1]["content"])
         self.assertEqual((tool_result["x"], tool_result["n"]), ("pace", 3))
         self.assertEqual(second["messages"][-2]["tool_calls"][0]["function"]["arguments"], '{"x": "pace", "y": "heartRate"}')
+        self.assertNotIn("extra_content", second["messages"][-2]["tool_calls"][0])  # only sent when the provider gave one
 
     def test_gemini_key_selects_gemini(self):
         gateway = FakeGateway([chunk("Hi")])
@@ -240,6 +250,14 @@ class EndpointTests(ChatTestCase):
         self.assertEqual(third[-1]["tool_call_id"], "call-1-0")
         self.assertEqual(json.loads(third[-1]["content"])["returned"], 1)
 
+    def test_gemini_thought_signatures_are_sent_back_with_their_calls(self):
+        signature = {"google": {"thought_signature": "c2lnbmVk"}}
+        gateway = FakeGateway([chunk(tool_calls=[tool_piece(None, "a", "summarize_period", "{}", signature)])],
+                              [chunk("Done.")])
+        self.events(self.post(gateway))
+        call = gateway.requests[1]["messages"][-2]["tool_calls"][0]
+        self.assertEqual(call["extra_content"], signature)
+
     def test_last_step_cannot_call_tools(self):
         call = [chunk(tool_calls=[tool_piece(0, "call", "summarize_period", "{}")])]
         gateway = FakeGateway(*([call] * (MAX_STEPS - 1)), [chunk("Here is what I found.")])
@@ -256,6 +274,7 @@ class EndpointTests(ChatTestCase):
     def test_provider_errors_become_friendly_messages(self):
         cases = [(429, "gateway error", "too many requests"), (402, "gateway error", "AI credits"),
                  (401, "gateway error", "rejected its key"), (400, "Please pass a valid API key", "rejected its key"),
+                 (503, "This model is currently experiencing high demand.", "busy right now"),
                  (500, "gateway error", "ran into a problem")]
         for status, detail, message in cases:
             with self.subTest(status=status), self.assertLogs("app.services.chat", "WARNING"):
