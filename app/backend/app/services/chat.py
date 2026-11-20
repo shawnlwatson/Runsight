@@ -1,4 +1,5 @@
-"""Runsight Assistant: a tool-calling loop over Vercel AI Gateway, streamed to the browser as NDJSON events."""
+"""Runsight Assistant: a tool-calling loop over an OpenAI-compatible API (Gemini or Vercel AI Gateway),
+streamed to the browser as NDJSON events."""
 
 import json
 import logging
@@ -13,10 +14,12 @@ from app.services.chat_tools import TOOL_DEFINITIONS, AnalysisScope, run_tool
 
 logger = logging.getLogger(__name__)
 
+GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/openai/"
+GEMINI_MODEL = "gemini-2.5-flash"
 GATEWAY_URL = "https://ai-gateway.vercel.sh/v1"
-DEFAULT_MODEL = "anthropic/claude-haiku-5.5"  # any tool-capable id from https://ai-gateway.vercel.sh/v1/models
+GATEWAY_MODEL = "anthropic/claude-haiku-5.5"  # any tool-capable id from https://ai-gateway.vercel.sh/v1/models
 MAX_STEPS = 6  # model calls per question; the last one may not call tools
-MAX_OUTPUT_TOKENS = 1200
+MAX_OUTPUT_TOKENS = 4000  # room for Gemini's thinking tokens, which count toward the limit
 
 TOOL_STATUS = {
     "summarize_period": "Summarizing the period…",
@@ -52,19 +55,21 @@ questions, suggest a professional."""
 
 
 class AssistantUnavailable(RuntimeError):
-    """No AI Gateway credentials are configured."""
+    """No model provider credentials are configured."""
 
 
-def gateway_token(oidc_header: str | None):
-    """API key for local runs; on Vercel, the deployment's OIDC token authenticates to the gateway."""
+def resolve_provider(oidc_header: str | None):
+    """(base URL, key, model). A Gemini API key wins; otherwise AI Gateway with a key or Vercel's OIDC token."""
+    if key := os.getenv("GEMINI_API_KEY"):
+        return GEMINI_URL, key, os.getenv("AI_MODEL") or GEMINI_MODEL
     token = os.getenv("AI_GATEWAY_API_KEY") or oidc_header or os.getenv("VERCEL_OIDC_TOKEN")
-    if not token:
-        raise AssistantUnavailable("Set AI_GATEWAY_API_KEY, or deploy on Vercel to use OIDC")
-    return token
+    if token:
+        return GATEWAY_URL, token, os.getenv("AI_MODEL") or GATEWAY_MODEL
+    raise AssistantUnavailable("Set GEMINI_API_KEY or AI_GATEWAY_API_KEY")
 
 
-def make_client(token: str):
-    return openai.OpenAI(api_key=token, base_url=GATEWAY_URL, timeout=60, max_retries=1)
+def make_client(base_url: str, key: str):
+    return openai.OpenAI(api_key=key, base_url=base_url, timeout=60, max_retries=1)
 
 
 def event(kind: str, **fields):
@@ -80,13 +85,13 @@ def error_message(error: openai.OpenAIError):
         return "The assistant is getting too many requests right now. Wait a minute and try again."
     if status == 402:
         return "The assistant has used its AI credits for now. Try again later."
-    if status in (401, 403):
-        return "The assistant is not set up correctly (AI Gateway authentication failed)."
+    # Gemini reports a bad key as 400 rather than 401
+    if status in (401, 403) or (status == 400 and "api key" in str(getattr(error, "body", "")).lower()):
+        return "The assistant is not set up correctly (the AI service rejected its key)."
     return "The assistant ran into a problem answering. Try again."
 
 
-def stream_chat(request: ChatRequest, scope: AnalysisScope, client: openai.OpenAI) -> Iterator[str]:
-    model = os.getenv("AI_GATEWAY_MODEL") or DEFAULT_MODEL
+def stream_chat(request: ChatRequest, scope: AnalysisScope, client: openai.OpenAI, model: str) -> Iterator[str]:
     messages: list[dict] = [{"role": "system", "content": SYSTEM_PROMPT.format(today=date.today(), scope=scope.describe())}]
     messages += [{"role": message.role, "content": message.content} for message in request.messages]
     wrote_text = False
@@ -95,7 +100,7 @@ def stream_chat(request: ChatRequest, scope: AnalysisScope, client: openai.OpenA
             last_step = step == MAX_STEPS - 1
             stream = client.chat.completions.create(
                 model=model, messages=messages, tools=TOOL_DEFINITIONS, tool_choice="none" if last_step else "auto",
-                max_completion_tokens=MAX_OUTPUT_TOKENS, stream=True)
+                max_tokens=MAX_OUTPUT_TOKENS, stream=True)
             text, calls = [], {}
             for chunk in stream:
                 if not chunk.choices:
@@ -107,9 +112,15 @@ def stream_chat(request: ChatRequest, scope: AnalysisScope, client: openai.OpenA
                     text.append(delta.content)
                     wrote_text = True
                     yield event("delta", text=delta.content)
-                # Tool calls arrive in pieces, keyed by index
+                # Tool calls arrive in pieces, keyed by index. Gemini omits the index, so a new id starts a new call
                 for piece in delta.tool_calls or []:
-                    call = calls.setdefault(piece.index, {"id": "", "name": "", "arguments": ""})
+                    if piece.index is not None:
+                        key = piece.index
+                    elif piece.id or not calls:
+                        key = len(calls)
+                    else:
+                        key = len(calls) - 1
+                    call = calls.setdefault(key, {"id": "", "name": "", "arguments": ""})
                     if piece.id:
                         call["id"] = piece.id
                     if piece.function and piece.function.name:
@@ -118,7 +129,9 @@ def stream_chat(request: ChatRequest, scope: AnalysisScope, client: openai.OpenA
                         call["arguments"] += piece.function.arguments
             if not calls:
                 break
-            messages.append({"role": "assistant", "content": "".join(text) or None, "tool_calls": [
+            for number, call in enumerate(calls.values()):
+                call["id"] = call["id"] or f"call-{step}-{number}"  # every tool result must name its call
+            messages.append({"role": "assistant", "content": "".join(text), "tool_calls": [
                 {"id": call["id"], "type": "function", "function": {"name": call["name"], "arguments": call["arguments"]}}
                 for call in calls.values()]})
             for call in calls.values():
@@ -129,7 +142,7 @@ def stream_chat(request: ChatRequest, scope: AnalysisScope, client: openai.OpenA
             return
         yield event("done")
     except openai.OpenAIError as error:
-        logger.warning("AI Gateway request failed: %r", error)
+        logger.warning("Model request failed: %r", error)
         yield event("error", message=error_message(error))
     except Exception:
         logger.exception("Assistant failed")

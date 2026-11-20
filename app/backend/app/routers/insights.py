@@ -5,7 +5,7 @@ from fastapi.responses import StreamingResponse
 
 from app.models.chat import ChatRequest
 from app.models.health import FatigueRun
-from app.services.chat import AssistantUnavailable, gateway_token, make_client, stream_chat
+from app.services.chat import AssistantUnavailable, make_client, resolve_provider, stream_chat
 from app.services.chat_tools import AnalysisScope
 from app.services.runs import list_fatigue_runs
 
@@ -25,8 +25,8 @@ def chat(request: ChatRequest, x_vercel_oidc_token: str | None = Header(default=
     except ValueError as error:
         raise HTTPException(status_code=422, detail=str(error)) from error
     try:
-        client = make_client(gateway_token(x_vercel_oidc_token))
+        base_url, key, model = resolve_provider(x_vercel_oidc_token)
     except AssistantUnavailable as error:
         raise HTTPException(status_code=503, detail="The assistant is not configured on this server.") from error
-    return StreamingResponse(stream_chat(request, scope, client), media_type="application/x-ndjson",
+    return StreamingResponse(stream_chat(request, scope, make_client(base_url, key), model), media_type="application/x-ndjson",
                              headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"})

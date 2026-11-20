@@ -250,13 +250,13 @@ _dates = {
 }
 _metric = {"type": "string", "enum": list(METRICS)}
 
-# OpenAI-compatible tool definitions (AI Gateway accepts these for every provider)
+# OpenAI-compatible tool definitions. No additionalProperties: Gemini rejects it, and run_tool rejects unknown arguments
 TOOL_DEFINITIONS = [
     {"type": "function", "function": {
         "name": "summarize_period",
         "description": "Run count, total distance, average pace, and average heart rate for a period, plus the "
                        "same-length previous period when both dates are known. Matches the Dashboard tiles.",
-        "parameters": {"type": "object", "properties": {**_dates}, "additionalProperties": False}}},
+        "parameters": {"type": "object", "properties": {**_dates}}}},
     {"type": "function", "function": {
         "name": "list_runs",
         "description": "Individual runs with every metric. Sort by date or a metric to find the fastest, longest, "
@@ -266,7 +266,7 @@ TOOL_DEFINITIONS = [
             "sort_by": {"type": "string", "enum": ["date", *METRICS]},
             "order": {"type": "string", "enum": ["asc", "desc"], "description": "desc = newest or largest first"},
             "limit": {"type": "integer", "minimum": 1, "maximum": MAX_LISTED_RUNS},
-        }, "additionalProperties": False}}},
+        }}}},
     {"type": "function", "function": {
         "name": "metric_stats",
         "description": "Distribution of one metric (n, mean, median, spread). Group by month, quarter, or year "
@@ -274,19 +274,19 @@ TOOL_DEFINITIONS = [
         "parameters": {"type": "object", "properties": {
             "metric": _metric, **_dates,
             "group_by": {"type": "string", "enum": ["none", "month", "quarter", "year"]},
-        }, "required": ["metric"], "additionalProperties": False}}},
+        }, "required": ["metric"]}}},
     {"type": "function", "function": {
         "name": "correlate",
         "description": "Relationship between two metrics across runs: Pearson r with a 95% interval, Spearman rho, "
                        "slope, sample size, and a plain evidence label. Use for every claim that two things are related.",
         "parameters": {"type": "object", "properties": {"x": _metric, "y": _metric, **_dates},
-                       "required": ["x", "y"], "additionalProperties": False}}},
+                       "required": ["x", "y"]}}},
     {"type": "function", "function": {
         "name": "compare_run",
         "description": "Compare one run with the other selected runs: each metric's value, the typical median, and "
                        "its percentile. Use to explain an unusually good or bad run.",
         "parameters": {"type": "object", "properties": {"run_id": {"type": "string"}, **_dates},
-                       "required": ["run_id"], "additionalProperties": False}}},
+                       "required": ["run_id"]}}},
 ]
 
 

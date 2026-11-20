@@ -1,6 +1,6 @@
 """Tests for the Runsight Assistant: data tools, request validation, and the streamed tool-calling loop.
 
-AI Gateway is replaced by a scripted fake client, so no request leaves the machine and no credits are used.
+The model provider is replaced by a scripted fake client, so no request leaves the machine and no credits are used.
 
 Usage (from app/backend): ../../.venv/bin/python -m unittest tests/test_chat.py
 """
@@ -21,7 +21,7 @@ with patch("pymongo.MongoClient", mongomock.MongoClient):
     from app.main import app
 
 from app.models.chat import ChatFilters
-from app.services.chat import DEFAULT_MODEL, MAX_STEPS
+from app.services.chat import GATEWAY_MODEL, GATEWAY_URL, GEMINI_MODEL, GEMINI_URL, MAX_STEPS
 from app.services.chat_tools import AnalysisScope, pace_text, run_tool
 from tests.test_runs import HEALTH, RUNS
 
@@ -52,9 +52,11 @@ class FakeGateway:
         return iter(response)
 
 
-def gateway_error(status):
+def provider_error(status, message):
     response = SimpleNamespace(status_code=status, headers={}, request=None)
-    return openai.APIStatusError("gateway error", response=response, body=None)
+    # Shaped like Gemini's error body; the SDK's own message is just "Error code: <status>"
+    body = [{"error": {"code": status, "message": message}}]
+    return openai.APIStatusError(f"Error code: {status}", response=response, body=body)
 
 
 class ChatTestCase(unittest.TestCase):
@@ -160,12 +162,21 @@ class ToolTests(ChatTestCase):
         self.assertIsNone(pace_text(None))
 
 
+def provider_env(**values):
+    """Environment with only the given provider settings (the root .env may define real ones)."""
+    names = ["GEMINI_API_KEY", "AI_GATEWAY_API_KEY", "VERCEL_OIDC_TOKEN", "AI_MODEL"]
+    env = {name: value for name, value in os.environ.items() if name not in names}
+    return patch.dict(os.environ, {**env, **values}, clear=True)
+
+
 class EndpointTests(ChatTestCase):
-    def post(self, gateway=None, body=None, headers=None):
+    def post(self, gateway=None, body=None, headers=None, env=None):
         body = body or {"messages": [QUESTION]}
-        with patch.dict(os.environ, {"AI_GATEWAY_API_KEY": "test-key"}), \
-             patch("app.routers.insights.make_client", return_value=gateway or FakeGateway()):
-            return self.client.post("/insights/chat", json=body, headers=headers)
+        with provider_env(**(env if env is not None else {"GEMINI_API_KEY": "test-key"})), \
+             patch("app.routers.insights.make_client", return_value=gateway or FakeGateway()) as make_client:
+            response = self.client.post("/insights/chat", json=body, headers=headers)
+        self.make_client = make_client
+        return response
 
     def events(self, response):
         self.assertEqual(response.status_code, 200, response.text)
@@ -183,18 +194,51 @@ class EndpointTests(ChatTestCase):
                                   {"type": "delta", "text": "faster runs had higher heart rate."},
                                   {"type": "done"}])
         first, second = gateway.requests
-        self.assertEqual(first["model"], DEFAULT_MODEL)
         self.assertIn("pace 9:00 to any /mi", first["messages"][0]["content"])
         self.assertEqual(first["messages"][1:], [QUESTION])
         tool_result = json.loads(second["messages"][-1]["content"])
         self.assertEqual((tool_result["x"], tool_result["n"]), ("pace", 3))
         self.assertEqual(second["messages"][-2]["tool_calls"][0]["function"]["arguments"], '{"x": "pace", "y": "heartRate"}')
 
+    def test_gemini_key_selects_gemini(self):
+        gateway = FakeGateway([chunk("Hi")])
+        self.events(self.post(gateway))
+        self.make_client.assert_called_once_with(GEMINI_URL, "test-key")
+        self.assertEqual(gateway.requests[0]["model"], GEMINI_MODEL)
+
     def test_model_can_be_changed_with_an_environment_variable(self):
         gateway = FakeGateway([chunk("Hi")])
-        with patch.dict(os.environ, {"AI_GATEWAY_MODEL": "google/gemini-3-flash"}):
-            self.events(self.post(gateway))
-        self.assertEqual(gateway.requests[0]["model"], "google/gemini-3-flash")
+        self.events(self.post(gateway, env={"GEMINI_API_KEY": "test-key", "AI_MODEL": "gemini-3-flash"}))
+        self.assertEqual(gateway.requests[0]["model"], "gemini-3-flash")
+
+    def test_gateway_key_or_vercel_oidc_header_selects_ai_gateway(self):
+        for env, headers, token in [({"AI_GATEWAY_API_KEY": "gateway-key"}, None, "gateway-key"),
+                                    ({}, {"x-vercel-oidc-token": "oidc-token"}, "oidc-token")]:
+            with self.subTest(token=token):
+                gateway = FakeGateway([chunk("Hi")])
+                self.events(self.post(gateway, headers=headers, env=env))
+                self.make_client.assert_called_once_with(GATEWAY_URL, token)
+                self.assertEqual(gateway.requests[0]["model"], GATEWAY_MODEL)
+
+    def test_missing_credentials_return_503(self):
+        with provider_env():
+            response = self.client.post("/insights/chat", json={"messages": [QUESTION]})
+        self.assertEqual(response.status_code, 503)
+
+    def test_tool_calls_without_index_or_id(self):
+        # Gemini sends each call whole, with no index; ids can be missing
+        gateway = FakeGateway(
+            [chunk(tool_calls=[tool_piece(None, "a", "summarize_period", "{}"),
+                               tool_piece(None, "b", "metric_stats", '{"metric": "pace"}')])],
+            [chunk(tool_calls=[tool_piece(None, None, "list_runs", '{"limit": 1}')])],
+            [chunk("Done.")])
+        self.assertEqual(self.events(self.post(gateway))[-1], {"type": "done"})
+        second, third = gateway.requests[1]["messages"], gateway.requests[2]["messages"]
+        self.assertEqual([call["function"]["name"] for call in second[-3]["tool_calls"]], ["summarize_period", "metric_stats"])
+        self.assertEqual([message["tool_call_id"] for message in second[-2:]], ["a", "b"])
+        self.assertEqual(json.loads(second[-1]["content"])["metric"], "pace")
+        self.assertEqual(third[-1]["tool_call_id"], "call-1-0")
+        self.assertEqual(json.loads(third[-1]["content"])["returned"], 1)
 
     def test_last_step_cannot_call_tools(self):
         call = [chunk(tool_calls=[tool_piece(0, "call", "summarize_period", "{}")])]
@@ -209,33 +253,19 @@ class EndpointTests(ChatTestCase):
         text = "".join(event.get("text", "") for event in self.events(self.post(gateway)))
         self.assertEqual(text, "Let me check.\n\nYou ran 4 times.")
 
-    def test_gateway_errors_become_friendly_messages(self):
-        cases = {429: "too many requests", 402: "AI credits", 401: "not set up", 500: "ran into a problem"}
-        for status, message in cases.items():
+    def test_provider_errors_become_friendly_messages(self):
+        cases = [(429, "gateway error", "too many requests"), (402, "gateway error", "AI credits"),
+                 (401, "gateway error", "rejected its key"), (400, "Please pass a valid API key", "rejected its key"),
+                 (500, "gateway error", "ran into a problem")]
+        for status, detail, message in cases:
             with self.subTest(status=status), self.assertLogs("app.services.chat", "WARNING"):
-                events = self.events(self.post(FakeGateway(gateway_error(status))))
+                events = self.events(self.post(FakeGateway(provider_error(status, detail))))
                 self.assertEqual(events[-1]["type"], "error")
                 self.assertIn(message, events[-1]["message"])
 
     def test_empty_answer_is_an_error(self):
         events = self.events(self.post(FakeGateway([chunk("")])))
         self.assertEqual(events[-1]["type"], "error")
-
-    def test_missing_credentials_return_503(self):
-        with patch.dict(os.environ, clear=False) as env:
-            env.pop("AI_GATEWAY_API_KEY", None)
-            env.pop("VERCEL_OIDC_TOKEN", None)
-            response = self.client.post("/insights/chat", json={"messages": [QUESTION]})
-        self.assertEqual(response.status_code, 503)
-
-    def test_vercel_oidc_header_authenticates_without_an_api_key(self):
-        with patch.dict(os.environ, clear=False) as env, \
-             patch("app.routers.insights.make_client", return_value=FakeGateway([chunk("Hi")])) as make_client:
-            env.pop("AI_GATEWAY_API_KEY", None)
-            response = self.client.post("/insights/chat", json={"messages": [QUESTION]},
-                                        headers={"x-vercel-oidc-token": "oidc-token"})
-        self.assertEqual(response.status_code, 200)
-        make_client.assert_called_once_with("oidc-token")
 
     def test_invalid_requests_are_rejected(self):
         bodies = [
