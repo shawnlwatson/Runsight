@@ -1,3 +1,4 @@
+import type { ChatEvent, ChatRequest } from "@/types/chat";
 import type { FatigueRun } from "@/types/fatigue";
 import type { CurrentRun } from "@/types/run";
 import type { DashboardSummary } from "@/types/summary";
@@ -28,4 +29,27 @@ export function fetchSummary(start: string, end: string, excludedRunIds: readonl
   if (maxDistance !== null) params.set("max_distance", String(maxDistance));
   for (const [name, value] of Object.entries(attributes ?? {})) if (value) params.set(name, value);
   return getJson<DashboardSummary>(`/runs/summary?${params}`);
+}
+
+// Streams the Runsight Assistant's reply, calling onEvent for each NDJSON line. Abort with signal to stop.
+export async function streamChat(request: ChatRequest, onEvent: (event: ChatEvent) => void, signal?: AbortSignal) {
+  const response = await fetch(`${API_URL}/insights/chat`, {
+    method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(request), signal,
+  });
+  if (!response.ok || !response.body) {
+    throw new Error(response.status === 503 ? "The assistant is not set up on this server yet."
+      : response.status === 422 ? "The assistant could not read that request. Check the filters and try again."
+      : `The assistant is unavailable right now (status ${response.status}).`);
+  }
+  const reader = response.body.pipeThrough(new TextDecoderStream()).getReader();
+  let buffer = "";
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (value) buffer += value;
+    // Each complete line is one event; keep a partial line until the rest arrives
+    const lines = buffer.split("\n");
+    buffer = done ? "" : lines.pop() ?? "";
+    for (const line of lines) if (line.trim()) onEvent(JSON.parse(line) as ChatEvent);
+    if (done) return;
+  }
 }
