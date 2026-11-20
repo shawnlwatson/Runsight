@@ -13,7 +13,7 @@ app.add_middleware(
     CORSMiddleware,
     # FRONTEND_ORIGINS is a comma-separated list set on Vercel, e.g. https://runsight.vercel.app
     allow_origins=os.getenv("FRONTEND_ORIGINS", "http://localhost:3000").split(","),
-    allow_methods=["GET"],
+    allow_methods=["GET", "POST"],
     allow_headers=["*"]
 )
 
